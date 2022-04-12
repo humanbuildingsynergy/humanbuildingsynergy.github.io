@@ -1,0 +1,139 @@
+.shadow_black {
+    color: white;
+    text-shadow: 0 -3px black, 3px 0 black;
+}
+
+.shadow_white {
+    text-shadow: 0 -3px, 3px 0;
+}
+
+.about {
+    padding: 1.5rem 0;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.3) 100%), url("../assets/img/bg-about.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.about h2, .about .h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    display: block;
+}
+
+.synergy {
+    background-image: linear-gradient(to right, rgb(171, 5, 32) 20%, rgb(255, 255, 255), rgb(12, 35, 75) 80%);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 7.5rem;
+}
+
+.human {
+    color: rgb(255, 187, 138);
+    text-shadow: 0 0 5px black;
+    font-size: 5.0rem;
+}
+
+.building{
+    color: rgb(171, 171, 171);
+    text-shadow: 0 0 5px black;
+    font-size: 5.0rem;
+}
+
+.lead-primary {
+    font-size: 1.25rem;
+    font-weight: 500;
+    opacity: 1;
+}
+
+.lead-secondary {
+    font-size: 1.1rem;
+    font-weight: 400;
+    opacity: 1;
+}
+
+.content-section-footer {
+    padding-top: 2.0rem;
+    padding-bottom: 2.0rem;
+} 
+
+.fc-arizona-red{
+    color: rgb()
+}
+
+.bg-midnight {
+    --bs-bg-opacity: 1;
+    background-color: rgb(0, 28, 72) !important;
+}
+
+.bg-arizona-blue {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-arizona-blue-rgb), var(--bs-bg-opacity)) !important;
+}
+  
+.bg-azurite {
+    --bs-bg-opacity: 1;
+    background-color: rgb(30, 82, 136) !important;
+}
+
+.bg-oasis {
+    --bs-bg-opacity: 1;
+    background-color: rgb(55, 141, 189) !important;
+}
+
+.bg-sky {
+    --bs-bg-opacity: 1;
+    background-color: rgb(129, 211, 235) !important;
+}
+
+.content-section-motto {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.text-arizona-red {
+    color: rgb(171, 5, 32);
+}
+
+.profile {
+    color: rgb(20, 20, 20);
+}
+
+.profile:hover{
+    color: rgb(55, 141, 189);
+}
+
+.text-shadow-white{
+    text-shadow: 0 0 3px rgb(255, 255, 255);
+}
+
+.text-shadow-azurite{
+    text-shadow: 0 0 3px rgb(30, 82, 136);
+}
+
+.text-shadow-midnight{
+    text-shadow: 0 0 3px rgb(0, 28, 72);
+}
+
+.text-shadow-bloom{
+    text-shadow: 0 0 3px rgb(239, 64, 86);
+}
+
+.text-sky {
+    color: rgb(129, 211, 235) !important;
+}
+
+.text-oasis {
+    color: rgb(55, 141, 189) !important;
+}
+
+.text-azurite {
+    color: rgb(30, 82, 136) !important;
+}
+
+.text-arizona-blue {
+    color: rgb(12, 35, 75) !important;
+}
+
+.text-midnight {
+    color: rgb(0, 28, 72) !important;
+}
