@@ -7,3 +7,7 @@ span {
     opacity: 0;
     /* transform: translateY(0px); */
 }
+
+.shadow_white {
+    text-shadow: 0 -3px, 3px 0;
+}

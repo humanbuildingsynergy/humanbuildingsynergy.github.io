@@ -26,7 +26,7 @@ function onTick(){
         span.classList.add('building')
         //span.style.color = "#"+(rgb_building[0]).toString(16)+(rgb_building[1]).toString(16)+(rgb_building[2]).toString(16);
     } else {
-        span.classList.add('shadow_black')
+        span.classList.add('shadow_black', 'text-white')
     }
     char++
     if(char == hub1_text_split.length){

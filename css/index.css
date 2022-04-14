@@ -1,9 +1,77 @@
 span {
     opacity: 0;
     transition: all 0.5s ease;
+    font-size: 4.0vmax;
 }
 
 .fade {
     opacity: 1;
     /* transform: translateY(0px); */
+}
+
+.shadow_black {
+    text-shadow: 1px 2px black;
+}
+
+.synergy {
+    /* background-image: linear-gradient(to right, rgb(171, 5, 32) 20%, rgb(255, 255, 255), rgb(12, 35, 75) 80%); */
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 7.5vmax;
+    animation-name: synergy-ani;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    filter: drop-shadow(1px 1px white);
+    animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+}
+
+@keyframes synergy-ani {
+    0% {background-color: rgb(139, 0, 21);}
+    5% {background-color: rgb(171, 5, 32);}
+    10% {background-color: rgb(239, 64, 86);}
+    15% {background-color: rgb(239, 120, 136);}
+    20% {background-color: rgb(255, 204, 204);}
+    25% {background-color: rgb(255, 255, 255);}
+    30% {background-color: rgb(129, 211, 235);}
+    35% {background-color: rgb(55, 141, 189);}
+    40% {background-color: rgb(30, 82, 136);}
+    45% {background-color: rgb(12, 35, 75);}
+    50% {background-color: rgb(0, 28, 72);}
+    55% {background-color: rgb(12, 35, 75);}
+    60% {background-color: rgb(30, 82, 136);}
+    65% {background-color: rgb(55, 141, 189);}
+    75% {background-color: rgb(129, 211, 235);}
+    80% {background-color: rgb(255, 255, 255);}
+    85% {background-color: rgb(255, 204, 204);}
+    90% {background-color: rgb(239, 120, 136);}
+    95% {background-color: rgb(239, 64, 86);}
+    100% {background-color: rgb(171, 5, 32);}
+}
+
+.human {
+    background-image: 
+        linear-gradient(
+            to right, 
+            rgb(255,255,255), 
+            rgb(236, 188, 180), 
+            rgb(209, 163, 164), 
+            rgb(197, 140, 133), 
+            rgb(161, 102, 94), 
+            rgb(89, 47, 42), 
+            rgb(0,0,0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 6.0vmax;
+    filter: drop-shadow(1px 1px rgb(0, 0, 0));
+}
+
+.building{
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.0)), url("../assets/img/concrete.png");
+    background-position: center center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    font-size: 6.0vmax;
+    filter: drop-shadow(1px 2px rgb(0, 0, 0));
 }
