@@ -1,16 +1,3 @@
-.about {
-    padding: 1.5rem 0;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.3) 100%), url("../assets/img/bg-about.jpg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.about h2, .about .h2 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    display: block;
-}
-
 .lead-primary {
     font-size: 1.25rem;
     font-weight: 500;
@@ -109,3 +96,26 @@
 .text-midnight {
     color: rgb(0, 28, 72) !important;
 }
+
+.shadow_black {
+    text-shadow: 1px 2px black;
+}
+
+.img-profile{
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .img-profile{
+        max-width: 50%;
+        height: auto;
+        margin-bottom: 1rem !important;
+    }
+}
+
+.img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }

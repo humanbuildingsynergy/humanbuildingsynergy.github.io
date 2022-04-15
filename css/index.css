@@ -1,3 +1,30 @@
+.masthead {
+    min-height: 30rem;
+    position: relative;
+    display: table;
+    width: 100%;
+    height: auto;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.70) 85%), url("../assets/background/bg-masthead.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .masthead h1, .masthead .h1 {
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+  }
+  @media (min-width: 992px) {
+    .masthead {
+      height: 100vh;
+    }
+    .masthead h1, .masthead .h1 {
+      font-size: 4.0rem;
+    }
+  }
+
 span {
     opacity: 0;
     transition: all 0.5s ease;
@@ -7,10 +34,6 @@ span {
 .fade {
     opacity: 1;
     /* transform: translateY(0px); */
-}
-
-.shadow_black {
-    text-shadow: 1px 2px black;
 }
 
 .synergy {
@@ -67,7 +90,7 @@ span {
 }
 
 .building{
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.0)), url("../assets/img/concrete.png");
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.0)), url("../assets/font/concrete.png");
     background-position: center center;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

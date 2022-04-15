@@ -11,3 +11,16 @@ span {
 .shadow_white {
     text-shadow: 0 -3px, 3px 0;
 }
+
+.about {
+    padding: 1.5rem 0;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.3) 100%), url("../assets/background/bg-about.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.about h2, .about .h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    display: block;
+}
