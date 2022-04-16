@@ -24,3 +24,25 @@ span {
     font-weight: 700;
     display: block;
 }
+
+
+@media (max-width: 450px) {
+    .menu-toggle {
+      position: fixed;
+      right: 15px;
+      top: 15px;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      color: #fff;
+      background: rgb(30, 82, 136);
+      line-height: 40px;
+      z-index: 999;
+    }
+    .menu-toggle:focus, .menu-toggle:hover {
+      color: #fff;
+    }
+    .menu-toggle:hover {
+      background: rgb(55, 141, 189);
+    }
+  }

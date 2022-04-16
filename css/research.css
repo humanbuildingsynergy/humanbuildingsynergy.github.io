@@ -158,6 +158,7 @@
 }
 
 .modal-title {
+  font-weight: 800;
   margin-bottom: 0;
   line-height: 1.5;
 }
@@ -360,8 +361,40 @@
   height: auto;
 }
 
-.img-center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.img-w80 {
+  width: 80%;
+  height: auto;
+}
+
+.img-modal {
+  width: 40%;
+  height: auto;
+}
+
+.btn-azblue {
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(12, 35, 75, 1);
+}
+.btn-azblue:hover {
+  color: rgba(220, 220, 220, 1);
+  background-color: rgba(0, 28, 72, 1);
+}
+.btn-check:focus + .btn-azblue, .btn-azblue:focus {
+  color: rgba(211, 212, 213, 1);
+  background-color: rgba(0, 28, 72, 1);
+  border-color: rgba(0, 28, 72, 1);
+  box-shadow: 0 0 0 0.25rem rgba(211, 212, 213, 0.5);
+}
+.btn-check:checked + .btn-azblue, .btn-check:active + .btn-azblue, .btn-azblue:active, .btn-azblue.active, .show > .btn-azblue.dropdown-toggle {
+  color: rgba(211, 212, 213, 1);
+  background-color: rgba(0, 28, 72, 1);
+  border-color: rgba(0, 28, 72, 1);
+}
+.btn-check:checked + .btn-azblue:focus, .btn-check:active + .btn-azblue:focus, .btn-azblue:active:focus, .btn-azblue.active:focus, .show > .btn-azblue.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem rgba(211, 212, 213, 0.5);
+}
+.btn-azblue:disabled, .btn-azblue.disabled {
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(12, 35, 75, 1);
+  border-color: rgba(12, 35, 75, 1);
 }
