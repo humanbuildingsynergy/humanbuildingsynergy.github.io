@@ -97,6 +97,14 @@
     color: rgb(0, 28, 72) !important;
 }
 
+.text-chili {
+    color: rgb(139, 0, 21) !important;
+}
+
+.text-light-chili {
+    color: rgb(255, 140, 160) !important;
+}
+
 .shadow_black {
     text-shadow: 1px 2px black;
 }
