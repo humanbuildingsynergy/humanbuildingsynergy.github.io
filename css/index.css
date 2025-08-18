@@ -21,17 +21,9 @@
     font-size: 3rem;
     margin: 0;
     padding: 0;
-  }
-  
-  /* Hide text initially until animation is ready */
-  .hubs-1 {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  /* Show text when animation starts */
-  .hubs-1.animation-ready {
-    opacity: 1;
+    /* Reserve consistent space for the full text */
+    min-height: 6rem;
+    line-height: 1.2;
   }
   @media (min-width: 992px) {
     .masthead {
@@ -39,6 +31,7 @@
     }
     .masthead h1, .masthead .h1 {
       font-size: 4.0rem;
+      min-height: 8rem; /* Larger space for bigger text */
     }
   }
 
@@ -54,7 +47,7 @@ span {
 /* Loading state styles */
 .text-loading {
     position: relative;
-    opacity: 1 !important; /* Override the hidden state when showing loading cursor */
+    min-height: 1em; /* Ensure space for cursor even when empty */
 }
 
 .text-loading::after {
@@ -69,9 +62,7 @@ span {
     51%, 100% { opacity: 0; }
 }
 
-.text-loaded .text-loading::after {
-    display: none;
-}
+/* Loading cursor disappears when text-loading class is removed */
 
 /* ===== REDUCED MOTION SUPPORT ===== */
 @media (prefers-reduced-motion: reduce) {

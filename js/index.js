@@ -8,7 +8,7 @@
         return;
     }
     
-    const hub1_text = hub1.textContent.trim();
+    const hub1_text = hub1.getAttribute('data-text') || hub1.textContent.trim();
     if (!hub1_text) {
         console.warn('No text content found in hubs-1 element');
         return;
@@ -47,14 +47,10 @@
             fragment.appendChild(span);
         }
         hub1.appendChild(fragment);
-        hub1.classList.add('animation-ready'); // Show the text
         return;
     }
     
-    // Show loading state for users who don't prefer reduced motion
-    hub1.classList.add('text-loading');
-    
-    // Small delay to show loading state, then start animation
+    // Start animation after a brief delay
     setTimeout(() => {
         const hub1_text_split = hub1_text.split(" ");
         hub1.textContent = "";
@@ -70,10 +66,6 @@
             fragment.appendChild(span);
         }
         hub1.appendChild(fragment);
-        
-        // Remove loading state and start animation
-        hub1.classList.remove('text-loading');
-        hub1.classList.add('text-loaded', 'animation-ready');
         
         let char = 0;
         let timer = setInterval(onTick, 500); // Adjust this value to control animation speed
@@ -116,5 +108,5 @@
                 timer = null;
             }
         }
-    }, 1000); // 1 second delay to show loading cursor
+    }, 500); // 500ms delay before starting animation (adjust as needed)
 })();
