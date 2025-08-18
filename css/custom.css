@@ -143,6 +143,42 @@
     margin-right: auto;
 }
 
+/* ===== FOCUS INDICATORS ===== */
+/* Custom focus styles for better accessibility */
+a:focus,
+button:focus,
+.menu-toggle:focus {
+    outline: 3px solid var(--arizona-blue);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Enhanced focus for navigation links */
+.sidebar-nav-item a:focus {
+    background-color: var(--arizona-blue);
+    color: var(--white);
+    outline: 2px solid var(--arizona-red);
+    outline-offset: 2px;
+}
+
+/* Focus for buttons */
+.btn:focus {
+    outline: 3px solid var(--arizona-red);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(171, 5, 32, 0.3);
+}
+
+/* Remove default focus for mouse users only */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Restore focus for keyboard users */
+:focus-visible {
+    outline: 3px solid var(--arizona-blue);
+    outline-offset: 2px;
+}
+
 /* ===== SMOOTH SCROLLING ===== */
 html {
     scroll-behavior: smooth;
