@@ -1,3 +1,25 @@
+/* ===== CSS VARIABLES FOR CONSISTENT COLORS ===== */
+:root {
+    /* Arizona Brand Colors */
+    --arizona-red: rgb(171, 5, 32);
+    --arizona-blue: rgb(12, 35, 75);
+    
+    /* HUBS Color Palette */
+    --midnight: rgb(0, 28, 72);
+    --azurite: rgb(30, 82, 136);
+    --oasis: rgb(55, 141, 189);
+    --sky: rgb(129, 211, 235);
+    --chili: rgb(139, 0, 21);
+    --light-chili: rgb(255, 140, 160);
+    --bloom: rgb(239, 64, 86);
+    
+    /* Neutral Colors */
+    --dark-gray: rgb(20, 20, 20);
+    --white: rgb(255, 255, 255);
+    --black: rgb(0, 0, 0);
+}
+
+/* ===== TYPOGRAPHY UTILITIES ===== */
 .lead-primary {
     font-size: 1.25rem;
     font-weight: 500;
@@ -16,29 +38,30 @@
 } 
 
 
+/* ===== BACKGROUND COLORS ===== */
 .bg-midnight {
     --bs-bg-opacity: 1;
-    background-color: rgb(0, 28, 72) !important;
+    background-color: var(--midnight) !important;
 }
 
 .bg-arizona-blue {
     --bs-bg-opacity: 1;
-    background-color: rgba(var(--bs-arizona-blue-rgb), var(--bs-bg-opacity)) !important;
+    background-color: var(--arizona-blue) !important;
 }
   
 .bg-azurite {
     --bs-bg-opacity: 1;
-    background-color: rgb(30, 82, 136) !important;
+    background-color: var(--azurite) !important;
 }
 
 .bg-oasis {
     --bs-bg-opacity: 1;
-    background-color: rgb(55, 141, 189) !important;
+    background-color: var(--oasis) !important;
 }
 
 .bg-sky {
     --bs-bg-opacity: 1;
-    background-color: rgb(129, 211, 235) !important;
+    background-color: var(--sky) !important;
 }
 
 .content-section-motto {
@@ -46,81 +69,85 @@
     padding-bottom: 1.5rem;
 }
 
+/* ===== TEXT COLORS ===== */
 .text-arizona-red {
-    color: rgb(171, 5, 32);
+    color: var(--arizona-red);
 }
 
 .profile {
-    color: rgb(20, 20, 20);
+    color: var(--dark-gray);
 }
 
-.profile:hover{
-    color: rgb(55, 141, 189);
+.profile:hover {
+    color: var(--oasis);
 }
 
-.text-shadow-white{
-    text-shadow: 0 0 3px rgb(255, 255, 255);
+/* ===== TEXT SHADOWS ===== */
+.text-shadow-white {
+    text-shadow: 0 0 3px var(--white);
 }
 
-.text-shadow-azurite{
-    text-shadow: 0 0 3px rgb(30, 82, 136);
+.text-shadow-azurite {
+    text-shadow: 0 0 3px var(--azurite);
 }
 
-.text-shadow-midnight{
-    text-shadow: 0 0 3px rgb(0, 28, 72);
+.text-shadow-midnight {
+    text-shadow: 0 0 3px var(--midnight);
 }
 
-.text-shadow-bloom{
-    text-shadow: 0 0 3px rgb(239, 64, 86);
+.text-shadow-bloom {
+    text-shadow: 0 0 3px var(--bloom);
 }
 
 .text-sky {
-    color: rgb(129, 211, 235) !important;
+    color: var(--sky) !important;
 }
 
 .text-oasis {
-    color: rgb(55, 141, 189) !important;
+    color: var(--oasis) !important;
 }
 
 .text-azurite {
-    color: rgb(30, 82, 136) !important;
+    color: var(--azurite) !important;
 }
 
 .text-arizona-blue {
-    color: rgb(12, 35, 75) !important;
+    color: var(--arizona-blue) !important;
 }
 
 .text-midnight {
-    color: rgb(0, 28, 72) !important;
+    color: var(--midnight) !important;
 }
 
 .text-chili {
-    color: rgb(139, 0, 21) !important;
+    color: var(--chili) !important;
 }
 
 .text-light-chili {
-    color: rgb(255, 140, 160) !important;
+    color: var(--light-chili) !important;
 }
 
 .shadow_black {
-    text-shadow: 1px 2px black;
+    text-shadow: 1px 2px var(--black);
 }
 
-.img-profile{
+/* ===== IMAGE UTILITIES ===== */
+.img-profile {
     max-width: 100%;
     height: auto;
-}
-
-@media (max-width: 768px) {
-    .img-profile{
-        max-width: 50%;
-        height: auto;
-        margin-bottom: 1rem !important;
-    }
 }
 
 .img-center {
     display: block;
     margin-left: auto;
     margin-right: auto;
-  }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .img-profile {
+        max-width: 50%;
+        height: auto;
+        margin-bottom: 1rem !important;
+    }
+}

@@ -42,21 +42,15 @@ span {
 
 .fade {
     opacity: 1;
-    /* transform: translateY(0px); */
 }
 
 /* Performance optimized synergy animation */
 .synergy {
-    /* background-image: linear-gradient(to right, rgb(171, 5, 32) 20%, rgb(255, 255, 255), rgb(12, 35, 75) 80%); */
     -webkit-background-clip: text;
     color: transparent;
     font-size: 7.5vmax;
-    animation-name: synergy-ani;
-    animation-duration: 20s;
-    animation-iteration-count: infinite;
+    animation: synergy-ani 20s linear infinite;
     filter: drop-shadow(1px 1px white);
-    animation-timing-function: linear;
-    -webkit-animation-timing-function: linear;
     /* Performance optimizations */
     will-change: background-color;
     transform: translateZ(0);
@@ -99,16 +93,20 @@ span {
             rgb(89, 47, 42), 
             rgb(0,0,0));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: transparent;
     font-size: 6.0vmax;
     filter: drop-shadow(1px 1px rgb(0, 0, 0));
 }
 
-.building{
+.building {
     background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.0)), url("../assets/font/concrete.png");
     background-position: center center;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: transparent;
     font-weight: 900;
     font-size: 6.0vmax;
     filter: drop-shadow(1px 2px rgb(0, 0, 0));
