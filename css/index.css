@@ -40,6 +40,27 @@ span {
     transform: translateZ(0);
 }
 
+/* Loading state styles */
+.text-loading {
+    position: relative;
+}
+
+.text-loading::after {
+    content: '|';
+    animation: blink 1s infinite;
+    color: var(--arizona-blue);
+    font-weight: bold;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.text-loaded .text-loading::after {
+    display: none;
+}
+
 .fade {
     opacity: 1;
 }

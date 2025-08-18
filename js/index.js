@@ -1,4 +1,4 @@
-// Performance optimized text animation with error handling
+// Performance optimized text animation with loading states
 (function() {
     'use strict';
     
@@ -14,25 +14,34 @@
         return;
     }
     
-    const hub1_text_split = hub1_text.split(" ");
-    hub1.textContent = "";
+    // Show loading state
+    hub1.classList.add('text-loading');
     
-    // Use document fragment for better performance
-    const fragment = document.createDocumentFragment();
-    for (let i = 0; i < hub1_text_split.length; i++) {
-        if (hub1_text_split[i] === 'Synergy') {
-            hub1_text_split[i] += "<br>";
+    // Small delay to show loading state, then start animation
+    setTimeout(() => {
+        const hub1_text_split = hub1_text.split(" ");
+        hub1.textContent = "";
+        
+        // Use document fragment for better performance
+        const fragment = document.createDocumentFragment();
+        for (let i = 0; i < hub1_text_split.length; i++) {
+            if (hub1_text_split[i] === 'Synergy') {
+                hub1_text_split[i] += "<br>";
+            }
+            const span = document.createElement('span');
+            span.innerHTML = hub1_text_split[i] + " ";
+            fragment.appendChild(span);
         }
-        const span = document.createElement('span');
-        span.innerHTML = hub1_text_split[i] + " ";
-        fragment.appendChild(span);
-    }
-    hub1.appendChild(fragment);
-    
-    let char = 0;
-    let timer = setInterval(onTick, 800); // Adjust this value to control animation speed
+        hub1.appendChild(fragment);
+        
+        // Remove loading state and start animation
+        hub1.classList.remove('text-loading');
+        hub1.classList.add('text-loaded');
+        
+        let char = 0;
+        let timer = setInterval(onTick, 800); // Adjust this value to control animation speed
 
-    function onTick() {
+        function onTick() {
         const spans = hub1.querySelectorAll('span');
         if (char >= spans.length) {
             complete();
@@ -64,10 +73,11 @@
         }
     }
     
-    function complete() {
-        if (timer) {
-            clearInterval(timer);
-            timer = null;
+        function complete() {
+            if (timer) {
+                clearInterval(timer);
+                timer = null;
+            }
         }
-    }
+    }, 1000); // 1 second delay to show loading cursor
 })();
