@@ -23,13 +23,6 @@
         
         <title>HUBS - Human Building Synergy Laboratory | UArizona CAEM</title>
         
-        <!-- Security Headers -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://kit.fontawesome.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://kit.fontawesome.com; img-src 'self' data:; connect-src 'self';">
-        <meta http-equiv="X-Content-Type-Options" content="nosniff">
-        <meta http-equiv="X-Frame-Options" content="DENY">
-        <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-        <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-        
         <!-- PWA Manifest -->
         <link rel="manifest" href="/manifest.json">
         <meta name="theme-color" content="#0C234B">
@@ -68,50 +61,6 @@
         <!-- Simple line icons-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
         
-        <!-- Structured Data -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "ResearchOrganization",
-          "name": "Human Building Synergy Laboratory",
-          "alternateName": "HUBS",
-          "url": "https://hubs.engr.arizona.edu",
-          "logo": "https://hubs.engr.arizona.edu/assets/logo/hubs_logo_one_inch.png",
-          "description": "Research laboratory focusing on creating synergy between humans and buildings through smart technologies and energy efficiency.",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1209 E. 2nd St. 220D",
-            "addressLocality": "Tucson",
-            "addressRegion": "AZ",
-            "postalCode": "85719",
-            "addressCountry": "US"
-          },
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+1-520-621-7469",
-            "email": "wooyoung@arizona.edu",
-            "contactType": "research"
-          },
-          "parentOrganization": {
-            "@type": "CollegeOrUniversity",
-            "name": "University of Arizona",
-            "department": "Civil & Architectural Engineering & Mechanics"
-          },
-          "foundingDate": "2020",
-          "founder": {
-            "@type": "Person",
-            "name": "Dr. Wooyoung Jung",
-            "jobTitle": "Assistant Professor"
-          },
-          "researchField": [
-            "Building Energy Efficiency",
-            "HVAC Systems",
-            "Occupant Comfort",
-            "Smart Buildings",
-            "Building Automation"
-          ]
-        }
-        </script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -122,7 +71,7 @@
     
     <body id="page-top">
         <!-- Navigation-->
-        <a class="menu-toggle rounded" href="#" aria-label="Toggle navigation menu"><i class="fa fa-bars"></i></a>
+        <a class="menu-toggle rounded" href="#" aria-label="Toggle navigation menu"><i class="fa-solid fa-bars"></i></a>
         <nav id="sidebar-wrapper" aria-label="Main navigation">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand"><a href="index.html">HUBS</a></li>
@@ -213,20 +162,5 @@
         <script src="js/scripts.js" defer></script>
         <script src="js/index.js" defer></script>
         <script src="js/modern-images.js" defer></script>
-        
-        <!-- Service Worker Registration -->
-        <script>
-            if ('serviceWorker' in navigator) {
-                window.addEventListener('load', () => {
-                    navigator.serviceWorker.register('/sw.js')
-                        .then(registration => {
-                            console.log('SW registered: ', registration);
-                        })
-                        .catch(registrationError => {
-                            console.log('SW registration failed: ', registrationError);
-                        });
-                });
-            }
-        </script>
     </body>
 </html>

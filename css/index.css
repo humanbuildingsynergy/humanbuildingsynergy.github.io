@@ -174,13 +174,16 @@ span {
     position: fixed;
     right: 15px;
     top: 15px;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     text-align: center;
-    color: #fff;
-    background: rgb(30, 82, 136);
-    line-height: 40px;
-    z-index: 999;
+    color: #fff !important;
+    background: rgb(30, 82, 136) !important;
+    line-height: 50px;
+    z-index: 9999;
+    display: block !important;
+    border: 2px solid #fff !important;
+    font-size: 18px !important;
   }
   .menu-toggle:focus, .menu-toggle:hover {
     color: #fff;

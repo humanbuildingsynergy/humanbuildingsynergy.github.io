@@ -174,8 +174,6 @@ button:focus,
 .sidebar-nav-item a:focus {
     background-color: var(--arizona-blue);
     color: var(--white);
-    outline: 2px solid var(--arizona-red);
-    outline-offset: 2px;
 }
 
 /* Focus for buttons */
