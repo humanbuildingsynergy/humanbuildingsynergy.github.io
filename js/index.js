@@ -76,7 +76,7 @@
         hub1.classList.add('text-loaded', 'animation-ready');
         
         let char = 0;
-        let timer = setInterval(onTick, 800); // Adjust this value to control animation speed
+        let timer = setInterval(onTick, 500); // Adjust this value to control animation speed
 
         function onTick() {
         const spans = hub1.querySelectorAll('span');
