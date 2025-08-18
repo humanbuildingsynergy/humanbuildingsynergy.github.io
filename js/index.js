@@ -30,7 +30,7 @@
     hub1.appendChild(fragment);
     
     let char = 0;
-    let timer = setInterval(onTick, 350);
+    let timer = setInterval(onTick, 800); // Adjust this value to control animation speed
 
     function onTick() {
         const spans = hub1.querySelectorAll('span');
