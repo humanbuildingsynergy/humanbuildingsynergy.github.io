@@ -61,6 +61,39 @@ span {
     display: none;
 }
 
+/* ===== REDUCED MOTION SUPPORT ===== */
+@media (prefers-reduced-motion: reduce) {
+    /* Disable all animations for users who prefer reduced motion */
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    /* Disable specific animations */
+    .synergy {
+        animation: none !important;
+        background-color: var(--arizona-red) !important;
+    }
+    
+    .text-loading::after {
+        animation: none !important;
+    }
+    
+    /* Remove smooth scrolling for reduced motion users */
+    html {
+        scroll-behavior: auto !important;
+    }
+    
+    /* Show all text immediately */
+    span {
+        opacity: 1 !important;
+        transition: none !important;
+    }
+}
+
 .fade {
     opacity: 1;
 }
