@@ -28,6 +28,51 @@
         <script src="https://kit.fontawesome.com/c1826cb8c6.js" crossorigin="anonymous"></script>
         <!-- Simple line icons-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
+        
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "ResearchOrganization",
+          "name": "Human Building Synergy Laboratory",
+          "alternateName": "HUBS",
+          "url": "https://hubs.engr.arizona.edu",
+          "logo": "https://hubs.engr.arizona.edu/assets/logo/hubs_logo_one_inch.png",
+          "description": "Research laboratory focusing on creating synergy between humans and buildings through smart technologies and energy efficiency.",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1209 E. 2nd St. 220D",
+            "addressLocality": "Tucson",
+            "addressRegion": "AZ",
+            "postalCode": "85719",
+            "addressCountry": "US"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-520-621-7469",
+            "email": "wooyoung@arizona.edu",
+            "contactType": "research"
+          },
+          "parentOrganization": {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Arizona",
+            "department": "Civil & Architectural Engineering & Mechanics"
+          },
+          "foundingDate": "2020",
+          "founder": {
+            "@type": "Person",
+            "name": "Dr. Wooyoung Jung",
+            "jobTitle": "Assistant Professor"
+          },
+          "researchField": [
+            "Building Energy Efficiency",
+            "HVAC Systems",
+            "Occupant Comfort",
+            "Smart Buildings",
+            "Building Automation"
+          ]
+        }
+        </script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -38,8 +83,8 @@
     
     <body id="page-top">
         <!-- Navigation-->
-        <a class="menu-toggle rounded" href="#"><i class="fa fa-bars"></i></a>
-        <nav id="sidebar-wrapper">
+        <a class="menu-toggle rounded" href="#" aria-label="Toggle navigation menu"><i class="fa fa-bars"></i></a>
+        <nav id="sidebar-wrapper" aria-label="Main navigation">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand"><a href="index.html">HUBS</a></li>
                 <li class="sidebar-nav-item"><a href="index.html">Home</a></li>
@@ -59,11 +104,11 @@
             </div>
         </header>
         <!-- About-->
-        <section class="content-section bg-white">
+        <section class="content-section bg-white" aria-labelledby="news-heading">
             <div class="container px-4 px-lg-6">
                 <div class="row gx-1 gx-lg-2 justify-content-center">
                     <div class="col">
-                        <h2 class="fw-700">News</h2>
+                        <h2 id="news-heading" class="fw-700">News</h2>
                         <ul>
                             <li>08/2025, HUBS lab won AZTI SPR-804: Potential Revenue Generation Through the Commercialization of Arizona Rest Areas as a Co-PI!</li>
                             <li>07/2025, A new journal article, titled <a href="https://doi.org/10.1016/j.buildenv.2025.113471" target="_blank">Personalized Environmental Control Systems (PECS): A systematic review of performance evaluation methods for Thermal Comfort, Air Quality and Energy</a>, gets accepted and published by Building and Environment!</li>
@@ -122,7 +167,7 @@
             </div>
         </footer>
         <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
+        <a class="scroll-to-top rounded" href="#page-top" aria-label="Scroll to top"><i class="fas fa-angle-up"></i></a>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
