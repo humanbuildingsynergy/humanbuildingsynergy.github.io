@@ -1,48 +1,73 @@
-// Performance optimized text animation
-const hub1 = document.querySelector(".hubs-1");
-const hub1_text = hub1.textContent;
-const hub1_text_split = hub1_text.split(" ");                           // identify each word, separated by a space
-
-hub1.textContent = "";                                                  // delete the text
-
-// Use document fragment for better performance
-const fragment = document.createDocumentFragment();
-for(let i=0; i < hub1_text_split.length; i++){
-    if (hub1_text_split[i] == 'Synergy'){
-        hub1_text_split[i] += "<br>"                                    // 
-    }
-    const span = document.createElement('span');
-    span.innerHTML = hub1_text_split[i] + " ";
-    fragment.appendChild(span);
-}
-hub1.appendChild(fragment);
-
-let char = 0;
-let timer = setInterval(onTick, 350);
-
-function onTick(){
-    const span = hub1.querySelectorAll('span')[char];
-    span.classList.add('fade');
-    if (span.textContent == 'Synergy '){
-        // span.style.color = "#"+(rgb_synergy[0]).toString(16)+(rgb_synergy[1]).toString(16)+(rgb_synergy[2]).toString(16);
-        span.classList.add('synergy', 'shadow_white')
-    } else if (span.textContent == 'Human '){
-        span.classList.add('human')
-        //span.style.color = "#"+(rgb_human[0]).toString(16)+(rgb_human[1]).toString(16)+(rgb_human[2]).toString(16);
-    } else if (span.textContent == 'Building '){
-        span.classList.add('building')
-        //span.style.color = "#"+(rgb_building[0]).toString(16)+(rgb_building[1]).toString(16)+(rgb_building[2]).toString(16);
-    } else {
-        span.classList.add('shadow_black', 'text-white')
-    }
-    char++
-    if(char == hub1_text_split.length){
-        complete();
+// Performance optimized text animation with error handling
+(function() {
+    'use strict';
+    
+    const hub1 = document.querySelector(".hubs-1");
+    if (!hub1) {
+        console.warn('Element with class "hubs-1" not found');
         return;
     }
-}
+    
+    const hub1_text = hub1.textContent.trim();
+    if (!hub1_text) {
+        console.warn('No text content found in hubs-1 element');
+        return;
+    }
+    
+    const hub1_text_split = hub1_text.split(" ");
+    hub1.textContent = "";
+    
+    // Use document fragment for better performance
+    const fragment = document.createDocumentFragment();
+    for (let i = 0; i < hub1_text_split.length; i++) {
+        if (hub1_text_split[i] === 'Synergy') {
+            hub1_text_split[i] += "<br>";
+        }
+        const span = document.createElement('span');
+        span.innerHTML = hub1_text_split[i] + " ";
+        fragment.appendChild(span);
+    }
+    hub1.appendChild(fragment);
+    
+    let char = 0;
+    let timer = setInterval(onTick, 350);
 
-function complete(){
-    clearInterval(timer);
-    timer = null;
-}
+    function onTick() {
+        const spans = hub1.querySelectorAll('span');
+        if (char >= spans.length) {
+            complete();
+            return;
+        }
+        
+        const span = spans[char];
+        if (!span) {
+            complete();
+            return;
+        }
+        
+        span.classList.add('fade');
+        
+        const spanText = span.textContent.trim();
+        if (spanText === 'Synergy') {
+            span.classList.add('synergy', 'shadow_white');
+        } else if (spanText === 'Human') {
+            span.classList.add('human');
+        } else if (spanText === 'Building') {
+            span.classList.add('building');
+        } else {
+            span.classList.add('shadow_black', 'text-white');
+        }
+        
+        char++;
+        if (char >= hub1_text_split.length) {
+            complete();
+        }
+    }
+    
+    function complete() {
+        if (timer) {
+            clearInterval(timer);
+            timer = null;
+        }
+    }
+})();
