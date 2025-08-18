@@ -1,3 +1,4 @@
+/* Performance optimized masthead with faster loading */
 .masthead {
     min-height: 30rem;
     position: relative;
@@ -10,6 +11,11 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    /* Performance optimizations */
+    will-change: transform;
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
   .masthead h1, .masthead .h1 {
     font-size: 3rem;
@@ -25,10 +31,13 @@
     }
   }
 
+/* Optimized text animation performance */
 span {
     opacity: 0;
-    transition: all 0.5s ease;
+    transition: opacity 0.5s ease;
     font-size: 4.0vmax;
+    will-change: opacity;
+    transform: translateZ(0);
 }
 
 .fade {
@@ -36,6 +45,7 @@ span {
     /* transform: translateY(0px); */
 }
 
+/* Performance optimized synergy animation */
 .synergy {
     /* background-image: linear-gradient(to right, rgb(171, 5, 32) 20%, rgb(255, 255, 255), rgb(12, 35, 75) 80%); */
     -webkit-background-clip: text;
@@ -47,6 +57,11 @@ span {
     filter: drop-shadow(1px 1px white);
     animation-timing-function: linear;
     -webkit-animation-timing-function: linear;
+    /* Performance optimizations */
+    will-change: background-color;
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 @keyframes synergy-ani {

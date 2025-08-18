@@ -1,14 +1,21 @@
+// Performance optimized text animation
 const hub1 = document.querySelector(".hubs-1");
 const hub1_text = hub1.textContent;
 const hub1_text_split = hub1_text.split(" ");                           // identify each word, separated by a space
 
 hub1.textContent = "";                                                  // delete the text
+
+// Use document fragment for better performance
+const fragment = document.createDocumentFragment();
 for(let i=0; i < hub1_text_split.length; i++){
     if (hub1_text_split[i] == 'Synergy'){
         hub1_text_split[i] += "<br>"                                    // 
     }
-    hub1.innerHTML += "<span>" + hub1_text_split[i] + " </span>"
+    const span = document.createElement('span');
+    span.innerHTML = hub1_text_split[i] + " ";
+    fragment.appendChild(span);
 }
+hub1.appendChild(fragment);
 
 let char = 0;
 let timer = setInterval(onTick, 350);
