@@ -7,22 +7,56 @@ window.addEventListener('DOMContentLoaded', event => {
 
     const sidebarWrapper = document.getElementById('sidebar-wrapper');
     let scrollToTopVisible = false;
+    
+    // Keyboard navigation support
+    document.addEventListener('keydown', event => {
+        // ESC key closes sidebar
+        if (event.key === 'Escape' && sidebarWrapper.classList.contains('active')) {
+            closeSidebar();
+        }
+        
+        // Space or Enter on menu toggle
+        if ((event.key === ' ' || event.key === 'Enter') && event.target.classList.contains('menu-toggle')) {
+            event.preventDefault();
+            toggleSidebar();
+        }
+    });
+    
     // Closes the sidebar menu
     const menuToggle = document.body.querySelector('.menu-toggle');
     menuToggle.addEventListener('click', event => {
         event.preventDefault();
+        toggleSidebar();
+    })
+    
+    function toggleSidebar() {
         sidebarWrapper.classList.toggle('active');
         _toggleMenuIcon();
         menuToggle.classList.toggle('active');
-    })
+        
+        // Focus management
+        if (sidebarWrapper.classList.contains('active')) {
+            // Focus first menu item when opening
+            const firstMenuItem = sidebarWrapper.querySelector('.sidebar-nav-item a');
+            if (firstMenuItem) firstMenuItem.focus();
+        } else {
+            // Return focus to menu toggle when closing
+            menuToggle.focus();
+        }
+    }
+    
+    function closeSidebar() {
+        sidebarWrapper.classList.remove('active');
+        menuToggle.classList.remove('active');
+        _toggleMenuIcon();
+        menuToggle.focus();
+    }
 
     // Closes responsive menu when a scroll trigger link is clicked
-    var scrollTriggerList = [].slice.call(document.querySelectorAll('#sidebar-wrapper .js-scroll-trigger'));
+    var scrollTriggerList = [].slice.call(document.querySelectorAll('#sidebar-wrapper .sidebar-nav-item a'));
     scrollTriggerList.map(scrollTrigger => {
         scrollTrigger.addEventListener('click', () => {
-            sidebarWrapper.classList.remove('active');
-            menuToggle.classList.remove('active');
-            _toggleMenuIcon();
+            closeSidebar();
         })
     });
 
