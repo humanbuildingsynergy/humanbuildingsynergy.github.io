@@ -22,6 +22,17 @@
     margin: 0;
     padding: 0;
   }
+  
+  /* Hide text initially until animation is ready */
+  .hubs-1 {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Show text when animation starts */
+  .hubs-1.animation-ready {
+    opacity: 1;
+  }
   @media (min-width: 992px) {
     .masthead {
       height: 100vh;
@@ -43,6 +54,7 @@ span {
 /* Loading state styles */
 .text-loading {
     position: relative;
+    opacity: 1 !important; /* Override the hidden state when showing loading cursor */
 }
 
 .text-loading::after {

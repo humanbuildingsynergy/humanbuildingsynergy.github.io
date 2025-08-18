@@ -47,6 +47,7 @@
             fragment.appendChild(span);
         }
         hub1.appendChild(fragment);
+        hub1.classList.add('animation-ready'); // Show the text
         return;
     }
     
@@ -72,7 +73,7 @@
         
         // Remove loading state and start animation
         hub1.classList.remove('text-loading');
-        hub1.classList.add('text-loaded');
+        hub1.classList.add('text-loaded', 'animation-ready');
         
         let char = 0;
         let timer = setInterval(onTick, 800); // Adjust this value to control animation speed
