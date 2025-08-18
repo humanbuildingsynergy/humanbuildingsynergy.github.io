@@ -1,0 +1,78 @@
+{
+  "name": "HUBS - Human Building Synergy Laboratory",
+  "short_name": "HUBS Lab",
+  "description": "Research laboratory focusing on creating synergy between humans and buildings through smart technologies and energy efficiency at University of Arizona.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0C234B",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["education", "research", "science"],
+  "icons": [
+    {
+      "src": "assets/hubs_logo.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "assets/logo/hubs_logo_one_inch.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/logo/hubs_logo_one_inch.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/background/bg-masthead.jpg",
+      "sizes": "1920x1080",
+      "type": "image/jpeg",
+      "label": "HUBS Laboratory Homepage"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Research",
+      "short_name": "Research",
+      "description": "View our research projects",
+      "url": "/research.html",
+      "icons": [
+        {
+          "src": "assets/logo/hubs_logo_one_inch.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "People",
+      "short_name": "People",
+      "description": "Meet our team",
+      "url": "/people.html",
+      "icons": [
+        {
+          "src": "assets/logo/hubs_logo_one_inch.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Join Us",
+      "short_name": "Join",
+      "description": "Join our research team",
+      "url": "/joinus.html",
+      "icons": [
+        {
+          "src": "assets/logo/hubs_logo_one_inch.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}
