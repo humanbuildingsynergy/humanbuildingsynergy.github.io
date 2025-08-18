@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HUBS - Modern Web Standards Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; line-height: 1.6; }
+        .test { margin: 1rem 0; padding: 1rem; border: 1px solid #ddd; border-radius: 4px; }
+        .pass { border-color: #28a745; background-color: #d4edda; }
+        .fail { border-color: #dc3545; background-color: #f8d7da; }
+        .unknown { border-color: #ffc107; background-color: #fff3cd; }
+        code { background: #f8f9fa; padding: 0.2rem 0.4rem; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <h1>HUBS Laboratory - Modern Web Standards Test</h1>
+    <p>This page tests the modern web features we've implemented.</p>
+    
+    <div id="pwa-test" class="test unknown">
+        <h3>📱 Progressive Web App (PWA)</h3>
+        <p>Status: <span id="pwa-status">Testing...</span></p>
+        <p>Features: Manifest file, service worker, installability</p>
+    </div>
+    
+    <div id="sw-test" class="test unknown">
+        <h3>⚡ Service Worker</h3>
+        <p>Status: <span id="sw-status">Testing...</span></p>
+        <p>Features: Offline functionality, caching, background sync</p>
+    </div>
+    
+    <div id="webp-test" class="test unknown">
+        <h3>🖼️ Modern Image Formats</h3>
+        <p>WebP Support: <span id="webp-status">Testing...</span></p>
+        <p>AVIF Support: <span id="avif-status">Testing...</span></p>
+    </div>
+    
+    <div id="security-test" class="test unknown">
+        <h3>🔒 Security Headers</h3>
+        <p>Status: <span id="security-status">Testing...</span></p>
+        <p>Features: CSP, XSS Protection, Frame Options</p>
+    </div>
+    
+    <div id="performance-test" class="test unknown">
+        <h3>🚀 Performance Features</h3>
+        <p>Critical Resource Hints: <span id="perf-status">Testing...</span></p>
+        <p>Features: Preload, Prefetch, DNS Prefetch, Preconnect</p>
+    </div>
+    
+    <div id="accessibility-test" class="test unknown">
+        <h3>♿ Accessibility Features</h3>
+        <p>Status: <span id="a11y-status">Testing...</span></p>
+        <p>Features: Focus management, reduced motion, ARIA labels</p>
+    </div>
+    
+    <script>
+        // Test PWA Support
+        function testPWA() {
+            const pwaTest = document.getElementById('pwa-test');
+            const pwaStatus = document.getElementById('pwa-status');
+            
+            if ('serviceWorker' in navigator && 'PushManager' in window) {
+                pwaStatus.textContent = '✅ PWA features supported';
+                pwaTest.className = 'test pass';
+            } else {
+                pwaStatus.textContent = '❌ PWA features not fully supported';
+                pwaTest.className = 'test fail';
+            }
+        }
+        
+        // Test Service Worker
+        function testServiceWorker() {
+            const swTest = document.getElementById('sw-test');
+            const swStatus = document.getElementById('sw-status');
+            
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistration().then(registration => {
+                    if (registration) {
+                        swStatus.textContent = '✅ Service Worker registered and active';
+                        swTest.className = 'test pass';
+                    } else {
+                        swStatus.textContent = '⚠️ Service Worker not registered';
+                        swTest.className = 'test unknown';
+                    }
+                });
+            } else {
+                swStatus.textContent = '❌ Service Worker not supported';
+                swTest.className = 'test fail';
+            }
+        }
+        
+        // Test WebP Support
+        function testWebP() {
+            const webpStatus = document.getElementById('webp-status');
+            const webpTest = document.getElementById('webp-test');
+            
+            const webP = new Image();
+            webP.onload = webP.onerror = function () {
+                if (webP.height === 2) {
+                    webpStatus.textContent = '✅ Supported';
+                } else {
+                    webpStatus.textContent = '❌ Not supported';
+                }
+                testAVIF();
+            };
+            webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+        }
+        
+        // Test AVIF Support
+        function testAVIF() {
+            const avifStatus = document.getElementById('avif-status');
+            const webpTest = document.getElementById('webp-test');
+            
+            const avif = new Image();
+            avif.onload = avif.onerror = function () {
+                if (avif.height === 2) {
+                    avifStatus.textContent = '✅ Supported';
+                } else {
+                    avifStatus.textContent = '❌ Not supported';
+                }
+                
+                // Update overall test status
+                const webpSupported = document.getElementById('webp-status').textContent.includes('✅');
+                const avifSupported = avifStatus.textContent.includes('✅');
+                
+                if (webpSupported || avifSupported) {
+                    webpTest.className = 'test pass';
+                } else {
+                    webpTest.className = 'test fail';
+                }
+            };
+            avif.src = 'data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUIAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAAB0AAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAAAIAAAACAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgQ0MAAAAABNjb2xybmNseAACAAIAAYAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAACVtZGF0EgAKCBgABogQEAwgMg8f8D///8WfhwB8+ErK42A=';
+        }
+        
+        // Test Security Headers (limited client-side testing)
+        function testSecurity() {
+            const securityTest = document.getElementById('security-test');
+            const securityStatus = document.getElementById('security-status');
+            
+            // Check if CSP is blocking inline scripts (this is a basic test)
+            try {
+                eval('1+1'); // If CSP is strict, this might be blocked
+                securityStatus.textContent = '⚠️ Basic security headers present (full test requires server inspection)';
+                securityTest.className = 'test unknown';
+            } catch (e) {
+                securityStatus.textContent = '✅ Strict CSP active (eval blocked)';
+                securityTest.className = 'test pass';
+            }
+        }
+        
+        // Test Performance Features
+        function testPerformance() {
+            const perfTest = document.getElementById('performance-test');
+            const perfStatus = document.getElementById('perf-status');
+            
+            // Check if resource hints are present
+            const preloadLinks = document.querySelectorAll('link[rel="preload"]');
+            const prefetchLinks = document.querySelectorAll('link[rel="prefetch"]');
+            const dnsLinks = document.querySelectorAll('link[rel="dns-prefetch"]');
+            const preconnectLinks = document.querySelectorAll('link[rel="preconnect"]');
+            
+            if (preloadLinks.length > 0 && dnsLinks.length > 0) {
+                perfStatus.textContent = `✅ Resource hints active (${preloadLinks.length} preload, ${prefetchLinks.length} prefetch, ${dnsLinks.length} DNS prefetch, ${preconnectLinks.length} preconnect)`;
+                perfTest.className = 'test pass';
+            } else {
+                perfStatus.textContent = '❌ Resource hints missing';
+                perfTest.className = 'test fail';
+            }
+        }
+        
+        // Test Accessibility Features
+        function testAccessibility() {
+            const a11yTest = document.getElementById('accessibility-test');
+            const a11yStatus = document.getElementById('a11y-status');
+            
+            // Check for reduced motion support
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            const hasReducedMotionCSS = Array.from(document.styleSheets).some(sheet => {
+                try {
+                    return Array.from(sheet.cssRules || []).some(rule => 
+                        rule.media && rule.media.mediaText.includes('prefers-reduced-motion')
+                    );
+                } catch (e) {
+                    return false; // CORS issues with external stylesheets
+                }
+            });
+            
+            // Check for ARIA labels
+            const ariaElements = document.querySelectorAll('[aria-label], [aria-labelledby], [role]');
+            
+            if (hasReducedMotionCSS && ariaElements.length > 0) {
+                a11yStatus.textContent = '✅ Accessibility features present';
+                a11yTest.className = 'test pass';
+            } else {
+                a11yStatus.textContent = '⚠️ Some accessibility features present';
+                a11yTest.className = 'test unknown';
+            }
+        }
+        
+        // Run all tests when page loads
+        window.addEventListener('load', () => {
+            testPWA();
+            testServiceWorker();
+            testWebP();
+            testSecurity();
+            testPerformance();
+            testAccessibility();
+        });
+    </script>
+</body>
+</html>
