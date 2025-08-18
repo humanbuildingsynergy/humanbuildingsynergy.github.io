@@ -143,6 +143,23 @@
     margin-right: auto;
 }
 
+/* Modern image format support */
+.picture-wrapper {
+    display: inline-block;
+    max-width: 100%;
+}
+
+.picture-wrapper picture {
+    display: block;
+    width: 100%;
+}
+
+.picture-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* ===== FOCUS INDICATORS ===== */
 /* Custom focus styles for better accessibility */
 a:focus,
