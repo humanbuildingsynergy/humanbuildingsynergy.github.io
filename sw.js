@@ -1,7 +1,7 @@
 // HUBS Laboratory Service Worker
 // Provides offline functionality and improved performance
 
-const CACHE_NAME = 'hubs-lab-v1.0.0';
+const CACHE_NAME = 'hubs-lab-v1.1.0';
 const CACHE_URLS = [
   '/',
   '/index.html',
