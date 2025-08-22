@@ -1,21 +1,18 @@
 // HUBS Laboratory Service Worker
 // Provides offline functionality and improved performance
 
-const CACHE_NAME = 'hubs-lab-v1.1.0';
+const CACHE_NAME = 'hubs-lab-v1.2.0';
 const CACHE_URLS = [
-  '/',
-  '/index.html',
-  '/about.html',
-  '/research.html',
-  '/people.html',
-  '/teaching.html',
-  '/joinus.html',
-  '/director.html',
   '/css/styles.css',
   '/css/custom.css',
   '/css/index.css',
+  '/css/about.css',
+  '/css/research.css',
+  '/css/menu-toggle.css',
   '/js/scripts.js',
   '/js/index.js',
+  '/js/about.js',
+  '/js/modern-images.js',
   '/assets/logo/hubs_logo_one_inch.png',
   '/assets/hubs_logo.ico',
   '/assets/background/bg-masthead.jpg',
@@ -60,7 +57,7 @@ self.addEventListener('activate', event => {
   );
 });
 
-// Fetch event - serve from cache, fallback to network
+// Fetch event - network first for HTML, cache first for assets
 self.addEventListener('fetch', event => {
   // Skip non-GET requests
   if (event.request.method !== 'GET') {
@@ -72,39 +69,53 @@ self.addEventListener('fetch', event => {
     return;
   }
   
-  event.respondWith(
-    caches.match(event.request)
-      .then(cachedResponse => {
-        if (cachedResponse) {
-          console.log('[SW] Serving from cache:', event.request.url);
-          return cachedResponse;
-        }
-        
-        console.log('[SW] Fetching from network:', event.request.url);
-        return fetch(event.request)
-          .then(response => {
-            // Don't cache non-successful responses
-            if (!response || response.status !== 200 || response.type !== 'basic') {
+  const isHTMLRequest = event.request.headers.get('accept')?.includes('text/html') || 
+                       event.request.url.endsWith('.html') ||
+                       event.request.mode === 'navigate';
+  
+  if (isHTMLRequest) {
+    // Network first strategy for HTML pages - always get fresh content
+    event.respondWith(
+      fetch(event.request)
+        .then(response => {
+          console.log('[SW] Fetched fresh HTML from network:', event.request.url);
+          return response;
+        })
+        .catch(() => {
+          console.log('[SW] Network failed, serving cached HTML:', event.request.url);
+          return caches.match(event.request) || caches.match('/index.html');
+        })
+    );
+  } else {
+    // Cache first strategy for static assets (CSS, JS, images)
+    event.respondWith(
+      caches.match(event.request)
+        .then(cachedResponse => {
+          if (cachedResponse) {
+            console.log('[SW] Serving asset from cache:', event.request.url);
+            return cachedResponse;
+          }
+          
+          console.log('[SW] Fetching asset from network:', event.request.url);
+          return fetch(event.request)
+            .then(response => {
+              // Don't cache non-successful responses
+              if (!response || response.status !== 200 || response.type !== 'basic') {
+                return response;
+              }
+              
+              // Cache successful responses for future use
+              const responseToCache = response.clone();
+              caches.open(CACHE_NAME)
+                .then(cache => {
+                  cache.put(event.request, responseToCache);
+                });
+              
               return response;
-            }
-            
-            // Cache successful responses for future use
-            const responseToCache = response.clone();
-            caches.open(CACHE_NAME)
-              .then(cache => {
-                cache.put(event.request, responseToCache);
-              });
-            
-            return response;
-          })
-          .catch(() => {
-            // Network failed, try to serve a fallback page for navigation requests
-            if (event.request.mode === 'navigate') {
-              return caches.match('/index.html');
-            }
-          });
-      })
-  );
+            });
+        })
+    );
+  }
 });
 
 // Background sync for when connectivity is restored
