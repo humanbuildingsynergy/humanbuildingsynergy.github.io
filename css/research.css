@@ -8,7 +8,7 @@
   display: flex;
   height: 100%;
   width: 100%;
-  background-color: rgba(33, 37, 41, 0.2);
+  background: linear-gradient(to bottom, rgba(33, 37, 41, 0.1) 0%, rgba(33, 37, 41, 0.7) 100%);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -16,15 +16,17 @@
 }
 .research-item .caption .caption-content {
   color: #fff;
-  margin: auto 2rem 2rem;
+  margin: auto 1rem 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 .research-item .caption .caption-content h2, .research-item .caption .caption-content .h2 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
+  font-weight: 600;
 }
 .research-item .caption .caption-content p {
-  font-weight: 300;
-  font-size: 1.0rem;
+  font-weight: 400;
+  font-size: 0.85rem;
 }
 @media (min-width: 992px) {
   .research-item {
@@ -40,9 +42,9 @@
   }
   .research-item .caption .caption-content {
     transition: opacity 0.25s;
-    margin-left: 5rem;
-    margin-right: 5rem;
-    margin-bottom: 5rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    margin-bottom: 1.5rem;
   }
   .research-item img {
     transition: -webkit-clip-path 0.25s ease-out;
@@ -52,13 +54,13 @@
             clip-path: inset(-1px);
   }
   .research-item:hover img {
-    -webkit-clip-path: inset(2rem);
-            clip-path: inset(2rem);
+    -webkit-clip-path: inset(0.5rem);
+            clip-path: inset(0.5rem);
   }
   .research-item:hover .caption {
     background-color: rgba(0, 28, 72, 0.8);
-    -webkit-clip-path: inset(2rem);
-            clip-path: inset(2rem);
+    -webkit-clip-path: inset(0.5rem);
+            clip-path: inset(0.5rem);
   }
 }
   
@@ -368,7 +370,6 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
-  border: 1px solid #dee2e6;
   border-radius: 0.25rem;
   background-color: white;
 }
@@ -427,4 +428,35 @@
   color: rgba(255, 255, 255, 1);
   background-color: rgba(12, 35, 75, 1);
   border-color: rgba(12, 35, 75, 1);
+}
+
+/* Custom link colors for research page */
+.research-links a {
+  color: #007D84 !important; /* River */
+  text-decoration: none;
+}
+
+.research-links a:hover {
+  color: #005A61 !important; /* Darker River on hover */
+  text-decoration: underline;
+}
+
+/* Override default link colors in project sections */
+.card-body a {
+  color: #007D84 !important; /* River */
+  text-decoration: none;
+}
+
+.card-body a:hover {
+  color: #005A61 !important; /* Darker River on hover */
+  text-decoration: underline;
+}
+
+/* Footer links maintain their existing styling */
+footer a {
+  color: inherit !important;
+}
+
+footer a:hover {
+  color: rgba(255, 255, 255, 0.8) !important;
 }
