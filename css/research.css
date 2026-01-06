@@ -452,6 +452,17 @@
   text-decoration: underline;
 }
 
+/* Publication links styling */
+.publication-link a {
+  color: #007D84 !important; /* River color - same as other project links */
+  text-decoration: underline;
+}
+
+.publication-link a:hover {
+  color: #036469 !important; /* Darker River on hover */
+  text-decoration: underline;
+}
+
 /* Footer links maintain their existing styling */
 footer a {
   color: inherit !important;
