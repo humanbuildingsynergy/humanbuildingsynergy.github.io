@@ -338,10 +338,25 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 @media (max-width: 940px) {
   .stage { grid-template-columns: 1fr; }
   .trace { grid-row: 2; }
+  /* On a phone the six stacked readouts pushed the exchange most of a screen
+     down. Collapse them into one scrollable row: the numbers still flash as
+     they change, but the conversation starts almost immediately. */
   .statePanel {
     grid-row: 1; position: static !important;
     border-left: 0 !important; border-bottom: 1px solid var(--hairline);
+    padding: .8rem 1.1rem .7rem;
   }
+  .statePanel h2 { margin-bottom: .55rem; }
+  .readout {
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 1.5rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    padding-bottom: .15rem;
+    scrollbar-width: thin;
+  }
+  .ro__v { font-size: .95rem; }
 }
 
 .trace { padding: 1.5rem clamp(.75rem, 1.6vw, 1.25rem) 2rem; }
@@ -488,7 +503,31 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
   display: grid; place-items: center; gap: .3rem; padding: 1.7rem .5rem;
   border-inline: 1px solid var(--hairline); font-family: var(--mono);
 }
-@media (max-width: 880px) { .edge__mid { border-inline: 0; border-block: 1px solid var(--hairline); padding-block: .8rem; } }
+/* On narrow screens the "Edge 01" divider sat *inside* each edge, so the two
+   halves of adjacent edges ran together — "Human → Building" from edge 01 read
+   as a pair with "Human → AI" from edge 02. Promote the label to a heading at
+   the top of each block so every edge is a self-contained, labelled unit. */
+@media (max-width: 880px) {
+  .edge > :nth-child(1) { grid-row: 2; }   /* first direction  */
+  .edge > :nth-child(2) { grid-row: 1; }   /* the label        */
+  .edge > :nth-child(3) { grid-row: 3; }   /* second direction */
+
+  .edge__mid {
+    place-items: initial;
+    grid-auto-flow: column;
+    justify-content: start;
+    align-items: baseline;
+    gap: .6rem;
+    border-inline: 0;
+    border-bottom: 1px solid var(--hairline);
+    padding: 1rem 1.4rem .7rem;
+  }
+  .edge__mid i { order: 1; font-size: .68rem; color: var(--ink-2); }
+  .edge__mid b { order: 2; font-size: 1rem; }
+
+  .edge__side { padding-block: 1.15rem; }
+  .edge__side:nth-child(1) { padding-bottom: .4rem; }
+}
 .edge__mid b { font-size: 1.15rem; font-weight: 400; color: var(--ink-3); letter-spacing: .1em; }
 .edge__mid i { font-style: normal; font-size: .58rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); }
 
