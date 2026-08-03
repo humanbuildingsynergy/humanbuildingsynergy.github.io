@@ -6,8 +6,6 @@
 # versions, licences and descriptions), so it should match what a reader sees
 # when they follow the DOI.
 #
-# NOTE: the ROSS paper DOI has been removed — I had guessed it in an earlier
-# draft rather than looking it up. Send it and I'll restore the link.
 # ============================================================================
 
 githubOrg: https://github.com/humanbuildingsynergy
@@ -53,6 +51,7 @@ code:
     zenodo: ""
     year: 2023
     paper:
+      doi: 10.1016/j.buildenv.2023.110628
       venue: Building and Environment
 
 # ---- Archived datasets and benchmarks -------------------------------------
