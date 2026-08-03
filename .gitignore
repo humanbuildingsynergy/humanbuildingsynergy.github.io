@@ -13,3 +13,7 @@ _Archive/
 # Keep your own backup of these — a fresh clone will not include them.
 _source/facility/photo/
 _source/originals/
+
+# Large source PDFs (drawings, scans). Keep them locally; they are inputs,
+# not site content, and a 60 MB blob lives in git history forever.
+_source/**/*.drawio.pdf
