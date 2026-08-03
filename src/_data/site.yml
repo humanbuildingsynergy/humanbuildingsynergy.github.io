@@ -22,6 +22,9 @@ description: >-
 # (human = amber, ai = cyan, bldg = violet); fragments without one stay in the
 # base ink. The payoff carries no colour on purpose — the three parties are the
 # colours, and the synergy is what they add up to.
+# The first four fragments stay fixed across every variant — only the payoff
+# changes. That keeps one recognisable phrase while giving returning visitors
+# something that shifts.
 titleCards:
   - fragments:
       - { text: "You,", party: human }
@@ -29,6 +32,13 @@ titleCards:
       - { text: "and" }
       - { text: "the Building", party: bldg }
       - { text: "— in Synergy." }
+
+  - fragments:
+      - { text: "You,", party: human }
+      - { text: "the AI,", party: ai }
+      - { text: "and" }
+      - { text: "the Building", party: bldg }
+      - { text: "— in Collaboration." }
 
 # The homepage headline — one clause per party.
 headline:
