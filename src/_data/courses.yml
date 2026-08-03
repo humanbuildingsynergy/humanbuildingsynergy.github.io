@@ -13,6 +13,11 @@ courses:
     title: Human Building Interaction
     levels: [Undergraduate, Graduate]
     party: human
+    credits: 3 units
+    term: Spring, 2023–2026
+    prerequisite: >-
+      ARCE 223 (Building Technology III: Environmentally Adaptive Systems)
+      and ARCE 340 (Introduction to Mechanical Systems)
     summary: >-
       An introduction to the indoor environment and the role of buildings and
       building systems from a human-centred perspective.
