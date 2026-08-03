@@ -308,6 +308,28 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 .ctl--go { border-color: var(--ai); color: var(--ai); }
 .ctl--go:hover:not(:disabled) { background: var(--ai); color: var(--ground); }
 
+/* Before the visitor has pressed anything, this is the one control on the page
+   we want noticed: it fills in, gains weight, and breathes. Once the exchange
+   is running it drops back to the quiet outlined style of its siblings. */
+.ctl--go[data-primary="true"] {
+  background: var(--ai);
+  color: var(--ground);
+  font-weight: 700;
+  padding-inline: 1.3rem;
+  animation: ctlPulse 2.6s ease-out infinite;
+}
+.ctl--go[data-primary="true"]:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--ground);
+  animation: none;
+}
+
+@keyframes ctlPulse {
+  0%        { box-shadow: 0 0 0 0 color-mix(in srgb, var(--ai) 55%, transparent); }
+  70%, 100% { box-shadow: 0 0 0 9px color-mix(in srgb, var(--ai) 0%, transparent); }
+}
+
 .dots { display: flex; gap: 5px; align-items: center; }
 .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--hairline); transition: background-color var(--t); }
 .dot[data-on="true"] { background: var(--ink-3); }

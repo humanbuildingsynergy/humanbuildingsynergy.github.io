@@ -27,7 +27,9 @@ disclaimer: >-
       <div class="controls">
         <div class="dots" id="dots" aria-hidden="true"></div>
         <button class="ctl" id="prev" type="button" disabled>Back</button>
-        <button class="ctl ctl--go" id="next" type="button">Run the exchange</button>
+        {# data-primary is set here too so the button is already loud on first
+           paint, before main.js takes over rendering it. #}
+        <button class="ctl ctl--go" id="next" type="button" data-primary="true">▶&nbsp;&nbsp;Run the exchange</button>
       </div>
     </div>
 

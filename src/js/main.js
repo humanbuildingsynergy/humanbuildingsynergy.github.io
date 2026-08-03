@@ -289,10 +289,13 @@
       paintState(list, cursor);
 
       var atChoice = cursor > 0 && list[cursor - 1] && list[cursor - 1].kind === "choice";
-      prevBtn.disabled = cursor === 0;
+      var atStart = cursor === 0;
+      prevBtn.disabled = atStart;
       nextBtn.disabled = atChoice;
-      nextBtn.textContent = cursor === 0 ? "Run the exchange"
-                          : cursor >= list.length ? "Replay" : "Next";
+      nextBtn.textContent = atStart ? "▶  Run the exchange"
+                          : cursor >= list.length ? "↻  Replay" : "Next";
+      // Only loud before the first press; after that it is just another control.
+      nextBtn.dataset.primary = String(atStart);
     }
 
     function stop() { if (timer) { clearTimeout(timer); timer = null; } }

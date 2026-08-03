@@ -7,7 +7,7 @@ url: https://hubs.engr.arizona.edu
 description: >-
   The Human Building Synergy Laboratory (HUBS) at the University of Arizona
   studies Human–AI–Building Interaction — how occupants, agentic AI, and physical
-  building systems sense, reason, act, and negotiate with one another.
+  building systems sense, reason, act, and collaborate with one another.
 
 # The title card. Each fragment is one animated word-group; `party` colours it
 # (human / ai / bldg) and anything without a party stays in the base ink.
@@ -27,7 +27,7 @@ headline:
 
 lede: >-
   Three parties, and none of them is in charge by default. We study the
-  negotiation between them — what each one can sense, what each one may do, and
+  interaction and collaboration between them — what each one can sense, what each one may do, and
   who gets the last word when they disagree. Try disagreeing.
 
 department: Civil & Architectural Engineering & Mechanics

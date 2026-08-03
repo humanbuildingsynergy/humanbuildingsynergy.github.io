@@ -15,9 +15,9 @@ scales:
       individuals perceive, tolerate, and respond to their environment, and how
       that diversity should reshape the way buildings are run.
     points:
-      - Personal heat strain and thermal resilience
+      - Personal, context-aware comfort understanding and modeling
       - Non-invasive physiological sensing
-      - Personal comfort systems in real households
+      - Multi-modality, including language information
     triangle: >-
       The body reports in its own words, the AI learns what those words mean for
       that person, and the building conditions at the scale of one desk.
