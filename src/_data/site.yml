@@ -62,11 +62,35 @@ titleCards:
       - { text: "the Building", party: bldg }
       - { text: "— Learning Each Other." }
 
-# The homepage headline — one clause per party.
-headline:
-  - { text: "The building acts.", party: bldg }
-  - { text: "The AI reasons.", party: ai }
-  - { text: "You decide.", party: human }
+# The homepage headline. Like the title card, one variant is picked per visit.
+#
+# Every variant makes the SAME claim — a capability is shared by all three
+# parties, not assigned to one of them — so whichever a search engine or screen
+# reader happens to see is equally accurate. Keep that property if you add more:
+# vary the verb, never the argument.
+#
+# Each also names all three parties, which keeps the colour legend
+# (amber = human, cyan = AI, violet = building) working before the diagram.
+headlines:
+  - fragments:
+      - { text: "You sense.", party: human }
+      - { text: "So does the building.", party: bldg }
+      - { text: "So does the AI.", party: ai }
+
+  - fragments:
+      - { text: "The AI acts.", party: ai }
+      - { text: "So do you.", party: human }
+      - { text: "So does the building.", party: bldg }
+
+  - fragments:
+      - { text: "The building adapts.", party: bldg }
+      - { text: "So do you.", party: human }
+      - { text: "So does the AI.", party: ai }
+
+  - fragments:
+      - { text: "You decide.", party: human }
+      - { text: "So does the AI.", party: ai }
+      - { text: "Nobody decides alone.", party: accent }
 
 lede: >-
   Three parties, and none of them is in charge by default. We study the

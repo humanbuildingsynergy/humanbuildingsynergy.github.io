@@ -9,16 +9,31 @@ disclaimer: >-
   make the three-way coupling legible.
 ---
 {% from "icons.njk" import icon %}
-{% macro partyClass(p) %}{{ 'c-hu' if p == 'human' else ('c-ai' if p == 'ai' else 'c-bl') }}{% endmacro %}
+{% macro partyClass(p) %}{{ { "human": "c-hu", "ai": "c-ai", "bldg": "c-bl", "accent": "c-ac" }[p] or "" }}{% endmacro %}
 
 <!-- ===== Hero + exchange ============================================ -->
 <section class="hero wrap" id="exchange">
   <p class="label">{{ site.researchArea }}</p>
-  <h1>
-    {%- for part in site.headline %}
+  {%- for head in site.headlines %}
+  <h1 class="heroHeadline">
+    {%- for part in head.fragments %}
     <span class="{{ partyClass(part.party) | trim }}">{{ part.text }}</span>
     {%- endfor %}
   </h1>
+  {%- endfor %}
+
+  {# Synchronous, before first paint, so unpicked headlines never render and the
+     page is left with exactly one <h1>. #}
+  <script>
+    (function () {
+      var all = document.querySelectorAll("h1.heroHeadline");
+      if (all.length < 2) return;
+      var keep = Math.floor(Math.random() * all.length);
+      for (var i = 0; i < all.length; i++) {
+        if (i !== keep) all[i].parentNode.removeChild(all[i]);
+      }
+    })();
+  </script>
   <p class="lede">{{ site.lede }}</p>
 
   <div class="stageWrap">
