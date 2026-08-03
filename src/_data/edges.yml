@@ -49,8 +49,9 @@ edges:
       party: bldg
       title: Building → AI
       text: >-
-        Telemetry and refusal. Dampers stick, sensors drift, physics says no. The
-        AI's model of the building is always partly wrong.
+        Telemetry and ground truth. Sensor streams, equipment state, and whether
+        the command actually landed. The building is the one thing that can keep
+        the AI's model of it honest.
 
 closing:
   lead: Edges 02 and 03 are new. Edge 01 is as old as shelter.
