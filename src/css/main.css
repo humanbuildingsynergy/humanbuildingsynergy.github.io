@@ -739,12 +739,17 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 .release h3 { font-size: 1.05rem; }
 .release__desc { margin-top: .4rem; font-size: .9rem; color: var(--ink-2); }
 .release__links { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; margin-top: .8rem; }
-.release__links a {
+/* Anchors and plain spans share the treatment — a release without a DOI still
+   names its venue, and it should sit in line with the links beside it. */
+.release__links a,
+.release__links span {
   display: inline-flex; align-items: center; gap: .4rem;
   font-family: var(--mono); font-size: .72rem; letter-spacing: .06em;
   color: var(--ink-2); text-decoration: none;
 }
 .release__links a:hover { color: var(--ai); }
+/* Slightly quieter, so "not a link" reads without looking broken. */
+.release__links span { color: var(--ink-3); }
 .release__links svg { width: 1em; height: 1em; flex-shrink: 0; }
 @media (max-width: 700px) {
   .release article { grid-template-columns: 1fr; gap: .5rem; }
