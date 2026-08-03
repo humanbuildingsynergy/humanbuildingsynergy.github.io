@@ -36,17 +36,24 @@ ogImage: /assets/facility/HUBS_lab_inside_01.webp
     <p class="lede">{{ facility.zonesNote }}</p>
   </div>
 
-  <div class="grid grid--2">
-    {%- for z in facility.zones %}
-    <div class="card">
-      <div class="zoneHead">
-        <p class="card__head {{ tone(z.party) | trim }}" style="margin:0">{{ z.name }}</p>
-        <span class="zoneSize">{{ z.size }}</span>
-      </div>
-      <p style="color:var(--ink-2);font-size:.95rem;margin:.9rem 0 1rem">{{ z.summary }}</p>
-      <ul>{%- for d in z.details %}<li>{{ d }}</li>{%- endfor %}</ul>
+  <div class="planLayout">
+    <div class="planWrap">
+      {% include "floorplan.njk" %}
+      <p class="planHint">Hover or tap a room</p>
     </div>
-    {%- endfor %}
+
+    <div class="zoneCards">
+      {%- for z in facility.zones %}
+      <div class="card zoneCard" data-zone="{{ z.id }}" tabindex="0">
+        <div class="zoneHead">
+          <p class="card__head {{ tone(z.party) | trim }}" style="margin:0">{{ z.name }}</p>
+          <span class="zoneSize">{{ z.size }}</span>
+        </div>
+        <p style="color:var(--ink-2);font-size:.95rem;margin:.9rem 0 1rem">{{ z.summary }}</p>
+        <ul>{%- for d in z.details %}<li>{{ d }}</li>{%- endfor %}</ul>
+      </div>
+      {%- endfor %}
+    </div>
   </div>
 
 </section>

@@ -346,6 +346,44 @@
     render();
   })();
 
+  /* ---- Floor plan ⇄ zone cards -------------------------------------
+     Highlighting runs both ways: point at a room in the plan and its card
+     lights up, point at a card and the room does.                        */
+  (function () {
+    var rooms = [].slice.call(document.querySelectorAll(".plan__room[data-zone]"));
+    var cards = [].slice.call(document.querySelectorAll(".zoneCard[data-zone]"));
+    if (!rooms.length || !cards.length) return;
+
+    function setActive(zone) {
+      rooms.concat(cards).forEach(function (el) {
+        el.classList.toggle("is-on", !!zone && el.dataset.zone === zone);
+      });
+    }
+
+    rooms.concat(cards).forEach(function (el) {
+      var zone = el.dataset.zone;
+      el.addEventListener("mouseenter", function () { setActive(zone); });
+      el.addEventListener("focus", function () { setActive(zone); });
+      el.addEventListener("mouseleave", function () { setActive(null); });
+      el.addEventListener("blur", function () { setActive(null); });
+    });
+
+    // On a touch screen there is no hover, so tapping a room scrolls to its card.
+    rooms.forEach(function (room) {
+      room.addEventListener("click", function () {
+        var card = document.querySelector('.zoneCard[data-zone="' + room.dataset.zone + '"]');
+        if (!card) return;
+        setActive(room.dataset.zone);
+        if (window.innerWidth <= 900) {
+          card.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "center" });
+        }
+      });
+      room.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); room.click(); }
+      });
+    });
+  })();
+
   /* ---- Scale visualisation -----------------------------------------
      One particle field that reorganises across the five scales: the same
      matter seen at body, room, building, feeder and city resolution.

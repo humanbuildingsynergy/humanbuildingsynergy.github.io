@@ -1,0 +1,70 @@
+{# Schematic plan of CE 116, redrawn from the lab's drawio figure.
+   Drawn at a consistent 28 px per foot, so the two chambers are true to
+   proportion — Chamber 1 long and shallow, Chamber 2 deeper than wide.
+   The Control Room is drawn to fill the remaining footprint; its real
+   dimensions are not in the source document, hence "dimensions TBC".
+   Each room carries data-zone, which links it to the cards beside it. #}
+<svg class="plan" viewBox="0 0 700 850" role="img" aria-labelledby="planTitle planDesc">
+  <title id="planTitle">Schematic floor plan of the HUBS Laboratory, Room CE 116</title>
+  <desc id="planDesc">
+    Three zones. Chamber 1 runs along the top of the suite, long and shallow.
+    Below it the Control Room sits on the left and Chamber 2 on the right,
+    separated by an observation window. A folding partition joins the two
+    chambers so they can be opened into a single volume.
+  </desc>
+
+  <!-- suite envelope -->
+  <rect class="plan__shell" x="10" y="10" width="680" height="820" rx="2" />
+  <line class="plan__wall" x1="95" y1="88" x2="690" y2="88" />
+
+  <!-- ── rooms ─────────────────────────────────────────────── -->
+  <g class="plan__room" data-zone="chamber-1" tabindex="0" role="button"
+     aria-label="Chamber 1, 8 feet by 19 feet 10 inches">
+    <rect x="95" y="88" width="555" height="224" />
+    <text x="372" y="190">CHAMBER 1</text>
+    <text class="plan__dim" x="372" y="216">8′ × 19′10″</text>
+  </g>
+
+  <g class="plan__room" data-zone="control" tabindex="0" role="button"
+     aria-label="Control Room, dimensions to be confirmed">
+    <rect x="95" y="312" width="205" height="248" />
+    <text x="197" y="425">CONTROL</text>
+    <text class="plan__dim" x="197" y="451">dimensions TBC</text>
+  </g>
+
+  <g class="plan__room" data-zone="chamber-2" tabindex="0" role="button"
+     aria-label="Chamber 2, 12 feet 6 inches by 16 feet 6 inches">
+    <rect x="300" y="312" width="350" height="462" />
+    <text x="475" y="528">CHAMBER 2</text>
+    <text class="plan__dim" x="475" y="554">12′6″ × 16′6″</text>
+  </g>
+
+  <!-- ── openings ──────────────────────────────────────────── -->
+  <!-- folding partition, Chamber 1 to Chamber 2 -->
+  <polyline class="plan__fold"
+    points="322,304 350,320 378,304 406,320 434,304 462,320 490,304 518,320 546,304 574,320 602,304 628,320" />
+
+  <!-- sliding window, Chamber 1 to the corridor -->
+  <rect class="plan__glass" x="300" y="82" width="190" height="12" />
+  <!-- sliding window, Control Room to Chamber 1 -->
+  <rect class="plan__glass" x="130" y="306" width="150" height="12" />
+  <!-- observation window, Control Room to Chamber 2 -->
+  <rect class="plan__glass" x="294" y="400" width="12" height="130" />
+
+  <!-- doors -->
+  <g class="plan__door">
+    <path d="M275 10 A 55 55 0 0 1 330 65" /><line x1="275" y1="10" x2="275" y2="65" />
+    <path d="M95 88 A 78 78 0 0 1 173 166" /><line x1="95" y1="88" x2="173" y2="88" />
+    <path d="M95 560 A 72 72 0 0 0 167 488" /><line x1="95" y1="560" x2="167" y2="560" />
+    <path d="M320 774 A 68 68 0 0 0 388 706" /><line x1="320" y1="774" x2="388" y2="774" />
+  </g>
+
+  <!-- ── annotation ───────────────────────────────────────── -->
+  <g class="plan__note">
+    <text x="680" y="34" text-anchor="end">OUTDOOR</text>
+    <text x="680" y="70" text-anchor="end">INDOOR</text>
+    <text x="644" y="292" text-anchor="end">folding partition</text>
+    <text x="316" y="586" text-anchor="start">observation window</text>
+    <text x="10" y="845" text-anchor="start">SCHEMATIC · NOT TO CONSTRUCTION SCALE</text>
+  </g>
+</svg>

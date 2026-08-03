@@ -19,6 +19,7 @@ intro: >-
 # ---- The three zones ------------------------------------------------------
 zones:
   - name: Chamber 1
+    id: chamber-1
     party: bldg
     size: 8′ × 19′10″
     summary: >-
@@ -30,6 +31,7 @@ zones:
       - Ten individually controllable LED fixtures
 
   - name: Chamber 2
+    id: chamber-2
     party: bldg
     size: 12′6″ × 16′6″
     summary: >-
@@ -41,6 +43,7 @@ zones:
       - Twelve individually controllable LED fixtures
 
   - name: Control Room
+    id: control
     party: ai
     size: Thermally isolated
     summary: >-
