@@ -53,6 +53,15 @@ titleCards:
       - { text: "the Building", party: bldg }
       - { text: "— in Collaboration.", party: bldg }
 
+  # The odd one out on purpose: a process rather than a state, and the only
+  # reciprocal one — so it takes no party colour at all.
+  - fragments:
+      - { text: "You,", party: human }
+      - { text: "the AI,", party: ai }
+      - { text: "and" }
+      - { text: "the Building", party: bldg }
+      - { text: "— Learning Each Other." }
+
 # The homepage headline — one clause per party.
 headline:
   - { text: "The building acts.", party: bldg }
