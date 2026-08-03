@@ -56,10 +56,11 @@
     {% if showCard %}
     <div id="card" role="presentation">
       <div class="wrap">
+        {%- set partyClass = { "human": "c-hu", "ai": "c-ai", "bldg": "c-bl", "accent": "c-ac" } %}
         {%- for card in site.titleCards %}
         <h2 class="card__phrase" aria-hidden="true">
           {%- for part in card.fragments %}
-          <span{% if part.party %} class="c-{{ 'hu' if part.party == 'human' else ('ai' if part.party == 'ai' else 'bl') }}"{% endif %}>{{ part.text | replace(" ", "&nbsp;") | safe }}</span>
+          <span{% if part.party %} class="{{ partyClass[part.party] }}"{% endif %}>{{ part.text | replace(" ", "&nbsp;") | safe }}</span>
           {%- endfor %}
         </h2>
         {%- endfor %}

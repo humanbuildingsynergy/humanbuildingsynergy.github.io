@@ -151,6 +151,9 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 .c-hu { color: var(--human); }
 .c-ai { color: var(--ai); }
 .c-bl { color: var(--bldg); }
+/* Institutional accent. Not one of the three parties — used where something
+   belongs to the lab itself rather than to human, AI or building. */
+.c-ac { color: var(--az-red); }
 
 .muted { color: var(--ink-3); }
 
