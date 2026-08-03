@@ -85,12 +85,41 @@ ogImage: /assets/facility/HUBS_lab_inside_01.webp
     {%- for g in facility.capability %}
     <div class="card">
       <p class="card__head {{ tone(g.party) | trim }}">{{ g.group }}</p>
-      {% if g.note %}<p class="label" style="margin-bottom:.9rem">{{ g.note }}</p>{% endif %}
-      <ul>{%- for it in g.items %}<li>{{ it }}</li>{%- endfor %}</ul>
+      <p class="cap__summary">{{ g.summary }}</p>
+
+      {%- if g.detail.length or g.table %}
+      <details class="cap">
+        <summary>{{ g.toggle or "Detail" }}</summary>
+
+        {%- if g.table %}
+        <div class="tableWrap">
+          <table class="specTable">
+            <thead>
+              <tr>{% for h in g.table.head %}<th>{{ h }}</th>{% endfor %}</tr>
+            </thead>
+            <tbody>
+              {%- for row in g.table.rows %}
+              <tr>{% for cell in row %}<td>{{ cell }}</td>{% endfor %}</tr>
+              {%- endfor %}
+            </tbody>
+          </table>
+        </div>
+        {%- endif %}
+
+        {%- if g.detail.length %}
+        <ul>{%- for d in g.detail %}<li>{{ d }}</li>{%- endfor %}</ul>
+        {%- endif %}
+      </details>
+      {%- endif %}
     </div>
     {%- endfor %}
   </div>
 </section>
+
+{# ---------------------------------------------------------------------------
+   RESEARCH MODES — hidden for now.
+   To bring it back, delete the comment markers on the first and last lines of
+   this block. The content still lives under `modes:` in _data/facility.yml.
 
 <!-- ===== Research modes ============================================= -->
 {% if facility.modes.length %}
@@ -110,6 +139,8 @@ ogImage: /assets/facility/HUBS_lab_inside_01.webp
   </div>
 </section>
 {% endif %}
+
+--------------------------------------------------------------------------- #}
 
 <!-- ===== Collaborate ================================================ -->
 {% if facility.collaborate %}

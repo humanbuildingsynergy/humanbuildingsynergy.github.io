@@ -57,78 +57,84 @@ zonesNote: >-
   run side-by-side comparative experiments, or merge into one continuous volume.
 
 # ---- Capability -----------------------------------------------------------
+# Each group opens with a plain-language summary that anyone can read. The
+# equipment sits behind a collapsed toggle — nothing is hidden from search
+# engines, it just isn't the first thing a visitor meets.
+#
+# A group may carry `detail` (a bullet list), `table` (rows of figures), or both.
 capability:
-  - group: Building automation
-    party: ai
-    items:
-      - Delta Controls platform, managed through the enteliWEB cloud suite
-      - Delta eZNT-T304 fully programmable thermostat in each zone
-      - Thermostats accept external inputs for temperature, RH, CO₂ and occupancy
-      - Delta UNOnext (UNO-9SW) IAQ monitor per zone
-      - BACnet MS/TP field bus, bridged to BACnet/IP for campus integration
-      - Custom control sequences, fine-interval logging, remote access
-
-  - group: HVAC
+  - group: Conditioning the space
     party: bldg
-    items:
+    toggle: Equipment
+    summary: >-
+      Each of the three zones has its own heating, cooling and fresh-air supply,
+      controlled independently — so two experiments can run side by side under
+      different conditions. Fold back the partition and two of them become one
+      large room. The lighting is dimmable and colour-tunable, so daylight and
+      circadian studies sit alongside the thermal ones.
+    detail:
       - Trane M-Series horizontal concealed fan coil unit per zone (Size 040)
       - 4-row chilled water cooling coil with hot water reheat coil
-      - MERV 13 filtration, high-static fan motor
-      - 2-way analog valves (2–10 VDC) driven by the BAS
-      - Dedicated outdoor air connection ducted to each FCU return
-      - Repositionable diffusers — 12″ or 18″ ceiling tiles, flexible ductwork
-      - Portable heaters, portable AC units and air purifiers for wider ranges
+      - MERV 13 filtration and a high-static fan motor
+      - 2-way analog valves (2–10 VDC) modulated by the automation system
+      - Dedicated outdoor air connection ducted to each unit's return
+      - Diffusers repositionable on 12″ and 18″ ceiling tiles, flexible ductwork
+      - Portable heaters, air conditioners and purifiers to widen the range
+      - 30 LED fixtures — 10, 12 and 8 by zone — controllable in groups of two to four
+      - Philips Hue White and Color Ambiance bulbs for tunable colour temperature
 
-  - group: Environmental & IEQ sensing
-    party: human
-    note: Replicated in each of the three zones
-    items:
-      - Air temperature — five wall-mounted sensors at varied heights
-      - Relative humidity — five co-located wall-mounted sensors
-      - Mean radiant temperature — one ceiling-mounted sensor
-      - CO₂ — three sensors (ppm)
-      - PM2.5 and PM10 — three sensors each (µg/m³)
-      - TVOC — three sensors (µg/m³)
-      - Illuminance — three sensors (lux)
-      - Sound level — three sensors (dBA)
-      - One outdoor ambient sensor for temperature, humidity and CO₂
-
-  - group: Occupancy & presence
-    party: human
-    note: Per zone in Chambers 1 and 2
-    items:
-      - Three passive infrared (PIR) sensors
-      - Three ultrasonic sensors
-      - Three Doppler radar sensors
-      - Three technologies side by side for cross-validation and benchmarking
-      - PIR catches gross movement; radar registers typing and breathing
-
-  - group: HVAC performance monitoring
+  - group: Measuring the environment
     party: bldg
-    items:
-      - Flow meters and insertion temperature sensors on chilled and hot water loops
-      - Current transducers on each fan coil unit — kW and kWh per room
-      - Duct and coil temperature sensors with thermowell protection
-      - Six fan relays and current sensors across the three units
-      - Differential pressure transmitters tracking filter loading
+    toggle: Sensor counts
+    summary: >-
+      Around forty sensors in every zone track eight environmental parameters at
+      once. Not one reading per room — a grid dense enough to map how conditions
+      change from floor to ceiling and corner to corner.
+    table:
+      head: [Parameter, Per zone, Unit]
+      rows:
+        - ["Air temperature", "5 wall-mounted", "°F"]
+        - ["Relative humidity", "5 co-located", "%"]
+        - ["Mean radiant temperature", "1 ceiling-mounted", "°F"]
+        - ["Carbon dioxide", "3", "ppm"]
+        - ["Particulates PM2.5 / PM10", "3 each", "µg/m³"]
+        - ["Volatile organic compounds", "3", "µg/m³"]
+        - ["Illuminance", "3", "lux"]
+        - ["Sound level", "3", "dBA"]
+    detail:
+      - Delta UNOnext (UNO-9SW) IAQ monitor in each zone, consolidating nine parameters
+      - One outdoor ambient sensor for temperature, humidity and CO₂ as a reference baseline
 
-  - group: Lighting
+  - group: Detecting occupancy
     party: human
-    items:
-      - 30 LED fixtures total — 10, 12 and 8 across the three zones
-      - Controllable individually or in groups of two to four
-      - Low heat output, chosen not to interfere with thermal experiments
-      - Philips Hue White and Color Ambiance bulbs for tunable CCT
-      - Operable manually, through enteliWEB, or via smart-home protocols
+    toggle: Equipment
+    summary: >-
+      Three different sensing technologies run side by side in both chambers so
+      they can be compared against each other. Infrared catches someone crossing
+      the room; Doppler radar picks up typing, or breathing.
+    detail:
+      - Three passive infrared (PIR) sensors per zone
+      - Three ultrasonic sensors per zone
+      - Three Doppler radar sensors per zone
+      - Deployed in Chambers 1 and 2, for cross-validation and benchmarking
 
-  - group: Compute & IT
+  - group: Recording and reasoning
     party: ai
-    items:
-      - High-specification server with two GPUs
-      - Real-time ingestion, ML model training, building simulation workloads
-      - Centralised storage for raw and processed sensor data
-      - Two 27″ all-in-one workstations in the Control Room
-      - Per-circuit energy monitoring across all loads in the lab
+    toggle: Equipment
+    summary: >-
+      Everything the building senses is logged continuously and kept on site,
+      alongside how much energy each system drew to produce it. A two-GPU server
+      runs the models that learn from it, so the analysis happens where the data
+      lives.
+    detail:
+      - Delta Controls platform managed through the enteliWEB cloud suite
+      - Delta eZNT-T304 programmable thermostat per zone, accepting external temperature, humidity, CO₂ and occupancy inputs
+      - BACnet MS/TP field bus bridged to BACnet/IP for campus integration
+      - Flow meters and insertion temperature sensors on the chilled and hot water loops
+      - Current transducers on each fan coil unit — kW and kWh per room
+      - Differential pressure transmitters tracking filter loading over time
+      - High-specification server with two GPUs for ingestion, model training and simulation
+      - Two 27″ workstations in the Control Room, and per-circuit energy monitoring
 
 # ---- Research modes -------------------------------------------------------
 modes:
