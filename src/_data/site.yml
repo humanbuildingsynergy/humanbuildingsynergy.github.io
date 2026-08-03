@@ -73,24 +73,9 @@ titleCards:
 # (amber = human, cyan = AI, violet = building) working before the diagram.
 headlines:
   - fragments:
-      - { text: "You sense.", party: human }
-      - { text: "So does the building.", party: bldg }
-      - { text: "So does the AI.", party: ai }
-
-  - fragments:
-      - { text: "The AI acts.", party: ai }
-      - { text: "So do you.", party: human }
-      - { text: "So does the building.", party: bldg }
-
-  - fragments:
-      - { text: "The building adapts.", party: bldg }
-      - { text: "So do you.", party: human }
-      - { text: "So does the AI.", party: ai }
-
-  - fragments:
+      - { text: "The building acts.", party: bldg }
+      - { text: "The AI reasons.", party: ai }
       - { text: "You decide.", party: human }
-      - { text: "So does the AI.", party: ai }
-      - { text: "Nobody decides alone.", party: accent }
 
 lede: >-
   Three parties, and none of them is in charge by default. We study the
