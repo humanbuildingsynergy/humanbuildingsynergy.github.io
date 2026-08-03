@@ -64,18 +64,41 @@ titleCards:
 
 # The homepage headline. Like the title card, one variant is picked per visit.
 #
-# Every variant makes the SAME claim — a capability is shared by all three
-# parties, not assigned to one of them — so whichever a search engine or screen
-# reader happens to see is equally accurate. Keep that property if you add more:
-# vary the verb, never the argument.
+# Each is a three-beat story: something happens, something makes sense of it,
+# someone responds. If you add more, keep two properties —
 #
-# Each also names all three parties, which keeps the colour legend
-# (amber = human, cyan = AI, violet = building) working before the diagram.
+#   1. Rotate the verbs. Read down the list, no party is stuck with one job:
+#        building  acts · moves · senses · reports
+#        AI        reasons · plans · explains · learns
+#        you       decide · ask · decide · correct
+#      That is what stops a fixed headline from pigeonholing anyone.
+#
+#   2. Name all three parties, so the colour legend (amber = human,
+#      cyan = AI, violet = building) is taught before the diagram below.
 headlines:
+  # a request answered
   - fragments:
       - { text: "The building acts.", party: bldg }
       - { text: "The AI reasons.", party: ai }
       - { text: "You decide.", party: human }
+
+  # something is asked for
+  - fragments:
+      - { text: "You ask.", party: human }
+      - { text: "The AI plans.", party: ai }
+      - { text: "The building moves.", party: bldg }
+
+  # something is noticed
+  - fragments:
+      - { text: "The building senses.", party: bldg }
+      - { text: "The AI explains.", party: ai }
+      - { text: "You decide.", party: human }
+
+  # something is learned
+  - fragments:
+      - { text: "The building reports.", party: bldg }
+      - { text: "The AI learns.", party: ai }
+      - { text: "You correct.", party: human }
 
 lede: >-
   Three parties, and none of them is in charge by default. We study the
