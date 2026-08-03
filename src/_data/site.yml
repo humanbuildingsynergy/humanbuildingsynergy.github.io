@@ -18,12 +18,11 @@ description: >-
 # phrase stays recognisable while returning visitors get some variety.
 #
 # `party` colours a fragment: human = amber, ai = cyan, bldg = violet,
-# accent = Arizona Red. Each payoff below is coloured by the party that word
-# most implicates:
-#   Synergy        accent — the lab's own word, belonging to no single party
-#   Conversation   amber  — language is the human's channel
-#   the Loop       cyan   — the control loop is the AI's territory
-#   Collaboration  violet — the claim that the building is a partner, not equipment
+# accent = Arizona Red.
+#
+# Every payoff uses `accent`. The three party colours are already spoken for in
+# the same sentence, so reusing one would repeat a colour a few words later —
+# the payoff gets the one hue that belongs to the lab rather than to a party.
 titleCards:
   - fragments:
       - { text: "You,", party: human }
@@ -37,30 +36,30 @@ titleCards:
       - { text: "the AI,", party: ai }
       - { text: "and" }
       - { text: "the Building", party: bldg }
-      - { text: "— in Conversation.", party: human }
+      - { text: "— in Conversation.", party: accent }
 
   - fragments:
       - { text: "You,", party: human }
       - { text: "the AI,", party: ai }
       - { text: "and" }
       - { text: "the Building", party: bldg }
-      - { text: "— in the Loop.", party: ai }
+      - { text: "— in the Loop.", party: accent }
 
   - fragments:
       - { text: "You,", party: human }
       - { text: "the AI,", party: ai }
       - { text: "and" }
       - { text: "the Building", party: bldg }
-      - { text: "— in Collaboration.", party: bldg }
+      - { text: "— in Collaboration.", party: accent }
 
   # The odd one out on purpose: a process rather than a state, and the only
-  # reciprocal one — so it takes no party colour at all.
+  # reciprocal one.
   - fragments:
       - { text: "You,", party: human }
       - { text: "the AI,", party: ai }
       - { text: "and" }
       - { text: "the Building", party: bldg }
-      - { text: "— Learning Each Other." }
+      - { text: "— Learning Each Other.", party: accent }
 
 # The homepage headline. Like the title card, one variant is picked per visit.
 #

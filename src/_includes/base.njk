@@ -60,7 +60,9 @@
         {%- for card in site.titleCards %}
         <h2 class="card__phrase" aria-hidden="true">
           {%- for part in card.fragments %}
-          <span{% if part.party %} class="{{ partyClass[part.party] }}"{% endif %}>{{ part.text | replace(" ", "&nbsp;") | safe }}</span>
+          {#- Short fragments hold together with non-breaking spaces ("the AI,"),
+      but a long payoff must be allowed to wrap or it overflows the card. -#}
+          <span{% if part.party %} class="{{ partyClass[part.party] }}"{% endif %}>{% if part.text | length < 15 %}{{ part.text | replace(" ", "&nbsp;") | safe }}{% else %}{{ part.text }}{% endif %}</span>
           {%- endfor %}
         </h2>
         {%- endfor %}

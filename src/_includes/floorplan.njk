@@ -51,18 +51,24 @@
   <!-- observation window, Control Room to Chamber 2 -->
   <rect class="plan__glass" x="294" y="400" width="12" height="130" />
 
-  <!-- doors -->
+  {# Doors, drawn the architectural way: the leaf stands open perpendicular to
+     the wall, and the arc traces its swing back to the closed position. #}
   <g class="plan__door">
-    <path d="M275 10 A 55 55 0 0 1 330 65" /><line x1="275" y1="10" x2="275" y2="65" />
-    <path d="M95 88 A 78 78 0 0 1 173 166" /><line x1="95" y1="88" x2="173" y2="88" />
-    <path d="M95 560 A 72 72 0 0 0 167 488" /><line x1="95" y1="560" x2="167" y2="560" />
-    <path d="M320 774 A 68 68 0 0 0 388 706" /><line x1="320" y1="774" x2="388" y2="774" />
+    <!-- into Chamber 1, hinged left, swinging into the room -->
+    <line x1="120" y1="88" x2="120" y2="166" />
+    <path d="M120 166 A 78 78 0 0 0 198 88" />
+
+    <!-- out of the Control Room, hinged left, swinging into the room -->
+    <line x1="110" y1="560" x2="110" y2="490" />
+    <path d="M110 490 A 70 70 0 0 1 180 560" />
+
+    <!-- into Chamber 2, hinged left, swinging into the room -->
+    <line x1="340" y1="774" x2="340" y2="704" />
+    <path d="M340 704 A 70 70 0 0 1 410 774" />
   </g>
 
   <!-- ── annotation ───────────────────────────────────────── -->
   <g class="plan__note">
-    <text x="680" y="34" text-anchor="end">OUTDOOR</text>
-    <text x="680" y="70" text-anchor="end">INDOOR</text>
     <text x="644" y="292" text-anchor="end">folding partition</text>
     <text x="316" y="586" text-anchor="start">observation window</text>
     <text x="10" y="845" text-anchor="start">SCHEMATIC · NOT TO CONSTRUCTION SCALE</text>
