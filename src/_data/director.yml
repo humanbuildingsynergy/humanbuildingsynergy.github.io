@@ -1,0 +1,89 @@
+# Dr. Jung's CV content, as shown on the Director page.
+education:
+  - degree: Ph.D. in Civil Engineering
+    institution: Virginia Polytechnic Institute and State University
+    date: 2020-05
+    note: >-
+      Member of <a href="https://www.inform-lab.org/" target="_blank" rel="noopener">INFORM Lab</a>,
+      directed by Dr. Farrokh Jazizadeh.
+  - degree: M.S. in Architectural Engineering
+    institution: Yonsei University
+    date: 2016-02
+    note: >-
+      Member of <a href="http://big.yonsei.ac.kr/" target="_blank" rel="noopener">Building
+      Informatics Group</a>, directed by Dr. Ghang Lee.
+  - degree: B.S. in Architectural Engineering
+    institution: Yonsei University
+    date: 2011-02
+
+experience:
+  - role: Assistant Professor
+    org: Civil & Architectural Engineering & Mechanics, The University of Arizona
+    period: 08.2022 - Current
+  - role: Research Engineer | Post-doctorate Research Associate
+    org: Electricity Infrastructure and Buildings Division, Pacific Northwest National Laboratory
+    period: 07.2020 - 05.2022
+  - role: Graduate Assistant
+    org: Dept. of Civil and Environmental Engineering, Virginia Polytechnic Institute and State University
+    period: 08.2016 - 05.2020
+  - role: Affiliate
+    org: Building Technologies Department, Lawrence Berkeley National Laboratory
+    period: 10.2019 - 04.2020
+  - role: Graduate Assistant
+    org: Dept. of Architectural Engineering, Yonsei University
+    period: 03.2014 - 02.2016
+  - role: Assistant Manager | Staff Engineer
+    org: Building Division, Daewoo Engineering & Construction
+    period: 01.2011 - 01.2014
+  - role: Intern
+    org: Building Division, Daewoo Engineering & Construction
+    period: 07.2010 - 08.2010
+
+honors:
+  - date: 2021-09
+    text: >-
+      <strong>Outstanding Performance Award</strong> in recognition of the exceptional
+      contribution to the
+      <a href="https://arpa-e.energy.gov/technologies/programs/sensor" target="_blank" rel="noopener">ARPA-E
+      SENSOR project</a> by PNNL
+  - date: 2020-10
+    text: >-
+      <strong>Highly Cited Review Paper</strong> in recognition of
+      "<a href="https://doi.org/10.1016/j.apenergy.2019.01.070" target="_blank" rel="noopener">HVAC
+      operations: A quantitative review on occupancy, comfort, and energy-efficiency
+      dimensions</a>" by Applied Energy
+  - date: 2016-08
+    text: >-
+      <strong>Vecellio Fellow</strong> by the Vecellio Construction Engineering and
+      Management Program (VCEMP) at Virginia Tech
+
+service:
+  journals:
+    note: chronologically invited starting from 07/2019
+    items:
+      - Computers in Industry
+      - Building and Environment
+      - Applied Energy
+      - SoftwareX
+      - Sensors
+      - Journal of Building Engineering
+      - Energies
+      - Energy and Buildings
+      - Renewable & Sustainable Energy Reviews
+      - Science and Technology for the Built Environment
+      - Expert Systems with Applications
+  conferences:
+    items:
+      - 2022 Building Performance Analysis Conference (BPAC) and SimBuild
+      - >-
+        The 7th ACM International Conference on Systems for Energy-Efficient Built
+        Environment (Buildsys 2020)
+      - The 2019 ASCE International Conference on Computing in Civil Engineering (i3ce 2019)
+      - 36th International Symposium on Automation and Robotics in Construction (ISARC 2019)
+      - 25th International Workshop on Intelligent Computing in Engineering (EG-ICE 2018)
+      - Construction Research Congress (CRC) 2018
+
+affiliations:
+  - Associate, American Society of Heating, Refrigerating, and Air-conditioning Engineers (ASHRAE)
+  - Member, International Building Performance Simulation Association (IBPSA) - USA
+  - Associate Member, American Society of Civil Engineers (ASCE)

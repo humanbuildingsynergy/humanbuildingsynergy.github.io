@@ -1,0 +1,100 @@
+# Funded projects. `status` is one of: current, past.
+# `group` separates UArizona work from prior-affiliation work.
+uarizona:
+  - title: >-
+      Collaborative Research: Empowering STEM Education by Creating Benchmarking
+      Models for GenAI Learning Assistants
+    sponsor: National Science Foundation
+    start: 2025-10
+    end: 2028-09
+    role: "PI (non-leading institution; Lead PI: Dr. Namgyun Kim at Texas A&M University)"
+    status: current
+    url: https://www.nsf.gov/awardsearch/showAward?AWD_ID=2519054&HistoricalAwards=false
+
+  - title: "AZTI SPR-804: Potential Revenue Generation Through Arizona Rest Areas"
+    sponsor: Arizona Department of Transportation
+    start: 2025-08
+    end: 2026-07
+    role: "Co-PI (PI: Dr. Ali Shamshiripour)"
+    status: current
+
+  - title: Benefits of Smart Electric Panels for SRP Sustainability Goals
+    sponsor: Salt River Project
+    start: 2024-08
+    end: 2026-07
+    role: PI
+    status: current
+
+  - title: Towards All-Electric Buildings in the SRP Territory
+    sponsor: Salt River Project
+    start: 2024-08
+    end: 2025-07
+    role: PI
+    status: past
+
+  - title: >-
+      Enhancing Environmental and Energy Equity: Advanced Indoor Heat Stress
+      Sensing for Diverse Populations
+    sponsor: SensorLab (UArizona)
+    start: 2023-08
+    end: 2024-07
+    role: PI
+    status: past
+
+  - title: >-
+      Emergency System for Collaborative and Active Protection and Evacuation
+      (ESCAPE)
+    sponsor: Western Alliance to Expand Student Opportunities (WAESO)
+    start: 2024-08
+    end: 2025-05
+    role: PI
+    status: past
+
+  - title: Modeling Distributed Energy Resource Solar Generation Output
+    sponsor: Salt River Project
+    start: 2024-08
+    end: 2025-07
+    role: "Co-PI (PI: Dr. Chris Chaeha Lim)"
+    status: past
+
+# Work carried out before joining the University of Arizona.
+previousAffiliations:
+  - institution: Pacific Northwest National Laboratory
+    icon: flask
+    projects:
+      - title: ASHRAE Standard 140 Maintenance and Development
+        sponsor: U.S. Department of Energy
+        start: 2022-02
+        end: 2022-05
+        url: https://www.energy.gov/eere/buildings/ashrae-standard-140-maintenance-and-development
+      - title: EnergyPlus Development
+        sponsor: U.S. Department of Energy
+        start: 2021-05
+        end: 2022-05
+        url: https://energyplus.net/
+      - title: Healthy Buildings
+        sponsor: U.S. Department of Energy & General Services Administration
+        start: 2020-07
+        end: 2022-05
+        url: https://www.pnnl.gov/projects/healthy-buildings
+      - title: >-
+          Quantification of HVAC Energy Savings for Occupancy Sensing in Buildings
+          Through an Innovative Testing Methodology
+        sponsor: Advanced Research Projects Agency-Energy (ARPA-E)
+        start: 2020-07
+        end: 2022-02
+        url: https://arpa-e.energy.gov/programs-and-initiatives/search-all-projects/quantification-hvac-energy-savings-occupancy-sensing-buildings-through-innovative-testing-methodology
+      - title: Building Energy Codes Program
+        sponsor: U.S. Department of Energy
+        start: 2020-07
+        end: 2022-02
+        url: https://www.energycodes.gov/
+
+  - institution: Virginia Tech
+    icon: graduation
+    projects:
+      - title: Human-Aware Environments for Distributed Building Systems Operations
+        sponsor: National Science Foundation
+        start: 2017-08
+        end: 2020-05
+        url: https://nsf.gov/awardsearch/showAward?AWD_ID=1663513&HistoricalAwards=false

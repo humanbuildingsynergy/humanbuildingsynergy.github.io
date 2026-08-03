@@ -1,0 +1,23 @@
+---
+layout: base.njk
+title: Page not found
+description: The page you were looking for does not exist.
+permalink: /404.html
+excludeFromSitemap: true
+---
+{% from "icons.njk" import icon %}
+
+<section class="band wrap" style="min-height:55vh;display:grid;place-items:center;text-align:center">
+  <div>
+    <p class="label">404</p>
+    <h1 style="font-size:clamp(2rem,5vw,3.2rem);margin-top:.6rem">This page isn't here.</h1>
+    <p class="lede" style="color:var(--ink-2);max-width:44ch;margin:1rem auto 0">
+      The link may be out of date, or the page may have moved during our site redesign.
+    </p>
+    <div class="btnRow" style="justify-content:center">
+      <a class="btn" href="/">Back to home {{ icon("arrow-right") }}</a>
+      <a class="btn btn--quiet" href="/research/">Research</a>
+      <a class="btn btn--quiet" href="/news/">News</a>
+    </div>
+  </div>
+</section>

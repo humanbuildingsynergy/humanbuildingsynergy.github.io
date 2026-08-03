@@ -1,0 +1,97 @@
+---
+layout: base.njk
+title: Director
+description: >-
+  Dr. Wooyoung Jung, Assistant Professor of Civil & Architectural Engineering &
+  Mechanics at the University of Arizona and director of the HUBS Laboratory.
+---
+{% from "icons.njk" import icon %}
+
+<section class="pageHero wrap">
+  <p class="label">Director</p>
+  <h1>{{ people.director.name }}, {{ people.director.credential }}</h1>
+  <p class="lede">{{ people.director.role }} · {{ site.department }}</p>
+</section>
+
+<section class="band band--tight wrap">
+  <div style="display:grid;grid-template-columns:minmax(0,17rem) minmax(0,1fr);gap:clamp(1.5rem,5vw,3.5rem);align-items:start">
+    <div>
+      <img src="/assets/profile/{{ people.director.photoFull }}" alt="{{ people.director.name }}"
+           style="width:100%;border:1px solid var(--hairline);border-radius:3px" width="700" height="912" />
+      <ul class="social">
+        {%- for link in people.director.links %}
+        <li><a href="{{ link.url }}" target="_blank" rel="noopener" aria-label="{{ link.label }}" title="{{ link.label }}">{{ icon(link.type) }}</a></li>
+        {%- endfor %}
+      </ul>
+    </div>
+
+    <div>
+      <h2 style="font-size:clamp(1.25rem,2.6vw,1.7rem)">Education</h2>
+      <div class="defList" style="margin-top:1.25rem">
+        {%- for e in director.education %}
+        <div class="defList__item">
+          <p class="defList__term">{{ e.degree }}</p>
+          <p class="defList__meta">{{ e.institution }} · {{ e.date | slashDate }}</p>
+          {% if e.note %}<p style="margin-top:.35rem;font-size:.875rem;color:var(--ink-2)">{{ e.note | safe }}</p>{% endif %}
+        </div>
+        {%- endfor %}
+      </div>
+
+      <h2 style="font-size:clamp(1.25rem,2.6vw,1.7rem);margin-top:clamp(2rem,4vw,3rem)">Academic &amp; professional experience</h2>
+      <div class="defList" style="margin-top:1.25rem">
+        {%- for x in director.experience %}
+        <div class="defList__item">
+          <p class="defList__term">{{ x.role }}</p>
+          <p class="defList__meta">{{ x.org }}</p>
+          <p class="defList__meta">{{ x.period }}</p>
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--rule band--tight wrap">
+  <div class="grid grid--2">
+    <div class="card">
+      <p class="card__head c-hu">Honors &amp; awards</p>
+      <div class="defList">
+        {%- for h in director.honors %}
+        <div class="defList__item">
+          <p class="defList__meta">{{ h.date | slashDate }}</p>
+          <p style="margin-top:.25rem;font-size:.9rem;color:var(--ink-2)">{{ h.text | safe }}</p>
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+
+    <div class="card">
+      <p class="card__head c-ai">Affiliations</p>
+      <ul>
+        {%- for a in director.affiliations %}<li>{{ a }}</li>{%- endfor %}
+      </ul>
+      <div class="btnRow">
+        <a class="btn btn--quiet" href="{{ site.social.scholar }}" target="_blank" rel="noopener">Publications on Google Scholar {{ icon("external") }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--rule band--tight wrap">
+  <div class="band__head measure">
+    <p class="label">Service</p>
+    <h2>Referee service for scientific articles</h2>
+  </div>
+
+  <div class="grid grid--2">
+    <div class="card">
+      <p class="card__head c-bl">Journals</p>
+      <p class="muted" style="font-size:.8rem;margin-bottom:1rem">{{ director.service.journals.note }}</p>
+      <ul>{%- for j in director.service.journals.items %}<li>{{ j }}</li>{%- endfor %}</ul>
+    </div>
+    <div class="card">
+      <p class="card__head c-bl">Conferences</p>
+      <ul>{%- for c in director.service.conferences.items %}<li>{{ c }}</li>{%- endfor %}</ul>
+    </div>
+  </div>
+</section>

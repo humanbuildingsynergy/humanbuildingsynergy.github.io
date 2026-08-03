@@ -1,0 +1,57 @@
+# The three relationships in the human / AI / building triangle.
+# Each edge runs both ways; `left` and `right` are the two directions.
+#
+# Order matters. Edge 01 is the direct human–building relationship, which is as
+# old as shelter. Edges 02 and 03 are what appears when an agent is inserted
+# between them — and the list is not closed.
+intro: >-
+  For most of architectural history there was one relationship: you and the
+  building, directly. Putting an agent between them does not replace it — it
+  creates two more alongside it, and there will be more than three before long.
+
+edges:
+  - n: "01"
+    left:
+      party: bldg
+      title: Building → Human
+      text: >-
+        The part that needs no AI at all — radiant heat, glare, draught, noise.
+        You feel the building directly, and always did.
+    right:
+      party: human
+      title: Human → Building
+      text: >-
+        You open a window, move desks, tape over a diffuser. The most honest
+        feedback in the building, and nobody logs it.
+
+  - n: "02"
+    left:
+      party: human
+      title: Human → AI
+      text: >-
+        "It's stuffy." Language is cheap, high-bandwidth and ambiguous — and it
+        carries intent that no sensor can infer.
+    right:
+      party: ai
+      title: AI → Human
+      text: >-
+        Explanation you can interrogate, and a refusal you can overrule. An agent
+        that only complies is a switch.
+
+  - n: "03"
+    left:
+      party: ai
+      title: AI → Building
+      text: >-
+        Commands under constraint — grid, cost, physics, and the other occupants
+        who never asked for anything.
+    right:
+      party: bldg
+      title: Building → AI
+      text: >-
+        Telemetry and refusal. Dampers stick, sensors drift, physics says no. The
+        AI's model of the building is always partly wrong.
+
+closing:
+  lead: Edges 02 and 03 are new. Edge 01 is as old as shelter.
+  punch: What the new ones do to the old one is the research.

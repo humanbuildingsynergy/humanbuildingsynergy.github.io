@@ -1,0 +1,53 @@
+# Conference papers hosted directly on this site as PDFs.
+# These files existed in the old assets/publications/ folder but no page ever
+# linked to them. They are now surfaced on the Research page.
+#
+# Journal articles are NOT listed here — those live on Google Scholar. If you
+# later want a full filterable publication list, this is the file it would grow from.
+- title: >-
+    Exploring Awareness, Knowledge, and Interest in Energy Equity Among
+    Community Assessment Corps Undergraduates
+  venue: CSCE/CRC 2025
+  year: 2025
+  file: Exploring_Awareness_Knowledge_and_Interest_in_Energy_Equity_Among_CAC_Undergraduates_WJ_CSCECRC2025.pdf
+
+- title: >-
+    Student and Educator Awareness and Perception of Generative AI in
+    Architecture, Engineering, and Construction Education
+  venue: CSCE/CRC 2025
+  year: 2025
+  file: Student_Educator_Awareness_Perception_of_GenAI_in_AEC_Edu_WJ_CSCECRC2025.pdf
+
+- title: >-
+    Sustainability Engagement and Career Aspiration Among Underrepresented
+    Minority Engineering Students
+  venue: CSCE/CRC 2025
+  year: 2025
+  file: Sustainability_Engagement_Career_Aspiration_Among_URM_Engineering_Students_WJ_CSCECRC2025.pdf
+
+- title: Indoor Heat Strain Early Detection using Heart Rate Variability
+  venue: i3ce 2025
+  year: 2025
+  file: Indoor_Heat_Strain_Early_Detection_using_Heart_Rate_Variability_PBA_i3ce2025.pdf
+
+- title: A New Simple HVAC Performance Metric — Climate and Occupant-Adjusted
+  venue: i3ce 2025
+  year: 2025
+  file: New_Simple_HVAC_Performance_Metric_Climate_Occupant-Adjusted_WJ_i3ce2025.pdf
+
+- title: >-
+    Virtual and Augmented Reality in Building Science and Technology Education:
+    A Review
+  venue: i3ce 2025
+  year: 2025
+  file: VAR_Building_Science_Technology_Education_Review_WJ_i3ce2025.pdf
+
+- title: Performance Evaluation of Electrified Office Buildings under IRMM
+  venue: ASHRAE Annual Conference 2025
+  year: 2025
+  file: Performance_Evaluation_of_Electrified_Office_Buildings_under_IRMM_EHA_ASHRAE_Annual2025.pdf
+
+- title: U.S. Smart Thermostat Adopters through the Lens of Diffusion of Innovation Theory
+  venue: ICCEPM 2025
+  year: 2025
+  file: US_Smart_Thermostat_Adopters_through_DI_Theory_WJ_ICCEPM2025.pdf

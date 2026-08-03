@@ -1,0 +1,145 @@
+{% from "icons.njk" import icon %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {# Per-page SEO. Every page sets its own title and description. #}
+    <title>{% if title %}{{ title }} | {{ site.titleName }}{% else %}{{ site.titleName }} — {{ site.researchArea }} | UArizona{% endif %}</title>
+    <meta name="description" content="{{ description or site.description }}" />
+    <meta name="author" content="Dr. Wooyoung Jung" />
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{{ site.name }}" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+    <meta property="og:title" content="{% if title %}{{ title }} | {{ site.titleName }}{% else %}{{ site.titleName }} — {{ site.researchArea }}{% endif %}" />
+    <meta property="og:description" content="{{ description or site.description }}" />
+    <meta property="og:image" content="{{ site.url }}{{ ogImage or '/assets/logo/hubs_logo_one_inch.png' }}" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{% if title %}{{ title }} | {{ site.titleName }}{% else %}{{ site.titleName }} — {{ site.researchArea }}{% endif %}" />
+    <meta name="twitter:description" content="{{ description or site.description }}" />
+    <meta name="twitter:image" content="{{ site.url }}{{ ogImage or '/assets/logo/hubs_logo_one_inch.png' }}" />
+
+    <meta name="theme-color" content="#131210" />
+    <link rel="icon" href="/assets/hubs_logo.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/assets/logo/hubs-icon-192.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} news" href="{{ site.url }}/feed.xml" />
+
+    {# The curtain goes on <html> before first paint. Content below is always
+       in the DOM, so crawlers and no-JS visitors get the complete page. #}
+    {% if showCard %}
+    <script>
+      (function () {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        // Play once per browser session — now that "Home" is in the nav, the
+        // card would otherwise replay every time someone navigates back.
+        try { if (sessionStorage.getItem("hubs-card-seen")) return; } catch (e) { /* private mode */ }
+        document.documentElement.classList.add("curtain");
+      })();
+    </script>
+    {% endif %}
+
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    {% if showCard %}
+    <div id="card" role="presentation">
+      <div class="wrap">
+        <h2 class="card__phrase" aria-hidden="true">
+          {%- for part in site.titleCard %}
+          <span{% if part.party %} class="c-{{ 'hu' if part.party == 'human' else ('ai' if part.party == 'ai' else 'bl') }}"{% endif %}>{{ part.text | replace(" ", "&nbsp;") | safe }}</span>
+          {%- endfor %}
+        </h2>
+        <div class="card__rule"></div>
+        <div class="card__foot">
+          <span class="label">{{ site.researchArea }} · {{ site.shortName }} · {{ site.university }}</span>
+          <button class="tbtn" id="skip" type="button">Enter</button>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    <header class="top">
+      <div class="wrap top__in">
+        {# The wordmark is the "front door" — clicking it replays the title card.
+           The Home link in the nav is utility and doesn't. #}
+        <a class="mark" href="/" data-replay-intro><b>{{ site.shortName }}</b><span class="label">UArizona</span></a>
+
+        <button class="navToggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Toggle navigation menu">
+          <span></span>
+        </button>
+
+        <nav class="nav" id="nav" aria-label="Main navigation">
+          {%- for item in site.nav %}
+          <a href="{{ item.url }}"{% if item.highlight %} class="cta"{% endif %}{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.text }}</a>
+          {%- endfor %}
+        </nav>
+
+        {# Theme toggle — hidden while the site commits to the dark palette.
+           Re-enable together with the light tokens in src/css/main.css.
+        <button class="tbtn" id="themeBtn" type="button">Light</button>
+        #}
+      </div>
+    </header>
+
+    <main id="main">
+      {{ content | safe }}
+    </main>
+
+    <footer class="foot">
+      <div class="wrap">
+        {% if disclaimer %}<p class="disclaimer">{{ disclaimer | safe }}</p>{% endif %}
+
+        <div class="foot__grid">
+          <div>
+            <h2>{{ site.name }}</h2>
+            <p>{{ site.researchArea }}.</p>
+          </div>
+          <div>
+            <h3>Contact</h3>
+            <ul>
+              <li><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></li>
+              <li><a href="tel:{{ site.contact.phoneHref }}">{{ site.contact.phone }}</a></li>
+              <li>{{ site.contact.address }}</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Explore</h3>
+            <ul class="foot__nav">
+              {%- for item in site.nav %}
+              <li><a href="{{ item.url }}">{{ item.text }}</a></li>
+              {%- endfor %}
+            </ul>
+          </div>
+          <div>
+            <h3>Department</h3>
+            <ul>
+              <li>{{ site.department }}</li>
+              <li>{{ site.university }}</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="foot__bottom">
+          <span>&copy; {{ build.year }} Regents of the University of Arizona</span>
+          <ul class="foot__legal">
+            {%- for link in site.footerLinks %}
+            <li><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.text }}</a></li>
+            {%- endfor %}
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <button class="toTop" type="button" aria-label="Scroll back to top">{{ icon("arrow-up") }}</button>
+
+    <script src="/js/main.js" defer></script>
+  </body>
+</html>

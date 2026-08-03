@@ -1,0 +1,203 @@
+# ============================================================================
+# Fig. 1 — the human / AI / building exchange on the homepage.
+#
+# THIS IS THE FILE TO EDIT when you want to change the conversation. No HTML,
+# no JavaScript. Add, remove, or reword steps and the diagram redraws.
+#
+# Each step needs:
+#   from:  human | ai | bldg      which lifeline the message sits in
+#   to:    human | ai | bldg      who it is addressed to (draws the arrow)
+#   kind:  msg | think | tele | act | choice
+#   text:  what is said
+#
+# kind meanings:
+#   msg    a message from one party to another        (outline box, arrow)
+#   think  the AI reasoning to itself                 (dashed, no arrow)
+#   tele   the building reporting sensor data upward  (dotted, mono)
+#   act    the building physically doing something    (SOLID block — committed)
+#   choice the visitor picks the human's reply        (branches the exchange)
+#
+# Optional on any step:
+#   tag:    a small pill of extra context, e.g. "unprompted"
+#   state:  updates the Building state panel — only the keys that changed
+#   branch: only shown if the visitor picked that branch at the choice step
+# ============================================================================
+
+caption: "Fig. 1 — Illustrative exchange · weekday, 14:40, grid peak approaching"
+
+# The readouts in the Building state panel, in display order.
+fields:
+  - key: temp
+    label: East zone
+    unit: °F
+    init: "75.8"
+  - key: damper
+    label: Outdoor air
+    unit: "%"
+    init: "18"
+  - key: blind
+    label: Blind tilt
+    unit: °
+    init: "0"
+  - key: co2
+    label: CO₂
+    unit: ppm
+    init: "780"
+  - key: fan
+    label: Personal fan
+    unit: ""
+    init: "OFF"
+  - key: peak
+    label: Peak contrib.
+    unit: kW
+    init: "6.9"
+
+steps:
+  - from: bldg
+    to: ai
+    kind: tele
+    text: >-
+      TELEMETRY · east zone 75.8 °F · CO₂ 780 ppm · occupancy 3 ·
+      utility signal: PEAK 16:00–19:00
+
+  - from: ai
+    to: human
+    kind: msg
+    tag: unprompted
+    text: >-
+      Grid peak event 16:00–19:00 today. I can pre-cool the east zone now and
+      coast through it. You'd drift to about 76 °F by 18:00.
+
+  - from: human
+    to: ai
+    kind: msg
+    text: I've got a meeting at 5. East room.
+
+  - from: ai
+    kind: think
+    text: >-
+      Two other occupants in that zone at 17:00, one well below median preferred
+      temperature. Below 71 °F the pre-cool costs more than the peak avoidance
+      returns.
+
+  - from: ai
+    to: bldg
+    kind: msg
+    text: >-
+      Setpoint east → 71 °F until 15:55. Blinds east → 60° at 15:30.
+      Stage personal fan at desk 4.
+
+  - from: bldg
+    kind: act
+    text: >-
+      EXECUTED · east zone 71.0 °F  ·  blinds 60°  ·  desk-4 fan STAGED  ·
+      peak contribution 6.9 → 4.1 kW
+    state: { temp: "71.0", damper: "18", blind: "60", co2: "820", fan: "STAGED", peak: "4.1" }
+
+  - from: bldg
+    to: ai
+    kind: tele
+    text: "TELEMETRY · 16:10 · east zone 74.2 °F · CO₂ 1,140 ppm ↑ · occupancy 5"
+    state: { temp: "74.2", co2: "1140" }
+
+  - from: human
+    to: ai
+    kind: msg
+    text: still stuffy
+
+  - from: ai
+    kind: think
+    text: >-
+      74.2 °F is inside the comfort band. CO₂ has climbed 320 ppm since occupancy
+      rose. This report is about ventilation, not temperature.
+
+  - from: ai
+    to: human
+    kind: msg
+    text: >-
+      That reads as air quality rather than heat — CO₂ is at 1,140 ppm. I'm
+      bringing in more outdoor air. I'm keeping mechanical cooling off until 19:00
+      to hold the peak commitment. Tell me if that's the wrong call.
+
+  # The visitor becomes a party to the negotiation rather than an audience.
+  - kind: choice
+    prompt: Your reply
+    options:
+      - label: "“No, that's better.”"
+        note: accept
+        go: accept
+      - label: "“Just turn the AC on.”"
+        note: override
+        go: override
+
+  # ---- Branch A: the occupant accepts the agent's reading -----------------
+  - branch: accept
+    from: human
+    to: ai
+    kind: msg
+    text: no, that's better
+
+  - branch: accept
+    from: ai
+    to: bldg
+    kind: msg
+    text: Outdoor-air damper 18% → 34%. Hold cooling off.
+
+  - branch: accept
+    from: bldg
+    kind: act
+    text: "EXECUTED · outdoor-air damper 34%  ·  CO₂ falling  ·  peak commitment INTACT"
+    state: { damper: "34", co2: "910" }
+
+  - branch: accept
+    from: ai
+    to: human
+    kind: msg
+    text: >-
+      Logged. Next time you say “stuffy” I'll check ventilation first and won't ask.
+
+  # ---- Branch B: the occupant overrules the agent -------------------------
+  - branch: override
+    from: human
+    to: ai
+    kind: msg
+    text: just turn the AC on
+
+  - branch: override
+    from: ai
+    kind: think
+    text: >-
+      Explicit override. The peak commitment is a preference, not a safety
+      constraint — the occupant outranks it. Cost is recoverable; trust is not.
+
+  - branch: override
+    from: ai
+    to: human
+    kind: msg
+    text: >-
+      Doing it. That breaks the peak commitment: about $4.10 more today and it
+      forfeits the demand-response credit. I'm opening the damper too, because the
+      CO₂ is the actual problem and cooling won't fix it.
+
+  - branch: override
+    from: ai
+    to: bldg
+    kind: msg
+    text: >-
+      Cooling east → 72 °F now. Outdoor-air damper 18% → 34%. Release peak commitment.
+
+  - branch: override
+    from: bldg
+    kind: act
+    text: >-
+      EXECUTED · cooling ON, east 72.0 °F  ·  damper 34%  ·
+      peak commitment RELEASED, contribution 7.4 kW
+    state: { temp: "72.0", damper: "34", co2: "910", peak: "7.4" }
+
+  - branch: override
+    from: ai
+    to: human
+    kind: msg
+    text: >-
+      Noted that you'd rather pay than wait it out. I'll offer pre-cooling earlier
+      next time instead of asking you to ride it out.

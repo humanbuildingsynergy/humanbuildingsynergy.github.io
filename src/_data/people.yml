@@ -1,0 +1,51 @@
+# Current lab members. The director is rendered separately, first.
+# Add a member by copying a block. `photo` is a filename in assets/profile/.
+director:
+  name: Wooyoung Jung
+  credential: Ph.D.
+  role: Assistant Professor
+  affiliation: Civil & Architectural Engineering & Mechanics, The University of Arizona
+  photo: WooyoungJung.webp
+  photoFull: WooyoungJung_full.webp
+  bio: >-
+    Dr. Wooyoung Jung is an assistant professor and the HUBS Lab's director at the
+    University of Arizona. He aims to realize cognitive and self-adaptive built
+    environments, creating synergy between human and building.
+  links:
+    - type: email
+      url: mailto:wooyoung@arizona.edu
+      label: Email
+    - type: linkedin
+      url: https://www.linkedin.com/in/jungwyoungs/
+      label: LinkedIn
+    - type: scholar
+      url: https://scholar.google.com/citations?user=hv9gbJoAAAAJ&hl=en
+      label: Google Scholar
+    - type: github
+      url: https://github.com/humanbuildingsynergy?tab=repositories
+      label: GitHub
+    - type: cv
+      url: https://docs.google.com/document/d/1IlxMXIXxsaTBeeKN_7ePlJd5l9TdesEssXqEQs2QjNw/edit?usp=drive_link
+      label: CV
+
+members:
+  - name: Prosper Babon-Ayeng
+    role: Graduate Research Assistant
+    affiliation: Civil & Architectural Engineering & Mechanics, The University of Arizona
+    photo: ProsperBA.webp
+    bio: >-
+      Mr. Prosper Babon-Ayeng is a graduate research assistant at the Human Building
+      Synergy (HUBS) Lab. He assists with the conduct of scholarly research works in
+      the Lab. He received his M.Sc. in Construction Management from the Kwame Nkrumah
+      University of Science and Technology (KNUST), Kumasi-Ghana, and B.Sc. in Quantity
+      Surveying and Construction Economics from the same institution. Mr. Babon-Ayeng
+      has research interest in energy efficiency of human-centered building operations,
+      sustainability, construction circular economy, green financing of infrastructure
+      projects, and construction 4.0 technologies.
+    links:
+      - type: email
+        url: mailto:pbabonayeng@arizona.edu
+        label: Email
+      - type: linkedin
+        url: https://www.linkedin.com/in/prosper-babon-ayeng-36a8991b9/
+        label: LinkedIn

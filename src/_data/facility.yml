@@ -1,0 +1,188 @@
+# ============================================================================
+# The HUBS Laboratory, Room CE 116.
+# Content taken from HUBS_Lab_CE116_Info_041026.pdf. Edit freely — every
+# section renders from this file, and an empty section simply disappears.
+# ============================================================================
+
+location:
+  room: Room 116, Civil Engineering Building
+  address: 1209 E. 2nd St., Tucson, AZ 85719
+  campus: The University of Arizona
+  ceiling: Finished ceiling height 8′10″ throughout
+
+intro: >-
+  A purpose-built laboratory for studying how building systems and human
+  occupants interact — AI-based comfort control, indoor environmental quality,
+  HVAC performance under controlled conditions, and human thermoregulation
+  across a range of indoor thermal environments.
+
+positioning: >-
+  The lab sits at the intersection of architectural, civil, electrical and
+  mechanical engineering, and architecture. It also runs as a living lab:
+  graduate students occupy the space and serve as research participants,
+  generating continuous long-term baseline data on comfort and behaviour. When
+  it is not in active experimental use, the facility is available to other
+  faculty for their own experiments.
+
+# ---- The three zones ------------------------------------------------------
+zones:
+  - name: Chamber 1
+    party: bldg
+    size: 8′ × 19′10″
+    summary: >-
+      The smaller experimental chamber. Its compact volume reaches thermal
+      equilibrium quickly, which suits tightly controlled experiments.
+    details:
+      - Sliding window for observation and emergency egress
+      - Folding partition door on the wall shared with Chamber 2
+      - Ten individually controllable LED fixtures
+
+  - name: Chamber 2
+    party: bldg
+    size: 12′6″ × 16′6″
+    summary: >-
+      The larger experimental space, sized for more occupants and bigger
+      experimental setups.
+    details:
+      - Merges with Chamber 1 when the folding partition is opened
+      - Supports airflow, thermal gradient and open-plan behaviour studies
+      - Twelve individually controllable LED fixtures
+
+  - name: Control Room
+    party: ai
+    size: Thermally isolated
+    summary: >-
+      A separate monitoring and operations space. Researchers observe and manage
+      experiments next door without influencing the conditions inside them.
+    details:
+      - Data acquisition server and two 27″ workstations
+      - Eight LED fixtures
+      - Independent thermostatic control, like both chambers
+
+zonesNote: >-
+  All three zones are independent thermostatic control zones, so each can hold a
+  different setpoint and ventilation strategy at the same time. Two chambers can
+  run side-by-side comparative experiments, or merge into one continuous volume.
+
+# ---- Capability -----------------------------------------------------------
+capability:
+  - group: Building automation
+    party: ai
+    items:
+      - Delta Controls platform, managed through the enteliWEB cloud suite
+      - Delta eZNT-T304 fully programmable thermostat in each zone
+      - Thermostats accept external inputs for temperature, RH, CO₂ and occupancy
+      - Delta UNOnext (UNO-9SW) IAQ monitor per zone
+      - BACnet MS/TP field bus, bridged to BACnet/IP for campus integration
+      - Custom control sequences, fine-interval logging, remote access
+
+  - group: HVAC
+    party: bldg
+    items:
+      - Trane M-Series horizontal concealed fan coil unit per zone (Size 040)
+      - 4-row chilled water cooling coil with hot water reheat coil
+      - MERV 13 filtration, high-static fan motor
+      - 2-way analog valves (2–10 VDC) driven by the BAS
+      - Dedicated outdoor air connection ducted to each FCU return
+      - Repositionable diffusers — 12″ or 18″ ceiling tiles, flexible ductwork
+      - Portable heaters, portable AC units and air purifiers for wider ranges
+
+  - group: Environmental & IEQ sensing
+    party: human
+    note: Replicated in each of the three zones
+    items:
+      - Air temperature — five wall-mounted sensors at varied heights
+      - Relative humidity — five co-located wall-mounted sensors
+      - Mean radiant temperature — one ceiling-mounted sensor
+      - CO₂ — three sensors (ppm)
+      - PM2.5 and PM10 — three sensors each (µg/m³)
+      - TVOC — three sensors (µg/m³)
+      - Illuminance — three sensors (lux)
+      - Sound level — three sensors (dBA)
+      - One outdoor ambient sensor for temperature, humidity and CO₂
+
+  - group: Occupancy & presence
+    party: human
+    note: Per zone in Chambers 1 and 2
+    items:
+      - Three passive infrared (PIR) sensors
+      - Three ultrasonic sensors
+      - Three Doppler radar sensors
+      - Three technologies side by side for cross-validation and benchmarking
+      - PIR catches gross movement; radar registers typing and breathing
+
+  - group: HVAC performance monitoring
+    party: bldg
+    items:
+      - Flow meters and insertion temperature sensors on chilled and hot water loops
+      - Current transducers on each fan coil unit — kW and kWh per room
+      - Duct and coil temperature sensors with thermowell protection
+      - Six fan relays and current sensors across the three units
+      - Differential pressure transmitters tracking filter loading
+
+  - group: Lighting
+    party: human
+    items:
+      - 30 LED fixtures total — 10, 12 and 8 across the three zones
+      - Controllable individually or in groups of two to four
+      - Low heat output, chosen not to interfere with thermal experiments
+      - Philips Hue White and Color Ambiance bulbs for tunable CCT
+      - Operable manually, through enteliWEB, or via smart-home protocols
+
+  - group: Compute & IT
+    party: ai
+    items:
+      - High-specification server with two GPUs
+      - Real-time ingestion, ML model training, building simulation workloads
+      - Centralised storage for raw and processed sensor data
+      - Two 27″ all-in-one workstations in the Control Room
+      - Per-circuit energy monitoring across all loads in the lab
+
+# ---- Research modes -------------------------------------------------------
+modes:
+  - name: Cooling
+    text: >-
+      Passive cooling, natural ventilation through the operable window, and
+      evaporative effects — studying how Tucson's arid climate interacts with
+      different ventilation approaches.
+  - name: Heating
+    text: >-
+      Occupant comfort at elevated indoor temperatures using hot water reheat
+      and supplemental portable heaters. Relevant to adaptive comfort models and
+      setpoint optimisation in warm climates.
+  - name: Heat transfer
+    text: >-
+      Radiative and convective exchange between surfaces, HVAC components and
+      occupants, resolved spatially by the MRT sensor and the distributed air
+      temperature array.
+  - name: Daylighting
+    text: >-
+      Natural daylight combined with artificial light, and its effect on visual
+      comfort, energy use and circadian response.
+
+# ---- Photographs ----------------------------------------------------------
+# Captions written from the photographs themselves — correct them if I've
+# misread anything.
+photos:
+  - file: HUBS_lab_outside_01.webp
+    caption: The two entrances to the laboratory, seen from the corridor.
+  - file: HUBS_lab_outside_02.webp
+    caption: The laboratory enclosure along the corridor, with observation window.
+  - file: HUBS_lab_inside_01.webp
+    caption: >-
+      A chamber during fit-out — folding partition to the right, sliding
+      observation window to the left.
+  - file: HUBS_lab_inside_02.webp
+    caption: Observation windows into the corridor and the adjacent chamber.
+  - file: HUBS_lab_BAS.webp
+    caption: The building automation panel — DIN-rail controllers and field wiring.
+  - file: HUBS_lab_sensors.webp
+    caption: >-
+      Wall-mounted IAQ monitor, programmable thermostat, and touchscreen
+      interface in one of the chambers.
+  - file: HUBS_Lab_server.webp
+    caption: The rack-mounted data acquisition server in the Control Room.
+
+collaborate: >-
+  The lab is open to collaborators. If you'd like to run a study here, bring
+  equipment in, or use the facility when it is between experiments, get in touch.

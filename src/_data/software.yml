@@ -1,0 +1,103 @@
+# ============================================================================
+# Code releases and archived datasets — the lab's citable research outputs
+# that are not journal articles.
+#
+# Metadata below is taken directly from the Zenodo records (titles, dates,
+# versions, licences and descriptions), so it should match what a reader sees
+# when they follow the DOI.
+#
+# NOTE: the ROSS paper DOI has been removed — I had guessed it in an earlier
+# draft rather than looking it up. Send it and I'll restore the link.
+# ============================================================================
+
+githubOrg: https://github.com/humanbuildingsynergy
+
+intro: >-
+  Software and data released by the lab. Everything here is citable and
+  independently archived — each release carries its own DOI, so it can be
+  referenced without going through the paper that describes it.
+
+# ---- Software releases ----------------------------------------------------
+code:
+  - name: BuildOcc
+    full: ATUS-grounded LLM occupant agents for building energy simulation
+    description: >-
+      LLM-based occupant agents grounded in American Time Use Survey microdata.
+      Ships a Python agent library, a REST API, and an MCP server — with
+      ATUS-informed activity scheduling across demographic groups, persona
+      generation from EIA RECS appliance data, a memory stream, demand-response
+      signal classification, and validation metrics for both behaviour and energy.
+    github: https://github.com/humanbuildingsynergy/BuildOcc
+    zenodo: 10.5281/zenodo.21192895
+    version: v1.0.0
+    licence: Apache-2.0
+    year: 2026
+
+  - name: HEMA
+    full: Multi-Agent Home Energy Management Assistant
+    description: >-
+      A multi-agent assistant for residential energy management.
+    github: https://github.com/humanbuildingsynergy/HEMA
+    zenodo: ""
+    year: 2026
+    paper:
+      doi: 10.1016/j.softx.2026.102633
+      venue: SoftwareX
+
+  - name: ROSS
+    full: Residential Occupancy Schedule Simulator
+    description: >-
+      Generates representative U.S. residential occupancy schedules derived from
+      smart thermostat data.
+    github: https://github.com/humanbuildingsynergy/ResidentialOccupancyScheduleSimulator
+    zenodo: ""
+    year: 2023
+    paper:
+      venue: Building and Environment
+
+# ---- Archived datasets and benchmarks -------------------------------------
+datasets:
+  - name: BuildGraph
+    full: A Synthetic Multi-Archetype Building Knowledge Graph Dataset
+    description: >-
+      120 commercial building knowledge graphs in Brick Schema v1.3, as RDF
+      Turtle. Derived from DOE Commercial Prototype Building Models across eight
+      building types and three ASHRAE code vintages, with sensor placement mined
+      from 65 real buildings via Mortar. Ships 75 SPARQL queries with automatic
+      scope detection; BuildGraph buildings reach a 91.5% Query Answerability
+      Rate against that benchmark, versus 35.8% for public real-world Brick models.
+    github: https://github.com/humanbuildingsynergy/BuildGraph
+    zenodo: 10.5281/zenodo.20015123
+    version: "1.0"
+    licence: CC-BY-NC-4.0
+    year: 2026
+
+  - name: Build2SPARQL
+    full: A Large-Scale Text-to-SPARQL Benchmark for Building Knowledge Graph Querying
+    description: >-
+      6,136 executable SPARQL queries and 30,680 natural-language questions over
+      201 building knowledge graphs. Queries are validated by graph traversal
+      before the natural-language questions are generated, across six query
+      patterns and five vocabulary registers from ontology jargon to plain
+      English. Includes a 173/28 building train–test split.
+    zenodo: 10.5281/zenodo.20451474
+    version: "1.0"
+    licence: CC-BY-NC-4.0
+    year: 2026
+
+  - name: BATS
+    full: >-
+      Building AI Testbed Suite — physics-grounded sensor time-series with
+      knowledge graph annotations and auto-gradable QA benchmarks
+    description: >-
+      Eighteen building simulations from three DOE commercial prototypes
+      (small, medium and large office, ASHRAE 90.1-2019) across three climate
+      zones, each in fault-free and faulted variants. Combines Brick v1.3
+      knowledge graphs, 9.2 million hourly sensor readings across 1,050 streams,
+      and 249 machine-gradable question–answer pairs. Faults are injected as
+      physics parameters rather than post-hoc adjustments, so they propagate
+      through the control system realistically.
+    zenodo: 10.5281/zenodo.20777376
+    version: v1.0
+    licence: CC-BY-NC-4.0
+    year: 2026

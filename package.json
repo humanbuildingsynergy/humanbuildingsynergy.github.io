@@ -1,0 +1,17 @@
+{
+  "name": "hubs-website",
+  "version": "2026.1.0",
+  "description": "Human Building Synergy Laboratory — University of Arizona",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rm -rf _site"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "js-yaml": "^4.1.0"
+  }
+}

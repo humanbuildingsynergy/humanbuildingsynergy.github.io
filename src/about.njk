@@ -1,0 +1,139 @@
+---
+layout: base.njk
+title: About
+description: >-
+  The vision, mission, and pillars of the Human Building Synergy Laboratory
+  (HUBS) at the University of Arizona.
+---
+{% from "icons.njk" import icon %}
+
+<section class="pageHero wrap">
+  <p class="label">About the lab</p>
+  <h1>
+    <span class="c-hu">HU</span>man <span class="c-bl">B</span>uilding
+    <span class="c-ai">S</span>ynergy Laboratory
+  </h1>
+  <p class="lede">{{ site.researchArea }}.</p>
+</section>
+
+<section class="band band--tight wrap">
+  <div class="prose">
+    <p class="label">Vision</p>
+    <h2 style="margin-top:.5rem">Buildings that understand the people in them — and can be argued with.</h2>
+    <p style="font-size:1.15rem;color:var(--ink-2)">
+      HUBS works toward built environments that understand their occupants well
+      enough to act on their behalf, and explain themselves well enough to be
+      trusted. That takes three things at once: a building that senses without
+      intruding, an agent that reasons under real constraints, and an occupant who
+      keeps the last word.
+    </p>
+  </div>
+</section>
+
+<section class="band band--rule band--tight wrap">
+  <div class="band__head measure">
+    <p class="label">Mission</p>
+    <h2>The questions we keep asking.</h2>
+    <p class="lede">
+      One question per corner of the triangle, and one that belongs to all three.
+    </p>
+  </div>
+
+  <div class="grid grid--2">
+    <div class="card">
+      <p class="card__head c-hu">Of the human</p>
+      <ul>
+        <li>How do people express what they need from a space?</li>
+        <li>What do those words actually mean, for that particular person?</li>
+        <li>What makes someone trust an automated system enough to leave it on?</li>
+      </ul>
+    </div>
+    <div class="card">
+      <p class="card__head c-ai">Of the AI</p>
+      <ul>
+        <li>When should an agent act on its own judgment, and when must it defer?</li>
+        <li>How does it arbitrate between occupants who want opposite things?</li>
+        <li>What does an explanation have to contain to be worth anything?</li>
+      </ul>
+    </div>
+    <div class="card">
+      <p class="card__head c-bl">Of the building</p>
+      <ul>
+        <li>How can systems sense occupants non-invasively and effortlessly?</li>
+        <li>How can a space be conditioned at the scale of a person, not a zone?</li>
+        <li>How does a building report its own limits and failures honestly?</li>
+      </ul>
+    </div>
+    <div class="card">
+      <p class="card__head">Of all three</p>
+      <ul>
+        <li>Who gets the last word when they disagree?</li>
+        <li>Who pays when comfort is traded for grid flexibility?</li>
+        <li>What happens to the direct human–building relationship in between?</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band band--rule band--tight wrap">
+  <div class="band__head measure">
+    <p class="label">Pillars</p>
+    <h2>What holds the work up.</h2>
+  </div>
+
+  <div class="grid grid--2">
+    <div class="card">
+      <p class="card__head c-hu">Human agency</p>
+      <p class="muted">
+        The occupant keeps authority. An override is the most valuable signal the
+        system receives, not a failure of it.
+      </p>
+    </div>
+    <div class="card">
+      <p class="card__head c-ai">Machine reasoning</p>
+      <p class="muted">
+        Agents that plan under real constraints — grid, cost, physics, other
+        people — and can say what they did and why.
+      </p>
+    </div>
+    <div class="card">
+      <p class="card__head c-bl">Physical embodiment</p>
+      <p class="muted">
+        Sensing and actuation that reach the scale of a single person, and report
+        back what actually happened.
+      </p>
+    </div>
+    <div class="card">
+      <p class="card__head">Synergy</p>
+      <p class="muted">
+        Comfort and energy treated as a win-win to be engineered, not a trade-off
+        to be split.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="band band--rule band--tight wrap">
+  <div class="cta">
+    <p class="label">Next</p>
+    <h2 style="margin-top:.8rem">See what the questions have produced.</h2>
+    <div class="btnRow">
+      <a class="btn" href="/research/">Research {{ icon("arrow-right") }}</a>
+      <a class="btn btn--quiet" href="/facility/">The facility</a>
+      <a class="btn btn--quiet" href="/join-us/">Join us</a>
+    </div>
+  </div>
+</section>
+
+{# ---------------------------------------------------------------------------
+   IDENTITY / LOGO — hidden while the lab icon is being redesigned.
+   To bring it back: delete the comment markers on the first and last lines of
+   this block, and point the img at the new logo file.
+
+<section class="band band--rule band--tight wrap" style="text-align:center">
+  <p class="label">Identity</p>
+  <img src="/assets/logo/hubs_logo_one_inch.png" alt="HUBS Laboratory logo"
+       style="max-width:260px;margin:1.5rem auto 0" loading="lazy" />
+</section>
+
+--------------------------------------------------------------------------- #}

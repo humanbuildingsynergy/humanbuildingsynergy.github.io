@@ -1,0 +1,123 @@
+---
+layout: base.njk
+title: Facility
+description: >-
+  The HUBS Laboratory in Room CE 116 at the University of Arizona — two
+  reconfigurable environmental chambers, a control room, and dense multi-modal
+  instrumentation for occupant comfort, IEQ and HVAC research.
+ogImage: /assets/facility/HUBS_lab_inside_01.webp
+---
+{% from "icons.njk" import icon %}
+{% macro tone(p) %}{{ 'c-hu' if p == 'human' else ('c-ai' if p == 'ai' else 'c-bl') }}{% endmacro %}
+
+<section class="pageHero wrap">
+  <p class="label">Facility</p>
+  <h1>HUBS Living Lab.</h1>
+  <p class="lede">{{ facility.intro }}</p>
+  <p class="label" style="margin-top:1.5rem">
+    {{ facility.location.room }} · {{ facility.location.address }} · {{ facility.location.campus }}
+  </p>
+</section>
+
+<section class="band band--tight wrap">
+  <div class="measure">
+    <p style="font-size:1.05rem;color:var(--ink-2)">{{ facility.positioning }}</p>
+  </div>
+</section>
+
+<!-- ===== Zones ====================================================== -->
+<section class="band band--rule band--tight wrap">
+  <div class="band__head measure">
+    <p class="label">Layout</p>
+    <h2>Three zones, independently controlled.</h2>
+    <p class="lede">{{ facility.zonesNote }}</p>
+  </div>
+
+  <div class="grid grid--2">
+    {%- for z in facility.zones %}
+    <div class="card">
+      <div class="zoneHead">
+        <p class="card__head {{ tone(z.party) | trim }}" style="margin:0">{{ z.name }}</p>
+        <span class="zoneSize">{{ z.size }}</span>
+      </div>
+      <p style="color:var(--ink-2);font-size:.95rem;margin:.9rem 0 1rem">{{ z.summary }}</p>
+      <ul>{%- for d in z.details %}<li>{{ d }}</li>{%- endfor %}</ul>
+    </div>
+    {%- endfor %}
+  </div>
+
+</section>
+
+<!-- ===== Photographs ================================================ -->
+{% if facility.photos.length %}
+<section class="band band--rule band--tight wrap">
+  <div class="band__head measure">
+    <p class="label">The space</p>
+  </div>
+  <div class="photoGrid">
+    {%- for p in facility.photos %}
+    <figure>
+      <img src="/assets/facility/{{ p.file }}" alt="{{ p.caption }}" loading="lazy" />
+      <figcaption>{{ p.caption }}</figcaption>
+    </figure>
+    {%- endfor %}
+  </div>
+</section>
+{% endif %}
+
+<!-- ===== Capability ================================================= -->
+<section class="band band--rule band--tight wrap">
+  <div class="band__head measure">
+    <p class="label">Capability</p>
+    <h2>What we can measure, and what we can move.</h2>
+    <p class="lede">
+      The three corners of the triangle need different hardware — sensing for the
+      human, compute for the agent, actuation for the building. The lab carries
+      all three.
+    </p>
+  </div>
+
+  <div class="grid grid--2">
+    {%- for g in facility.capability %}
+    <div class="card">
+      <p class="card__head {{ tone(g.party) | trim }}">{{ g.group }}</p>
+      {% if g.note %}<p class="label" style="margin-bottom:.9rem">{{ g.note }}</p>{% endif %}
+      <ul>{%- for it in g.items %}<li>{{ it }}</li>{%- endfor %}</ul>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+<!-- ===== Research modes ============================================= -->
+{% if facility.modes.length %}
+<section class="band band--rule band--tight wrap">
+  <div class="band__head measure">
+    <p class="label">Research modes</p>
+    <h2>Four ways the lab gets configured.</h2>
+  </div>
+
+  <div class="modes">
+    {%- for m in facility.modes %}
+    <article>
+      <h3>{{ m.name }}</h3>
+      <p>{{ m.text }}</p>
+    </article>
+    {%- endfor %}
+  </div>
+</section>
+{% endif %}
+
+<!-- ===== Collaborate ================================================ -->
+{% if facility.collaborate %}
+<section class="band band--rule band--tight wrap">
+  <div class="cta">
+    <p class="label">Collaborate</p>
+    <h2 style="margin-top:.8rem">Open to visiting researchers.</h2>
+    <p style="color:var(--ink-2);max-width:54ch;margin-top:1rem">{{ facility.collaborate }}</p>
+    <div class="btnRow">
+      <a class="btn" href="mailto:{{ site.contact.email }}">Email Dr. Jung {{ icon("arrow-right") }}</a>
+      <a class="btn btn--quiet" href="/research/">See the research</a>
+    </div>
+  </div>
+</section>
+{% endif %}

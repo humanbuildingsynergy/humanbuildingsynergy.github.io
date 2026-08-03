@@ -1,0 +1,68 @@
+---
+layout: base.njk
+title: People
+description: >-
+  The director and members of the Human Building Synergy Laboratory at the
+  University of Arizona.
+---
+{% from "icons.njk" import icon %}
+
+{% macro socials(links, name) %}
+  {%- if links.length %}
+  <ul class="social">
+    {%- for link in links %}
+    <li><a href="{{ link.url }}" target="_blank" rel="noopener" aria-label="{{ link.label }}{% if name %} — {{ name }}{% endif %}" title="{{ link.label }}">{{ icon(link.type) }}</a></li>
+    {%- endfor %}
+  </ul>
+  {%- endif %}
+{% endmacro %}
+
+<section class="pageHero wrap">
+  <p class="label">People</p>
+  <h1>Each is a knowledge HUB.</h1>
+  <p class="lede">The people who make the Human Building Synergy Laboratory work.</p>
+</section>
+
+<section class="band band--tight wrap">
+  <p class="label" style="margin-bottom:1rem">Director</p>
+
+  <article class="person">
+    <img src="/assets/profile/{{ people.director.photo }}" alt="{{ people.director.name }}, Director of the HUBS Laboratory" width="152" height="152" />
+    <div>
+      <h3><a href="/director/">{{ people.director.name }}</a></h3>
+      <p class="role">{{ people.director.role }}</p>
+      <p class="affil">{{ people.director.affiliation }}</p>
+      {{ socials(people.director.links, people.director.name) }}
+      <p class="bio">{{ people.director.bio }}</p>
+      <div class="btnRow"><a class="btn btn--quiet" href="/director/">Full profile, CV &amp; service {{ icon("arrow-right") }}</a></div>
+    </div>
+  </article>
+</section>
+
+<section class="band band--rule band--tight wrap">
+  <p class="label" style="margin-bottom:1rem">Members</p>
+
+  {%- for m in people.members %}
+  <article class="person">
+    <img src="/assets/profile/{{ m.photo }}" alt="{{ m.name }}, {{ m.role }}" width="152" height="152" loading="lazy" />
+    <div>
+      <h3>{{ m.name }}</h3>
+      <p class="role">{{ m.role }}</p>
+      <p class="affil">{{ m.affiliation }}</p>
+      {{ socials(m.links, m.name) }}
+      <p class="bio">{{ m.bio }}</p>
+    </div>
+  </article>
+  {%- endfor %}
+</section>
+
+<section class="band band--rule band--tight wrap">
+  <div class="cta">
+    <p class="label">Join us</p>
+    <h2 style="margin-top:.8rem">There's room for you here.</h2>
+    <div class="btnRow">
+      <a class="btn" href="/join-us/">How to apply {{ icon("arrow-right") }}</a>
+      <a class="btn btn--quiet" href="/alumni/">Alumni</a>
+    </div>
+  </div>
+</section>

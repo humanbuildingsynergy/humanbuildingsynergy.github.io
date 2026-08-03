@@ -1,0 +1,606 @@
+# Lab news. ONE list — the homepage shows the newest few, the news page shows
+# all of them grouped by year, and the RSS feed reads the same list.
+# To add an item: copy a block to the top. `date` is YYYY-MM.
+# `type` drives the little icon: publication, grant, conference, seminar,
+# service, people, outreach, milestone.
+# `text` may contain inline HTML links.
+
+- date: 2026-07
+  type: publication
+  text: >-
+    A new journal article, titled Large Language Model-Driven Context-Aware
+    Eco-Feedback Generation and Evaluation, is accepted and published by
+    Energy and Buildings!
+
+- date: 2026-07
+  type: publication
+  text: >-
+    Prosper's third, first-authored journal article has been accepted by Building
+    and Environment:
+    <a href="https://doi.org/10.1016/j.buildenv.2026.115052" target="_blank" rel="noopener">Assessing
+    Indoor Heat Strain through Occupant Language: A Framework for Building Thermal
+    Resilience</a>. Congrats!
+
+- date: 2026-06
+  type: conference
+  text: >-
+    Dr. Jung participated in
+    <a href="https://buildsys.acm.org/2026/" target="_blank" rel="noopener">Buildsys26</a>,
+    presented four papers, and won a 3rd Best Paper from
+    <a href="https://www.socialsysworkshop.com/" target="_blank" rel="noopener">Socialsys26</a>!
+
+- date: 2026-06
+  type: outreach
+  text: >-
+    The HUBS lab successfully led another Summer Engineering Academy activity to
+    represent Architectural Engineering!
+
+- date: 2026-06
+  type: milestone
+  text: >-
+    The HUBS lab visited the SRP headquarter to deliver its final presentation for
+    the 2-year SEP research project!
+
+- date: 2026-05
+  type: conference
+  text: >-
+    Dr. Jung participated in
+    <a href="https://iaqvec2026.org/" target="_blank" rel="noopener">IAQVEC 2026</a>
+    and successfully delivered five presentations, Yay!
+
+- date: 2026-05
+  type: milestone
+  text: >-
+    Prosper has successfully finished his comprehensive exam! He is now a PhD
+    candidate! Big congrats!
+
+- date: 2026-05
+  type: publication
+  text: >-
+    A new journal article, titled
+    <a href="https://doi.org/10.1016/j.jobe.2026.116313" target="_blank" rel="noopener">Adoption,
+    use, and perception of room and personal comfort systems in U.S. households</a>
+    is accepted and published by Journal of Building Engineering!
+
+- date: 2026-03
+  type: publication
+  text: >-
+    A new journal article, titled
+    <a href="https://doi.org/10.1016/j.softx.2026.102633" target="_blank" rel="noopener">Multi-Agent
+    Home Energy Management Assistant (HEMA)</a> is accepted and published by SoftwareX!
+
+- date: 2026-03
+  type: publication
+  text: >-
+    A new journal article, titled
+    <a href="https://doi.org/10.1016/j.egyr.2026.109244" target="_blank" rel="noopener">Understanding
+    smart thermostat adoption: Housing, HVAC, and socio-economic traits in the U.S.</a>
+    gets accepted and published by Energy Reports!
+
+- date: 2026-03
+  type: service
+  text: >-
+    Dr. Jung serves as technical committee &amp; best paper committee of
+    <a href="https://buildsys.acm.org/2026/" target="_blank" rel="noopener">Buildsys 2026</a>
+
+- date: 2026-03
+  type: publication
+  text: >-
+    A total of five papers were accepted by
+    <a href="https://iaqvec2026.org/" target="_blank" rel="noopener">IAQVEC 2026</a>!
+
+- date: 2026-03
+  type: service
+  text: >-
+    Dr. Jung serves as a reviewer for
+    <a href="https://www.i3ce2026.com/" target="_blank" rel="noopener">i3ce 2026</a>
+
+- date: 2025-12
+  type: publication
+  text: >-
+    Congrats to Prosper who published his second journal paper, titled:
+    <a href="https://doi.org/10.1016/j.buildenv.2025.114165" target="_blank" rel="noopener">Personalized
+    Building Thermal Resilience Assessment Under Future Climate Scenarios</a>, in
+    Building and Environment
+
+- date: 2025-12
+  type: seminar
+  text: >-
+    Dr. Jung visited Yonsei University to give a seminar titled: Towards
+    Human-Artificial Intelligence (AI)-Building Collaborations, invited by
+    Prof. Chungyoon Chun!
+
+- date: 2025-12
+  type: seminar
+  text: >-
+    Dr. Jung visited Seoul National University of Science and Technology to give a
+    seminar on "Demand Response Strategies and Research in the U.S. Residential
+    Sector", invited by Dr. Jimin Kim!
+
+- date: 2025-12
+  type: service
+  text: >-
+    Dr. Jung will serve as a reviewer for
+    <a href="https://www.iaarc.org/isarc-2026" target="_blank" rel="noopener">the ISARC 2026 conference</a>.
+
+- date: 2025-12
+  type: service
+  text: >-
+    Dr. Jung will serve on the technical program committee for the
+    <a href="https://buildsys.acm.org/2026/" target="_blank" rel="noopener">ACM Buildsys 2026</a>
+
+- date: 2025-11
+  type: conference
+  text: >-
+    Dr. Jung participated in
+    <a href="https://www.iccepm2025.com/" target="_blank" rel="noopener">the 11th International
+    Conference on Construction Engineering and Project Management (ICCEPM 2025)</a>
+    and presented his research: Smart Thermostat Adopters Through the Lens of
+    Diffusion of Innovation Theory.
+
+- date: 2025-11
+  type: conference
+  text: >-
+    Dr. Jung participated in the Fall annual conference, organized by
+    <a href="https://www.kiaebs.org/" target="_blank" rel="noopener">the Korean Institute of
+    Architectural Sustainable Environment and Building Systems</a>.
+
+- date: 2025-11
+  type: seminar
+  text: >-
+    Dr. Jung visited
+    <a href="https://caku.konkuk.ac.kr/caku/index.do" target="_blank" rel="noopener">KonKuk University</a>
+    to give a seminar on "Career Pathways: Building Science Track."
+
+- date: 2025-10
+  type: seminar
+  text: >-
+    Dr. Jung visited
+    <a href="https://arch.ajou.ac.kr/arch/index.do" target="_blank" rel="noopener">Ajou University</a>
+    to give a seminar on "Why do we need EnergyPlus and what do we use it for?"
+
+- date: 2025-10
+  type: seminar
+  text: >-
+    Dr. Jung visited
+    <a href="https://www.bistskku.com/" target="_blank" rel="noopener">the Building Information
+    Science &amp; Technology (BIST) Lab</a>, directed by Dr. Sungmin Yoon at
+    Sungkyunkwan University!
+
+- date: 2025-10
+  type: service
+  text: >-
+    Dr. Jung served as a reviewer for
+    <a href="https://cisummit-crc.asce.org/" target="_blank" rel="noopener">CI &amp; CRC Joint
+    Conference 2026</a>.
+
+- date: 2025-10
+  type: seminar
+  text: >-
+    Dr. Jung visited the Human-centered Smart &amp; Sustainable Construction
+    Management (HSSCM) Lab, directed by Dr. Kwangbok Jeong at Sejong University!
+
+- date: 2025-09
+  type: seminar
+  text: >-
+    Dr. Jung visited
+    <a href="https://inugsl.inu.ac.kr/" target="_blank" rel="noopener">the Incheon National
+    University Graduate School of Logistics</a> to give a seminar "Understanding the
+    State of the Art in Any Field"
+
+- date: 2025-09
+  type: seminar
+  text: >-
+    Dr. Jung visited
+    <a href="https://sites.google.com/view/hibe-lab" target="_blank" rel="noopener">the
+    Hyper-Intelligent Built Environment (HIBE) Lab</a>, directed by Dr. Youngsu
+    (Micheal) Kim at Chung-Ang University!
+
+- date: 2025-09
+  type: seminar
+  text: >-
+    Dr. Jung visited
+    <a href="http://big.yonsei.ac.kr/" target="_blank" rel="noopener">the Building Informatics
+    Group</a> at Yonsei University for a brownbag seminar "Surviving as an Assistant
+    Professor in the U.S."
+
+- date: 2025-08
+  type: grant
+  text: >-
+    The HUBS lab won an NSF grant, entitled:
+    <a href="https://www.nsf.gov/awardsearch/show-award?AWD_ID=2519054" target="_blank" rel="noopener">"Collaborative
+    Research: Empowering STEM Education by Creating Benchmarking Models for GenAI
+    Learning Assistants!"</a> We appreciate this great collaborative opportunity with
+    Dr. Namgyun Kim and other Co-PIs at TAMU and look forward to making a significant
+    impact!
+
+- date: 2025-08
+  type: grant
+  text: >-
+    The HUBS lab won AZTI SPR-804: Potential Revenue Generation Through the
+    Commercialization of Arizona Rest Areas as a Co-PI! We look forward to
+    collaborating with Dr. Ali Shamshiripour (the PI), other team members, and ADOT
+    officers!
+
+- date: 2025-07
+  type: publication
+  text: >-
+    A new journal article, titled
+    <a href="https://doi.org/10.1016/j.buildenv.2025.113471" target="_blank" rel="noopener">Personalized
+    Environmental Control Systems (PECS): A systematic review of performance
+    evaluation methods for Thermal Comfort, Air Quality and Energy</a>, gets accepted
+    and published by Building and Environment!
+
+- date: 2025-07
+  type: publication
+  text: >-
+    A new journal article, titled
+    <a href="https://doi.org/10.1016/j.enbuild.2025.116106" target="_blank" rel="noopener">Streamlining
+    occupant-centric HVAC operations through multi-modal infrared array sensing
+    technology</a>, gets accepted and published by Energy and Buildings!
+
+- date: 2025-07
+  type: grant
+  text: >-
+    The HUBS lab will continue the 'Benefits of Smart Electric Panels for SRP
+    Sustainability Goals' project as it has been funded in the second year! We
+    appreciate this continued support from SRP!
+
+- date: 2025-06
+  type: publication
+  text: >-
+    Congrats to Prosper for his first
+    <a href="https://doi.org/10.1016/j.enbuild.2025.115965" target="_blank" rel="noopener">journal
+    article</a> — published in Energy and Buildings — with the HUBS lab! Keep up your
+    good work!
+
+- date: 2025-05
+  type: grant
+  text: >-
+    Our SRP project, titled "Benefits of Smart Electric Panels for SRP Sustainability
+    Goals", was once again awarded! We are excited about this opportunity!
+
+- date: 2025-04
+  type: publication
+  text: One conference paper was accepted by the ASHRAE Annual Conference 2025!
+
+- date: 2025-04
+  type: service
+  text: >-
+    Dr. Jung will serve as a scientific committee member for
+    <a href="https://iaqvec2026.org/" target="_blank" rel="noopener">IAQVEC 2026</a>!
+
+- date: 2025-04
+  type: publication
+  text: >-
+    Three conference proceedings were accepted by
+    <a href="https://csce-crc2025.com/" target="_blank" rel="noopener">CSCE/CRC 2025 conference</a>!
+
+- date: 2025-03
+  type: milestone
+  text: >-
+    Congrats to Prosper who won
+    <a href="https://carson.arizona.edu/" target="_blank" rel="noopener">the Carson Scholarship</a>
+    for the 2025/26 academic year!
+
+- date: 2025-03
+  type: service
+  text: Dr. Jung serves as a reviewer for the CRC/CSCE 2025 conference!
+
+- date: 2025-03
+  type: people
+  text: Ms. Shivani Rajesh Bavdhankar joined the HUBS lab! Welcome!
+
+- date: 2025-03
+  type: publication
+  text: >-
+    Three conference proceedings were accepted by
+    <a href="https://www.lsu.edu/eng/cm/i3ce2025/" target="_blank" rel="noopener">i3ce 2025 conference</a>!
+
+- date: 2025-01
+  type: service
+  text: >-
+    Dr. Jung serves as a reviewer for the
+    <a href="https://www.iaarc.org/isarc-2025" target="_blank" rel="noopener">ISARC 2025 conference</a>!
+
+- date: 2024-12
+  type: grant
+  text: >-
+    The HUBS lab, again, won
+    <a href="https://www.waeso.org/" target="_blank" rel="noopener">the Western Alliance to Expand
+    Student Opportunities (WAESO)</a> STEM-centered undergraduate research experiences!
+    We look forward to working with talented undergraduates this Spring, 2025!
+
+- date: 2024-11
+  type: conference
+  text: >-
+    Dr. Jung participated in
+    <a href="https://sites.google.com/view/symber/about-symber?authuser=0" target="_blank" rel="noopener">the
+    Symposium on Building-Energy Research</a>! Thank you for the invitation!
+
+- date: 2024-09
+  type: people
+  text: >-
+    The HUBS lab welcomes a new undergraduate research assistant: Efren Hiram
+    Figueroa! He will support Prosper's experiment!
+
+- date: 2024-09
+  type: people
+  text: >-
+    The HUBS lab welcomes a new undergraduate research assistant: Sascha Nicole
+    Moran! She will support Prosper's experiment and our heat resiliency study!
+
+- date: 2024-08
+  type: people
+  text: >-
+    The HUBS lab welcomes new undergraduate research assistants: Alyssa La Fountain,
+    Lucas DeFrancesco, Nick Kyle! They will support the new research initiative about
+    smart buildings
+
+- date: 2024-08
+  type: people
+  text: >-
+    The HUBS lab welcomes a new PhD student, Elham Hasani Alavy! She will work on our
+    building electrification project and continue her IAQ research.
+
+- date: 2024-08
+  type: grant
+  text: >-
+    The HUBS lab won
+    <a href="https://www.waeso.org/" target="_blank" rel="noopener">the Western Alliance to Expand
+    Student Opportunities (WAESO)</a> STEM-centered undergraduate research experiences
+    for Fall 2024! We do look forward to working with talented undergraduates this Fall!
+
+- date: 2024-07
+  type: grant
+  text: >-
+    The HUBS lab won the SensorLab 2025 - Seed Grant! We do look forward to
+    collaborating with the SensorLab continuously!
+
+- date: 2024-06
+  type: milestone
+  text: >-
+    Details of the two SRP projects that Dr. Jung serves as a PI are updated in the
+    <a href="/research/">Research</a> tab
+
+- date: 2024-05
+  type: conference
+  text: >-
+    Dr. Jung participated in
+    <a href="https://engineering.unl.edu/durhamschool/fobi-workshop/" target="_blank" rel="noopener">the
+    Future of Building Industry Workshop (FoBI)</a>, organized by the University of
+    Nebraska, Lincoln (UNL)! It was such an informative workshop and the HUBS lab
+    looks forward to future collaborations with UNL faculty!
+
+- date: 2024-05
+  type: grant
+  text: >-
+    The HUBS lab wins three projects from Salt River Project (SRP)! The HUBS lab does
+    appreciate this opportunity and look forward to working with SRP! More details
+    will come!
+
+- date: 2024-05
+  type: publication
+  text: >-
+    A new paper, titled "A new database of building-space-specific internal loads and
+    load schedules for performance based code compliance modeling of commercial
+    buildings", has been published by the Building Simulation Journal!
+
+- date: 2024-04
+  type: publication
+  text: >-
+    Our conference paper, titled "Unveiling Personal Heat Stress Diversity in
+    Buildings", has been accepted by
+    <a href="https://icccbe2024.etsmtl.ca/" target="_blank" rel="noopener">ICCCBE 2024</a>!
+    Congrats to Prosper for his first publication with the HUBS lab!
+
+- date: 2024-03
+  type: service
+  text: >-
+    Dr. Jung serves as a reviewer for the
+    <a href="https://www.cmu.edu/cee/i3ce2024/index.html" target="_blank" rel="noopener">ASCE
+    International Conference on Computing in Civil Engineering 2024</a> conference.
+
+- date: 2024-03
+  type: publication
+  text: >-
+    Our poster abstract, titled "Biophilic design and the COVID-19 pandemic:
+    Literature review and novel tools to assess mental health and well-being", has
+    been accepted by
+    <a href="https://www.edra.org/page/edra55" target="_blank" rel="noopener">EDRA55 Portland</a>!
+
+- date: 2024-03
+  type: conference
+  text: >-
+    Dr. Jung attended the
+    <a href="https://cisummit-crc.asce.org/" target="_blank" rel="noopener">CI-CRC 2024 conference</a>!
+
+- date: 2024-02
+  type: service
+  text: >-
+    Dr. Jung joins the Mentor Training and Student Mentoring Service organized by the
+    Building Pathway Project funded by the NSF.
+
+- date: 2023-12
+  type: grant
+  text: >-
+    HUBS won an undergraduate research award and get to work with Mr. Diego Fajardo,
+    a senior majoring in civil engineering!
+
+- date: 2023-11
+  type: publication
+  text: >-
+    A new paper, titled "Towards intelligent workstations: Investigating the
+    feasibility of Doppler radar sensors for personal respiratory quantification in
+    thermal comfort", has been accepted by the Building and Environment journal! Yay!
+
+- date: 2023-09
+  type: service
+  text: >-
+    Dr. Jung has become the Summer Engineering Academy (SEA) coordinator for
+    Architectural Engineering. We look forward to our consistent contribution to such
+    outreach activities!
+
+- date: 2023-09
+  type: publication
+  text: >-
+    A new journal paper, entitled "Towards intelligent workstations: Investigating
+    the feasibility of Doppler radar sensors for personal respiratory quantification
+    in thermal comfort" has been accepted by Building and Environment!
+
+- date: 2023-09
+  type: service
+  text: Dr. Jung has become a Poster/Demo technical program committee of ACM Buildsys 2023!
+
+- date: 2023-08
+  type: people
+  text: >-
+    A new PhD student, Prosper Babon-Ayeng, has joined the HUBS lab! Welcome and we
+    look forward to your contribution to the world!
+
+- date: 2023-07
+  type: publication
+  text: >-
+    A new paper, titled "Smart thermostat data-driven U.S. residential occupancy
+    schedules and development of a U.S. residential occupancy schedule simulator",
+    has been accepted by the Building and Environment journal! Yay!
+
+- date: 2023-07
+  type: outreach
+  text: >-
+    HUBS lab successfully led the Summer Engineering Academy - Architectural
+    Engineering! We look forward to upcoming outreach activities!
+
+- date: 2023-05
+  type: people
+  text: >-
+    Dr. Erin Driver joins HUBS as an intern! She is highly qualified for the position
+    and we look forward to our collaborative works!
+
+- date: 2023-04
+  type: milestone
+  text: Dr. Jung has introduced himself at the CAEM Alumni Council Meeting!
+
+- date: 2023-04
+  type: service
+  text: >-
+    Dr. Jung has become an Annex87 Subtask C co-leader with Prof. Joon-ho Choi at
+    USC! Thanks a lot for the opportunity!
+
+- date: 2023-04
+  type: conference
+  text: >-
+    Dr. Jung has attended
+    <a href="https://www.aei-conference.org/" target="_blank" rel="noopener">the ASCE AEI
+    conference, Denver, CO</a>, to attend the Academic Council meeting and get the
+    sense of the student competition :)
+
+- date: 2023-04
+  type: seminar
+  text: >-
+    Dr. Jung has presented his research and the Architectural Engineering program to
+    the ASHRAE Tucson Chapter!
+
+- date: 2023-03
+  type: people
+  text: Sophia Kristine Witt joins HUBS as an undergraduate student! Welcome, Sophia!
+
+- date: 2023-02
+  type: outreach
+  text: >-
+    Dr. <a href="https://altafengineer.weebly.com/" target="_blank" rel="noopener">Altaf Engineer</a>
+    provided his invited talk to the students in the HBI class. We appreciate his
+    insightful talk!
+
+- date: 2023-02
+  type: outreach
+  text: >-
+    Dr. Jason Koh at <a href="https://www.mapped.com/" target="_blank" rel="noopener">Mapped</a>
+    joined the HBI class and shared his research and works at Mapped! It was an
+    eye-opening talk and we are very thankful for the talk!
+
+- date: 2023-01
+  type: service
+  text: >-
+    Dr. Jung will serve as a Co-Chair for the Sustainability and Resilience Track at
+    <a href="https://cisummit-crc.asce.org/" target="_blank" rel="noopener">CI &amp; CRC 2024</a>.
+    Thanks for the opportunity!
+
+- date: 2023-01
+  type: seminar
+  text: >-
+    Dr. Jung was invited to ARC497B/597B and shared his ways of developing/addressing
+    interesting/impactful research questions!
+
+- date: 2023-01
+  type: seminar
+  text: >-
+    Dr. Jung presented his research at a
+    <a href="https://www.kicem.or.kr/eng/" target="_blank" rel="noopener">KICEM</a> monthly meeting.
+
+- date: 2023-01
+  type: seminar
+  text: Dr. Jung shared his research at an IAQVEC technical meeting. Thanks for the opportunity!
+
+- date: 2023-01
+  type: milestone
+  text: "Dr. Jung started his new course in the department: Human Building Interaction :)"
+
+- date: 2022-12
+  type: milestone
+  text: >-
+    Dr. Jung is affiliated with the
+    <a href="https://ipwp.arizona.edu/" target="_blank" rel="noopener">UArizona Institute of Place,
+    Wellbeing &amp; Performance</a> and looking forward to our collaborations!
+
+- date: 2022-12
+  type: seminar
+  text: Dr. Jung presented his research at the G-Net KBTS seminar!
+
+- date: 2022-11
+  type: milestone
+  text: >-
+    Yay! HUBS now has access to the
+    <a href="https://www.ecobee.com/donate-your-data/" target="_blank" rel="noopener">ecobee Donate
+    Your Data dataset</a>! Thanks for being a partner ecobee!
+
+- date: 2022-11
+  type: service
+  text: >-
+    Dr. Jung joins
+    <a href="https://annex87.iea-ebc.org/" target="_blank" rel="noopener">IEA EBC Annex 87 - Energy
+    and Indoor Environmental Quality Performance of Personalized Environmental Control
+    Systems</a>! Great to be part of this international research effort!
+
+- date: 2022-11
+  type: seminar
+  text: >-
+    Dr. Jung was invited to present his research and career to graduate students at
+    Ajou University. The title was Built Environment Sustainability through
+    Human-Centered Operations.
+
+- date: 2022-09
+  type: milestone
+  text: >-
+    <a href="https://github.com/humanbuildingsynergy/ResidentialOccupancyScheduleSimulator" target="_blank" rel="noopener">Residential
+    Occupancy Schedule Simulator (ROSS)</a> has been uploaded in the HUBS' GitHub page.
+
+- date: 2022-08
+  type: milestone
+  text: >-
+    Dr. Jung officially started his position at the University of Arizona as an
+    assistant professor!
+
+- date: 2022-08
+  type: people
+  text: Dr. Jung started advertising two Ph.D. student positions in Social Media!
+
+- date: 2022-03
+  type: milestone
+  text: >-
+    Dr. Jung accepted the offer from Civil &amp; Architectural Engineering &amp;
+    Mechanics, The University of Arizona.
+
+- date: 2022-03
+  type: milestone
+  text: Dr. Jung named his lab as the Human Building Synergy Laboratory (HUBS)!

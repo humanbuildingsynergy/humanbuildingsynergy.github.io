@@ -1,0 +1,38 @@
+---
+layout: base.njk
+title: News
+description: >-
+  Publications, grants, conferences, seminars, and lab milestones from the Human
+  Building Synergy Laboratory at the University of Arizona.
+---
+{% from "icons.njk" import icon %}
+
+<section class="pageHero wrap">
+  <p class="label">News</p>
+  <h1>The HUBS news.</h1>
+  <p class="lede">
+    Everything the lab has announced since it was founded in 2022 — {{ news.length }} entries.
+  </p>
+</section>
+
+<section class="band band--tight wrap">
+  {%- for group in news | groupByYear %}
+  <div class="yearHead">
+    <b>{{ group.year }}</b>
+    <hr />
+    <span>{{ group.items.length }} {% if group.items.length == 1 %}entry{% else %}entries{% endif %}</span>
+  </div>
+
+  <ul class="news">
+    {%- for item in group.items %}
+    <li>
+      <span class="date">{{ item.date | slashDate }}</span>
+      <div>
+        <p>{{ item.text | safe }}</p>
+        {% if item.type %}<span class="kind">{{ item.type }}</span>{% endif %}
+      </div>
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- endfor %}
+</section>

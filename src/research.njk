@@ -1,0 +1,147 @@
+---
+layout: base.njk
+title: Research
+description: >-
+  Funded projects, publications, and open-source software from the Human Building
+  Synergy Laboratory at the University of Arizona.
+---
+{% from "icons.njk" import icon %}
+
+<!-- ===== Projects =================================================== -->
+<section class="pageHero wrap">
+  <div class="band__head">
+    <p class="label">Research</p>
+    <h1>Current and past projects</h1>
+  </div>
+
+  <div class="grid grid--2">
+    <div class="card">
+      <p class="card__head c-ai">Current</p>
+      {%- for p in projects.uarizona %}{% if p.status == "current" %}
+      <div class="project">
+        <h3>{% if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
+        <p class="project__meta">{{ p.sponsor }} · {{ p.start | slashDate }} – {{ p.end | slashDate }}</p>
+        <p class="project__role">Role: {{ p.role }}</p>
+      </div>
+      {% endif %}{%- endfor %}
+    </div>
+
+    <div class="card">
+      <p class="card__head muted">Past</p>
+      {%- for p in projects.uarizona %}{% if p.status == "past" %}
+      <div class="project">
+        <h3>{% if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
+        <p class="project__meta">{{ p.sponsor }} · {{ p.start | slashDate }} – {{ p.end | slashDate }}</p>
+        <p class="project__role">Role: {{ p.role }}</p>
+      </div>
+      {% endif %}{%- endfor %}
+    </div>
+  </div>
+
+  <div class="band__head" style="margin-top:clamp(2.5rem,5vw,4rem)">
+    <h2 style="font-size:clamp(1.25rem,2.6vw,1.7rem)">Previous affiliations</h2>
+  </div>
+
+  <div class="grid grid--2">
+    {%- for group in projects.previousAffiliations %}
+    <div class="card">
+      <p class="card__head c-bl">{{ group.institution }}</p>
+      {%- for p in group.projects %}
+      <div class="project">
+        <h4>{% if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h4>
+        <p class="project__meta">{{ p.sponsor }} · {{ p.start | slashDate }} – {{ p.end | slashDate }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+<!-- ===== Publications =============================================== -->
+<section class="band band--rule wrap">
+  <div class="band__head measure">
+    <p class="label">Publications</p>
+    <h2>Papers and proceedings</h2>
+    <p class="lede">The complete, current list of journal articles is on Google Scholar.</p>
+  </div>
+
+  <div class="btnRow" style="margin-top:0">
+    <a class="btn" href="{{ site.social.scholar }}" target="_blank" rel="noopener">Google Scholar {{ icon("external") }}</a>
+  </div>
+</section>
+
+<!-- ===== Software and data ========================================== -->
+<section class="band band--rule wrap">
+  <div class="band__head measure">
+    <p class="label">Intellectual property</p>
+    <h2>Software and data</h2>
+    <p class="lede">{{ software.intro }}</p>
+  </div>
+
+  <div class="btnRow" style="margin-top:0;margin-bottom:2.5rem">
+    <a class="btn" href="{{ software.githubOrg }}" target="_blank" rel="noopener">All repositories on GitHub {{ icon("external") }}</a>
+  </div>
+
+  {%- macro release(r, tone) %}
+  <article>
+    <div class="release__id">
+      <span class="release__name {{ tone }}">{{ r.name }}</span>
+      {% if r.year %}<span class="release__yr">{{ r.year }}</span>{% endif %}
+      {% if r.version %}<span class="release__yr">{{ r.version }}</span>{% endif %}
+      {% if r.licence %}<span class="release__yr">{{ r.licence }}</span>{% endif %}
+    </div>
+    <div>
+      <h3>{{ r.full }}</h3>
+      <p class="release__desc">{{ r.description }}</p>
+      <div class="release__links">
+        {%- if r.github %}<a href="{{ r.github }}" target="_blank" rel="noopener">{{ icon("github") }} GitHub</a>{% endif %}
+        {%- if r.zenodo %}<a href="https://doi.org/{{ r.zenodo }}" target="_blank" rel="noopener">{{ icon("external") }} {{ r.zenodo }}</a>{% endif %}
+        {%- if r.paper.doi %}<a href="https://doi.org/{{ r.paper.doi }}" target="_blank" rel="noopener">{{ icon("cv") }} {{ r.paper.venue }}</a>
+        {%- elif r.paper.venue %}<span>{{ icon("cv") }} {{ r.paper.venue }}</span>{% endif %}
+      </div>
+    </div>
+  </article>
+  {%- endmacro %}
+
+  {%- if software.code.length %}
+  <p class="label" style="margin-bottom:.75rem">Software</p>
+  <div class="release">
+    {%- for s in software.code %}{{ release(s, "c-ai") }}{%- endfor %}
+  </div>
+  {%- endif %}
+
+  {%- if software.datasets.length %}
+  <p class="label" style="margin:2.75rem 0 .75rem">Datasets &amp; benchmarks</p>
+  <div class="release">
+    {%- for d in software.datasets %}{{ release(d, "c-bl") }}{%- endfor %}
+  </div>
+  {%- endif %}
+</section>
+
+<!-- ===== Sponsors and partners ====================================== -->
+<section class="band band--rule band--tight wrap">
+  <div class="band__head measure">
+    <p class="label">Acknowledgements</p>
+    <h2>Sponsors and partners</h2>
+  </div>
+
+  <div class="grid grid--2">
+    <div class="card">
+      <p class="card__head c-ai">With support from</p>
+      <ul class="nameList">
+        {%- for s in sponsors.sponsors %}
+        <li>{% if s.url %}<a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.name }}</a>{% else %}{{ s.name }}{% endif %}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+
+    <div class="card">
+      <p class="card__head c-bl">In partnership with</p>
+      <ul class="nameList">
+        {%- for p in sponsors.partners %}
+        <li>{% if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

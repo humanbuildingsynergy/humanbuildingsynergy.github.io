@@ -1,0 +1,60 @@
+# Global site settings. Edit here once; every page picks it up.
+name: Human Building Synergy Laboratory
+shortName: HUBS          # the wordmark in the top-left corner
+titleName: HUBS Lab      # what appears in the browser tab and in search results
+researchArea: Human–AI–Building Interaction
+url: https://hubs.engr.arizona.edu
+description: >-
+  The Human Building Synergy Laboratory (HUBS) at the University of Arizona
+  studies Human–AI–Building Interaction — how occupants, agentic AI, and physical
+  building systems sense, reason, act, and negotiate with one another.
+
+# The title card. Each fragment is one animated word-group; `party` colours it
+# (human / ai / bldg) and anything without a party stays in the base ink.
+titleCard:
+  - { text: "You,", party: human }
+  - { text: "the AI,", party: ai }
+  - { text: "and" }
+  - { text: "the building", party: bldg }
+  - { text: "are all" }
+  - { text: "interacting now." }
+
+# The homepage headline — one clause per party.
+headline:
+  - { text: "The building acts.", party: bldg }
+  - { text: "The AI reasons.", party: ai }
+  - { text: "You decide.", party: human }
+
+lede: >-
+  Three parties, and none of them is in charge by default. We study the
+  negotiation between them — what each one can sense, what each one may do, and
+  who gets the last word when they disagree. Try disagreeing.
+
+department: Civil & Architectural Engineering & Mechanics
+university: The University of Arizona
+
+contact:
+  email: wooyoung@arizona.edu
+  phone: "+1 520 621 7469"
+  phoneHref: "+15206217469"
+  address: 1209 E. 2nd St. 220D, Tucson, AZ, 85719
+
+social:
+  scholar: https://scholar.google.com/citations?user=hv9gbJoAAAAJ&hl=en
+  github: https://github.com/humanbuildingsynergy?tab=repositories
+  linkedin: https://www.linkedin.com/in/jungwyoungs/
+
+nav:
+  - { text: Home,      url: / }
+  - { text: Research,  url: /research/ }
+  - { text: Facility,  url: /facility/ }
+  - { text: People,    url: /people/ }
+  - { text: Teaching,  url: /teaching/ }
+  - { text: News,      url: /news/ }
+  - { text: About,     url: /about/ }
+  - { text: Join Us,   url: /join-us/, highlight: true }
+
+footerLinks:
+  - { text: Privacy,    url: https://privacy.arizona.edu/privacy-statement }
+  - { text: Copyright,  url: https://www.arizona.edu/copyright }
+  - { text: Campus Map, url: https://map.arizona.edu/ }

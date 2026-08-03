@@ -1,6 +1,20 @@
-MIT License
+Copyright (c) 2022-2026 Arizona Board of Regents on behalf of
+The University of Arizona, Human Building Synergy Laboratory (HUBS).
 
-Copyright (c) 2022 humanbuildingsynergy
+This repository contains two different kinds of material, released under two
+different licenses. Please check which one applies before reusing anything.
+
+
+================================================================================
+1. SOFTWARE  —  MIT License
+================================================================================
+
+Applies to the source code and build tooling of this website:
+
+  - src/css/**, src/js/**
+  - src/*.njk, src/_includes/**
+  - eleventy.config.js, package.json
+  - tools/**
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +33,50 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+================================================================================
+2. CONTENT  —  Creative Commons Attribution-NonCommercial 4.0 International
+================================================================================
+
+Applies to the written and visual content of this website:
+
+  - src/_data/**           (all text: research descriptions, news, biographies,
+                            course descriptions, facility documentation)
+  - src/assets/facility/**  (photographs of the laboratory)
+  - prose written directly into the page templates
+
+You are free to share and adapt this material for non-commercial purposes,
+with attribution to the Human Building Synergy Laboratory, University of
+Arizona. Full terms: https://creativecommons.org/licenses/by-nc/4.0/
+
+This matches the licensing of the lab's datasets on Zenodo.
+
+
+================================================================================
+3. NOT COVERED BY EITHER LICENSE
+================================================================================
+
+The following are excluded and may not be reused under the terms above:
+
+  - Photographs of individuals (src/assets/profile/**). Copyright and the
+    personality rights of the people depicted are reserved. Do not reuse
+    portraits of lab members or alumni without their permission.
+
+  - HUBS and University of Arizona names, logos and marks
+    (src/assets/logo/**, src/assets/hubs_logo.ico). These are institutional
+    marks, not licensed for reuse.
+
+  - Any third-party trademark, logo or name referred to in the content
+    (sponsors, partners, publishers, software vendors). Referring to an
+    organisation by name does not license its marks.
+
+
+================================================================================
+NOTE ON INSTITUTIONAL OWNERSHIP
+================================================================================
+
+Material produced in the course of University of Arizona employment may be
+subject to University intellectual property policy. This file records the
+lab's intent; it does not override that policy. If you need certainty about
+reuse, contact the laboratory.

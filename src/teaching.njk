@@ -1,0 +1,67 @@
+---
+layout: base.njk
+title: Teaching
+description: >-
+  Courses taught by Dr. Wooyoung Jung in Civil & Architectural Engineering &
+  Mechanics at the University of Arizona.
+---
+{% from "icons.njk" import icon %}
+{% macro tone(p) %}{{ 'c-hu' if p == 'human' else ('c-ai' if p == 'ai' else 'c-bl') }}{% endmacro %}
+
+<section class="pageHero wrap">
+  <p class="label">Teaching</p>
+  <h1>{{ courses.motto }}</h1>
+  <p class="lede">{{ courses.intro }}</p>
+</section>
+
+<section class="band band--tight wrap">
+  {%- for c in courses.courses %}
+  <article class="course">
+    <header class="course__head">
+      <div>
+        <p class="course__code {{ tone(c.party) | trim }}">{{ c.code }}</p>
+        <h2 class="course__title">{{ c.title }}</h2>
+      </div>
+      <ul class="course__levels">
+        {%- for l in c.levels %}<li>{{ l }}</li>{%- endfor %}
+      </ul>
+    </header>
+
+    {%- if c.credits or c.term or c.prerequisite %}
+    <dl class="course__facts">
+      {%- if c.credits %}<div><dt>Credits</dt><dd>{{ c.credits }}</dd></div>{% endif %}
+      {%- if c.term %}<div><dt>Term</dt><dd>{{ c.term }}</dd></div>{% endif %}
+      {%- if c.prerequisite %}<div><dt>Prerequisite</dt><dd>{{ c.prerequisite }}</dd></div>{% endif %}
+    </dl>
+    {%- endif %}
+
+    <div class="course__body">
+      <p class="course__summary">{{ c.summary }}</p>
+
+      {%- if c.structure %}
+      <p class="course__structure">{{ c.structure }}</p>
+      {%- endif %}
+
+      {%- if c.topics.length %}
+      <p class="label" style="margin:1.5rem 0 .6rem">What the course covers</p>
+      <ul class="course__topics">
+        {%- for t in c.topics %}<li>{{ t }}</li>{%- endfor %}
+      </ul>
+      {%- endif %}
+
+      {%- if c.detail %}<p class="course__detail">{{ c.detail }}</p>{% endif %}
+    </div>
+  </article>
+  {%- endfor %}
+</section>
+
+<section class="band band--rule band--tight wrap">
+  <div class="cta">
+    <p class="label">Prospective students</p>
+    <h2 style="margin-top:.8rem">Interested in the research behind the teaching?</h2>
+    <div class="btnRow">
+      <a class="btn" href="/join-us/">Join the lab {{ icon("arrow-right") }}</a>
+      <a class="btn btn--quiet" href="/research/">Research</a>
+    </div>
+  </div>
+</section>

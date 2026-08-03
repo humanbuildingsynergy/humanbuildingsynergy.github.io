@@ -1,0 +1,85 @@
+# Former lab members, newest departure first.
+# `until` drives the sort, so keep it as YYYY-MM.
+- name: Sophia Kristine Witt
+  role: Undergraduate Research Assistant
+  affiliation: Civil & Architectural Engineering & Mechanics, The University of Arizona
+  photo: SophiaWitt.webp
+  from: 2023-02
+  until: 2025-08
+  links:
+    - type: linkedin
+      url: https://www.linkedin.com/in/sophiakwitt
+      label: LinkedIn
+
+- name: Shivani Rajesh Bavdhankar
+  role: Graduate Research Assistant
+  affiliation: Business Analytics, The University of Arizona
+  photo: ShivaniRB.webp
+  from: 2025-03
+  until: 2025-08
+  links:
+    - type: linkedin
+      url: https://www.linkedin.com/in/shivani-bavdhankar-a93399127/
+      label: LinkedIn
+
+- name: Nick McKendree Kyle
+  role: Undergraduate Research Assistant
+  affiliation: Civil & Architectural Engineering & Mechanics, The University of Arizona
+  photo: NickMK.webp
+  from: 2024-08
+  until: 2025-05
+  links: []
+
+- name: Sascha Moran-Toledo
+  role: Undergraduate Research Assistant
+  affiliation: Architecture & Sustainable Built Environments, The University of Arizona
+  photo: SaschaNM.webp
+  from: 2024-08
+  until: 2025-05
+  links: []
+
+- name: Alyssa La Fountain
+  role: Undergraduate Research Assistant
+  affiliation: Civil & Architectural Engineering & Mechanics, The University of Arizona
+  photo: AlyssaLF.webp
+  from: 2024-08
+  until: 2024-12
+  links:
+    - type: linkedin
+      url: https://www.linkedin.com/in/alyssalafountain/
+      label: LinkedIn
+
+- name: Lucas William DeFrancesco
+  role: Undergraduate Research Assistant
+  affiliation: Civil & Architectural Engineering & Mechanics, The University of Arizona
+  photo: LucasWD.webp
+  from: 2024-08
+  until: 2024-12
+  links: []
+
+- name: Erin Driver
+  role: Graduate Research Intern
+  note: Graduated in Spring 2024
+  affiliation: Mel & Enid Zuckerman College of Public Health, The University of Arizona
+  photo: ErinDriver.webp
+  from: 2023-05
+  until: 2024-05
+  links:
+    - type: linkedin
+      url: https://www.linkedin.com/in/erindriver/
+      label: LinkedIn
+    - type: scholar
+      url: https://scholar.google.com/citations?user=lDlRLwEAAAAJ&hl=en
+      label: Google Scholar
+
+- name: Diego A. Fajardo
+  role: Undergraduate Research Assistant
+  note: Graduated in Spring 2024
+  affiliation: Civil & Architectural Engineering & Mechanics, The University of Arizona
+  photo: DiegoFajardo.webp
+  from: 2024-01
+  until: 2024-05
+  links:
+    - type: linkedin
+      url: https://www.linkedin.com/in/diego-fajardo-b04128200/
+      label: LinkedIn

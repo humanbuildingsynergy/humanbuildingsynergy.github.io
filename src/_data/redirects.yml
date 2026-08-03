@@ -1,0 +1,21 @@
+# Old .html URLs from the previous site -> their new home.
+# Keep these forever: they preserve Google rankings and any external links.
+#
+# /index.html is deliberately absent: GitHub Pages already serves the homepage
+# at that path, so a redirect stub there would collide with the real page.
+- from: /about.html
+  to: /about/
+- from: /research.html
+  to: /research/
+- from: /teaching.html
+  to: /teaching/
+- from: /people.html
+  to: /people/
+- from: /joinus.html
+  to: /join-us/
+- from: /director.html
+  to: /director/
+- from: /alumni.html
+  to: /alumni/
+- from: /news_archive.html
+  to: /news/

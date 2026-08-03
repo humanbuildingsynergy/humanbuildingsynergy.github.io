@@ -1,3 +1,15 @@
-CLAUDE.md
+# Build + tooling
+node_modules/
+_site/
+*.log
 .DS_Store
+
+# Local notes, not part of the site
+CLAUDE.md
 _Archive/
+
+# Large source originals stay on disk but out of the repo. The optimised WebP
+# versions in src/assets/ are committed and are what the site actually serves.
+# Keep your own backup of these — a fresh clone will not include them.
+_source/facility/photo/
+_source/originals/

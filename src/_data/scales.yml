@@ -1,0 +1,86 @@
+# The five research scales, body outward to city.
+# `triangle` states how the three parties relate at that scale — it is what
+# ties each research area back to the Human–AI–Building framing.
+intro: >-
+  Human–AI–Building interaction is not a sixth research area beside the others —
+  it is how we now approach all five, from a single body to a whole city.
+
+scales:
+  - id: body
+    tab: Body
+    metric: ≈ 1 m · one person
+    title: Occupant comfort, behaviour, and health
+    text: >-
+      People do not experience a room the way a sensor does. We study how
+      individuals perceive, tolerate, and respond to their environment, and how
+      that diversity should reshape the way buildings are run.
+    points:
+      - Personal heat strain and thermal resilience
+      - Non-invasive physiological sensing
+      - Personal comfort systems in real households
+    triangle: >-
+      The body reports in its own words, the AI learns what those words mean for
+      that person, and the building conditions at the scale of one desk.
+
+  - id: room
+    tab: Room
+    metric: ≈ 10 m · one zone
+    title: Smart building control
+    text: >-
+      A building that cannot sense who is inside cannot serve them. We build the
+      sensing and control that lets systems infer occupancy and need, then act on it.
+    points:
+      - Occupant-centric HVAC from multi-modal sensing
+      - Smart thermostat adoption in U.S. homes
+      - Agents planning across competing occupants
+    triangle: >-
+      Several humans want different things, one AI arbitrates, and one set of
+      physical systems can only do one thing at a time.
+
+  - id: building
+    tab: Building
+    metric: ≈ 50 m · one building
+    title: Building energy modelling
+    text: >-
+      Simulation is only as good as its assumptions. We work on the inputs and the
+      validation machinery — load schedules, internal gains, and the test suites
+      that decide whether a model can be trusted.
+    points:
+      - Space-specific internal loads and schedules
+      - EnergyPlus and ASHRAE Standard 140
+      - Occupant-adjusted performance metrics
+    triangle: >-
+      The AI's model of the building is always partly wrong, and the building is
+      the only thing that can tell it so.
+
+  - id: grid
+    tab: Grid
+    metric: ≈ 5 km · one feeder
+    title: Grid-interactive effective buildings
+    text: >-
+      Buildings are no longer passive loads. Working with Salt River Project, we
+      examine how Arizona homes can electrify, shift load, and negotiate with the
+      utility.
+    points:
+      - Smart electric panels as demand flexibility
+      - All-electric buildings in a hot-arid climate
+      - Distributed solar generation modelling
+    triangle: >-
+      A fourth party appears — the utility — and the AI has to represent the
+      occupant's interests against it, not just relay instructions.
+
+  - id: city
+    tab: City
+    metric: ≈ 50 km · one city
+    title: Urban energy modelling
+    text: >-
+      Scaling from one building to a community changes the question. We build the
+      occupancy and behaviour inputs urban-scale models need, so aggregate
+      projections rest on how people actually occupy their homes.
+    points:
+      - Thermostat data as real occupancy schedules
+      - Open simulators for occupancy profiles
+      - Community-scale demand projection
+    triangle: >-
+      Decisions are made in aggregate but land on individual households, and the
+      feedback path back down is mostly missing.

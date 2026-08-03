@@ -1,0 +1,39 @@
+---
+layout: base.njk
+title: Alumni
+description: >-
+  Former members of the Human Building Synergy Laboratory at the University of
+  Arizona.
+---
+{% from "icons.njk" import icon %}
+
+<section class="pageHero wrap">
+  <p class="label">Alumni</p>
+  <h1>Once a HUB, always a HUB.</h1>
+  <p class="lede">Researchers who spent time in the lab and took the knowledge onward.</p>
+</section>
+
+<section class="band band--tight wrap">
+  <div class="alumniGrid">
+    {%- for p in alumni %}
+    <article class="alum">
+      <img src="/assets/profile/{{ p.photo }}" alt="{{ p.name }}" width="96" height="96" loading="lazy" />
+      <h3>{{ p.name }}</h3>
+      <p class="role">{{ p.role }}</p>
+      <p class="affil">{{ p.affiliation }}</p>
+      <p class="period">{{ p.from | slashDate }} – {{ p.until | slashDate }}{% if p.note %} · {{ p.note }}{% endif %}</p>
+      {%- if p.links.length %}
+      <ul class="social">
+        {%- for link in p.links %}
+        <li><a href="{{ link.url }}" target="_blank" rel="noopener" aria-label="{{ link.label }} — {{ p.name }}" title="{{ link.label }}">{{ icon(link.type) }}</a></li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
+    </article>
+    {%- endfor %}
+  </div>
+
+  <div class="btnRow">
+    <a class="btn btn--quiet" href="/people/">Current HUBS members {{ icon("arrow-right") }}</a>
+  </div>
+</section>

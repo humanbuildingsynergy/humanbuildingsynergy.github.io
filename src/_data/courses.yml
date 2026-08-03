@@ -1,0 +1,61 @@
+# Teaching. One entry per course.
+#
+# `levels` is a list — a cross-listed course simply names both, which is why
+# there is no longer a separate "undergraduate" and "graduate" section.
+motto: Be an independent thinker!
+
+intro: >-
+  The goal of undergraduate courses is to learn the body of knowledge. The goal
+  of graduate courses is to be ready to expand it.
+
+courses:
+  - code: ARCE 453/553
+    title: Human Building Interaction
+    levels: [Undergraduate, Graduate]
+    party: human
+    summary: >-
+      An introduction to the indoor environment and the role of buildings and
+      building systems from a human-centred perspective.
+    topics:
+      - The four categories of indoor environment — thermal, lighting and acoustic environments, and indoor air quality
+      - Systems of the human body
+      - Relationships between indoor environment and humans — comfort, productivity, stress, and health
+      - The roles of buildings and building systems
+    detail: >-
+      The course introduces state-of-the-art research on the interaction between
+      humans and buildings, and puts energy on the table to address the importance
+      of building energy efficiency and sustainability. Students also learn to set
+      up environmental monitoring systems and analyse indoor environmental quality.
+
+  - code: CE 310
+    title: Probability and Statistics for Civil and Architectural Engineering
+    levels: [Undergraduate]
+    party: ai
+    credits: 3 units
+    term: Fall 2026
+    prerequisite: MATH 129 (Calculus II)
+    structure: >-
+      Three 50-minute sessions per week — lecture, guided tool tutorial, and
+      hands-on lab. Excel in weeks 1–8, Python and Google Colab in weeks 9–15.
+    summary: >-
+      An applied introduction to probability, statistics and data analysis for
+      civil and architectural engineering. Students learn to characterise data
+      distributions, apply probability models to engineering design decisions,
+      build regression and simulation models, and communicate uncertainty in
+      building performance analysis.
+    topics:
+      - Characterise distributions — descriptive statistics, histograms, box plots, design percentiles
+      - Probability fundamentals — classical rules, conditional probability, Bayes' theorem
+      - Model with distributions — Poisson and Normal, return periods, design thresholds
+      - Compare empirical and parametric models for design applications
+      - Build and interpret regression models — t-tests, ANOVA, confounding
+      - Quantify uncertainty by simulation — Monte Carlo and bootstrap confidence intervals
+      - Communicate probabilistic design recommendations to a technical client audience
+      - Use professional analysis tools — Excel, and Python with pandas, scipy, statsmodels, matplotlib
+    detail: >-
+      Weeks 1–8 develop statistical foundations through Excel analysis of real
+      climate and building energy datasets. Weeks 9–15 extend those foundations
+      into predictive modelling, hypothesis testing, sensitivity analysis,
+      simulation and uncertainty quantification in Python. The course closes with
+      a capstone probabilistic design report and presentation, in which teams
+      choose their own real-world civil or architectural engineering dataset.

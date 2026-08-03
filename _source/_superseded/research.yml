@@ -1,0 +1,187 @@
+# Research themes. Each one renders a tile AND the modal that opens from it.
+#
+# NOTE FOR DR. JUNG: the `summary` and `focus` prose below is DRAFT copy written
+# from your published paper titles and funded projects. Please read and rewrite
+# in your own voice before going live. Everything under `publications` and
+# `projects` is taken verbatim from your existing site and news items.
+
+themes:
+  - id: occupant
+    title: Occupant Comfort, Behavior, and Health
+    tagline: Taking care of individuals' diverse needs!
+    image: occupant.webp
+    icon: user
+    summary: >-
+      People do not experience a room the way a sensor does. This theme studies how
+      individual occupants actually perceive, tolerate, and respond to their indoor
+      environment — thermally, physiologically, and behaviorally — and how that
+      diversity should reshape the way we operate buildings.
+    focus:
+      - Personal heat strain and thermal resilience under current and future climates
+      - Non-invasive physiological sensing of comfort and stress
+      - Personal comfort systems and their adoption in real households
+      - Occupant language and self-report as a signal for building operation
+    publications:
+      - title: >-
+          Assessing Indoor Heat Strain through Occupant Language: A Framework for
+          Building Thermal Resilience
+        venue: Building and Environment
+        year: 2026
+        doi: 10.1016/j.buildenv.2026.115052
+      - title: >-
+          Adoption, use, and perception of room and personal comfort systems in
+          U.S. households
+        venue: Journal of Building Engineering
+        year: 2026
+        doi: 10.1016/j.jobe.2026.116313
+      - title: >-
+          Personalized Building Thermal Resilience Assessment Under Future Climate
+          Scenarios
+        venue: Building and Environment
+        year: 2025
+        doi: 10.1016/j.buildenv.2025.114165
+      - title: >-
+          Personalized Environmental Control Systems (PECS): A systematic review of
+          performance evaluation methods for Thermal Comfort, Air Quality and Energy
+        venue: Building and Environment
+        year: 2025
+        doi: 10.1016/j.buildenv.2025.113471
+    projects:
+      - >-
+        Enhancing Environmental and Energy Equity: Advanced Indoor Heat Stress
+        Sensing for Diverse Populations
+
+  - id: smart-control
+    title: Smart Building Control
+    tagline: Adaptive to human dynamics and customized to individuals.
+    image: thermostat.webp
+    icon: sliders
+    summary: >-
+      A building that cannot sense who is inside cannot serve them. This theme
+      develops sensing and control approaches that let building systems infer
+      occupancy and need, then act on it — from infrared array sensing on the
+      hardware side to large language model agents on the interaction side.
+    focus:
+      - Occupant-centric HVAC operation driven by multi-modal sensing
+      - Smart thermostat adoption and how real households use them
+      - LLM-driven agents for home energy management and eco-feedback
+      - Quantifying the energy savings that occupancy sensing actually delivers
+    publications:
+      - title: >-
+          Large Language Model-Driven Context-Aware Eco-Feedback Generation and
+          Evaluation
+        venue: Energy and Buildings
+        year: 2026
+      - title: Multi-Agent Home Energy Management Assistant (HEMA)
+        venue: SoftwareX
+        year: 2026
+        doi: 10.1016/j.softx.2026.102633
+      - title: >-
+          Understanding smart thermostat adoption: Housing, HVAC, and socio-economic
+          traits in the U.S.
+        venue: Energy Reports
+        year: 2026
+        doi: 10.1016/j.egyr.2026.109244
+      - title: >-
+          Streamlining occupant-centric HVAC operations through multi-modal infrared
+          array sensing technology
+        venue: Energy and Buildings
+        year: 2025
+        doi: 10.1016/j.enbuild.2025.116106
+      - title: >-
+          HVAC operations: A quantitative review on occupancy, comfort, and
+          energy-efficiency dimensions
+        venue: Applied Energy
+        year: 2019
+        doi: 10.1016/j.apenergy.2019.01.070
+        note: Highly Cited Review Paper
+    projects:
+      - Benefits of Smart Electric Panels for SRP Sustainability Goals
+
+  - id: grid-interactive
+    title: Grid-Interactive Effective Buildings
+    tagline: Communicative for a sustainable future!
+    image: grid.webp
+    icon: bolt
+    summary: >-
+      Buildings are no longer passive loads on the grid. Working directly with
+      Salt River Project, this theme examines how residential buildings in Arizona
+      can electrify, shift load, and communicate with the utility — and what that
+      means for both the customer and the distribution system.
+    focus:
+      - Smart electric panels as a demand-flexibility resource
+      - Pathways to all-electric residential buildings in a hot-arid climate
+      - Distributed energy resources and solar generation modeling
+      - Demand response strategies in the U.S. residential sector
+    publications: []
+    projects:
+      - Benefits of Smart Electric Panels for SRP Sustainability Goals
+      - Towards All-Electric Buildings in the SRP Territory
+      - Modeling Distributed Energy Resource Solar Generation Output
+
+  - id: building-energy
+    title: Building Energy Modeling
+    tagline: Reflecting the reality onto physics-based modeling!
+    image: building_energy.webp
+    icon: building
+    summary: >-
+      Simulation is only as good as the assumptions underneath it. This theme works
+      on the inputs and the validation machinery of building energy models — the
+      load schedules, the internal gains, and the test suites that decide whether a
+      model can be trusted for code compliance.
+    focus:
+      - Building-space-specific internal loads and load schedules
+      - EnergyPlus development and ASHRAE Standard 140 test procedures
+      - Performance-based code compliance modeling
+      - Occupant-adjusted HVAC performance metrics
+    publications:
+      - title: >-
+          A new database of building-space-specific internal loads and load schedules
+          for performance based code compliance modeling of commercial buildings
+        venue: Building Simulation
+        year: 2024
+    projects:
+      - ASHRAE Standard 140 Maintenance and Development
+      - EnergyPlus Development
+      - Building Energy Codes Program
+
+  - id: urban-energy
+    title: Urban Energy Modeling
+    tagline: Analyzing the butterfly effect!
+    image: community.webp
+    icon: city
+    summary: >-
+      Scaling from one building to a whole community changes the question. This
+      theme builds the data-driven occupancy and behavior inputs that community- and
+      urban-scale energy models need, so that aggregate projections rest on how
+      people actually occupy their homes.
+    focus:
+      - Smart thermostat data as a source of real residential occupancy schedules
+      - Open simulators for generating representative occupancy profiles
+      - Community- and urban-scale energy demand projection
+    publications:
+      - title: >-
+          Smart thermostat data-driven U.S. residential occupancy schedules and
+          development of a U.S. residential occupancy schedule simulator
+        venue: Building and Environment
+        year: 2023
+    projects: []
+
+# Open-source software released by the lab.
+software:
+  - title: Multi-Agent Home Energy Management Assistant
+    short: HEMA
+    tagline: AI-powered home energy management!
+    image: HEMA.webp
+    url: https://github.com/humanbuildingsynergy/HEMA
+    description: >-
+      A multi-agent assistant for residential energy management, published in
+      SoftwareX.
+  - title: Residential Occupancy Schedule Simulator
+    short: ROSS
+    tagline: Occupancy schedules grounded in real thermostat data.
+    image: community_02_grey.webp
+    url: https://github.com/humanbuildingsynergy/ResidentialOccupancyScheduleSimulator
+    description: >-
+      Generates representative U.S. residential occupancy schedules derived from
+      smart thermostat data.

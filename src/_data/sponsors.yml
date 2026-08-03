@@ -1,0 +1,28 @@
+# Logos shown at the bottom of the Research page.
+# `url` is optional; when present the logo becomes a link.
+sponsors:
+  - name: National Science Foundation
+    logo: national-science-foundation-logo.webp
+    url: https://www.nsf.gov/
+  - name: Salt River Project
+    logo: SRP_logo.webp
+    url: https://www.srpnet.com/
+  - name: Western Alliance to Expand Student Opportunities
+    logo: waeso_logo.webp
+    url: https://www.waeso.org/
+  - name: Civil & Architectural Engineering & Mechanics, University of Arizona
+    logo: CAEM_logo.webp
+    url: https://caem.engineering.arizona.edu/
+  - name: SensorLab, University of Arizona
+    logo: SensorLab_logo.webp
+
+partners:
+  - name: UArizona Institute of Place, Wellbeing & Performance
+    logo: UA_IPWP.webp
+    url: https://ipwp.arizona.edu/
+  - name: ecobee
+    logo: ecobee_logo.webp
+    url: https://www.ecobee.com/donate-your-data/
+  - name: City of Tucson
+    logo: COT.webp
+    url: https://www.tucsonaz.gov/
