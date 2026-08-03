@@ -15,14 +15,20 @@ description: >-
 
 # The title card. Each fragment is one animated word-group; `party` colours it
 # (human / ai / bldg) and anything without a party stays in the base ink.
-# The payoff fragment carries no party colour on purpose — the three parties
-# are amber / cyan / violet, and the synergy is what they add up to.
-titleCard:
-  - { text: "You,", party: human }
-  - { text: "the AI,", party: ai }
-  - { text: "and" }
-  - { text: "the Building", party: bldg }
-  - { text: "— in Synergy." }
+# The title card. Add more entries under `titleCards` and one is picked at
+# random on each visit — with a single entry it simply always shows that one.
+#
+# Each fragment animates in as its own beat. `party` colours it
+# (human = amber, ai = cyan, bldg = violet); fragments without one stay in the
+# base ink. The payoff carries no colour on purpose — the three parties are the
+# colours, and the synergy is what they add up to.
+titleCards:
+  - fragments:
+      - { text: "You,", party: human }
+      - { text: "the AI,", party: ai }
+      - { text: "and" }
+      - { text: "the Building", party: bldg }
+      - { text: "— in Synergy." }
 
 # The homepage headline — one clause per party.
 headline:

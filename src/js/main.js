@@ -178,7 +178,14 @@
           note.textContent = o.note || "";
           b.appendChild(note);
           b.addEventListener("click", function () {
-            branch = o.go; cursor++; render(); advance(false);
+            branch = o.go;
+            cursor++;              // consume the choice row itself
+            render();
+            // Pick the rhythm back up rather than dumping the reply instantly:
+            // a beat, then the remaining steps play at reading pace as before.
+            if (reduced) { advance(false); return; }
+            stop();
+            timer = setTimeout(function () { advance(true); }, 750);
           });
           opts.appendChild(b);
         });

@@ -56,11 +56,27 @@
     {% if showCard %}
     <div id="card" role="presentation">
       <div class="wrap">
+        {%- for card in site.titleCards %}
         <h2 class="card__phrase" aria-hidden="true">
-          {%- for part in site.titleCard %}
+          {%- for part in card.fragments %}
           <span{% if part.party %} class="c-{{ 'hu' if part.party == 'human' else ('ai' if part.party == 'ai' else 'bl') }}"{% endif %}>{{ part.text | replace(" ", "&nbsp;") | safe }}</span>
           {%- endfor %}
         </h2>
+        {%- endfor %}
+
+        {# Runs synchronously, right after the markup and before first paint, so
+           the unpicked phrases never render. With one phrase it does nothing. #}
+        <script>
+          (function () {
+            var all = document.querySelectorAll("#card .card__phrase");
+            if (all.length < 2) return;
+            var keep = Math.floor(Math.random() * all.length);
+            for (var i = 0; i < all.length; i++) {
+              if (i !== keep) all[i].parentNode.removeChild(all[i]);
+            }
+          })();
+        </script>
+
         <div class="card__rule"></div>
         <div class="card__foot">
           <span class="label">{{ site.researchArea }} · {{ site.shortName }} · {{ site.university }}</span>
