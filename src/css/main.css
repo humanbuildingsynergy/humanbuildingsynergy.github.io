@@ -336,27 +336,29 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 
 .stage { display: grid; grid-template-columns: minmax(0,1fr) 14.5rem; }
 @media (max-width: 940px) {
-  .stage { grid-template-columns: 1fr; }
-  .trace { grid-row: 2; }
-  /* On a phone the six stacked readouts pushed the exchange most of a screen
-     down. Collapse them into one scrollable row: the numbers still flash as
-     they change, but the conversation starts almost immediately. */
+  /* minmax(0, 1fr) rather than 1fr: a plain fr track has min-width:auto, so a
+     wide child stretches it and the whole page scrolls sideways. */
+  .stage { grid-template-columns: minmax(0, 1fr); }
+  .trace { grid-row: 2; min-width: 0; }
+
+  /* Six stacked readouts pushed the exchange most of a screen down on a phone.
+     Wrap them into a compact block instead — no horizontal scrolling, which
+     nobody discovers, and no overflow. */
   .statePanel {
     grid-row: 1; position: static !important;
     border-left: 0 !important; border-bottom: 1px solid var(--hairline);
-    padding: .8rem 1.1rem .7rem;
+    padding: .8rem 1.1rem .9rem;
+    min-width: 0;
   }
-  .statePanel h2 { margin-bottom: .55rem; }
+  .statePanel h2 { margin-bottom: .6rem; }
   .readout {
-    grid-auto-flow: column;
-    grid-auto-columns: max-content;
-    gap: 1.5rem;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    padding-bottom: .15rem;
-    scrollbar-width: thin;
+    grid-template-columns: repeat(auto-fit, minmax(5.25rem, 1fr));
+    gap: .75rem 1rem;
+    min-width: 0;
   }
-  .ro__v { font-size: .95rem; }
+  .ro { min-width: 0; }
+  .ro__k { font-size: .58rem; }
+  .ro__v { font-size: .95rem; white-space: nowrap; }
 }
 
 .trace { padding: 1.5rem clamp(.75rem, 1.6vw, 1.25rem) 2rem; }
