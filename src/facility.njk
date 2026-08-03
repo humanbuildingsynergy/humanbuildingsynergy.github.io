@@ -19,13 +19,16 @@ ogImage: /assets/facility/HUBS_lab_inside_01.webp
   </p>
 </section>
 
+{% if facility.positioning %}
 <section class="band band--tight wrap">
   <div class="measure">
     <p style="font-size:1.05rem;color:var(--ink-2)">{{ facility.positioning }}</p>
   </div>
 </section>
+{% endif %}
 
 <!-- ===== Zones ====================================================== -->
+{% if facility.zones.length %}
 <section class="band band--rule band--tight wrap">
   <div class="band__head measure">
     <p class="label">Layout</p>
@@ -47,6 +50,7 @@ ogImage: /assets/facility/HUBS_lab_inside_01.webp
   </div>
 
 </section>
+{% endif %}
 
 <!-- ===== Photographs ================================================ -->
 {% if facility.photos.length %}
