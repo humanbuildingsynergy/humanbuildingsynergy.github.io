@@ -23,6 +23,10 @@
     <meta name="twitter:description" content="{{ description or site.description }}" />
     <meta name="twitter:image" content="{{ site.url }}{{ ogImage or '/assets/logo/hubs_logo_one_inch.png' }}" />
 
+    {% if site.googleSiteVerification %}
+    <meta name="google-site-verification" content="{{ site.googleSiteVerification }}" />
+    {% endif %}
+
     <meta name="theme-color" content="#131210" />
     <link rel="icon" href="/assets/hubs_logo.ico" sizes="any" />
     <link rel="apple-touch-icon" href="/assets/logo/hubs-icon-192.png" />
