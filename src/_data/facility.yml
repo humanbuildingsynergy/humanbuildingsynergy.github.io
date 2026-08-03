@@ -16,14 +16,6 @@ intro: >-
   HVAC performance under controlled conditions, and human thermoregulation
   across a range of indoor thermal environments.
 
-positioning: >-
-  The lab sits at the intersection of architectural, civil, electrical and
-  mechanical engineering, and architecture. It also runs as a living lab:
-  graduate students occupy the space and serve as research participants,
-  generating continuous long-term baseline data on comfort and behaviour. When
-  it is not in active experimental use, the facility is available to other
-  faculty for their own experiments.
-
 # ---- The three zones ------------------------------------------------------
 zones:
   - name: Chamber 1
