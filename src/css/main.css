@@ -32,6 +32,14 @@
   /* University of Arizona, used sparingly for institutional moments */
   --az-red: #d4213c;
 
+  /* Four further accents, used only for the title-card payoff. Chosen to sit
+     clear of amber / cyan / violet so the closing phrase never repeats a
+     colour already used earlier in the same sentence. */
+  --accent-gold: #e3c24a;
+  --accent-grn:  #63c98d;
+  --accent-rose: #ef7fae;
+  --accent-sky:  #5fa8ef;
+
   --gutter: clamp(1.25rem, 4vw, 3rem);
   --container: 1240px;
   --measure: 62ch;
@@ -151,9 +159,15 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 .c-hu { color: var(--human); }
 .c-ai { color: var(--ai); }
 .c-bl { color: var(--bldg); }
-/* Institutional accent. Not one of the three parties — used where something
-   belongs to the lab itself rather than to human, AI or building. */
-.c-ac { color: var(--az-red); }
+
+/* Payoff accents. Each title-card variant ends on a different one, so the
+   closing phrase is always a fourth colour alongside the three parties.
+   Only one card is ever on screen, so these are never seen together. */
+.c-ac   { color: var(--az-red); }      /* red   — Synergy */
+.c-gold { color: var(--accent-gold); } /* gold  — Conversation */
+.c-grn  { color: var(--accent-grn); }  /* green — the Loop */
+.c-rose { color: var(--accent-rose); } /* rose  — Collaboration */
+.c-sky  { color: var(--accent-sky); }  /* sky   — Learning Each Other */
 
 .muted { color: var(--ink-3); }
 

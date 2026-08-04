@@ -21,7 +21,7 @@ zones:
   - name: Chamber 1
     id: chamber-1
     party: bldg
-    size: 8′ × 19′10″
+    size: 8′5″ × 19′10″
     summary: >-
       The smaller experimental chamber. Its compact volume reaches thermal
       equilibrium quickly, which suits tightly controlled experiments.
@@ -33,7 +33,7 @@ zones:
   - name: Chamber 2
     id: chamber-2
     party: bldg
-    size: 12′6″ × 16′6″
+    size: 12′6″ × 11′8″
     summary: >-
       The larger experimental space, sized for more occupants and bigger
       experimental setups.
@@ -45,7 +45,7 @@ zones:
   - name: Control Room
     id: control
     party: ai
-    size: Thermally isolated
+    size: 11′ × 8′1″
     summary: >-
       A separate monitoring and operations space. Researchers observe and manage
       experiments next door without influencing the conditions inside them.

@@ -1,76 +1,76 @@
-{# Schematic plan of CE 116, redrawn from the lab's drawio figure.
-   Drawn at a consistent 28 px per foot, so the two chambers are true to
-   proportion — Chamber 1 long and shallow, Chamber 2 deeper than wide.
-   The Control Room is drawn to fill the remaining footprint; its real
-   dimensions are not in the source document, hence "dimensions TBC".
-   Each room carries data-zone, which links it to the cards beside it. #}
-<svg class="plan" viewBox="0 0 700 850" role="img" aria-labelledby="planTitle planDesc">
+{# Schematic plan of CE 116, drawn at a consistent 28 px per foot.
+     Chamber 1   19′10″ wide × 8′5″ deep
+     Control      8′1″  wide × 11′  deep
+     Chamber 2   11′8″  wide × 12′6″ deep
+   Control + Chamber 2 span 19′9″, one inch under Chamber 1's 19′10″ — the
+   shared wall — which is what fixes the layout.
+   Each room carries data-zone, linking it to the cards beside it. #}
+<svg class="plan" viewBox="0 0 700 740" role="img" aria-labelledby="planTitle planDesc">
   <title id="planTitle">Schematic floor plan of the HUBS Laboratory, Room CE 116</title>
   <desc id="planDesc">
     Three zones. Chamber 1 runs along the top of the suite, long and shallow.
     Below it the Control Room sits on the left and Chamber 2 on the right,
-    separated by an observation window. A folding partition joins the two
-    chambers so they can be opened into a single volume.
+    connected by an observation window and a door. A folding partition joins
+    the two chambers so they can be opened into a single volume.
   </desc>
 
-  <!-- suite envelope -->
-  <rect class="plan__shell" x="10" y="10" width="680" height="820" rx="2" />
+  <rect class="plan__shell" x="10" y="10" width="680" height="690" rx="2" />
   <line class="plan__wall" x1="95" y1="88" x2="690" y2="88" />
 
   <!-- ── rooms ─────────────────────────────────────────────── -->
   <g class="plan__room" data-zone="chamber-1" tabindex="0" role="button"
-     aria-label="Chamber 1, 8 feet by 19 feet 10 inches">
-    <rect x="95" y="88" width="555" height="224" />
-    <text x="372" y="190">CHAMBER 1</text>
-    <text class="plan__dim" x="372" y="216">8′ × 19′10″</text>
+     aria-label="Chamber 1, 8 feet 5 inches by 19 feet 10 inches">
+    <rect x="95" y="88" width="555" height="236" />
+    <text x="372" y="196">CHAMBER 1</text>
+    <text class="plan__dim" x="372" y="222">8′5″ × 19′10″</text>
   </g>
 
   <g class="plan__room" data-zone="control" tabindex="0" role="button"
-     aria-label="Control Room, dimensions to be confirmed">
-    <rect x="95" y="312" width="205" height="248" />
-    <text x="197" y="425">CONTROL</text>
-    <text class="plan__dim" x="197" y="451">dimensions TBC</text>
+     aria-label="Control Room, 11 feet by 8 feet 1 inch">
+    <rect x="95" y="324" width="227" height="308" />
+    <text x="208" y="468">CONTROL</text>
+    <text class="plan__dim" x="208" y="494">11′ × 8′1″</text>
   </g>
 
   <g class="plan__room" data-zone="chamber-2" tabindex="0" role="button"
-     aria-label="Chamber 2, 12 feet 6 inches by 16 feet 6 inches">
-    <rect x="300" y="312" width="350" height="462" />
-    <text x="475" y="528">CHAMBER 2</text>
-    <text class="plan__dim" x="475" y="554">12′6″ × 16′6″</text>
+     aria-label="Chamber 2, 12 feet 6 inches by 11 feet 8 inches">
+    <rect x="322" y="324" width="328" height="350" />
+    <text x="486" y="489">CHAMBER 2</text>
+    <text class="plan__dim" x="486" y="515">12′6″ × 11′8″</text>
   </g>
 
   <!-- ── openings ──────────────────────────────────────────── -->
   <!-- folding partition, Chamber 1 to Chamber 2 -->
   <polyline class="plan__fold"
-    points="322,304 350,320 378,304 406,320 434,304 462,320 490,304 518,320 546,304 574,320 602,304 628,320" />
+    points="342,316 370,332 398,316 426,332 454,316 482,332 510,316 538,332 566,316 594,332 622,316 640,326" />
 
   <!-- sliding window, Chamber 1 to the corridor -->
   <rect class="plan__glass" x="300" y="82" width="190" height="12" />
   <!-- sliding window, Control Room to Chamber 1 -->
-  <rect class="plan__glass" x="130" y="306" width="150" height="12" />
+  <rect class="plan__glass" x="130" y="318" width="150" height="12" />
   <!-- observation window, Control Room to Chamber 2 -->
-  <rect class="plan__glass" x="294" y="400" width="12" height="130" />
+  <rect class="plan__glass" x="316" y="370" width="12" height="120" />
 
-  {# Doors, drawn the architectural way: the leaf stands open perpendicular to
+  {# Doors drawn the architectural way: the leaf stands open perpendicular to
      the wall, and the arc traces its swing back to the closed position. #}
   <g class="plan__door">
-    <!-- into Chamber 1, hinged left, swinging into the room -->
+    <!-- into Chamber 1, hinged left on the corridor wall -->
     <line x1="120" y1="88" x2="120" y2="166" />
     <path d="M120 166 A 78 78 0 0 0 198 88" />
 
-    <!-- out of the Control Room, hinged left, swinging into the room -->
-    <line x1="110" y1="560" x2="110" y2="490" />
-    <path d="M110 490 A 70 70 0 0 1 180 560" />
+    <!-- out of the Control Room, hinged left on its south wall -->
+    <line x1="110" y1="632" x2="110" y2="562" />
+    <path d="M110 562 A 70 70 0 0 1 180 632" />
 
-    <!-- into Chamber 2, hinged left, swinging into the room -->
-    <line x1="340" y1="774" x2="340" y2="704" />
-    <path d="M340 704 A 70 70 0 0 1 410 774" />
+    <!-- into Chamber 2, on its LEFT wall, swinging into the chamber -->
+    <line x1="322" y1="545" x2="392" y2="545" />
+    <path d="M392 545 A 70 70 0 0 1 322 615" />
   </g>
 
   <!-- ── annotation ───────────────────────────────────────── -->
   <g class="plan__note">
-    <text x="644" y="292" text-anchor="end">folding partition</text>
-    <text x="316" y="586" text-anchor="start">observation window</text>
-    <text x="10" y="845" text-anchor="start">SCHEMATIC · NOT TO CONSTRUCTION SCALE</text>
+    <text x="640" y="304" text-anchor="end">folding partition</text>
+    <text x="338" y="362" text-anchor="start">observation window</text>
+    <text x="10" y="728" text-anchor="start">SCHEMATIC · 28 px PER FOOT · NOT A CONSTRUCTION DRAWING</text>
   </g>
 </svg>

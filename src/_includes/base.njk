@@ -56,7 +56,8 @@
     {% if showCard %}
     <div id="card" role="presentation">
       <div class="wrap">
-        {%- set partyClass = { "human": "c-hu", "ai": "c-ai", "bldg": "c-bl", "accent": "c-ac" } %}
+        {%- set partyClass = { "human": "c-hu", "ai": "c-ai", "bldg": "c-bl", "accent": "c-ac",
+                               "gold": "c-gold", "green": "c-grn", "rose": "c-rose", "sky": "c-sky" } %}
         {%- for card in site.titleCards %}
         <h2 class="card__phrase" aria-hidden="true">
           {%- for part in card.fragments %}

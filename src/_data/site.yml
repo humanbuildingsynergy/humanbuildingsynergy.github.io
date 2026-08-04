@@ -20,9 +20,10 @@ description: >-
 # `party` colours a fragment: human = amber, ai = cyan, bldg = violet,
 # accent = Arizona Red.
 #
-# Every payoff uses `accent`. The three party colours are already spoken for in
-# the same sentence, so reusing one would repeat a colour a few words later —
-# the payoff gets the one hue that belongs to the lab rather than to a party.
+# Each payoff ends on its OWN accent — red, gold, green, rose, sky — so the
+# closing phrase is always a fourth colour beside the three parties, and never
+# repeats one used earlier in the same sentence. Only one card shows at a time,
+# so the five accents are never seen together.
 titleCards:
   - fragments:
       - { text: "You,", party: human }
@@ -36,21 +37,21 @@ titleCards:
       - { text: "the AI,", party: ai }
       - { text: "and" }
       - { text: "the Building", party: bldg }
-      - { text: "— in Conversation.", party: accent }
+      - { text: "— in Conversation.", party: gold }
 
   - fragments:
       - { text: "You,", party: human }
       - { text: "the AI,", party: ai }
       - { text: "and" }
       - { text: "the Building", party: bldg }
-      - { text: "— in the Loop.", party: accent }
+      - { text: "— in the Loop.", party: green }
 
   - fragments:
       - { text: "You,", party: human }
       - { text: "the AI,", party: ai }
       - { text: "and" }
       - { text: "the Building", party: bldg }
-      - { text: "— in Collaboration.", party: accent }
+      - { text: "— in Collaboration.", party: rose }
 
   # The odd one out on purpose: a process rather than a state, and the only
   # reciprocal one.
@@ -59,7 +60,7 @@ titleCards:
       - { text: "the AI,", party: ai }
       - { text: "and" }
       - { text: "the Building", party: bldg }
-      - { text: "— Learning Each Other.", party: accent }
+      - { text: "— Learning Each Other.", party: sky }
 
 # The homepage headline. Like the title card, one variant is picked per visit.
 #

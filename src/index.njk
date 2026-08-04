@@ -9,7 +9,7 @@ disclaimer: >-
   make the three-way coupling legible.
 ---
 {% from "icons.njk" import icon %}
-{% macro partyClass(p) %}{{ { "human": "c-hu", "ai": "c-ai", "bldg": "c-bl", "accent": "c-ac" }[p] or "" }}{% endmacro %}
+{% macro partyClass(p) %}{{ { "human": "c-hu", "ai": "c-ai", "bldg": "c-bl", "accent": "c-ac", "gold": "c-gold", "green": "c-grn", "rose": "c-rose", "sky": "c-sky" }[p] or "" }}{% endmacro %}
 
 <!-- ===== Hero + exchange ============================================ -->
 <section class="hero wrap" id="exchange">
