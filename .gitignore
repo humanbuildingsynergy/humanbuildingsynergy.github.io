@@ -17,3 +17,4 @@ _source/originals/
 # Large source PDFs (drawings, scans). Keep them locally; they are inputs,
 # not site content, and a 60 MB blob lives in git history forever.
 _source/**/*.drawio.pdf
+_source/facility/UA HUBS LAB RENOVATION*.pdf

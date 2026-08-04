@@ -8,7 +8,6 @@ location:
   room: Room 116, Civil Engineering Building
   address: 1209 E. 2nd St., Tucson, AZ 85719
   campus: The University of Arizona
-  ceiling: Finished ceiling height 8′10″ throughout
 
 intro: >-
   A purpose-built laboratory for studying how building systems and human
@@ -21,7 +20,7 @@ zones:
   - name: Chamber 1
     id: chamber-1
     party: bldg
-    size: 8′5″ × 19′10″
+    size: 8′5″ × 19′9″
     summary: >-
       The smaller experimental chamber. Its compact volume reaches thermal
       equilibrium quickly, which suits tightly controlled experiments.
@@ -33,7 +32,7 @@ zones:
   - name: Chamber 2
     id: chamber-2
     party: bldg
-    size: 12′6″ × 11′8″
+    size: 11′ × 11′8″
     summary: >-
       The larger experimental space, sized for more occupants and bigger
       experimental setups.
