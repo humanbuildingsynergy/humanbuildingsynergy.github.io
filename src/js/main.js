@@ -147,8 +147,19 @@
 
     var branch = null, cursor = 0, timer = null;
 
+    // What the visitor is currently looking at, so render() can tell a row that
+    // is arriving for the first time from one that is already on screen.
+    var shownCount = 0, shownBranch = null;
+
     function active() {
       return STEPS.filter(function (s) { return !s.branch || s.branch === branch; });
+    }
+
+    function choiceIndex(list) {
+      for (var i = 0; i < list.length; i++) {
+        if (list[i].kind === "choice") return i;
+      }
+      return -1;
     }
 
     function buildRow(s) {
@@ -179,7 +190,13 @@
           b.appendChild(note);
           b.addEventListener("click", function () {
             branch = o.go;
-            cursor++;              // consume the choice row itself
+            // The choice stays on screen after the exchange has run, so the
+            // visitor can come back and pick the other reply. Rewind to the
+            // choice rather than trusting where the cursor happens to be —
+            // left at the end of the old branch, the new one would be drawn
+            // in a single frame instead of playing out.
+            var at = choiceIndex(active());
+            cursor = at > -1 ? at + 1 : cursor + 1;   // consume the choice row
             render();
             // Pick the rhythm back up rather than dumping the reply instantly:
             // a beat, then the remaining steps play at reading pace as before.
@@ -281,9 +298,23 @@
     function render() {
       var list = active();
 
+      /* Every row is rebuilt from scratch, which would restart the entrance
+         animation on the whole transcript each step. Rows the visitor has
+         already watched arrive are marked settled so only genuinely new ones
+         animate. Switching branch keeps the shared prologue settled too — the
+         steps up to and including the choice are the same either way. */
+      var settled = Math.min(shownCount, cursor);
+      if (branch !== shownBranch) settled = Math.min(settled, choiceIndex(list) + 1);
+
       rowsEl.textContent = "";
       if (axisMid) rowsEl.appendChild(axisMid);   // the centre axis is not a step
-      list.slice(0, cursor).forEach(function (s) { rowsEl.appendChild(buildRow(s)); });
+      list.slice(0, cursor).forEach(function (s, i) {
+        var row = buildRow(s);
+        if (i < settled) row.classList.add("row--settled");
+        rowsEl.appendChild(row);
+      });
+      shownCount = cursor;
+      shownBranch = branch;
 
       dotsEl.textContent = "";
       list.forEach(function (_, i) {
@@ -334,11 +365,7 @@
     prevBtn.addEventListener("click", function () {
       stop();
       if (cursor > 0) cursor--;
-      var list = active();
-      var choiceAt = -1;
-      for (var i = 0; i < list.length; i++) {
-        if (list[i].kind === "choice") { choiceAt = i; break; }
-      }
+      var choiceAt = choiceIndex(active());
       if (branch && choiceAt > -1 && cursor <= choiceAt) branch = null;
       render();
     });

@@ -405,6 +405,9 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
   animation: rise var(--t) both;
 }
 .row[data-shown="false"] { display: none; }
+/* Set by main.js on rows that were already on screen before this render, so a
+   rebuilt transcript does not replay every entrance at once. */
+.row--settled { animation: none; }
 @keyframes rise { from { opacity: 0; transform: translateY(6px); } }
 
 .bubble {
