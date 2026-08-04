@@ -12,8 +12,12 @@ ogImage: /assets/facility/HUBS_lab_inside_01.webp
 
 <section class="pageHero wrap">
   <p class="label">Facility</p>
-  {# Pulled from site.yml so the research area stays worded the same everywhere. #}
-  <h1>Where {{ site.researchArea }} becomes real.</h1>
+  {# The three parties are spelled out rather than pulled from site.researchArea,
+     because each one needs its own colour. Reword them together. #}
+  <h1>
+    Where <span class="c-hu">Human</span>–<span class="c-ai">AI</span>–<span class="c-bl">Building</span>
+    Interaction becomes real.
+  </h1>
   <p class="lede">{{ facility.intro }}</p>
   <p class="label" style="margin-top:1.5rem">
     {{ facility.location.room }} · {{ facility.location.address }} · {{ facility.location.campus }}
