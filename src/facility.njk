@@ -12,7 +12,8 @@ ogImage: /assets/facility/HUBS_lab_inside_01.webp
 
 <section class="pageHero wrap">
   <p class="label">Facility</p>
-  <h1>HUBS Living Lab.</h1>
+  {# Pulled from site.yml so the research area stays worded the same everywhere. #}
+  <h1>Where {{ site.researchArea }} becomes real.</h1>
   <p class="lede">{{ facility.intro }}</p>
   <p class="label" style="margin-top:1.5rem">
     {{ facility.location.room }} · {{ facility.location.address }} · {{ facility.location.campus }}
