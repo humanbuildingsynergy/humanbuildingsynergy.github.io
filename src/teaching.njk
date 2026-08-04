@@ -10,9 +10,9 @@ description: >-
 
 <section class="pageHero wrap">
   <p class="label">Teaching</p>
-  {# Teaching is addressed to people, so the motto's payoff takes the human
-     colour. The accent lives in courses.yml beside the motto it belongs to. #}
-  <h1>{{ courses.motto | replace(courses.mottoAccent, '<span class="c-hu">' + courses.mottoAccent + '</span>') | safe }}</h1>
+  {# The accented substring lives in courses.yml beside the motto it belongs to,
+     so rewording the motto cannot silently strip the colour. #}
+  <h1>{{ courses.motto | replace(courses.mottoAccent, '<span class="c-grn">' + courses.mottoAccent + '</span>') | safe }}</h1>
   <p class="lede">{{ courses.intro }}</p>
 </section>
 
