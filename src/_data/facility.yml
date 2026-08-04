@@ -32,7 +32,7 @@ zones:
   - name: Chamber 2
     id: chamber-2
     party: bldg
-    size: 11′ × 11′8″
+    size: 16′6″ × 11′8″
     summary: >-
       The larger experimental space, sized for more occupants and bigger
       experimental setups.

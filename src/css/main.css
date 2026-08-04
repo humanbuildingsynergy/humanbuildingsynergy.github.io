@@ -961,7 +961,9 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
   display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between;
   font-family: var(--mono); font-size: .68rem; color: var(--ink-3);
 }
-.foot__legal { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; list-style: none; padding: 0; margin: 0; }
+/* Qualified with ul so it outranks the `.foot ul` grid above — otherwise the
+   three legal links stack vertically instead of sitting in a row. */
+.foot ul.foot__legal { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
 
 .disclaimer { border-left: 2px solid var(--hairline); padding-left: 1rem; max-width: 64ch; margin-bottom: 2rem; font-size: .85rem; color: var(--ink-3); }
 

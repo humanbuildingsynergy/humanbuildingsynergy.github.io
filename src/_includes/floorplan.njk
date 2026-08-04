@@ -1,81 +1,82 @@
-{# Plan of CE 116, drawn to the construction set (Sears Gerbo, sheet A1.0)
-   at a consistent 28 px per foot.
-
-     Lab strip (116)          19′9″ × 5′7″
-     Chamber 1  (116.1)       19′9″ × 8′5″
-     Control    (116.3)        8′1″ × 11′0″
-     Chamber 2  (116.2)       11′8″ × 11′0″
-
-   Control and Chamber 2 share the same 11′0″ depth, and their widths sum to
-   19′9″ — Chamber 1's full width. Overall 19′9″ × 25′0″.
+{# Schematic plan of CE 116, drawn at a consistent 28 px per foot.
+     Chamber 1   19′9″ wide ×  8′5″ deep
+     Control      8′1″ wide × 11′0″ deep
+     Chamber 2   11′8″ wide × 16′6″ deep
+   Control + Chamber 2 span Chamber 1's full 19′9″, which is what fixes the
+   layout. Chamber 2 runs 5′6″ deeper than the Control Room, so the lower
+   stretch of its west wall faces the aisle — that is where its own door is.
    Each room carries data-zone, linking it to the cards beside it. #}
-<svg class="plan" viewBox="0 0 583 762" role="img" aria-labelledby="planTitle planDesc">
-  <title id="planTitle">Floor plan of the HUBS Laboratory, Room CE 116</title>
+<svg class="plan" viewBox="0 0 700 860" role="img" aria-labelledby="planTitle planDesc">
+  <title id="planTitle">Schematic floor plan of the HUBS Laboratory, Room CE 116</title>
   <desc id="planDesc">
-    Chamber 1 spans the full width of the suite. Below it the Control Room sits
-    on the left and Chamber 2 on the right, at equal depth, connected by an
-    observation window and a door. A folding partition joins the two chambers
-    so they can be opened into a single volume.
+    Three zones. Chamber 1 runs along the top of the suite, long and shallow.
+    Below it the Control Room sits on the left and Chamber 2 on the right.
+    Chamber 2 is the deeper of the two and reaches past the bottom of the
+    Control Room, where its own door opens onto the aisle. An observation
+    window connects the two, and a folding partition joins the chambers so
+    they can be opened into a single volume.
   </desc>
 
-  <rect class="plan__shell" x="10" y="10" width="553" height="700" rx="2" />
+  <rect class="plan__shell" x="10" y="10" width="680" height="808" rx="2" />
+  <line class="plan__wall" x1="95" y1="88" x2="690" y2="88" />
 
   <!-- ── rooms ─────────────────────────────────────────────── -->
   <g class="plan__room" data-zone="chamber-1" tabindex="0" role="button"
      aria-label="Chamber 1, 8 feet 5 inches by 19 feet 9 inches">
-    <rect x="10" y="166" width="553" height="236" />
-    <text x="286" y="275">CHAMBER 1</text>
-    <text class="plan__dim" x="286" y="301">8′5″ × 19′9″</text>
+    <rect x="95" y="88" width="553" height="236" />
+    <text x="372" y="196">CHAMBER 1</text>
+    <text class="plan__dim" x="372" y="222">8′5″ × 19′9″</text>
   </g>
 
   <g class="plan__room" data-zone="control" tabindex="0" role="button"
      aria-label="Control Room, 11 feet by 8 feet 1 inch">
-    <rect x="10" y="402" width="226" height="308" />
-    <text x="123" y="545">CONTROL</text>
-    <text class="plan__dim" x="123" y="571">11′ × 8′1″</text>
+    <rect x="95" y="324" width="226" height="308" />
+    <text x="208" y="468">CONTROL</text>
+    <text class="plan__dim" x="208" y="494">11′ × 8′1″</text>
   </g>
 
   <g class="plan__room" data-zone="chamber-2" tabindex="0" role="button"
-     aria-label="Chamber 2, 11 feet by 11 feet 8 inches">
-    <rect x="236" y="402" width="327" height="308" />
-    <text x="400" y="545">CHAMBER 2</text>
-    <text class="plan__dim" x="400" y="571">11′ × 11′8″</text>
+     aria-label="Chamber 2, 16 feet 6 inches by 11 feet 8 inches">
+    <rect x="321" y="324" width="327" height="462" />
+    <text x="485" y="545">CHAMBER 2</text>
+    <text class="plan__dim" x="485" y="571">16′6″ × 11′8″</text>
   </g>
 
   <!-- ── openings ──────────────────────────────────────────── -->
   <!-- folding partition, Chamber 1 to Chamber 2 -->
   <polyline class="plan__fold"
-    points="256,394 284,410 312,394 340,410 368,394 396,410 424,394 452,410 480,394 508,410 536,394 552,404" />
+    points="341,316 369,332 397,316 425,332 453,316 481,332 509,316 537,332 565,316 593,332 621,316 640,326" />
 
-  <!-- sliding window, Chamber 1 to the lab strip -->
-  <rect class="plan__glass" x="200" y="160" width="190" height="12" />
+  <!-- sliding window, Chamber 1 to the corridor -->
+  <rect class="plan__glass" x="300" y="82" width="190" height="12" />
   <!-- sliding window, Control Room to Chamber 1 -->
-  <rect class="plan__glass" x="60" y="396" width="140" height="12" />
+  <rect class="plan__glass" x="130" y="318" width="150" height="12" />
   <!-- observation window, Control Room to Chamber 2 -->
-  <rect class="plan__glass" x="230" y="450" width="12" height="110" />
+  <rect class="plan__glass" x="315" y="370" width="12" height="120" />
 
   {# Doors drawn the architectural way: the leaf stands open perpendicular to
      the wall, and the arc traces its swing back to the closed position. #}
   <g class="plan__door">
-    <!-- into Chamber 1 from the lab strip, hinged left -->
-    <line x1="40" y1="166" x2="40" y2="244" />
-    <path d="M40 244 A 78 78 0 0 0 118 166" />
+    <!-- into Chamber 1, hinged left on the corridor wall -->
+    <line x1="120" y1="88" x2="120" y2="166" />
+    <path d="M120 166 A 78 78 0 0 0 198 88" />
 
     <!-- out of the Control Room, hinged left on its south wall -->
-    <line x1="40" y1="710" x2="40" y2="640" />
-    <path d="M40 640 A 70 70 0 0 1 110 710" />
+    <line x1="110" y1="632" x2="110" y2="562" />
+    <path d="M110 562 A 70 70 0 0 1 180 632" />
 
-    <!-- into Chamber 2, on its LEFT wall, swinging into the chamber -->
-    <line x1="236" y1="620" x2="306" y2="620" />
-    <path d="M306 620 A 70 70 0 0 1 236 690" />
+    {#- Chamber 2's own door, in the stretch of west wall that runs past the
+        bottom of the Control Room — so it opens off the aisle, not off
+        Control. Hinged at the lower jamb, swinging into the chamber. -#}
+    <line x1="321" y1="744" x2="405" y2="744" />
+    <path d="M405 744 A 84 84 0 0 0 321 660" />
   </g>
 
   <!-- ── annotation ───────────────────────────────────────── -->
   <g class="plan__note">
-    <!-- the open lab bay the suite is entered through -->
-    <text x="286" y="98" text-anchor="middle">LAB 116 · 5′7″ DEEP</text>
-    <text x="553" y="382" text-anchor="end">folding partition</text>
-    <text x="252" y="440" text-anchor="start">observation window</text>
-    <text x="10" y="748" text-anchor="start">28 px PER FOOT · AFTER THE CONSTRUCTION SET · OVERALL 19′9″ × 25′0″</text>
+    <text x="640" y="304" text-anchor="end">folding partition</text>
+    <text x="338" y="362" text-anchor="start">observation window</text>
+    <text x="311" y="700" text-anchor="end">door to the aisle</text>
+    <text x="10" y="846" text-anchor="start">SCHEMATIC · 28 px PER FOOT · NOT A CONSTRUCTION DRAWING</text>
   </g>
 </svg>
