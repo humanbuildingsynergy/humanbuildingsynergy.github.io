@@ -9,7 +9,7 @@ scales:
   - id: body
     tab: Body
     metric: ≈ one person
-    title: Occupant Comfort, Behaviour, and Health
+    title: Occupant Comfort, Behavior, and Health
     text: >-
       People do not experience a room the way a sensor does. We study how
       individuals perceive and respond to their environment, and how
@@ -68,7 +68,7 @@ scales:
   - id: city
     tab: City
     metric: ≈ one city
-    title: Urban energy modelling
+    title: Urban Energy Modelling
     text: >-
       Scaling from one building to a community changes the question. We build the
       occupancy and behaviour inputs urban-scale models need, so aggregate
