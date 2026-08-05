@@ -5,8 +5,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    {# Per-page SEO. Every page sets its own title and description. #}
-    <title>{% if title %}{{ title }} | {{ site.titleName }}{% else %}{{ site.titleName }} — {{ site.researchArea }} | UArizona{% endif %}</title>
+    {# Per-page SEO. Every page sets its own title and description.
+       The research area is deliberately not in the browser title — it made the
+       home page tab too long to read. It stays in the og:/twitter: titles below,
+       where a shared link has room for it and needs the context. #}
+    <title>{% if title %}{{ title }} | {{ site.titleName }}{% else %}{{ site.titleName }} | UArizona{% endif %}</title>
     <meta name="description" content="{{ description or site.description }}" />
     <meta name="author" content="Dr. Wooyoung Jung" />
     <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
