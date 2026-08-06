@@ -201,8 +201,7 @@
             // Pick the rhythm back up rather than dumping the reply instantly:
             // a beat, then the remaining steps play at reading pace as before.
             if (reduced) { advance(false); return; }
-            stop();
-            timer = setTimeout(function () { advance(true); }, 750);
+            schedule(750);
           });
           opts.appendChild(b);
         });
@@ -338,6 +337,34 @@
 
     function stop() { if (timer) { clearTimeout(timer); timer = null; } }
 
+    /* ---- Never grow while nobody is watching --------------------------
+       Each arriving row is 70–200px tall on a phone and pushes the whole
+       page below it down — the scale explorer drifts over 1,100px during a
+       single run. Chrome and Firefox absorb that with scroll anchoring; iOS
+       Safari has none, so the page crawls under the reader's thumb. The
+       auto-play therefore holds whenever the figure is off screen and picks
+       up where it left off on the way back. Manual Next and Back are never
+       blocked — those are deliberate, and the visitor is looking at it. */
+    var stage = rowsEl.closest(".stageWrap") || rowsEl;
+
+    function onScreen() {
+      var r = stage.getBoundingClientRect();
+      return r.bottom > 0 && r.top < (window.innerHeight || document.documentElement.clientHeight);
+    }
+
+    // Visibility is tested when the step falls due, not when it is booked, so
+    // someone who scrolls away mid-beat is caught too. Off screen it simply
+    // looks again shortly — waiting on a scroll event would mean trusting the
+    // event to arrive, and a rect read every 800ms costs nothing.
+    function schedule(ms) {
+      stop();
+      timer = setTimeout(function () {
+        timer = null;
+        if (!onScreen()) { schedule(800); return; }
+        advance(true);
+      }, ms);
+    }
+
     function advance(auto) {
       var list = active();
       if (cursor >= list.length) {
@@ -349,8 +376,7 @@
 
       var shown = list[cursor - 1];
       if (auto && shown.kind !== "choice" && cursor < list.length) {
-        var ms = Math.min(4200, 1000 + (shown.text || "").length * 20);
-        timer = setTimeout(function () { advance(true); }, ms);
+        schedule(Math.min(4200, 1000 + (shown.text || "").length * 20));
       } else {
         stop();
       }
