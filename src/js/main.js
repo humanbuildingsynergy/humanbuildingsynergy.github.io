@@ -767,12 +767,8 @@
 
     var segs = [].slice.call(document.querySelectorAll(".seg"));
 
-    function show(i) {
-      segs.forEach(function (s, k) { s.setAttribute("aria-selected", String(k === i)); });
-      scaleViz.go(i);
-
-      var d = data[i];
-      panel.textContent = "";
+    function fill(el, d) {
+      el.textContent = "";
 
       var meta = document.createElement("p");
       meta.className = "scaleMeta";
@@ -795,13 +791,55 @@
       tri.className = "triangleNote";
       tri.textContent = d.triangle;
 
-      panel.appendChild(meta); panel.appendChild(h); panel.appendChild(p);
-      panel.appendChild(ul); panel.appendChild(tri);
+      el.appendChild(meta); el.appendChild(h); el.appendChild(p);
+      el.appendChild(ul); el.appendChild(tri);
+    }
+
+    function show(i) {
+      segs.forEach(function (s, k) { s.setAttribute("aria-selected", String(k === i)); });
+      scaleViz.go(i);
+      fill(panel, data[i]);
+    }
+
+    /* ---- Hold the panel at the height of its tallest scale ------------
+       Below 880px the panel is the only thing under the canvas, so a scale
+       with fewer bullets used to shorten the whole document — the page moved
+       under the visitor mid-tap, and near the bottom the browser clamped the
+       scroll position and it read as a jump. Measuring beats hard-coding a
+       height: the reserve follows the YAML, so editing a scale cannot make it
+       wrong. An off-screen copy does the measuring so the real panel never
+       flickers through four other scales to get there. */
+    var ghost = document.createElement("div");
+    ghost.className = "panel";
+    ghost.setAttribute("aria-hidden", "true");
+    ghost.style.cssText = "position:absolute;left:-9999px;top:0;visibility:hidden";
+    document.body.appendChild(ghost);
+
+    function reserve() {
+      panel.style.minHeight = "";
+      ghost.style.width = panel.getBoundingClientRect().width + "px";
+      var tallest = 0;
+      data.forEach(function (d) {
+        fill(ghost, d);
+        tallest = Math.max(tallest, ghost.getBoundingClientRect().height);
+      });
+      panel.style.minHeight = Math.ceil(tallest) + "px";
     }
 
     segs.forEach(function (s) {
       s.addEventListener("click", function () { show(parseInt(s.dataset.i, 10)); });
     });
     show(0);
+    reserve();
+
+    // Web fonts land after first paint and change the wrap points, so measure
+    // again once they have. Not fatal if unsupported — the first pass stands.
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(reserve);
+
+    var reserveTimer = null;
+    window.addEventListener("resize", function () {
+      clearTimeout(reserveTimer);
+      reserveTimer = setTimeout(reserve, 150);
+    }, { passive: true });
   })();
 })();
