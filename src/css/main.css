@@ -722,6 +722,21 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 
 .callout { padding: 1.1rem 1.4rem; border-left: 2px solid var(--ai); background: var(--surface); }
 
+/* Director CV — portrait beside the lists, stacked on narrow screens.
+   This lived as an inline style on the div, which no media query could reach:
+   on a 390px phone the portrait still claimed its full 17rem, leaving the CV a
+   ~54px track that its own words then overflowed off the side of the screen. */
+.cvGrid {
+  display: grid; grid-template-columns: minmax(0, 17rem) minmax(0, 1fr);
+  gap: clamp(1.5rem, 5vw, 3.5rem); align-items: start;
+}
+@media (max-width: 700px) {
+  .cvGrid { grid-template-columns: 1fr; }
+  /* Keep the portrait at the size it has on desktop rather than letting it go
+     full-bleed and push the CV a screen and a half down the page. */
+  .cvGrid > :first-child { max-width: 17rem; }
+}
+
 .defList { display: grid; gap: 1.5rem; }
 .defList__item { padding-bottom: 1.5rem; border-bottom: 1px solid var(--hairline); }
 .defList__item:last-child { border-bottom: 0; padding-bottom: 0; }
