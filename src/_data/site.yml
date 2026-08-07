@@ -113,6 +113,18 @@ contact:
   phone: "+1 520 621 7469"
   phoneHref: "+15206217469"
   address: 1209 E. 2nd St. 220D, Tucson, AZ, 85719
+  # The same address split into parts, for the schema.org block in the page
+  # head. Search engines want the components, not one string. If `address`
+  # above ever changes, change these to match — nothing checks that they agree.
+  postal:
+    street: 1209 E. 2nd St. 220D
+    city: Tucson
+    region: AZ
+    postalCode: "85719"
+    country: US
+
+# Year the lab was founded. Used in the About lede and in the schema.org block.
+founded: "2022"
 
 social:
   scholar: https://scholar.google.com/citations?user=hv9gbJoAAAAJ&hl=en

@@ -64,6 +64,12 @@ export default function (eleventyConfig) {
     JSON.stringify(value).replace(/</g, "\\u003c")
   );
 
+  // The URLs from a `links:` list whose type is one of `types`. Used to build
+  // schema.org sameAs, which wants public profiles only — not mailto: or a CV.
+  eleventyConfig.addFilter("urlsOfType", (links, types) =>
+    (links || []).filter((l) => types.includes(l.type)).map((l) => l.url)
+  );
+
   return {
     dir: { input: "src", output: "_site", includes: "_includes", data: "_data" },
     markdownTemplateEngine: "njk",

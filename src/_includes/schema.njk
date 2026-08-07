@@ -1,0 +1,85 @@
+{# ---------------------------------------------------------------------------
+   schema.org / JSON-LD. Machine-readable facts about the lab and its director,
+   for search engines and AI assistants. Nothing here is visible on the page.
+
+   It is not a ranking signal. What it buys is identity: it states outright that
+   HUBS is a research organisation inside the University of Arizona and that the
+   Wooyoung Jung here is the same person as the one on Scholar and ORCID, rather
+   than leaving all of that to be inferred from prose.
+
+   Deliberately only two pages carry it. Organization markup belongs on one
+   canonical page — repeating it sitewide invites a crawler to read eight
+   different labs — so the lab node lives on the home page and the person node
+   on the director page. The @id values are what tie them together.
+
+   Values come from site.yml and people.yml, so nothing is duplicated here.
+   After changing anything, paste a page URL into Google's Rich Results Test.
+--------------------------------------------------------------------------- #}
+
+{%- if page.url == "/" %}
+{%- set lab = {
+  "@context": "https://schema.org",
+  "@type": "ResearchOrganization",
+  "@id": site.url + "/#lab",
+  "name": site.name,
+  "alternateName": site.shortName,
+  "url": site.url,
+  "logo": site.url + "/assets/logo/hubs_logo_one_inch.png",
+  "description": site.description,
+  "foundingDate": site.founded,
+  "knowsAbout": site.researchArea,
+  "parentOrganization": {
+    "@type": "CollegeOrUniversity",
+    "name": site.university,
+    "url": "https://www.arizona.edu/"
+  },
+  "department": {
+    "@type": "Organization",
+    "name": site.department
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": site.contact.postal.street,
+    "addressLocality": site.contact.postal.city,
+    "addressRegion": site.contact.postal.region,
+    "postalCode": site.contact.postal.postalCode,
+    "addressCountry": site.contact.postal.country
+  },
+  "email": site.contact.email,
+  "telephone": site.contact.phone,
+  "founder": {
+    "@type": "Person",
+    "@id": site.url + "/director/#person",
+    "name": people.director.name
+  }
+} -%}
+<script type="application/ld+json">{{ lab | jsonScript | safe }}</script>
+{%- endif %}
+
+{%- if page.url == "/director/" %}
+{%- set person = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": site.url + "/director/#person",
+  "name": people.director.name,
+  "honorificSuffix": people.director.credential,
+  "jobTitle": people.director.role,
+  "description": people.director.bio,
+  "url": site.url + "/director/",
+  "image": site.url + "/assets/profile/" + people.director.photoFull,
+  "email": site.contact.email,
+  "worksFor": {
+    "@type": "ResearchOrganization",
+    "@id": site.url + "/#lab",
+    "name": site.name,
+    "url": site.url
+  },
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": site.university,
+    "url": "https://www.arizona.edu/"
+  },
+  "sameAs": people.director.links | urlsOfType(["linkedin", "scholar", "github"])
+} -%}
+<script type="application/ld+json">{{ person | jsonScript | safe }}</script>
+{%- endif %}
