@@ -1048,3 +1048,5 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 .pub__cite:hover { color: var(--human); }
 /* A paper with no DOI has no link, so it must not look like one. */
 .pub__title--plain { color: var(--ink); cursor: default; }
+/* An archived repo should not look like a live one. */
+.release__yr--warn { color: var(--human); }

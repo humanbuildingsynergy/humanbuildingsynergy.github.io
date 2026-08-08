@@ -1,0 +1,44 @@
+{
+  "10.5281/zenodo.21192895": {
+    "pushed": "2026-07-04",
+    "language": "Python",
+    "archived": false,
+    "ghLicence": "",
+    "version": "v1.0.0",
+    "licence": "APACHE-2.0",
+    "released": "2026-07-04"
+  },
+  "https://github.com/humanbuildingsynergy/HEMA": {
+    "pushed": "2026-04-28",
+    "language": "Python",
+    "archived": false,
+    "ghLicence": "",
+    "licence": ""
+  },
+  "https://github.com/humanbuildingsynergy/ResidentialOccupancyScheduleSimulator": {
+    "pushed": "2023-07-24",
+    "language": "Python",
+    "archived": false,
+    "ghLicence": "MIT",
+    "licence": "MIT"
+  },
+  "10.5281/zenodo.20015123": {
+    "pushed": "2026-05-04",
+    "language": "Python",
+    "archived": false,
+    "ghLicence": "",
+    "version": "1.0",
+    "licence": "CC-BY-NC-4.0",
+    "released": "2026-05-02"
+  },
+  "10.5281/zenodo.20451474": {
+    "version": "1.0",
+    "licence": "CC-BY-NC-4.0",
+    "released": "2026-05-29"
+  },
+  "10.5281/zenodo.20777376": {
+    "version": "",
+    "licence": "CC-BY-NC-4.0",
+    "released": "2026-06-20"
+  }
+}

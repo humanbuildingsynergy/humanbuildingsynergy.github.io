@@ -2,9 +2,10 @@
 # Code releases and archived datasets — the lab's citable research outputs
 # that are not journal articles.
 #
-# Metadata below is taken directly from the Zenodo records (titles, dates,
-# versions, licences and descriptions), so it should match what a reader sees
-# when they follow the DOI.
+# Prose only. `version`, `licence` and the last-updated date are NOT set here —
+# src/_data/software.js fetches them from Zenodo and GitHub at build time, so
+# they cannot drift from the actual release. Any `version`/`licence` left below
+# is a fallback used only if those APIs are unreachable.
 #
 # ============================================================================
 
