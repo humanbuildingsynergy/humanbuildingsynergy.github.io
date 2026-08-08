@@ -1,0 +1,65 @@
+name: Check links
+
+# Academic sites rot from the outside in: conference sites disappear a year
+# after the event, and collaborator pages move when someone changes
+# institution. This crawls the built site weekly and opens an issue when
+# something breaks, so nothing has to be remembered.
+
+on:
+  schedule:
+    - cron: "0 8 * * 1"   # Mondays, 08:00 UTC — an hour after the deploy
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: links
+  cancel-in-progress: true
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # Check the built site, not the templates — that is what visitors click,
+      # and it resolves every link the data files generate.
+      - run: npm ci
+      - run: npm run build
+
+      - uses: lycheeverse/lychee-action@v2
+        id: lychee
+        with:
+          # --accept is doing the real work here. Publishers behind bot
+          # protection answer a crawler with 403 while serving a browser
+          # normally: ACM, ASCE, ASME, MDPI, Wiley and EDP Sciences all do,
+          # and every doi.org link redirects to one of them. LinkedIn answers
+          # 999, which is its own invention. Treating those as failures would
+          # bury the real breakages under sixty false alarms.
+          args: >-
+            --no-progress
+            --max-concurrency 4
+            --timeout 30
+            --max-retries 2
+            --accept 200,206,301,302,403,429,999
+            --exclude-path _site/assets
+            './_site/**/*.html'
+          fail: false
+          output: lychee-report.md
+          jobSummary: true
+
+      # One issue, reused. A second broken link next month reopens the same
+      # thread rather than starting a new one.
+      - if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: Broken links on the site
+          content-filepath: lychee-report.md
+          labels: broken-links
