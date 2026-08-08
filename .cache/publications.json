@@ -1,0 +1,2512 @@
+{
+  "10.1016/j.buildenv.2026.115052": {
+    "title": [
+      "Assessing indoor heat strain through occupant language: A framework for building thermal resilience"
+    ],
+    "volume": "304",
+    "type": "journal-article",
+    "container-title": [
+      "Building and Environment"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          10
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          28
+        ]
+      ],
+      "date-time": "2026-07-28T15:39:49Z",
+      "timestamp": 1785253189000
+    },
+    "author": [
+      {
+        "family": "Babon-Ayeng",
+        "given": "Prosper"
+      },
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      }
+    ]
+  },
+  "10.1016/j.enbuild.2026.118038": {
+    "title": [
+      "Large Language Model-Driven Context-Aware Eco-Feedback Generation and Evaluation"
+    ],
+    "volume": null,
+    "type": "journal-article",
+    "container-title": [
+      "Energy and Buildings"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          8
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          8,
+          3
+        ]
+      ],
+      "date-time": "2026-08-03T15:56:07Z",
+      "timestamp": 1785772567000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Babon-Ayeng",
+        "given": "Prosper"
+      }
+    ]
+  },
+  "10.1145/3765611.3815486": {
+    "title": [
+      "BrickTrace: Separating Ontology Reasoning from Building Grounding in Knowledge Graph Question Answering"
+    ],
+    "volume": null,
+    "type": "proceedings-article",
+    "container-title": [
+      "Proceedings of the 2026 ACM Sustainability Week"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          22
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          20
+        ]
+      ],
+      "date-time": "2026-06-20T09:39:33Z",
+      "timestamp": 1781948373000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      }
+    ]
+  },
+  "10.1145/3744256.3812583": {
+    "title": [
+      "Language As a Sensor: Narrative-Enhanced Thermal Comfort Modeling"
+    ],
+    "volume": null,
+    "type": "proceedings-article",
+    "container-title": [
+      "Proceedings of the 13th ACM International Conference on Systems for Energy-Efficient Buildings, Cities, and Transportation"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          22
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          19
+        ]
+      ],
+      "date-time": "2026-06-19T11:01:41Z",
+      "timestamp": 1781866901000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Babon-Ayeng",
+        "given": "Prosper"
+      }
+    ]
+  },
+  "10.1145/3765611.3815484": {
+    "title": [
+      "What LLM-Simulated Users Can and Cannot Tell Us About Conversational Energy Management Systems"
+    ],
+    "volume": null,
+    "type": "proceedings-article",
+    "container-title": [
+      "Proceedings of the 2026 ACM Sustainability Week"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          22
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          20
+        ]
+      ],
+      "date-time": "2026-06-20T09:39:33Z",
+      "timestamp": 1781948373000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      }
+    ]
+  },
+  "10.1145/3765611.3815499": {
+    "title": [
+      "What You Know Does Not Show: Domain Knowledge and Occupant-AI Interaction in Building Energy Management"
+    ],
+    "volume": null,
+    "type": "proceedings-article",
+    "container-title": [
+      "Proceedings of the 2026 ACM Sustainability Week"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          22
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          20
+        ]
+      ],
+      "date-time": "2026-06-20T09:39:33Z",
+      "timestamp": 1781948373000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Jeon",
+        "given": "Kahyun"
+      },
+      {
+        "family": "Babon-Ayeng",
+        "given": "Prosper"
+      }
+    ]
+  },
+  "10.1016/j.jobe.2026.116313": {
+    "title": [
+      "Adoption, use, and perception of room and personal comfort systems in U.S. households"
+    ],
+    "volume": "127",
+    "type": "journal-article",
+    "container-title": [
+      "Journal of Building Engineering"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          6
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          16
+        ]
+      ],
+      "date-time": "2026-05-16T15:38:50Z",
+      "timestamp": 1778945930000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Mo",
+        "given": "Yunjeong"
+      }
+    ]
+  },
+  "10.1016/j.softx.2026.102633": {
+    "title": [
+      "Multi-agent home energy management assistant (HEMA)"
+    ],
+    "volume": "34",
+    "type": "journal-article",
+    "container-title": [
+      "SoftwareX"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          6
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          4,
+          8
+        ]
+      ],
+      "date-time": "2026-04-08T21:35:44Z",
+      "timestamp": 1775684144000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      }
+    ]
+  },
+  "10.1016/j.egyr.2026.109244": {
+    "title": [
+      "Understanding smart thermostat adoption: Housing, HVAC, and socio-economic traits in the U.S."
+    ],
+    "volume": "15",
+    "type": "journal-article",
+    "container-title": [
+      "Energy Reports"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          6
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          3,
+          27
+        ]
+      ],
+      "date-time": "2026-03-27T08:37:52Z",
+      "timestamp": 1774600672000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Witt",
+        "given": "Sophia"
+      }
+    ]
+  },
+  "10.1016/j.enbuild.2025.115965": {
+    "title": [
+      "Personalized indoor heat stress response modeling and assessment for improved building thermal resilience"
+    ],
+    "volume": "345",
+    "type": "journal-article",
+    "container-title": [
+      "Energy and Buildings"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          10
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2025,
+          6,
+          2
+        ]
+      ],
+      "date-time": "2025-06-02T19:31:46Z",
+      "timestamp": 1748892706000
+    },
+    "author": [
+      {
+        "family": "Babon-Ayeng",
+        "given": "Prosper"
+      },
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      }
+    ]
+  },
+  "10.1155/ina/6840369": {
+    "title": [
+      "Meta\u2010Analysis and Regression Modeling of the Impacts of Four Indoor Environmental Quality Metrics on Office Performance"
+    ],
+    "volume": "2025",
+    "type": "journal-article",
+    "container-title": [
+      "Indoor Air"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          1
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2025,
+          4,
+          27
+        ]
+      ],
+      "date-time": "2025-04-27T06:18:25Z",
+      "timestamp": 1745734705000
+    },
+    "author": [
+      {
+        "family": "Keene",
+        "given": "Kevin"
+      },
+      {
+        "family": "McCord",
+        "given": "Kieren"
+      },
+      {
+        "family": "Dehwah",
+        "given": "Ammar H. A."
+      },
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      }
+    ]
+  },
+  "10.1007/s12273-024-1111-z": {
+    "title": [
+      "A new database of building-space-specific internal loads and load schedules for performance based code compliance modeling of commercial buildings"
+    ],
+    "volume": "17",
+    "type": "journal-article",
+    "container-title": [
+      "Building Simulation"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024,
+          5,
+          1
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2024,
+          5,
+          1
+        ]
+      ],
+      "date-time": "2024-05-01T13:15:13Z",
+      "timestamp": 1714569313000
+    },
+    "author": [
+      {
+        "family": "Ye",
+        "given": "Yunyang"
+      },
+      {
+        "family": "Faulkner",
+        "given": "Cary A."
+      },
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Zhang",
+        "given": "Jian"
+      },
+      {
+        "family": "Brock",
+        "given": "Eli"
+      }
+    ]
+  },
+  "10.4324/9780367814748": {
+    "title": [
+      "Measuring the Impact of the Built Environment on Health, Wellbeing, and Performance"
+    ],
+    "volume": null,
+    "type": "monograph",
+    "container-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2024,
+          2,
+          8
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2024,
+          2,
+          8
+        ]
+      ],
+      "date-time": "2024-02-08T10:51:52Z",
+      "timestamp": 1707389512000
+    },
+    "author": [
+      {
+        "family": "Engineer",
+        "given": "Altaf"
+      },
+      {
+        "family": "Ida",
+        "given": "Aletheia"
+      },
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Sternberg",
+        "given": "Esther M."
+      }
+    ]
+  },
+  "10.1016/j.buildenv.2023.110846": {
+    "title": [
+      "Towards intelligent workstations: Investigating the feasibility of Doppler radar sensors for personal respiratory quantification in thermal comfort"
+    ],
+    "volume": "245",
+    "type": "journal-article",
+    "container-title": [
+      "Building and Environment"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023,
+          11
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2023,
+          9,
+          17
+        ]
+      ],
+      "date-time": "2023-09-17T11:09:47Z",
+      "timestamp": 1694948987000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Jazizadeh",
+        "given": "Farrokh"
+      }
+    ]
+  },
+  "10.1016/j.buildenv.2023.110628": {
+    "title": [
+      "Smart thermostat data-driven U.S. residential occupancy schedules and development of a U.S. residential occupancy schedule simulator"
+    ],
+    "volume": "243",
+    "type": "journal-article",
+    "container-title": [
+      "Building and Environment"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023,
+          9
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2023,
+          7,
+          18
+        ]
+      ],
+      "date-time": "2023-07-18T12:11:35Z",
+      "timestamp": 1689682295000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Wang",
+        "given": "Zhe"
+      },
+      {
+        "family": "Hong",
+        "given": "Tianzhen"
+      },
+      {
+        "family": "Jazizadeh",
+        "given": "Farrokh"
+      }
+    ]
+  },
+  "10.1115/1.4052872": {
+    "title": [
+      "A Statistical Evaluation of Combining Human Productivity Metrics in the Indoor Environment"
+    ],
+    "volume": null,
+    "type": "journal-article",
+    "container-title": [
+      "ASME Journal of Engineering for Sustainable Buildings and Cities"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2021,
+          11,
+          1
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2021,
+          11,
+          1
+        ]
+      ],
+      "date-time": "2021-11-01T07:59:53Z",
+      "timestamp": 1635753593000
+    },
+    "author": [
+      {
+        "family": "Keene",
+        "given": "Kevin"
+      },
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      }
+    ]
+  },
+  "10.1016/j.apenergy.2020.114882": {
+    "title": [
+      "Energy saving potentials of integrating personal thermal comfort models for control of building systems: Comprehensive quantification through combinatorial consideration of influential parameters"
+    ],
+    "volume": "268",
+    "type": "journal-article",
+    "container-title": [
+      "Applied Energy"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2020,
+          6
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2020,
+          5,
+          20
+        ]
+      ],
+      "date-time": "2020-05-20T14:15:22Z",
+      "timestamp": 1589984122000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Jazizadeh",
+        "given": "Farrokh"
+      }
+    ]
+  },
+  "10.3390/s19173691": {
+    "title": [
+      "Heat Flux Sensing for Machine-Learning-Based Personal Thermal Comfort Modeling"
+    ],
+    "volume": "19",
+    "type": "journal-article",
+    "container-title": [
+      "Sensors"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019,
+          8,
+          25
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2019,
+          8,
+          26
+        ]
+      ],
+      "date-time": "2019-08-26T04:38:23Z",
+      "timestamp": 1566794303000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Jazizadeh",
+        "given": "Farrokh"
+      },
+      {
+        "family": "Diller",
+        "given": "Thomas E."
+      }
+    ]
+  },
+  "10.1016/j.buildenv.2019.04.043": {
+    "title": [
+      "Comparative assessment of HVAC control strategies using personal thermal comfort and sensitivity models"
+    ],
+    "volume": "158",
+    "type": "journal-article",
+    "container-title": [
+      "Building and Environment"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019,
+          7
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2019,
+          4,
+          23
+        ]
+      ],
+      "date-time": "2019-04-23T11:16:45Z",
+      "timestamp": 1556018205000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Jazizadeh",
+        "given": "Farrokh"
+      }
+    ]
+  },
+  "10.1061/9780784482445.032": {
+    "title": [
+      "Feasibility Assessment of Heat Flux Sensors for Human-in-the-Loop HVAC Operations"
+    ],
+    "volume": null,
+    "type": "proceedings-article",
+    "container-title": [
+      "Computing in Civil Engineering 2019"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019,
+          6,
+          13
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2019,
+          6,
+          13
+        ]
+      ],
+      "date-time": "2019-06-13T06:03:43Z",
+      "timestamp": 1560405823000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Chan",
+        "given": "Matthew"
+      },
+      {
+        "family": "Jazizadeh",
+        "given": "Farrokh"
+      },
+      {
+        "family": "Diller",
+        "given": "Thomas E."
+      }
+    ]
+  },
+  "10.22260/isarc2019/0138": {
+    "title": [
+      "Spatial Efficacy of Respiration Monitoring using Doppler Radars for Personalized Thermal Comfort Assessment"
+    ],
+    "volume": null,
+    "type": "proceedings-article",
+    "container-title": [
+      "Proceedings of the International Symposium on Automation and Robotics in Construction (IAARC)",
+      "Proceedings of the 36th International Symposium on Automation and Robotics in Construction (ISARC)"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019,
+          5,
+          24
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2019,
+          6,
+          30
+        ]
+      ],
+      "date-time": "2019-06-30T14:10:31Z",
+      "timestamp": 1561903831000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Jazizadeh",
+        "given": "Farrokh"
+      }
+    ]
+  },
+  "10.1016/j.apenergy.2019.01.070": {
+    "title": [
+      "Human-in-the-loop HVAC operations: A quantitative review on occupancy, comfort, and energy-efficiency dimensions"
+    ],
+    "volume": "239",
+    "type": "journal-article",
+    "container-title": [
+      "Applied Energy"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019,
+          4
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2019,
+          3,
+          2
+        ]
+      ],
+      "date-time": "2019-03-02T09:15:04Z",
+      "timestamp": 1551518104000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Jazizadeh",
+        "given": "Farrokh"
+      }
+    ]
+  },
+  "10.1016/j.buildenv.2018.05.018": {
+    "title": [
+      "Vision-based thermal comfort quantification for HVAC control"
+    ],
+    "volume": "142",
+    "type": "journal-article",
+    "container-title": [
+      "Building and Environment"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2018,
+          9
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2018,
+          6,
+          20
+        ]
+      ],
+      "date-time": "2018-06-20T00:17:51Z",
+      "timestamp": 1529453871000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Jazizadeh",
+        "given": "Farrokh"
+      }
+    ]
+  },
+  "10.1016/j.apenergy.2018.02.049": {
+    "title": [
+      "Personalized thermal comfort inference using RGB video images for distributed HVAC control"
+    ],
+    "volume": "220",
+    "type": "journal-article",
+    "container-title": [
+      "Applied Energy"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2018,
+          6
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2018,
+          3,
+          8
+        ]
+      ],
+      "date-time": "2018-03-08T00:46:08Z",
+      "timestamp": 1520469968000
+    },
+    "author": [
+      {
+        "family": "Jazizadeh",
+        "given": "Farrokh"
+      },
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      }
+    ]
+  },
+  "10.1007/978-3-319-91638-5_12": {
+    "title": [
+      "Multi-occupancy Indoor Thermal Condition Optimization in Consideration of Thermal Sensitivity"
+    ],
+    "volume": null,
+    "type": "book-chapter",
+    "container-title": [
+      "Lecture Notes in Computer Science",
+      "Advanced Computing Strategies for Engineering"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2018,
+          5,
+          18
+        ]
+      ],
+      "date-time": "2018-05-18T08:34:34Z",
+      "timestamp": 1526632474000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Jazizadeh",
+        "given": "Farrokh"
+      }
+    ]
+  },
+  "10.1061/9780784480847.039": {
+    "title": [
+      "Non-Intrusive Detection of Respiration for Smart Control of HVAC System"
+    ],
+    "volume": null,
+    "type": "proceedings-article",
+    "container-title": [
+      "Computing in Civil Engineering 2017"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2017,
+          6,
+          13
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2017,
+          6,
+          13
+        ]
+      ],
+      "date-time": "2017-06-13T11:48:14Z",
+      "timestamp": 1497354494000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Jazizadeh",
+        "given": "Farrokh"
+      }
+    ]
+  },
+  "10.1145/3137133.3137166": {
+    "title": [
+      "Towards integration of doppler radar sensors into personalized thermoregulation-based control of HVAC"
+    ],
+    "volume": null,
+    "type": "proceedings-article",
+    "container-title": [
+      "Proceedings of the 4th ACM International Conference on Systems for Energy-Efficient Built Environments"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2017,
+          11,
+          8
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2018,
+          4,
+          11
+        ]
+      ],
+      "date-time": "2018-04-11T12:31:17Z",
+      "timestamp": 1523449877000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Jazizadeh",
+        "given": "Farrokh"
+      }
+    ]
+  },
+  "10.1061/(asce)cp.1943-5487.0000554": {
+    "title": [
+      "Slim BIM Charts for Rapidly Visualizing and Quantifying Levels of BIM Adoption and Implementation"
+    ],
+    "volume": "30",
+    "type": "journal-article",
+    "container-title": [
+      "Journal of Computing in Civil Engineering"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          7
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2015,
+          12,
+          17
+        ]
+      ],
+      "date-time": "2015-12-17T16:28:51Z",
+      "timestamp": 1450369731000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Lee",
+        "given": "Ghang"
+      }
+    ]
+  },
+  "10.1016/j.erss.2026.104630": {
+    "title": [
+      "Integrating social justice criteria into multiscale spatial modeling of energy burden: A case study of four states in the United States"
+    ],
+    "volume": "134",
+    "type": "journal-article",
+    "container-title": [
+      "Energy Research &amp; Social Science"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          4
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          3,
+          14
+        ]
+      ],
+      "date-time": "2026-03-14T01:56:43Z",
+      "timestamp": 1773453403000
+    },
+    "author": [
+      {
+        "family": "Kim",
+        "given": "Siyeon"
+      },
+      {
+        "family": "Chang",
+        "given": "Soowon"
+      },
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Debs",
+        "given": "Luciana"
+      },
+      {
+        "family": "Jung",
+        "given": "Sung Eun"
+      }
+    ]
+  },
+  "10.1016/j.buildenv.2025.114165": {
+    "title": [
+      "Personalized building thermal resilience assessment under future climate scenarios"
+    ],
+    "volume": "290",
+    "type": "journal-article",
+    "container-title": [
+      "Building and Environment"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          2
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2025,
+          12,
+          27
+        ]
+      ],
+      "date-time": "2025-12-27T07:19:51Z",
+      "timestamp": 1766819991000
+    },
+    "author": [
+      {
+        "family": "Babon-Ayeng",
+        "given": "Prosper"
+      },
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      }
+    ]
+  },
+  "10.1016/j.buildenv.2025.113541": {
+    "title": [
+      "Personalized Environmental Control Systems (PECS): Systematic review of benefits for thermal comfort, air quality, health, and human performance"
+    ],
+    "volume": "286",
+    "type": "journal-article",
+    "container-title": [
+      "Building and Environment"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          12
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2025,
+          8,
+          13
+        ]
+      ],
+      "date-time": "2025-08-13T15:55:50Z",
+      "timestamp": 1755100550000
+    },
+    "author": [
+      {
+        "family": "Khovalyg",
+        "given": "Dolaana"
+      },
+      {
+        "family": "Bivolarova",
+        "given": "Mariya P."
+      },
+      {
+        "family": "Shinoda",
+        "given": "Jun"
+      },
+      {
+        "family": "Al-Assaad",
+        "given": "Douaa"
+      },
+      {
+        "family": "Vellei",
+        "given": "Marika"
+      },
+      {
+        "family": "Bandurski",
+        "given": "Karol"
+      },
+      {
+        "family": "Chinazzo",
+        "given": "Giorgia"
+      },
+      {
+        "family": "Kazanci",
+        "given": "Ongun B."
+      },
+      {
+        "family": "Kim",
+        "given": "Joyce"
+      },
+      {
+        "family": "Kramer",
+        "given": "Tobias"
+      },
+      {
+        "family": "Lipczynska",
+        "given": "Aleksandra"
+      },
+      {
+        "family": "Liu",
+        "given": "Shichao"
+      },
+      {
+        "family": "Pasut",
+        "given": "Wilmer"
+      },
+      {
+        "family": "Rawal",
+        "given": "Rajan"
+      },
+      {
+        "family": "Sekhar",
+        "given": "Chandra"
+      },
+      {
+        "family": "Sun",
+        "given": "Ruiji"
+      },
+      {
+        "family": "Wu",
+        "given": "Zhibin"
+      },
+      {
+        "family": "Afshari",
+        "given": "Alireza"
+      },
+      {
+        "family": "Martinez-Alcaraz",
+        "given": "Pablo"
+      },
+      {
+        "family": "Andr\u00e9",
+        "given": "Ma\u00edra"
+      },
+      {
+        "family": "Ashrafian",
+        "given": "Touraj"
+      },
+      {
+        "family": "de la Barra",
+        "given": "Pedro"
+      },
+      {
+        "family": "Bavaresco",
+        "given": "Mateus"
+      },
+      {
+        "family": "Boudier",
+        "given": "Katharina"
+      },
+      {
+        "family": "Chun",
+        "given": "Chungyoon"
+      },
+      {
+        "family": "Choi",
+        "given": "Joon-Ho"
+      },
+      {
+        "family": "Chong",
+        "given": "Adrian"
+      },
+      {
+        "family": "Crosby",
+        "given": "Sarah"
+      },
+      {
+        "family": "De Vecchi",
+        "given": "Renata"
+      },
+      {
+        "family": "Rupp",
+        "given": "Ricardo Forgiarini"
+      },
+      {
+        "family": "Favero",
+        "given": "Matteo"
+      },
+      {
+        "family": "Vasquez",
+        "given": "Natalia Giraldo"
+      },
+      {
+        "family": "Geraldi",
+        "given": "Matheus"
+      },
+      {
+        "family": "Gnecco",
+        "given": "Veronica Martins"
+      },
+      {
+        "family": "Gupta",
+        "given": "Akshit"
+      },
+      {
+        "family": "Hoffmann",
+        "given": "Sabine"
+      },
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Kong",
+        "given": "Meng"
+      },
+      {
+        "family": "Kwon",
+        "given": "Minyoung"
+      },
+      {
+        "family": "Lamberti",
+        "given": "Giulia"
+      },
+      {
+        "family": "Lee",
+        "given": "Yoonhee"
+      },
+      {
+        "family": "Luna-Navarro",
+        "given": "Alessandra"
+      },
+      {
+        "family": "Nabilou",
+        "given": "Fatemeh"
+      },
+      {
+        "family": "de Souza",
+        "given": "Larissa Pereira"
+      },
+      {
+        "family": "Pigliautile",
+        "given": "Ilaria"
+      },
+      {
+        "family": "Pisello",
+        "given": "Anna Laura"
+      },
+      {
+        "family": "Rewitz",
+        "given": "Kai"
+      },
+      {
+        "family": "Rugani",
+        "given": "Roberto"
+      },
+      {
+        "family": "Sadrizadeh",
+        "given": "Sasan"
+      },
+      {
+        "family": "Simmonds",
+        "given": "Peter"
+      },
+      {
+        "family": "Sonta",
+        "given": "Andrew"
+      },
+      {
+        "family": "Syndicus",
+        "given": "Marc"
+      },
+      {
+        "family": "Topak",
+        "given": "Fatih"
+      },
+      {
+        "family": "Torriani",
+        "given": "Giulia"
+      },
+      {
+        "family": "Zaniboni",
+        "given": "Luca"
+      }
+    ]
+  },
+  "10.1016/j.buildenv.2025.113471": {
+    "title": [
+      "Personalized environmental control systems (PECS): A systematic review of performance evaluation methods for thermal comfort, air quality and energy"
+    ],
+    "volume": "284",
+    "type": "journal-article",
+    "container-title": [
+      "Building and Environment"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          10
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2025,
+          7,
+          22
+        ]
+      ],
+      "date-time": "2025-07-22T16:33:30Z",
+      "timestamp": 1753202010000
+    },
+    "author": [
+      {
+        "family": "Al-Assaad",
+        "given": "Douaa"
+      },
+      {
+        "family": "Pigliautile",
+        "given": "Ilaria"
+      },
+      {
+        "family": "Shinoda",
+        "given": "Jun"
+      },
+      {
+        "family": "Rawal",
+        "given": "Rajan"
+      },
+      {
+        "family": "Andr\u00e9",
+        "given": "Ma\u00edra"
+      },
+      {
+        "family": "Vashi",
+        "given": "Siddhi"
+      },
+      {
+        "family": "Rugani",
+        "given": "Roberto"
+      },
+      {
+        "family": "Torriani",
+        "given": "Giulia"
+      },
+      {
+        "family": "Pasut",
+        "given": "Wilmer"
+      },
+      {
+        "family": "Gupta",
+        "given": "Akshit"
+      },
+      {
+        "family": "Afshari",
+        "given": "Alireza"
+      },
+      {
+        "family": "Kong",
+        "given": "Meng"
+      },
+      {
+        "family": "Nabilou",
+        "given": "Fatemeh"
+      },
+      {
+        "family": "Rewitz",
+        "given": "Kai"
+      },
+      {
+        "family": "Kim",
+        "given": "Joyce"
+      },
+      {
+        "family": "Babich",
+        "given": "Francesco"
+      },
+      {
+        "family": "Bavaresco",
+        "given": "Mateus"
+      },
+      {
+        "family": "Khovalyg",
+        "given": "Dolaana"
+      },
+      {
+        "family": "Sekhar",
+        "given": "Chandra"
+      },
+      {
+        "family": "Kazanci",
+        "given": "Ongun Berk"
+      },
+      {
+        "family": "Cui",
+        "given": "Yanghao"
+      },
+      {
+        "family": "Ashrafian",
+        "given": "Touraj"
+      },
+      {
+        "family": "Bandurski",
+        "given": "Karol"
+      },
+      {
+        "family": "Boudier",
+        "given": "Katharina"
+      },
+      {
+        "family": "Chinazzo",
+        "given": "Giorgia"
+      },
+      {
+        "family": "Chong",
+        "given": "Adrian"
+      },
+      {
+        "family": "Crosby",
+        "given": "Sarah"
+      },
+      {
+        "family": "Favero",
+        "given": "Matteo"
+      },
+      {
+        "family": "Rupp",
+        "given": "Ricardo Forgiarini"
+      },
+      {
+        "family": "Geraldi",
+        "given": "Matheus"
+      },
+      {
+        "family": "Vasquez",
+        "given": "Natalia Giraldo"
+      },
+      {
+        "family": "Gnecco",
+        "given": "Veronica Martins"
+      },
+      {
+        "family": "Hoffmann",
+        "given": "Sabine"
+      },
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Kim",
+        "given": "Chul"
+      },
+      {
+        "family": "Kim",
+        "given": "Hyojin"
+      },
+      {
+        "family": "Lee",
+        "given": "Jeongseo"
+      },
+      {
+        "family": "Kramer",
+        "given": "Tobias"
+      },
+      {
+        "family": "Lamberti",
+        "given": "Giulia"
+      },
+      {
+        "family": "Lipczynska",
+        "given": "Aleksandra"
+      },
+      {
+        "family": "Martinez-Alcaraz",
+        "given": "Pablo"
+      },
+      {
+        "family": "Pisello",
+        "given": "Anna Laura"
+      },
+      {
+        "family": "Sonta",
+        "given": "Andrew"
+      },
+      {
+        "family": "Sun",
+        "given": "Ruiji"
+      },
+      {
+        "family": "Topak",
+        "given": "Fatih"
+      },
+      {
+        "family": "Vellei",
+        "given": "Marika"
+      },
+      {
+        "family": "Wu",
+        "given": "Zhibin"
+      },
+      {
+        "family": "Chen",
+        "given": "Xinhao"
+      },
+      {
+        "family": "Zhang",
+        "given": "Shiyu"
+      },
+      {
+        "family": "Fan",
+        "given": "Xianbing"
+      },
+      {
+        "family": "Wang",
+        "given": "Lihui"
+      },
+      {
+        "family": "Liu",
+        "given": "Fan"
+      }
+    ]
+  },
+  "10.1016/j.enbuild.2025.116106": {
+    "title": [
+      "Streamlining occupant-centric HVAC operations through multi-modal infrared array sensing technology"
+    ],
+    "volume": "346",
+    "type": "journal-article",
+    "container-title": [
+      "Energy and Buildings"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          11
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2025,
+          7,
+          5
+        ]
+      ],
+      "date-time": "2025-07-05T11:16:00Z",
+      "timestamp": 1751714160000
+    },
+    "author": [
+      {
+        "family": "Woo",
+        "given": "Deok-Oh"
+      },
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Menna",
+        "given": "Jonathan"
+      },
+      {
+        "family": "Al-Hamando",
+        "given": "Mazin"
+      }
+    ]
+  },
+  "10.1007/978-3-031-84224-5_14": {
+    "title": [
+      "Unveiling the Spectrum of Personal Heat Stress Responses in Buildings"
+    ],
+    "volume": null,
+    "type": "book-chapter",
+    "container-title": [
+      "Lecture Notes in Civil Engineering",
+      "Advances in Information Technology in Civil and Building Engineering"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2025,
+          3,
+          3
+        ]
+      ],
+      "date-time": "2025-03-03T09:22:59Z",
+      "timestamp": 1740993779000
+    },
+    "author": [
+      {
+        "family": "Babon-Ayeng",
+        "given": "Prosper"
+      },
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      }
+    ]
+  },
+  "10.6106/kjcem.2015.16.4.089": {
+    "title": [
+      "An Analysis of the Duration of the Construction Document Phase of Large Public Building Projects Delivered by the Total Solution Service from 2009 to 2014"
+    ],
+    "volume": "16",
+    "type": "journal-article",
+    "container-title": [
+      "Korean Journal of Construction Engineering and Management"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2015,
+          7,
+          31
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2015,
+          8,
+          30
+        ]
+      ],
+      "date-time": "2015-08-30T21:03:11Z",
+      "timestamp": 1440968591000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Lee",
+        "given": "Taewon"
+      },
+      {
+        "family": "Rhee",
+        "given": "Pung-wook"
+      },
+      {
+        "family": "Lee",
+        "given": "Ghang"
+      }
+    ]
+  },
+  "10.1051/e3sconf/202671606001": {
+    "title": [
+      "Human-AI Interaction in Large Language Model-Integrated Building Energy Management System: User Prompt Strategy"
+    ],
+    "volume": "716",
+    "type": "journal-article",
+    "container-title": [
+      "E3S Web of Conferences"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          9
+        ]
+      ],
+      "date-time": "2026-06-09T07:53:07Z",
+      "timestamp": 1780991587000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Babon-Ayeng",
+        "given": "Prosper"
+      },
+      {
+        "family": "Jeon",
+        "given": "Kahyun"
+      }
+    ]
+  },
+  "10.1051/e3sconf/202671606009": {
+    "title": [
+      "Multi-Agent AI Learning Assistant for Human Building Interaction: System Architecture and Preliminary Performance"
+    ],
+    "volume": "716",
+    "type": "journal-article",
+    "container-title": [
+      "E3S Web of Conferences"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          9
+        ]
+      ],
+      "date-time": "2026-06-09T07:52:59Z",
+      "timestamp": 1780991579000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Kim",
+        "given": "Namgyun"
+      }
+    ]
+  },
+  "10.1051/e3sconf/202671606015": {
+    "title": [
+      "Chain-of-Thought Prompting for Generating Personalized Home Energy-Saving Strategies"
+    ],
+    "volume": "716",
+    "type": "journal-article",
+    "container-title": [
+      "E3S Web of Conferences"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          9
+        ]
+      ],
+      "date-time": "2026-06-09T07:53:07Z",
+      "timestamp": 1780991587000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      }
+    ]
+  },
+  "10.1051/e3sconf/202671610012": {
+    "title": [
+      "A classification scheme for exploring the role of wearable thermal PECS in a changing climate"
+    ],
+    "volume": "716",
+    "type": "journal-article",
+    "container-title": [
+      "E3S Web of Conferences"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          9
+        ]
+      ],
+      "date-time": "2026-06-09T07:52:59Z",
+      "timestamp": 1780991579000
+    },
+    "author": [
+      {
+        "family": "Pigliautile",
+        "given": "Ilaria"
+      },
+      {
+        "family": "Al-Assaad",
+        "given": "Douaa"
+      },
+      {
+        "family": "Kazanci",
+        "given": "Ongun Berk"
+      },
+      {
+        "family": "Choi",
+        "given": "Joon-Ho"
+      },
+      {
+        "family": "Cui",
+        "given": "Yanghao"
+      },
+      {
+        "family": "Dong",
+        "given": "Yu"
+      },
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Kim",
+        "given": "Joyce"
+      },
+      {
+        "family": "Olesen",
+        "given": "Bjarne"
+      },
+      {
+        "family": "Bivolarova",
+        "given": "Mariya Petrova"
+      },
+      {
+        "family": "Shinoda",
+        "given": "Jun"
+      }
+    ]
+  },
+  "10.1051/e3sconf/202671605001": {
+    "title": [
+      "Do Common Performance Metrics in Indoor Environmental Quality Research Represent Actual Office Work? A Survey-Based Assessment"
+    ],
+    "volume": "716",
+    "type": "journal-article",
+    "container-title": [
+      "E3S Web of Conferences"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          9
+        ]
+      ],
+      "date-time": "2026-06-09T07:53:00Z",
+      "timestamp": 1780991580000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Babon-Ayeng",
+        "given": "Prosper"
+      },
+      {
+        "family": "Keene",
+        "given": "Kevin"
+      },
+      {
+        "family": "Witt",
+        "given": "Sophia"
+      },
+      {
+        "family": "Baweja",
+        "given": "Jessica"
+      }
+    ]
+  },
+  "10.1061/9780784486443.002": {
+    "title": [
+      "A New Simple HVAC Energy Performance Metric: Climate and Occupant Preference-Adjusted"
+    ],
+    "volume": null,
+    "type": "proceedings-article",
+    "container-title": [
+      "Computing in Civil Engineering 2025"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          1,
+          28
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          1,
+          28
+        ]
+      ],
+      "date-time": "2026-01-28T11:03:33Z",
+      "timestamp": 1769598213000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Mo",
+        "given": "Yunjeong"
+      },
+      {
+        "family": "Witt",
+        "given": "Sophia"
+      }
+    ]
+  },
+  "10.1061/9780784486443.003": {
+    "title": [
+      "Indoor Heat Strain Early Detection Using Heart Rate Variability"
+    ],
+    "volume": null,
+    "type": "proceedings-article",
+    "container-title": [
+      "Computing in Civil Engineering 2025"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          1,
+          28
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          1,
+          28
+        ]
+      ],
+      "date-time": "2026-01-28T11:03:33Z",
+      "timestamp": 1769598213000
+    },
+    "author": [
+      {
+        "family": "Babon-Ayeng",
+        "given": "Prosper"
+      },
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      }
+    ]
+  },
+  "10.1061/9780784486443.107": {
+    "title": [
+      "Virtual and Augmented Reality in Building Science and Technology Education: A Review Framework"
+    ],
+    "volume": null,
+    "type": "proceedings-article",
+    "container-title": [
+      "Computing in Civil Engineering 2025"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          1,
+          28
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          1,
+          28
+        ]
+      ],
+      "date-time": "2026-01-28T11:03:33Z",
+      "timestamp": 1769598213000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Song",
+        "given": "Kwonsik"
+      }
+    ]
+  },
+  "10.22260/crc-csce-2025/0033": {
+    "title": [
+      "Exploring Awareness, Knowledge, and Interest in Energy Equity Among Undergraduate Students"
+    ],
+    "volume": null,
+    "type": "proceedings-article",
+    "container-title": [
+      "Proceedings of the CSCE Construction Specialty Conference and ASCE Construction Research Congress (CSCE/CRC  2025)"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          7,
+          31
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          2,
+          5
+        ]
+      ],
+      "date-time": "2026-02-05T13:38:32Z",
+      "timestamp": 1770298712000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Kim",
+        "given": "Siyeon"
+      },
+      {
+        "family": "Chang",
+        "given": "Soowon"
+      }
+    ]
+  },
+  "10.22260/crc-csce-2025/0139": {
+    "title": [
+      "Student and Educator Perceptions Toward Generative AI in Architecture, Engineering, Construction Education"
+    ],
+    "volume": null,
+    "type": "proceedings-article",
+    "container-title": [
+      "Proceedings of the CSCE Construction Specialty Conference and ASCE Construction Research Congress (CSCE/CRC  2025)"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          7,
+          31
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          2,
+          5
+        ]
+      ],
+      "date-time": "2026-02-05T13:38:32Z",
+      "timestamp": 1770298712000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Kim",
+        "given": "Namgyun"
+      }
+    ]
+  },
+  "10.22260/crc-csce-2025/0143": {
+    "title": [
+      "Sustainability Engagement and Career Aspirations Among Underrepresented Engineering Students: Insights from a Comparative Analysis"
+    ],
+    "volume": null,
+    "type": "proceedings-article",
+    "container-title": [
+      "Proceedings of the CSCE Construction Specialty Conference and ASCE Construction Research Congress (CSCE/CRC  2025)"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          7,
+          31
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          2,
+          5
+        ]
+      ],
+      "date-time": "2026-02-05T13:38:32Z",
+      "timestamp": 1770298712000
+    },
+    "author": [
+      {
+        "family": "Babon-Ayeng",
+        "given": "Prosper"
+      },
+      {
+        "family": "Jung",
+        "given": "Sung-Eun"
+      },
+      {
+        "family": "Cheng",
+        "given": "Katherine"
+      },
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      }
+    ]
+  },
+  "10.63044/s25adv49": {
+    "title": [
+      "Performance Evaluation of Electrified Office Buildings Under Infection Risk Management Mode"
+    ],
+    "volume": null,
+    "type": "proceedings-article",
+    "container-title": [
+      "2025 ASHRAE Annual Conference"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          8,
+          4
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2025,
+          9,
+          7
+        ]
+      ],
+      "date-time": "2025-09-07T14:45:39Z",
+      "timestamp": 1757256339000
+    },
+    "author": [
+      {
+        "family": "Hasani Alavy",
+        "given": "Elham"
+      },
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      }
+    ]
+  },
+  "10.22260/isarc2015/0003": {
+    "title": [
+      "An Introduction to South Korea's BIM Knowledge Base Development Project"
+    ],
+    "volume": null,
+    "type": "proceedings-article",
+    "container-title": [
+      "Proceedings of the International Symposium on Automation and Robotics in Construction (IAARC)",
+      "Proceedings of the 32nd International Symposium on Automation and Robotics in Construction and Mining (ISARC 2015)"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2015,
+          6,
+          18
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2017,
+          10,
+          13
+        ]
+      ],
+      "date-time": "2017-10-13T15:20:55Z",
+      "timestamp": 1507908055000
+    },
+    "author": [
+      {
+        "family": "Lee",
+        "given": "Kyungha"
+      },
+      {
+        "family": "Park",
+        "given": "Young-hyun"
+      },
+      {
+        "family": "Lee",
+        "given": "Ghang"
+      },
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Lee",
+        "given": "Seungjae"
+      },
+      {
+        "family": "Lee",
+        "given": "Hwayeon"
+      }
+    ]
+  },
+  "10.2172/2476528": {
+    "title": [
+      "Commercial Building Prototypes Based on ANSI/ASHRAE/IES Standard 90.1-2019 Appendix G PRM: Technical Support Document"
+    ],
+    "volume": null,
+    "type": "report",
+    "container-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2024,
+          6,
+          28
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2024,
+          11,
+          10
+        ]
+      ],
+      "date-time": "2024-11-10T03:07:18Z",
+      "timestamp": 1731208038000
+    },
+    "author": [
+      {
+        "family": "Chandrasekharan Nambiar",
+        "given": "Chitra"
+      },
+      {
+        "family": "Rosenberg",
+        "given": "Michael"
+      },
+      {
+        "family": "Maddox",
+        "given": "Douglas"
+      },
+      {
+        "family": "Nagda",
+        "given": "Harshil"
+      },
+      {
+        "family": "Tillou",
+        "given": "Michael"
+      },
+      {
+        "family": "Karpman",
+        "given": "Maria"
+      },
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Kim",
+        "given": "Dongsu"
+      }
+    ]
+  }
+}

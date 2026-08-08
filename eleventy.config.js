@@ -70,6 +70,31 @@ export default function (eleventyConfig) {
     (links || []).filter((l) => types.includes(l.type)).map((l) => l.url)
   );
 
+  // Authors are stored "Last, First" because that is what RIS and BibTeX want.
+  // Reading order is for humans only, so it is produced at render time.
+  eleventyConfig.addFilter("authorDisplay", (name) => {
+    const parts = String(name).split(",");
+    return parts.length === 2 ? `${parts[1].trim()} ${parts[0].trim()}` : String(name).trim();
+  });
+
+  // Publications grouped by year, newest first — the /publications/ index reads
+  // like the news page. Publications carry `year`, not a `date`, so groupByYear
+  // above cannot be reused.
+  eleventyConfig.addFilter("groupPubsByYear", (items) => {
+    const groups = {};
+    for (const item of items || []) (groups[item.year] = groups[item.year] || []).push(item);
+    return Object.keys(groups)
+      .sort((a, b) => b.localeCompare(a))
+      .map((y) => ({ year: y, items: groups[y] }));
+  });
+
+  // Look a publication up by slug, so a news item can name the papers it is
+  // announcing without repeating their titles.
+  eleventyConfig.addFilter("pubsBySlug", (pubs, slugs) =>
+    (slugs || []).map((s) => (pubs || []).find((p) => p.slug === s)).filter(Boolean)
+  );
+
+
   return {
     dir: { input: "src", output: "_site", includes: "_includes", data: "_data" },
     markdownTemplateEngine: "njk",

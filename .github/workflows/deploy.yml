@@ -7,6 +7,19 @@ name: Build and deploy to GitHub Pages
 on:
   push:
     branches: [main]
+
+  # The publication list is fetched from ORCID during the build, so the site
+  # only learns about a new paper when a build runs. This rebuilds weekly with
+  # no push, which is what makes claiming a paper in ORCID enough on its own.
+  #
+  # GitHub disables scheduled workflows after 60 days of repository inactivity
+  # and emails about it; re-enable from the Actions tab. Times are UTC and runs
+  # can be delayed under load — nothing here depends on the exact minute.
+  schedule:
+    - cron: "0 7 * * 1"   # Mondays, 07:00 UTC — midnight Tucson
+
+  # Also runnable on demand: Actions → Build and deploy → Run workflow. Use it
+  # when you have just claimed something in ORCID and don't want to wait.
   workflow_dispatch:
 
 permissions:

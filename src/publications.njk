@@ -1,0 +1,63 @@
+---
+layout: base.njk
+title: Publications
+description: >-
+  Journal articles and conference papers from the Human Building Synergy
+  Laboratory at the University of Arizona.
+---
+{% from "icons.njk" import icon %}
+
+{# Deliberately absent from site.nav — reached from the Research page, which is
+   where someone looking for papers already is. The list itself is built from
+   Dr. Jung's ORCID record at deploy time; see src/_data/publications.js. #}
+<section class="pageHero wrap">
+  <p class="label">Publications</p>
+  <h1>Read the <span class="c-gold">work.</span></h1>
+  <p class="lede">
+    Everything the lab has published, newest first. Each title goes to the
+    paper; Cite downloads a citation file for your reference manager.
+  </p>
+</section>
+
+<section class="band band--tight wrap">
+  {%- for group in publications | groupPubsByYear %}
+  <div class="yearHead">
+    <b>{{ group.year }}</b>
+    <hr />
+    <span>{{ group.items.length }} {% if group.items.length == 1 %}paper{% else %}papers{% endif %}</span>
+  </div>
+
+  <ul class="pubs">
+    {%- for p in group.items %}
+    <li>
+      <span class="pub__n" aria-hidden="true">{{ p.n }}</span>
+      {%- if p.doi %}
+      <a class="pub__title" href="{{ p.doi }}" target="_blank" rel="noopener">{{ p.title }}</a>
+      {%- else %}
+      {# No DOI was ever registered for this one, so there is nothing to link to. #}
+      <span class="pub__title pub__title--plain">{{ p.title }}</span>
+      {%- endif %}
+      <p class="pub__authors">
+        {%- for a in p.authors %}{{ a | authorDisplay }}{% if not loop.last %}, {% endif %}{% endfor %}
+      </p>
+      <p class="pub__meta">
+        <span class="kind">{{ p.kind }}</span>
+        <span>{{ p.venue }}{% if p.volume %}, {{ p.volume }}{% endif %}</span>
+        <a class="pub__cite" href="/publications/{{ p.slug }}.ris" download>Cite</a>
+      </p>
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- endfor %}
+</section>
+
+<section class="band band--rule band--tight wrap">
+  <div class="cta">
+    <p class="label">Elsewhere</p>
+    <h2 style="margin-top:.8rem">Citation counts and preprints.</h2>
+    <div class="btnRow">
+      <a class="btn btn--quiet" href="{{ site.social.scholar }}" target="_blank" rel="noopener">Google Scholar {{ icon("external") }}</a>
+      <a class="btn btn--quiet" href="/research/">Research {{ icon("arrow-right") }}</a>
+    </div>
+  </div>
+</section>

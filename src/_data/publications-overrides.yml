@@ -1,0 +1,163 @@
+# Corrections to the automatic publication list. This is the ONLY file to edit
+# by hand — everything else comes from ORCID and Crossref at build time.
+#
+# Claiming a paper in ORCID is what puts it on the site. Nothing here adds a
+# paper except `extra`, and that is a stopgap.
+
+# ---------------------------------------------------------------------------
+# Papers to leave off the site entirely.
+#
+# The 2024 Taylor & Francis book is registered with a DOI per chapter as well
+# as one for the book, so ORCID reports eleven works for one book. The chapters
+# are dropped and the book itself is kept.
+# ---------------------------------------------------------------------------
+exclude:
+  - 10.4324/9780367814748-1    # Introduction
+  - 10.4324/9780367814748-3    # Human Health and Wellbeing Measures
+  - 10.4324/9780367814748-4    # Environmental Measures
+  - 10.4324/9780367814748-5    # Material Measures
+  - 10.4324/9780367814748-7    # Sensing and Data Acquisition
+  - 10.4324/9780367814748-8    # Measurement Tools and Technologies
+  - 10.4324/9780367814748-9    # Design and Analysis Methods
+  - 10.4324/9780367814748-11   # Case Studies
+  - 10.4324/9780367814748-12   # Future Directions
+
+# ---------------------------------------------------------------------------
+# Papers not yet claimed in ORCID.
+#
+# This list should shrink to nothing. Claim each of these in ORCID — it is the
+# record NSF, Scopus and Web of Science read — then delete the line here.
+# ---------------------------------------------------------------------------
+extra:
+  # Journal articles
+  - 10.1016/j.erss.2026.104630
+  - 10.1016/j.buildenv.2025.114165
+  - 10.1016/j.buildenv.2025.113541
+  - 10.1016/j.buildenv.2025.113471
+  - 10.1016/j.enbuild.2025.116106
+  - 10.6106/KJCEM.2015.16.4.089
+
+  # IAQVEC 2026 — published in E3S Web of Conferences
+  - 10.1051/e3sconf/202671606001
+  - 10.1051/e3sconf/202671606009
+  - 10.1051/e3sconf/202671606015
+  - 10.1051/e3sconf/202671610012
+  - 10.1051/e3sconf/202671605001
+
+  # i3ce 2025 — ASCE Computing in Civil Engineering
+  - 10.1061/9780784486443.002
+  - 10.1061/9780784486443.003
+  - 10.1061/9780784486443.107
+
+  # CRC / CSCE 2025
+  - 10.22260/crc-csce-2025/0033
+  - 10.22260/crc-csce-2025/0139
+  - 10.22260/crc-csce-2025/0143
+
+  # Other conferences
+  - 10.1007/978-3-031-84224-5_14   # ICCCBE 2024
+  - 10.63044/s25adv49              # ASHRAE 2025
+  - 10.22260/isarc2015/0003        # ISARC 2015
+
+  # Technical report
+  - 10.2172/2476528                # PNNL-32815, ASHRAE 90.1 Appendix G PRM
+
+# ---------------------------------------------------------------------------
+# Per-DOI corrections, for the cases where the publisher registered something
+# unhelpful. Any of `title`, `venue`, `kind` or `slug` may be set.
+#
+# Springer publishes these conference proceedings inside a book series, so
+# Crossref reports the series name as the venue and the type as a chapter.
+# ---------------------------------------------------------------------------
+fix:
+  10.1007/978-3-031-84224-5_14:
+    kind: conference
+    venue: >-
+      The 20th Conference of the International Society for Computing in Civil
+      and Building Engineering (ICCCBE 2024)
+  10.1007/978-3-319-91638-5_12:
+    kind: conference
+    venue: >-
+      The 25th International Workshop on Intelligent Computing in Engineering
+      (EG-ICE 2018)
+  10.1016/j.buildenv.2025.113471:
+    slug: pecs-review-performance-evaluation-methods
+  10.1016/j.buildenv.2025.113541:
+    slug: pecs-review-benefits
+
+# ---------------------------------------------------------------------------
+# Papers with no DOI, transcribed from the CV.
+#
+# Older conference proceedings often were never assigned one. These render
+# without a link, and their citation file carries no DO/UR line, but they are
+# real papers and belong on the list. If a DOI ever appears, move the entry to
+# `extra` above and delete it from here.
+#
+# `date` is the conference date and only affects ordering within the year.
+# `authors` is "Last, First", as everywhere else — and each name MUST be
+# quoted, or YAML splits it on the comma into two people.
+# ---------------------------------------------------------------------------
+manual:
+  - title: >-
+      Uncovering Age-Related Differences in Heat Stress Recognition and
+      Progression Under Gradual Indoor Heat Exposure
+    authors: ["Babon-Ayeng, Prosper", "Jung, Wooyoung"]
+    venue: >-
+      Construction Institute & Construction Research Congress Joint Conference
+      2026 (CI & CRC 2026), San Antonio, TX
+    year: "2026"
+    date: "2026-03"
+
+  - title: >-
+      U.S. Smart Thermostat Adopters Through the Lens of Diffusion of
+      Innovation Theory
+    authors: ["Jung, Wooyoung"]
+    venue: >-
+      The 11th International Conference on Construction Engineering and Project
+      Management (ICCEPM 2025), Jeju, South Korea
+    year: "2025"
+    date: "2025-11"
+
+  - title: >-
+      Understanding the Influence of Short-Term Thermal History on Personalized
+      Thermal Comfort Votes
+    authors: ["Jung, Wooyoung", "Jazizadeh, Farrokh"]
+    venue: eSim 2021, Vancouver, Canada
+    year: "2021"
+    date: "2021-06"
+
+  - title: Towards Non-intrusive Metabolic Rate Evaluation for HVAC Control
+    authors: ["Jung, Wooyoung", "Jazizadeh, Farrokh"]
+    venue: >-
+      The 17th International Conference on Computing in Civil and Building
+      Engineering (ICCCBE 2018), Tampere, Finland
+    year: "2018"
+    date: "2018-06"
+
+  - title: Introduction to the Global BIM Dashboard
+    authors:
+      - "Lee, Ghang"
+      - "Lee, Kyungha"
+      - "Jung, Wooyoung"
+      - "Hwang, Kyuhyup"
+      - "Han, Sunil"
+      - "Jung, Nahyun"
+      - "Lee, Hyunsoo"
+      - "Kim, Minchan"
+    venue: >-
+      The 16th International Conference on Computing in Civil and Building
+      Engineering (ICCCBE 2016), Osaka, Japan
+    year: "2016"
+    date: "2016-07"
+
+  # Archived on Zenodo, whose DOIs are registered with DataCite rather than
+  # Crossref, so the automatic fetch cannot see it. Metadata from the DataCite
+  # record; the title there is machine title-cased ("Bim"), corrected here.
+  - title: The Status of BIM Adoption on Six Continents
+    authors: ["Jung, Wooyoung", "Lee, Ghang"]
+    venue: >-
+      International Journal of Civil, Environmental, Structural, Construction
+      and Architectural Engineering
+    year: "2015"
+    kind: journal
+    doi: https://doi.org/10.5281/zenodo.1100430

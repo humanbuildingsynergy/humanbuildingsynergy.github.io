@@ -1,0 +1,37 @@
+---
+# A downloadable RIS record per paper, linked from the Cite link on the
+# /publications/ index, so a reader can drop the citation into Zotero,
+# Mendeley or EndNote instead of retyping it.
+#
+# RIS is line-oriented and strict about the two-space-hyphen-space separator.
+# Every field needs `| safe`: this is a plain-text file, and Nunjucks would
+# otherwise turn an apostrophe in a title or abstract into &#39;.
+pagination:
+  data: publications
+  size: 1
+  alias: pub
+permalink: "/publications/{{ pub.slug }}.ris"
+eleventyExcludeFromCollections: true
+---
+TY  - {{ "CONF" if pub.kind == "conference" else "JOUR" }}
+TI  - {{ pub.title | trim | safe }}
+{%- for a in pub.authors %}
+AU  - {{ a | safe }}
+{%- endfor %}
+{%- if pub.kind == "conference" %}
+T2  - {{ pub.venue | trim | safe }}
+{%- else %}
+JO  - {{ pub.venue | trim | safe }}
+{%- endif %}
+PY  - {{ pub.year }}
+{%- if pub.volume %}
+VL  - {{ pub.volume }}
+{%- endif %}
+{%- if pub.doi %}
+DO  - {{ pub.doi | replace("https://doi.org/", "") }}
+UR  - {{ pub.doi }}
+{%- endif %}
+{%- if pub.abstract %}
+AB  - {{ pub.abstract | trim | safe }}
+{%- endif %}
+ER  -
