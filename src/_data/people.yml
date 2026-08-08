@@ -24,8 +24,11 @@ director:
     - type: github
       url: https://github.com/humanbuildingsynergy?tab=repositories
       label: GitHub
+    # The PDF compiled from the LaTeX source, served from this repo. To update:
+    # recompile, overwrite src/assets/cv/CV_Full_LaTeX_WJ.pdf, commit. The URL
+    # never changes, so it is safe to put in a paper or an email signature.
     - type: cv
-      url: https://docs.google.com/document/d/1IlxMXIXxsaTBeeKN_7ePlJd5l9TdesEssXqEQs2QjNw/edit?usp=drive_link
+      url: /assets/cv/CV_Full_LaTeX_WJ.pdf
       label: CV
 
 members:
