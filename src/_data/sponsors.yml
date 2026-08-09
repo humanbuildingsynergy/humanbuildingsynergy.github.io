@@ -9,7 +9,9 @@ sponsors:
     url: https://www.srpnet.com/
   - name: Western Alliance to Expand Student Opportunities
     logo: waeso_logo.webp
-    url: https://www.waeso.org/
+    # waeso.org is parked at Pantheon and serves a 404; waeso.asu.edu, which
+    # search engines still list, has no DNS record. Name only until one works.
+    url: ""
   - name: Civil & Architectural Engineering & Mechanics, University of Arizona
     logo: CAEM_logo.webp
     url: https://caem.engineering.arizona.edu/
@@ -19,7 +21,8 @@ sponsors:
 partners:
   - name: UArizona Institute of Place, Wellbeing & Performance
     logo: UA_IPWP.webp
-    url: https://ipwp.arizona.edu/
+    # ipwp.arizona.edu no longer resolves. Name only until a new home appears.
+    url: ""
   - name: ecobee
     logo: ecobee_logo.webp
     url: https://www.ecobee.com/donate-your-data/

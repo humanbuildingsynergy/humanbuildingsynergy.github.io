@@ -42,7 +42,10 @@ jobs:
           # normally: ACM, ASCE, ASME, MDPI, Wiley and EDP Sciences all do,
           # and every doi.org link redirects to one of them. LinkedIn answers
           # 999, which is its own invention. Treating those as failures would
-          # bury the real breakages under sixty false alarms.
+          # bury the real breakages under sixty false alarms. Taylor & Francis
+          # goes further and answers 404 rather than 403, which is
+          # indistinguishable from a dead page, so that host is excluded
+          # outright — the one link there was verified by hand.
           args: >-
             --no-progress
             --max-concurrency 4
@@ -50,6 +53,7 @@ jobs:
             --max-retries 2
             --accept 200,206,301,302,403,429,999
             --exclude-path _site/assets
+            --exclude 'taylorfrancis\.com'
             './_site/**/*.html'
           fail: false
           output: lychee-report.md
