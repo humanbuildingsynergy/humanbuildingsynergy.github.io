@@ -2,6 +2,15 @@
 # `group` separates UArizona work from prior-affiliation work.
 uarizona:
   - title: >-
+      Preservation and Reinvestment Initiative for Community Enhancement (PRICE)
+    sponsor: The City of Tucson, U.S. Department of Housing and Urban Development
+    start: 2026-09
+    end: 2029-08
+    role: PI
+    status: current
+    url: https://www.hud.gov/hud-partners/community-price-awards
+
+  - title: >-
       Collaborative Research: Empowering STEM Education by Creating Benchmarking
       Models for GenAI Learning Assistants
     sponsor: National Science Foundation
