@@ -1046,6 +1046,11 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
             text-transform: uppercase; color: var(--ink-3); margin-top: .6rem; }
 .pub__cite { color: var(--ai); text-decoration: none; }
 .pub__cite:hover { color: var(--human); }
+
+/* The DOI sits quieter than Cite — it is there to be read and copied, not
+   clicked. Kept on one line: a wrapped DOI is impossible to select cleanly. */
+.pub__doi { color: var(--ink-3); text-decoration: none; white-space: nowrap; }
+.pub__doi:hover { color: var(--ai); text-decoration: underline; }
 /* A paper with no DOI has no link, so it must not look like one. */
 .pub__title--plain { color: var(--ink); cursor: default; }
 /* An archived repo should not look like a live one. */

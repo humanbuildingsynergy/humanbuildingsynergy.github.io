@@ -28,6 +28,11 @@ const overrides = yaml.load(
   fs.readFileSync(path.join(process.cwd(), "src", "_data", "publications-overrides.yml"), "utf8")
 ) || {};
 
+// Keyed case-insensitively — the YAML writes DOIs however the publisher does.
+const FIX = Object.fromEntries(
+  Object.entries(overrides.fix || {}).map(([k, v]) => [k.toLowerCase(), v])
+);
+
 const readCache = () => {
   try { return JSON.parse(fs.readFileSync(CACHE, "utf8")); } catch { return {}; }
 };
@@ -65,18 +70,30 @@ async function dois() {
   const found = (data.group || []).flatMap((g) =>
     (g["external-ids"]?.["external-id"] || [])
       .filter((e) => e["external-id-type"] === "doi")
-      .map((e) => e["external-id-value"].toLowerCase())
+      .map((e) => e["external-id-value"])
   );
   // `extra` is the escape hatch for a paper not yet claimed in ORCID. Prefer
   // claiming it in ORCID and deleting the line.
-  return [...new Set([...found, ...(overrides.extra || []).map((d) => d.toLowerCase())])];
+  //
+  // Case is preserved rather than folded: DOIs resolve case-insensitively, but
+  // the page now prints them for people to copy, and 10.6106/KJCEM… should not
+  // appear as 10.6106/kjcem…. Matching is still case-insensitive throughout.
+  const seen = new Set();
+  return [...found, ...(overrides.extra || [])].filter((d) => {
+    const k = d.toLowerCase();
+    return seen.has(k) ? false : seen.add(k);
+  });
 }
 
 function shape(doi, m) {
-  const fix = (overrides.fix || {})[doi] || {};
+  const fix = FIX[doi.toLowerCase()] || {};
   const rawTitle = (m.title || ["Untitled"])[0];
   const title = fix.title || rawTitle.replace(/<[^>]+>/g, "").replace(/&amp;/g, "&");
   return {
+    /* Displayed with whatever case the source gave. Crossref is no help here:
+       it lower-cases every DOI in its API, so 10.6106/KJCEM… comes back as
+       10.6106/kjcem…. ORCID preserves case for most but not all. DOIs resolve
+       either way; this only affects what a reader copies off the page. */
     doi: `https://doi.org/${doi}`,
     slug: fix.slug || slugify(title),
     title,
@@ -101,25 +118,27 @@ export default async function () {
 
   let list;
   try {
-    list = (await dois()).filter((d) => !skip.has(d));
+    list = (await dois()).filter((d) => !skip.has(d.toLowerCase()));
   } catch (err) {
     console.warn(`[publications] ORCID unreachable (${err.message}); using cache`);
-    list = Object.keys(cache).filter((d) => !skip.has(d));
+    list = Object.keys(cache).filter((d) => !skip.has(d.toLowerCase()));
   }
 
-  const missing = list.filter((d) => !cache[d]);
+  // Cache keys stay lower-cased so a DOI written two ways is fetched once.
+  const key = (d) => d.toLowerCase();
+  const missing = list.filter((d) => !cache[key(d)]);
   for (const doi of missing) {
     try {
       const { message } = await getJSON(
         `https://api.crossref.org/works/${encodeURIComponent(doi)}`);
-      cache[doi] = slim(message);
+      cache[key(doi)] = slim(message);
     } catch (err) {
       console.warn(`[publications] skipping ${doi}: ${err.message}`);
     }
   }
   if (missing.length) writeCache(cache);
 
-  const pubs = list.filter((d) => cache[d]).map((d) => shape(d, cache[d]));
+  const pubs = list.filter((d) => cache[key(d)]).map((d) => shape(d, cache[key(d)]));
 
   /* Hand-written entries, for work Crossref cannot supply — older conference
      proceedings that were never given a DOI, and the occasional paper whose

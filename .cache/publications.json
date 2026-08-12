@@ -1,4 +1,43 @@
 {
+  "10.1016/j.enbuild.2026.118038": {
+    "title": [
+      "Large language model-driven context-aware eco-feedback generation and evaluation"
+    ],
+    "volume": "370",
+    "type": "journal-article",
+    "container-title": [
+      "Energy and Buildings"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          11
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          8,
+          3
+        ]
+      ],
+      "date-time": "2026-08-03T15:56:07Z",
+      "timestamp": 1785772567000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      },
+      {
+        "family": "Babon-Ayeng",
+        "given": "Prosper"
+      }
+    ]
+  },
   "10.1016/j.buildenv.2026.115052": {
     "title": [
       "Assessing indoor heat strain through occupant language: A framework for building thermal resilience"
@@ -38,50 +77,10 @@
       }
     ]
   },
-  "10.1016/j.enbuild.2026.118038": {
-    "title": [
-      "Large Language Model-Driven Context-Aware Eco-Feedback Generation and Evaluation"
-    ],
-    "volume": null,
-    "type": "journal-article",
-    "container-title": [
-      "Energy and Buildings"
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026,
-          8
-        ]
-      ]
-    },
-    "created": {
-      "date-parts": [
-        [
-          2026,
-          8,
-          3
-        ]
-      ],
-      "date-time": "2026-08-03T15:56:07Z",
-      "timestamp": 1785772567000
-    },
-    "author": [
-      {
-        "family": "Jung",
-        "given": "Wooyoung"
-      },
-      {
-        "family": "Babon-Ayeng",
-        "given": "Prosper"
-      }
-    ]
-  },
   "10.1145/3765611.3815486": {
     "title": [
       "BrickTrace: Separating Ontology Reasoning from Building Grounding in Knowledge Graph Question Answering"
     ],
-    "volume": null,
     "type": "proceedings-article",
     "container-title": [
       "Proceedings of the 2026 ACM Sustainability Week"
@@ -117,7 +116,6 @@
     "title": [
       "Language As a Sensor: Narrative-Enhanced Thermal Comfort Modeling"
     ],
-    "volume": null,
     "type": "proceedings-article",
     "container-title": [
       "Proceedings of the 13th ACM International Conference on Systems for Energy-Efficient Buildings, Cities, and Transportation"
@@ -157,7 +155,6 @@
     "title": [
       "What LLM-Simulated Users Can and Cannot Tell Us About Conversational Energy Management Systems"
     ],
-    "volume": null,
     "type": "proceedings-article",
     "container-title": [
       "Proceedings of the 2026 ACM Sustainability Week"
@@ -193,7 +190,6 @@
     "title": [
       "What You Know Does Not Show: Domain Knowledge and Occupant-AI Interaction in Building Energy Management"
     ],
-    "volume": null,
     "type": "proceedings-article",
     "container-title": [
       "Proceedings of the 2026 ACM Sustainability Week"
@@ -488,7 +484,6 @@
     "title": [
       "Measuring the Impact of the Built Environment on Health, Wellbeing, and Performance"
     ],
-    "volume": null,
     "type": "monograph",
     "container-title": [],
     "issued": {
@@ -620,7 +615,6 @@
     "title": [
       "A Statistical Evaluation of Combining Human Productivity Metrics in the Indoor Environment"
     ],
-    "volume": null,
     "type": "journal-article",
     "container-title": [
       "ASME Journal of Engineering for Sustainable Buildings and Cities"
@@ -782,7 +776,6 @@
     "title": [
       "Feasibility Assessment of Heat Flux Sensors for Human-in-the-Loop HVAC Operations"
     ],
-    "volume": null,
     "type": "proceedings-article",
     "container-title": [
       "Computing in Civil Engineering 2019"
@@ -830,7 +823,6 @@
     "title": [
       "Spatial Efficacy of Respiration Monitoring using Doppler Radars for Personalized Thermal Comfort Assessment"
     ],
-    "volume": null,
     "type": "proceedings-article",
     "container-title": [
       "Proceedings of the International Symposium on Automation and Robotics in Construction (IAARC)",
@@ -988,7 +980,6 @@
     "title": [
       "Multi-occupancy Indoor Thermal Condition Optimization in Consideration of Thermal Sensitivity"
     ],
-    "volume": null,
     "type": "book-chapter",
     "container-title": [
       "Lecture Notes in Computer Science",
@@ -1027,7 +1018,6 @@
     "title": [
       "Non-Intrusive Detection of Respiration for Smart Control of HVAC System"
     ],
-    "volume": null,
     "type": "proceedings-article",
     "container-title": [
       "Computing in Civil Engineering 2017"
@@ -1067,7 +1057,6 @@
     "title": [
       "Towards integration of doppler radar sensors into personalized thermoregulation-based control of HVAC"
     ],
-    "volume": null,
     "type": "proceedings-article",
     "container-title": [
       "Proceedings of the 4th ACM International Conference on Systems for Energy-Efficient Built Environments"
@@ -1769,45 +1758,6 @@
       }
     ]
   },
-  "10.1007/978-3-031-84224-5_14": {
-    "title": [
-      "Unveiling the Spectrum of Personal Heat Stress Responses in Buildings"
-    ],
-    "volume": null,
-    "type": "book-chapter",
-    "container-title": [
-      "Lecture Notes in Civil Engineering",
-      "Advances in Information Technology in Civil and Building Engineering"
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2025
-        ]
-      ]
-    },
-    "created": {
-      "date-parts": [
-        [
-          2025,
-          3,
-          3
-        ]
-      ],
-      "date-time": "2025-03-03T09:22:59Z",
-      "timestamp": 1740993779000
-    },
-    "author": [
-      {
-        "family": "Babon-Ayeng",
-        "given": "Prosper"
-      },
-      {
-        "family": "Jung",
-        "given": "Wooyoung"
-      }
-    ]
-  },
   "10.6106/kjcem.2015.16.4.089": {
     "title": [
       "An Analysis of the Duration of the Construction Document Phase of Large Public Building Projects Delivered by the Total Solution Service from 2009 to 2014"
@@ -2098,7 +2048,6 @@
     "title": [
       "A New Simple HVAC Energy Performance Metric: Climate and Occupant Preference-Adjusted"
     ],
-    "volume": null,
     "type": "proceedings-article",
     "container-title": [
       "Computing in Civil Engineering 2025"
@@ -2142,7 +2091,6 @@
     "title": [
       "Indoor Heat Strain Early Detection Using Heart Rate Variability"
     ],
-    "volume": null,
     "type": "proceedings-article",
     "container-title": [
       "Computing in Civil Engineering 2025"
@@ -2182,7 +2130,6 @@
     "title": [
       "Virtual and Augmented Reality in Building Science and Technology Education: A Review Framework"
     ],
-    "volume": null,
     "type": "proceedings-article",
     "container-title": [
       "Computing in Civil Engineering 2025"
@@ -2222,7 +2169,6 @@
     "title": [
       "Exploring Awareness, Knowledge, and Interest in Energy Equity Among Undergraduate Students"
     ],
-    "volume": null,
     "type": "proceedings-article",
     "container-title": [
       "Proceedings of the CSCE Construction Specialty Conference and ASCE Construction Research Congress (CSCE/CRC  2025)"
@@ -2266,7 +2212,6 @@
     "title": [
       "Student and Educator Perceptions Toward Generative AI in Architecture, Engineering, Construction Education"
     ],
-    "volume": null,
     "type": "proceedings-article",
     "container-title": [
       "Proceedings of the CSCE Construction Specialty Conference and ASCE Construction Research Congress (CSCE/CRC  2025)"
@@ -2306,7 +2251,6 @@
     "title": [
       "Sustainability Engagement and Career Aspirations Among Underrepresented Engineering Students: Insights from a Comparative Analysis"
     ],
-    "volume": null,
     "type": "proceedings-article",
     "container-title": [
       "Proceedings of the CSCE Construction Specialty Conference and ASCE Construction Research Congress (CSCE/CRC  2025)"
@@ -2350,11 +2294,48 @@
       }
     ]
   },
+  "10.1007/978-3-031-84224-5_14": {
+    "title": [
+      "Unveiling the Spectrum of Personal Heat Stress Responses in Buildings"
+    ],
+    "type": "book-chapter",
+    "container-title": [
+      "Lecture Notes in Civil Engineering",
+      "Advances in Information Technology in Civil and Building Engineering"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2025,
+          3,
+          3
+        ]
+      ],
+      "date-time": "2025-03-03T09:22:59Z",
+      "timestamp": 1740993779000
+    },
+    "author": [
+      {
+        "family": "Babon-Ayeng",
+        "given": "Prosper"
+      },
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
+      }
+    ]
+  },
   "10.63044/s25adv49": {
     "title": [
       "Performance Evaluation of Electrified Office Buildings Under Infection Risk Management Mode"
     ],
-    "volume": null,
     "type": "proceedings-article",
     "container-title": [
       "2025 ASHRAE Annual Conference"
@@ -2394,7 +2375,6 @@
     "title": [
       "An Introduction to South Korea's BIM Knowledge Base Development Project"
     ],
-    "volume": null,
     "type": "proceedings-article",
     "container-title": [
       "Proceedings of the International Symposium on Automation and Robotics in Construction (IAARC)",
@@ -2451,7 +2431,6 @@
     "title": [
       "Commercial Building Prototypes Based on ANSI/ASHRAE/IES Standard 90.1-2019 Appendix G PRM: Technical Support Document"
     ],
-    "volume": null,
     "type": "report",
     "container-title": [],
     "issued": {

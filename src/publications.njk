@@ -43,6 +43,11 @@ description: >-
       <p class="pub__meta">
         <span class="kind">{{ p.kind }}</span>
         <span>{{ p.venue }}{% if p.volume %}, {{ p.volume }}{% endif %}</span>
+        {#- Shown bare rather than as a full URL: that is the form people paste
+            into a reference manager, and it keeps the meta line short. #}
+        {%- if p.doi %}
+        <a class="pub__doi" href="{{ p.doi }}" target="_blank" rel="noopener">{{ p.doi | replace("https://doi.org/", "") }}</a>
+        {%- endif %}
         <a class="pub__cite" href="/publications/{{ p.slug }}.ris" download>Cite</a>
       </p>
     </li>
