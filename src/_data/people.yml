@@ -52,3 +52,19 @@ members:
       - type: linkedin
         url: https://www.linkedin.com/in/prosper-babon-ayeng-36a8991b9/
         label: LinkedIn
+
+  - name: Sadia Jahan Noor
+    role: Graduate Research Assistant
+    affiliation: Civil & Architectural Engineering & Mechanics, The University of Arizona
+    photo: SadiaJN.webp
+    bio: >-
+      Ms. Sadia Jahan Noor is a PhD student and graduate research assistant in the
+      Human Building Synergy (HUBS) Lab at the University of Arizona, where she
+      contributes to ongoing research in the lab.
+      She holds an M.Sc. in Civil Engineering from North Carolina A&T State
+      University and a B.Arch. from Chittagong University of Engineering &
+      Technology (CUET) in Chattogram, Bangladesh. Her research centers on AI/ML-driven
+      building energy optimization and human-technology interaction, with additional
+      interests spanning hydrogen microgrids, computational design, sustainable
+      construction, and BIM/BEM-based approaches to high-performance, adaptive built
+      environments.
