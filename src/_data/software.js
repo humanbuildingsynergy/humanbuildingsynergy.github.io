@@ -3,10 +3,10 @@
    software-content.yml holds what only a human can write — the name, what the
    thing is, what it does. Everything that goes stale is fetched instead:
 
-     Zenodo (via DataCite)  version, licence, release date
+     Zenodo (via DataCite)  version, license, release date
      GitHub                 when the repo was last pushed, language, archived
 
-   Licence comes from Zenodo rather than GitHub on purpose: GitHub's detector
+   License comes from Zenodo rather than GitHub on purpose: GitHub's detector
    reports NOASSERTION for repos whose LICENSE it cannot classify, while the
    Zenodo record carries the SPDX identifier the author actually chose.
 
@@ -44,7 +44,7 @@ async function fromZenodo(doi) {
   const rights = (a.rightsList || [])[0] || {};
   return {
     version: a.version || "",
-    licence: (rights.rightsIdentifier || rights.rights || "").toUpperCase(),
+    license: (rights.rightsIdentifier || rights.rights || "").toUpperCase(),
     released: issued?.date || String(a.publicationYear || ""),
   };
 }
@@ -63,8 +63,8 @@ async function fromGitHub(url) {
     language: d.language || "",
     archived: !!d.archived,
     // GitHub answers NOASSERTION when it cannot classify a LICENSE file, which
-    // is not a licence name. Keep it only when it is a real SPDX identifier.
-    ghLicence: spdx && spdx !== "NOASSERTION" ? spdx.toUpperCase() : "",
+    // is not a license name. Keep it only when it is a real SPDX identifier.
+    ghLicense: spdx && spdx !== "NOASSERTION" ? spdx.toUpperCase() : "",
   };
 }
 
@@ -76,17 +76,17 @@ async function enrich(item, cache) {
       item.zenodo ? fromZenodo(item.zenodo) : {},
       item.github ? fromGitHub(item.github) : {},
     ]);
-    // Zenodo's licence wins over GitHub's; see the note on NOASSERTION above.
-    live = { ...live, ...g, ...z, licence: z.licence || g.ghLicence || "" };
+    // Zenodo's license wins over GitHub's; see the note on NOASSERTION above.
+    live = { ...live, ...g, ...z, license: z.license || g.ghLicense || "" };
     cache[key] = live;
   } catch (err) {
     console.warn(`[software] ${item.name}: ${err.message} — using cache`);
   }
-  // Live values win; the YAML's own version/licence are the last resort.
+  // Live values win; the YAML's own version/license are the last resort.
   return {
     ...item,
     version: live.version || item.version || "",
-    licence: live.licence || item.licence || "",
+    license: live.license || item.license || "",
     released: live.released || "",
     pushed: live.pushed || "",
     language: live.language || "",

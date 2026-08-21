@@ -1,4 +1,4 @@
-/* HUBS site behaviour. Vanilla, no dependencies.
+/* HUBS site behavior. Vanilla, no dependencies.
    Content for the exchange and the scale explorer arrives as JSON payloads
    rendered by Eleventy, so editing them means editing YAML, never this file. */
 (function () {
@@ -306,7 +306,7 @@
       if (branch !== shownBranch) settled = Math.min(settled, choiceIndex(list) + 1);
 
       rowsEl.textContent = "";
-      if (axisMid) rowsEl.appendChild(axisMid);   // the centre axis is not a step
+      if (axisMid) rowsEl.appendChild(axisMid);   // the center axis is not a step
       list.slice(0, cursor).forEach(function (s, i) {
         var row = buildRow(s);
         if (i < settled) row.classList.add("row--settled");
@@ -438,9 +438,9 @@
   })();
 
   /* ---- Scale visualisation -----------------------------------------
-     One particle field that reorganises across the five scales: the same
+     One particle field that reorganizes across the five scales: the same
      matter seen at body, room, building, feeder and city resolution.
-     Colour migrates amber → violet as the human recedes and the building
+     Color migrates amber → violet as the human recedes and the building
      comes to dominate.                                                   */
   var scaleViz = (function () {
     var canvas = document.getElementById("scaleCanvas");
@@ -549,7 +549,7 @@
       }
     ];
 
-    /* ---- Colour ------------------------------------------------------
+    /* ---- Color ------------------------------------------------------
        A three-stop ramp: human amber → AI cyan → building violet. Every
        stop is vivid, so the middle of the range never goes muddy.
 
@@ -729,7 +729,7 @@
         var y = (a.y + (b.y - a.y) * k) * H;
         var r = (a.r + (b.r - a.r) * k) * Math.min(1.4, W / 380);
 
-        // Colour is per particle, not per scale, so individuals stay distinct.
+        // Color is per particle, not per scale, so individuals stay distinct.
         var tp = tintFor(previous, i), tc = tintFor(current, i);
         var c = ramp(tp + (tc - tp) * k);
         ctx.fillStyle = rgba(c, 0.42 + nz(i, 1) * 0.45);
@@ -889,7 +889,7 @@
       return e;
     }
 
-    var COLOUR = { human: "var(--human)", mid: "var(--ai)", bldg: "var(--bldg)" };
+    var COLOR = { human: "var(--human)", mid: "var(--ai)", bldg: "var(--bldg)" };
     var LAYOUT = { human: [96, 132], mid: [320, 132], bldg: [544, 132] };
     var R = 52;
 
@@ -956,7 +956,7 @@
       var M = MODES[mode];
       var gWeak = el("g"), gLive = el("g"), gNodes = el("g"), tags = [];
 
-      // Real, but not accounted for by this arrangement — solid, uncoloured.
+      // Real, but not accounted for by this arrangement — solid, uncolored.
       (M.weak || []).forEach(function (w) {
         var a = arc(LAYOUT[w.from], LAYOUT[w.to], w.bow, w.under);
         gWeak.appendChild(el("path", { "class": "weak", d: a.d }));
@@ -966,7 +966,7 @@
       (M.live || []).forEach(function (c) {
         var a = arc(LAYOUT[c.from], LAYOUT[c.to], c.bow, c.under);
         gLive.appendChild(el("path", { "class": "edge__line", d: a.d,
-                                       stroke: COLOUR[c.from] }));
+                                       stroke: COLOR[c.from] }));
         // A third of the way along puts a label near its source, which keeps
         // the two directions of a pair apart; the agent's outbound channels
         // override to mid-span.
@@ -986,19 +986,19 @@
 
       Object.keys(LAYOUT).forEach(function (key) {
         var g = el("g", { transform: "translate(" + LAYOUT[key][0] + " " + LAYOUT[key][1] + ")" });
-        g.appendChild(el("circle", { "class": "node__disc", r: R, stroke: COLOUR[key] }));
-        var lab = el("text", { "class": "node__label", fill: COLOUR[key], y: 1 });
+        g.appendChild(el("circle", { "class": "node__disc", r: R, stroke: COLOR[key] }));
+        var lab = el("text", { "class": "node__label", fill: COLOR[key], y: 1 });
         lab.textContent = M.labels[key];
         g.appendChild(lab);
         gNodes.appendChild(g);
       });
 
       (M.extras || []).forEach(function (x) {
-        var colour = COLOUR[x.party === "ai" ? "mid" : x.party] || "var(--ai)";
+        var color = COLOR[x.party === "ai" ? "mid" : x.party] || "var(--ai)";
         var g = el("g", { transform: "translate(" + x.at[0] + " " + x.at[1] + ")" });
         g.appendChild(el("circle", { "class": "node__disc", r: x.r,
-                                     stroke: colour, "stroke-width": 1.2 }));
-        var t = el("text", { "class": "node__label", fill: colour, y: 1,
+                                     stroke: color, "stroke-width": 1.2 }));
+        var t = el("text", { "class": "node__label", fill: color, y: 1,
                              style: "font-size:11px" });
         t.textContent = x.label;
         g.appendChild(t);

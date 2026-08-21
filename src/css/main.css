@@ -34,7 +34,7 @@
 
   /* Four further accents, used only for the title-card payoff. Chosen to sit
      clear of amber / cyan / violet so the closing phrase never repeats a
-     colour already used earlier in the same sentence. */
+     color already used earlier in the same sentence. */
   --accent-gold: #e3c24a;
   --accent-grn:  #63c98d;
   --accent-rose: #ef7fae;
@@ -155,13 +155,13 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
   text-transform: uppercase; color: var(--ink-3);
 }
 
-/* Party colours — the one system that runs through the whole site */
+/* Party colors — the one system that runs through the whole site */
 .c-hu { color: var(--human); }
 .c-ai { color: var(--ai); }
 .c-bl { color: var(--bldg); }
 
 /* Payoff accents. Each title-card variant ends on a different one, so the
-   closing phrase is always a fourth colour alongside the three parties.
+   closing phrase is always a fourth color alongside the three parties.
    Only one card is ever on screen, so these are never seen together. */
 .c-ac   { color: var(--az-red); }      /* red   — Synergy */
 .c-gold { color: var(--accent-gold); } /* gold  — Conversation */
@@ -482,7 +482,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
   font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; margin-top: .25rem;
 }
 
-/* Narrow screens: collapse three lanes into one, colour-coded down the side */
+/* Narrow screens: collapse three lanes into one, color-coded down the side */
 @media (max-width: 720px) {
   .lanes { display: none; }
   .rows::before, .rows::after, .axisMid { display: none; }
@@ -548,7 +548,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
   text-transform: uppercase; text-anchor: middle; dominant-baseline: middle;
 }
 
-/* Two states, because there are two: `live` is modelled by the arrangement,
+/* Two states, because there are two: `live` is modeled by the arrangement,
    `weak` happens in the world but goes unaccounted for. */
 .edge__line { fill: none; stroke-width: 1.6; opacity: .6; }
 .weak { fill: none; stroke: var(--ink-2); stroke-width: 1.4; opacity: .5; }

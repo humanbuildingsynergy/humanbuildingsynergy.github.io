@@ -81,7 +81,7 @@ closing:
 #   calloutX/Y  pin the label at a fixed point and draw a leader down to the
 #            line, for labels too large to sit on it.
 #
-# `tag` breaks into lines on \n. `live` is modelled by the arrangement; `weak`
+# `tag` breaks into lines on \n. `live` is modeled by the arrangement; `weak`
 # happens in the world but goes unaccounted for.
 modes:
   - key: loop
@@ -105,7 +105,7 @@ modes:
   # Occupant-centric control does not change the controller-building side at
   # all, so it is drawn exactly as the rule-based mode draws it. What moves is
   # everything on the occupant's side — including opening the window, which
-  # occupant-behaviour models do account for. Five of the six.
+  # occupant-behavior models do account for. Five of the six.
   - key: occ
     name: Occupant-centric
     labels: { human: Human, mid: Controller, bldg: Building }

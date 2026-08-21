@@ -11,7 +11,7 @@ description: >-
 <section class="pageHero wrap">
   <p class="label">Teaching</p>
   {# The accented substring lives in courses.yml beside the motto it belongs to,
-     so rewording the motto cannot silently strip the colour. #}
+     so rewording the motto cannot silently strip the color. #}
   <h1>{{ courses.motto | replace(courses.mottoAccent, '<span class="c-grn">' + courses.mottoAccent + '</span>') | safe }}</h1>
   <p class="lede">{{ courses.intro }}</p>
 </section>

@@ -95,7 +95,7 @@ description: >-
 
   {%- macro release(r, tone) %}
   <article>
-    {#- version, licence and the date are fetched from Zenodo and GitHub at
+    {#- version, license and the date are fetched from Zenodo and GitHub at
         build time by src/_data/software.js — do not hand-edit them in the
         YAML. `pushed` is the repo's last activity, which is what tells a
         visitor the code is alive; datasets have no repo, so they fall back to
@@ -103,7 +103,7 @@ description: >-
     <div class="release__id">
       <span class="release__name {{ tone }}">{{ r.name }}</span>
       {% if r.version %}<span class="release__yr">{{ r.version }}</span>{% endif %}
-      {% if r.licence %}<span class="release__yr">{{ r.licence }}</span>{% endif %}
+      {% if r.license %}<span class="release__yr">{{ r.license }}</span>{% endif %}
       {% if r.pushed or r.released %}
       <span class="release__yr">Updated {{ (r.pushed or r.released) | monthYear }}</span>
       {%- elif r.year %}<span class="release__yr">{{ r.year }}</span>{% endif %}

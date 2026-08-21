@@ -15,13 +15,13 @@ description: >-
 
 # The title card. One entry is picked at random per visit. The first four
 # fragments stay fixed across every variant — only the payoff changes, so one
-# phrase stays recognisable while returning visitors get some variety.
+# phrase stays recognizable while returning visitors get some variety.
 #
-# `party` colours a fragment: human = amber, ai = cyan, bldg = violet,
+# `party` colors a fragment: human = amber, ai = cyan, bldg = violet,
 # accent = Arizona Red.
 #
 # Each payoff ends on its OWN accent — red, gold, green, rose, sky — so the
-# closing phrase is always a fourth colour beside the three parties, and never
+# closing phrase is always a fourth color beside the three parties, and never
 # repeats one used earlier in the same sentence. Only one card shows at a time,
 # so the five accents are never seen together.
 titleCards:
@@ -73,7 +73,7 @@ titleCards:
 #        you       decide · ask · decide · correct
 #      That is what stops a fixed headline from pigeonholing anyone.
 #
-#   2. Name all three parties, so the colour legend (amber = human,
+#   2. Name all three parties, so the color legend (amber = human,
 #      cyan = AI, violet = building) is taught before the diagram below.
 headlines:
   # a request answered

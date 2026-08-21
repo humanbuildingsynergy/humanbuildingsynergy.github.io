@@ -2,9 +2,9 @@
 # Code releases and archived datasets — the lab's citable research outputs
 # that are not journal articles.
 #
-# Prose only. `version`, `licence` and the last-updated date are NOT set here —
+# Prose only. `version`, `license` and the last-updated date are NOT set here —
 # src/_data/software.js fetches them from Zenodo and GitHub at build time, so
-# they cannot drift from the actual release. Any `version`/`licence` left below
+# they cannot drift from the actual release. Any `version`/`license` left below
 # is a fallback used only if those APIs are unreachable.
 #
 # ============================================================================
@@ -29,7 +29,7 @@ code:
     github: https://github.com/humanbuildingsynergy/BuildOcc
     zenodo: 10.5281/zenodo.21192895
     version: v1.0.0
-    licence: Apache-2.0
+    license: Apache-2.0
     year: 2026
 
   - name: HEMA
@@ -69,7 +69,7 @@ datasets:
     github: https://github.com/humanbuildingsynergy/BuildGraph
     zenodo: 10.5281/zenodo.20015123
     version: "1.0"
-    licence: CC-BY-NC-4.0
+    license: CC-BY-NC-4.0
     year: 2026
 
   - name: Build2SPARQL
@@ -82,7 +82,7 @@ datasets:
       English. Includes a 173/28 building train–test split.
     zenodo: 10.5281/zenodo.20451474
     version: "1.0"
-    licence: CC-BY-NC-4.0
+    license: CC-BY-NC-4.0
     year: 2026
 
   - name: BATS
@@ -99,5 +99,5 @@ datasets:
       through the control system realistically.
     zenodo: 10.5281/zenodo.20777376
     version: v1.0
-    licence: CC-BY-NC-4.0
+    license: CC-BY-NC-4.0
     year: 2026

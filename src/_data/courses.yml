@@ -3,7 +3,7 @@
 # `levels` is a list — a cross-listed course simply names both, which is why
 # there is no longer a separate "undergraduate" and "graduate" section.
 motto: Be an independent thinker!
-# The part of the motto that takes the human colour on the Teaching heading.
+# The part of the motto that takes the human color on the Teaching heading.
 # It has to appear in `motto` verbatim; if it does not, the heading just
 # renders plain, which is the safe failure.
 mottoAccent: independent thinker
