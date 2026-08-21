@@ -8,7 +8,7 @@ intro: >-
 scales:
   - id: body
     tab: Body
-    metric: ≈ one person
+    metric: ≈ 1 m · one person
     title: Occupant Comfort, Behavior, and Health
     text: >-
       People do not experience a room the way a sensor does. We study how
@@ -24,7 +24,7 @@ scales:
 
   - id: room
     tab: Room
-    metric: ≈ one zone
+    metric: ≈ 10 m · one zone
     title: Human-Centric Building Control and Assessment
     text: >-
       We build the capability that (1) senses and communicates occupant needs and
@@ -39,7 +39,7 @@ scales:
 
   - id: building
     tab: Building
-    metric: ≈ one building
+    metric: ≈ 50 m · one building
     title: Building Knowledge Graph · Building Energy Modeling  
     text: >-
       We contribute to machine-readable representation of buildings and their 
@@ -54,7 +54,7 @@ scales:
 
   - id: grid
     tab: Grid
-    metric: ≈ one feeder
+    metric: ≈ 5 km · one feeder
     title: Grid-Interactive Effective Buildings (GEB)
     text: >-
       Buildings are no longer passive loads. We examine how buildings can reduce and shift load, 
@@ -67,7 +67,7 @@ scales:
 
   - id: city
     tab: City
-    metric: ≈ one city
+    metric: ≈ 50 km · one city
     title: Urban Energy Modelling
     text: >-
       Scaling from one building to a community changes the question. We build the
