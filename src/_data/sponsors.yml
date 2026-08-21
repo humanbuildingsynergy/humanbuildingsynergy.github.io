@@ -19,10 +19,8 @@ sponsors:
     logo: SensorLab_logo.webp
 
 partners:
-  - name: UArizona Institute of Place, Wellbeing & Performance
-    logo: UA_IPWP.webp
-    # ipwp.arizona.edu no longer resolves. Name only until a new home appears.
-    url: ""
+  - name: California Lighting Technology Center, UC Davis
+    url: https://cltc.ucdavis.edu/
   - name: ecobee
     logo: ecobee_logo.webp
     url: https://www.ecobee.com/donate-your-data/
