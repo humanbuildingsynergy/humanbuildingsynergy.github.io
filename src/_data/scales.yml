@@ -48,7 +48,7 @@ scales:
     points:
       - Brick and ASHRAE 223P
       - Knowledge graph question and answering (KGQA)
-      - White and grey box modeling through EnergyPlus and OpenModelica 
+      - White and gray box modeling through EnergyPlus and OpenModelica 
     triangle: >-
       The AI-compatible technology will facilitate the interaction between humans and
       buildings. 
@@ -69,10 +69,10 @@ scales:
   - id: city
     tab: City
     metric: ≈ 50 km · one city
-    title: Urban Energy Modelling
+    title: Urban Energy Modeling
     text: >-
       Scaling from one building to a community changes the question. We build the
-      occupancy and behaviour inputs urban-scale models need, so aggregate
+      occupancy and behavior inputs urban-scale models need, so aggregate
       projections rest on how people actually behave in buildings.
     points:
       - Data-driven and agentic AI modeling from population-level data

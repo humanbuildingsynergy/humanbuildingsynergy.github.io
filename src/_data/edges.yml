@@ -15,7 +15,7 @@ edges:
       party: bldg
       title: Building → Human
       text: >-
-        The part that needs no AI at all — radiant heat, glare, draught, noise.
+        The part that needs no AI at all — radiant heat, glare, draft, noise.
         You feel the building directly, and always did.
     right:
       party: human
@@ -100,7 +100,7 @@ modes:
     miss: >-
       You and the building are still in direct contact, all day, every day. The
       loop simply does not account for it — and it has nothing to say back to you.
-    legend: 3 modelled · 2 real, but unaccounted for
+    legend: 3 modeled · 2 real, but unaccounted for
 
   # Occupant-centric control does not change the controller-building side at
   # all, so it is drawn exactly as the rule-based mode draws it. What moves is
@@ -128,7 +128,7 @@ modes:
       Five of the six. Everything you do and everything you feel is now accounted
       for. The one channel still missing is the one that would make it a
       collaboration: nothing comes back for you to interrogate or overrule.
-    legend: 5 modelled · 1 missing — the one running back to you
+    legend: 5 modeled · 1 missing — the one running back to you
 
   # Both of the agent's outbound channels take the upper route and both inbound
   # channels the lower one, so the top of the figure is the agent talking and
@@ -146,4 +146,4 @@ modes:
     weak: []
     # The six descriptions above stand in for the caption in this mode, so it
     # carries no hint or miss of its own.
-    legend: 6 modelled · nothing left unaccounted
+    legend: 6 modeled · nothing left unaccounted

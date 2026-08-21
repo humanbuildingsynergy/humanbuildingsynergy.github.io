@@ -24,7 +24,7 @@ courses:
       and ARCE 340 (Introduction to Mechanical Systems)
     summary: >-
       An introduction to the indoor environment and the role of buildings and
-      building systems from a human-centred perspective.
+      building systems from a human-centered perspective.
     topics:
       - The four categories of indoor environment — thermal, lighting and acoustic environments, and indoor air quality
       - Systems of the human body
@@ -34,7 +34,7 @@ courses:
       The course introduces state-of-the-art research on the interaction between
       humans and buildings, and puts energy on the table to address the importance
       of building energy efficiency and sustainability. Students also learn to set
-      up environmental monitoring systems and analyse indoor environmental quality.
+      up environmental monitoring systems and analyze indoor environmental quality.
 
   - code: CE 310
     title: Probability and Statistics for Civil and Architectural Engineering
@@ -64,7 +64,7 @@ courses:
     detail: >-
       Weeks 1–8 develop statistical foundations through Excel analysis of real
       climate and building energy datasets. Weeks 9–15 extend those foundations
-      into predictive modelling, hypothesis testing, sensitivity analysis,
+      into predictive modeling, hypothesis testing, sensitivity analysis,
       simulation and uncertainty quantification in Python. The course closes with
       a capstone probabilistic design report and presentation, in which teams
       choose their own real-world civil or architectural engineering dataset.

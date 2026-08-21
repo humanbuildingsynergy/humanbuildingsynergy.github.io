@@ -25,7 +25,7 @@ code:
       Ships a Python agent library, a REST API, and an MCP server — with
       ATUS-informed activity scheduling across demographic groups, persona
       generation from EIA RECS appliance data, a memory stream, demand-response
-      signal classification, and validation metrics for both behaviour and energy.
+      signal classification, and validation metrics for both behavior and energy.
     github: https://github.com/humanbuildingsynergy/BuildOcc
     zenodo: 10.5281/zenodo.21192895
     version: v1.0.0

@@ -38,7 +38,7 @@ zones:
       experimental setups.
     details:
       - Merges with Chamber 1 when the folding partition is opened
-      - Supports airflow, thermal gradient and open-plan behaviour studies
+      - Supports airflow, thermal gradient and open-plan behavior studies
       - Twelve individually controllable LED fixtures
 
   - name: Control Room
@@ -72,7 +72,7 @@ capability:
       Each of the three zones has its own heating, cooling and fresh-air supply,
       controlled independently — so two experiments can run side by side under
       different conditions. Fold back the partition and two of them become one
-      large room. The lighting is dimmable and colour-tunable, so daylight and
+      large room. The lighting is dimmable and color-tunable, so daylight and
       circadian studies sit alongside the thermal ones.
     detail:
       - Trane M-Series horizontal concealed fan coil unit per zone (Size 040)
@@ -83,7 +83,7 @@ capability:
       - Diffusers repositionable on 12″ and 18″ ceiling tiles, flexible ductwork
       - Portable heaters, air conditioners and purifiers to widen the range
       - 30 LED fixtures — 10, 12 and 8 by zone — controllable in groups of two to four
-      - Philips Hue White and Color Ambiance bulbs for tunable colour temperature
+      - Philips Hue White and Color Ambiance bulbs for tunable color temperature
 
   - group: Measuring the environment
     party: bldg
@@ -149,7 +149,7 @@ modes:
     text: >-
       Occupant comfort at elevated indoor temperatures using hot water reheat
       and supplemental portable heaters. Relevant to adaptive comfort models and
-      setpoint optimisation in warm climates.
+      setpoint optimization in warm climates.
   - name: Heat transfer
     text: >-
       Radiative and convective exchange between surfaces, HVAC components and
