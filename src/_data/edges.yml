@@ -54,8 +54,8 @@ edges:
         the AI's model of it honest.
 
 closing:
-  lead: Edges 02 and 03 are new. Edge 01 is as old as shelter.
-  punch: What the new ones do to the old one is the research.
+  lead: The sixth channel is the one that runs back to you.
+  punch: What it does to the other five is the research.
 
 # ---------------------------------------------------------------------------
 # The three arrangements the figure steps through, in the order the field got
@@ -127,7 +127,7 @@ modes:
     miss: >-
       Five of the six. Everything you do and everything you feel is now accounted
       for. The one channel still missing is the one that would make it a
-      conversation: nothing comes back for you to interrogate or overrule.
+      collaboration: nothing comes back for you to interrogate or overrule.
     legend: 5 modelled · 1 missing — the one running back to you
 
   # Both of the agent's outbound channels take the upper route and both inbound
