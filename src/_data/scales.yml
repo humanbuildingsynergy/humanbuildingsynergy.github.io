@@ -25,10 +25,11 @@ scales:
   - id: room
     tab: Room
     metric: ≈ 10 m · one zone
-    title: Human-Centric Building Control and Assessment
+    title: Context-Aware Building Control, Interaction, and Assessment
     text: >-
-      We build the capability that (1) senses and communicates occupant needs and
-      (2) controls adaptively and responsively.
+      We build the capability that (1) senses and communicates occupant needs,
+      (2) controls adaptively and responsively, and (3) explains its reasoning
+      well enough that an occupant can argue with it.
     points:
       - Human-centric HVAC from multi-modal sensing channels
       - Agentic AI architecture within buildings
