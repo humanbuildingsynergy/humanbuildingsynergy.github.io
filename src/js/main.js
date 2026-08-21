@@ -872,4 +872,216 @@
       reserveTimer = setTimeout(reserve, 150);
     }, { passive: true });
   })();
+
+  /* ---- The three arrangements -------------------------------------- */
+  (function () {
+    var data = payload("edges-data");
+    var viz = document.getElementById("habFig");
+    var panel = document.getElementById("habPanel");
+    var legendEl = document.getElementById("habLegend");
+    var tabs = document.getElementById("habTabs");
+    if (!data || !viz || !panel || !tabs) return;
+
+    var SVGNS = "http://www.w3.org/2000/svg";
+    function el(name, attrs) {
+      var e = document.createElementNS(SVGNS, name);
+      for (var k in attrs) e.setAttribute(k, attrs[k]);
+      return e;
+    }
+
+    var COLOUR = { human: "var(--human)", mid: "var(--ai)", bldg: "var(--bldg)" };
+    var LAYOUT = { human: [96, 132], mid: [320, 132], bldg: [544, 132] };
+    var R = 52;
+
+    var MODES = {};
+    data.modes.forEach(function (m) { MODES[m.key] = m; });
+    var mode = data.modes[data.modes.length - 1].key;
+
+    /* A quadratic through `from` and `to`, bowed off the straight line, with
+       both ends trimmed back so an arrow never runs into a disc. */
+    function arc(from, to, bow, under) {
+      var x1 = from[0], y1 = from[1], x2 = to[0], y2 = to[1];
+      if (under) {
+        // The long human-building channel crosses the whole figure, so it
+        // leaves the bottom of each disc rather than the side.
+        var rad = under * Math.PI / 180;
+        var sign = (to[0] - from[0]) < 0 ? -1 : 1;
+        x1 = from[0] + sign * R * Math.sin(rad); y1 = from[1] + R * Math.cos(rad);
+        x2 = to[0] - sign * R * Math.sin(rad);   y2 = to[1] + R * Math.cos(rad);
+      }
+      var dx = x2 - x1, dy = y2 - y1;
+      var len = Math.sqrt(dx * dx + dy * dy) || 1;
+      var ux = dx / len, uy = dy / len, nx = -uy, ny = ux;
+      var ts = under ? 0 : R, te = under ? 9 : R + 9;
+      var sx = x1 + ux * ts, sy = y1 + uy * ts;
+      var ex = x2 - ux * te, ey = y2 - uy * te;
+      var cx = (sx + ex) / 2 + nx * bow, cy = (sy + ey) / 2 + ny * bow;
+      function at(t) {
+        var u = 1 - t;
+        return [u * u * sx + 2 * u * t * cx + t * t * ex,
+                u * u * sy + 2 * u * t * cy + t * t * ey];
+      }
+      return { d: "M" + sx + " " + sy + " Q" + cx + " " + cy + " " + ex + " " + ey,
+               label: at(0.34), at: at };
+    }
+
+    /* Nudging labels around the curves never stopped lines crossing the
+       letters; a plate behind them does. getBBox needs the node in the
+       document, so the plate is inserted after the text is appended. */
+    function tagText(parent, x, y, str) {
+      var lines = String(str).split(/\s·\s|\n/);
+      var t = el("text", { "class": "edgeTag", x: x,
+                           y: y - (lines.length - 1) * 5.5 });
+      lines.forEach(function (ln, i) {
+        var ts = el("tspan", { x: x, dy: i ? 12 : 0 });
+        ts.textContent = ln;
+        t.appendChild(ts);
+      });
+      parent.appendChild(t);
+      var b = t.getBBox(), pad = 5;
+      parent.insertBefore(el("rect", {
+        x: b.x - pad, y: b.y - 1, rx: 2, width: b.width + pad * 2,
+        height: b.height + 2, fill: "var(--surface)"
+      }), t);
+    }
+
+    // Above the row the label rides over its line, below it rides under.
+    function offset(y, below) {
+      if (below) return 13;
+      return y <= LAYOUT.human[1] ? -11 : 13;
+    }
+
+    function draw() {
+      viz.textContent = "";
+      var M = MODES[mode];
+      var gWeak = el("g"), gLive = el("g"), gNodes = el("g"), tags = [];
+
+      // Real, but not accounted for by this arrangement — solid, uncoloured.
+      (M.weak || []).forEach(function (w) {
+        var a = arc(LAYOUT[w.from], LAYOUT[w.to], w.bow, w.under);
+        gWeak.appendChild(el("path", { "class": "weak", d: a.d }));
+        if (w.tag) tags.push([a.label[0], a.label[1] + offset(a.label[1]), w.tag]);
+      });
+
+      (M.live || []).forEach(function (c) {
+        var a = arc(LAYOUT[c.from], LAYOUT[c.to], c.bow, c.under);
+        gLive.appendChild(el("path", { "class": "edge__line", d: a.d,
+                                       stroke: COLOUR[c.from] }));
+        // A third of the way along puts a label near its source, which keeps
+        // the two directions of a pair apart; the agent's outbound channels
+        // override to mid-span.
+        var lp = c.labelT ? a.at(c.labelT) : a.label;
+        if (!c.tag) return;
+        if (c.calloutY !== undefined) {
+          var lx = c.calloutX !== undefined ? c.calloutX : lp[0];
+          gLive.appendChild(el("line", {
+            x1: lx, y1: c.calloutY + 20, x2: lx, y2: lp[1] - 3,
+            stroke: "var(--ink-3)", "stroke-width": 1, opacity: ".45"
+          }));
+          tags.push([lx, c.calloutY, c.tag]);
+        } else {
+          tags.push([lp[0], lp[1] + offset(lp[1], c.below), c.tag]);
+        }
+      });
+
+      Object.keys(LAYOUT).forEach(function (key) {
+        var g = el("g", { transform: "translate(" + LAYOUT[key][0] + " " + LAYOUT[key][1] + ")" });
+        g.appendChild(el("circle", { "class": "node__disc", r: R, stroke: COLOUR[key] }));
+        var lab = el("text", { "class": "node__label", fill: COLOUR[key], y: 1 });
+        lab.textContent = M.labels[key];
+        g.appendChild(lab);
+        gNodes.appendChild(g);
+      });
+
+      (M.extras || []).forEach(function (x) {
+        var colour = COLOUR[x.party === "ai" ? "mid" : x.party] || "var(--ai)";
+        var g = el("g", { transform: "translate(" + x.at[0] + " " + x.at[1] + ")" });
+        g.appendChild(el("circle", { "class": "node__disc", r: x.r,
+                                     stroke: colour, "stroke-width": 1.2 }));
+        var t = el("text", { "class": "node__label", fill: colour, y: 1,
+                             style: "font-size:11px" });
+        t.textContent = x.label;
+        g.appendChild(t);
+        gNodes.appendChild(g);
+      });
+
+      gLive.setAttribute("class", "edges-in");
+      viz.appendChild(gWeak); viz.appendChild(gLive); viz.appendChild(gNodes);
+      // Labels last, above every line, each on its own knocked-out plate.
+      var gTags = el("g");
+      viz.appendChild(gTags);
+      tags.forEach(function (t) { tagText(gTags, t[0], t[1], t[2]); });
+    }
+
+    function tone(party) {
+      return party === "human" ? "c-hu" : party === "mid" ? "c-ai" : "c-bl";
+    }
+
+    /* The six descriptions as a narrow stack, grouped in pairs so an edge is
+       still legible as one relationship read in two directions. */
+    function edgeStack() {
+      var wrap = document.createElement("div");
+      wrap.className = "panelEdges";
+      data.edges.forEach(function (e) {
+        var grp = document.createElement("div");
+        grp.className = "panelEdges__grp";
+        var n = document.createElement("p");
+        n.className = "panelEdges__n";
+        n.textContent = "Edge " + e.n;
+        grp.appendChild(n);
+        [[e.left, e.left.party], [e.right, e.right.party]].forEach(function (pair) {
+          var t = document.createElement("p");
+          t.className = "edge__t " + tone(pair[1] === "ai" ? "mid" : pair[1]);
+          t.textContent = pair[0].title;
+          var d = document.createElement("p");
+          d.className = "edge__d";
+          d.textContent = pair[0].text;
+          grp.appendChild(t); grp.appendChild(d);
+        });
+        wrap.appendChild(grp);
+      });
+      return wrap;
+    }
+
+    function fillPanel() {
+      var M = MODES[mode];
+      panel.textContent = "";
+      // Where every channel is live the six descriptions ARE the caption, so
+      // they sit beside the lines they name.
+      if (M.hint) {
+        var h = document.createElement("p");
+        h.className = "triPanel__hint";
+        h.textContent = M.hint;
+        panel.appendChild(h);
+        if (M.miss) {
+          var m = document.createElement("p");
+          m.className = "triPanel__miss";
+          m.textContent = M.miss;
+          panel.appendChild(m);
+        }
+      } else {
+        panel.appendChild(edgeStack());
+      }
+      if (legendEl) legendEl.textContent = M.legend || "";
+    }
+
+    function go(next) {
+      if (next === mode || !MODES[next]) return;
+      mode = next;
+      [].slice.call(tabs.querySelectorAll(".seg")).forEach(function (b) {
+        b.setAttribute("aria-selected", String(b.getAttribute("data-mode") === next));
+      });
+
+      draw();
+      fillPanel();
+    }
+
+    [].slice.call(tabs.querySelectorAll(".seg")).forEach(function (b) {
+      b.addEventListener("click", function () { go(b.getAttribute("data-mode")); });
+    });
+
+    draw();
+    fillPanel();
+  })();
+
 })();

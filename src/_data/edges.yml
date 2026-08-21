@@ -56,3 +56,94 @@ edges:
 closing:
   lead: Edges 02 and 03 are new. Edge 01 is as old as shelter.
   punch: What the new ones do to the old one is the research.
+
+# ---------------------------------------------------------------------------
+# The three arrangements the figure steps through, in the order the field got
+# to them. What changes between them is which channels exist — and what the
+# middle node IS. A rule-based loop has a controller, not an agent, so the node
+# relabels rather than pretending a PID loop had AI in it.
+#
+# Each channel is `from`/`to` over the node keys human | mid | bldg, plus the
+# geometry that places it. The numbers are pixels in the figure's own 640x366
+# coordinate space, and they live here next to the words they position:
+#
+#   bow      how far the curve bends off the straight line, and which side.
+#            The normal is (-uy, ux), so a positive bow pushes a left-to-right
+#            channel BELOW the row and a right-to-left channel ABOVE it. Two
+#            directions of the same pair therefore never sit on top of each
+#            other at the same bow.
+#   under    departure angle in degrees from vertical, for the long
+#            human-building channels that leave the bottom of each disc rather
+#            than the side.
+#   below    force the label under its line instead of over it.
+#   labelT   position along the curve, 0 to 1. Defaults to 0.34, near the
+#            source; the agent's outbound channels use mid-span.
+#   calloutX/Y  pin the label at a fixed point and draw a leader down to the
+#            line, for labels too large to sit on it.
+#
+# `tag` breaks into lines on \n. `live` is modelled by the arrangement; `weak`
+# happens in the world but goes unaccounted for.
+modes:
+  - key: loop
+    name: Rule-based
+    labels: { human: Human, mid: Controller, bldg: Building }
+    live:
+      - { from: human, to: mid,   tag: "setpoint", bow: 0 }
+      - { from: mid,   to: bldg,  tag: "command",  bow: 0, below: true }
+      - { from: bldg,  to: mid,   tag: "feedback", bow: 168 }
+    weak:
+      - { from: bldg,  to: human, tag: "the room acts on you\nnobody measures it", bow: -286, under: 20 }
+      - { from: human, to: bldg,  tag: "you change the room\nnobody records it",   bow: 122,  under: 58 }
+    hint: >-
+      The arrangement the field started with. No AI in it — the middle box is a
+      thermostat or a controller, closing a loop around the equipment.
+    miss: >-
+      You and the building are still in direct contact, all day, every day. The
+      loop simply does not account for it — and it has nothing to say back to you.
+    legend: 3 modelled · 2 real, but unaccounted for
+
+  # Occupant-centric control does not change the controller-building side at
+  # all, so it is drawn exactly as the rule-based mode draws it. What moves is
+  # everything on the occupant's side — including opening the window, which
+  # occupant-behaviour models do account for. Five of the six.
+  - key: occ
+    name: Occupant-centric
+    labels: { human: Human, mid: Controller, bldg: Building }
+    live:
+      - { from: human, to: mid,   tag: "multi-modal sensing\n(physiology, perceptual\nrating, motion)", bow: 0, calloutX: 158, calloutY: 38 }
+      - { from: mid,   to: bldg,  tag: "command",  bow: 0, below: true }
+      - { from: bldg,  to: mid,   tag: "feedback", bow: 168 }
+      - { from: bldg,  to: human, tag: "the room acts on you\nnow measured", bow: -286, under: 20 }
+      - { from: human, to: bldg,  tag: "you change the room\nnow recorded",  bow: 122,  under: 58 }
+    weak: []
+    # The occupant model, drawn overlapping the controller because it may sit
+    # inside it or beside it.
+    extras:
+      - { at: [282, 68], r: 36, label: Model, party: ai }
+    hint: >-
+      Occupant-centric control. The same one channel from the occupant now
+      carries far more — physiological response, perceptual comfort ratings,
+      motion as a proxy for occupancy. Multi-modal sensing, rather than a number.
+    miss: >-
+      Five of the six. Everything you do and everything you feel is now accounted
+      for. The one channel still missing is the one that would make it a
+      conversation: nothing comes back for you to interrogate or overrule.
+    legend: 5 modelled · 1 missing — the one running back to you
+
+  # Both of the agent's outbound channels take the upper route and both inbound
+  # channels the lower one, so the top of the figure is the agent talking and
+  # the bottom is the agent listening, mirrored either side of it.
+  - key: triangle
+    name: Human–AI–Building Interaction
+    labels: { human: Human, mid: AI, bldg: Building }
+    live:
+      - { from: human, to: mid,   tag: "you say it", bow: 26 }
+      - { from: mid,   to: human, tag: "explains its\nreasoning",   bow: 26,  labelT: 0.52 }
+      - { from: mid,   to: bldg,  tag: "commands after\ndiscussion", bow: -26, labelT: 0.52 }
+      - { from: bldg,  to: mid,   tag: "telemetry", bow: -26 }
+      - { from: bldg,  to: human, tag: "the room acts on you\nnow measured", bow: -286, under: 20 }
+      - { from: human, to: bldg,  tag: "you change the room\nnow recorded",  bow: 122,  under: 58 }
+    weak: []
+    # The six descriptions above stand in for the caption in this mode, so it
+    # carries no hint or miss of its own.
+    legend: 6 modelled · nothing left unaccounted

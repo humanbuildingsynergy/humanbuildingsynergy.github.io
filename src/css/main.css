@@ -558,6 +558,73 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 .edge__mid b { font-size: 1.15rem; font-weight: 400; color: var(--ink-3); letter-spacing: .1em; }
 .edge__mid i { font-style: normal; font-size: .58rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); }
 
+/* ---- The three arrangements ---------------------------------------------
+   A figure of the same three parties wired three ways, with a caption column
+   beside it. Geometry and wording both live in edges.yml. */
+.triWrap { margin-top: clamp(1.5rem, 4vw, 2.5rem); }
+.triStage {
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem); align-items: start;
+}
+@media (max-width: 880px) { .triStage { grid-template-columns: 1fr; } }
+
+.triViz {
+  position: relative; width: 100%; border: 1px solid var(--hairline);
+  border-radius: 3px; background: var(--surface); overflow: hidden;
+}
+/* In the last arrangement the description column runs about twice the figure's
+   height, so the figure would sit above a long gap. Pinning it keeps the
+   diagram in front of the reader at the last channel. Only above the
+   breakpoint — once the two stack, this would pin the figure over its own
+   captions. */
+@media (min-width: 881px) {
+  .triViz { position: sticky; top: clamp(1rem, 5vh, 3rem); }
+}
+.triViz svg { width: 100%; height: auto; display: block; }
+
+.node__disc { fill: var(--ground); stroke-width: 1.5; }
+.node__label {
+  font-family: var(--mono); font-size: 13px; letter-spacing: .06em;
+  text-transform: uppercase; text-anchor: middle; dominant-baseline: middle;
+}
+
+/* Two states, because there are two: `live` is modelled by the arrangement,
+   `weak` happens in the world but goes unaccounted for. */
+.edge__line { fill: none; stroke-width: 1.6; opacity: .6; }
+.weak { fill: none; stroke: var(--ink-2); stroke-width: 1.4; opacity: .5; }
+.edges-in { animation: edgesIn 380ms ease-out both; }
+@keyframes edgesIn { from { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .edges-in { animation: none; } }
+
+.edgeTag {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .1em;
+  text-transform: uppercase; text-anchor: middle; fill: var(--ink-3);
+  pointer-events: none;
+}
+
+.triPanel { min-height: 16rem; }
+@media (max-width: 880px) { .triPanel { min-height: 0; } }
+.triPanel__hint { color: var(--ink-2); font-size: .95rem; }
+.triPanel__miss { color: var(--ink-3); font-size: .85rem; margin-top: .9rem; }
+
+/* The six descriptions beside the figure. The .edges grid above is three
+   columns built for full width and collapses on a viewport query, not a
+   container one — in this column it would still try three columns, so the
+   pairing is carried by a grouped stack instead of the ⇄ divider. */
+.panelEdges { display: grid; gap: 1.25rem; }
+.panelEdges__grp { display: grid; gap: .5rem; }
+.panelEdges__n {
+  font-family: var(--mono); font-size: .58rem; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--ink-3);
+  padding-bottom: .4rem; border-bottom: 1px solid var(--hairline);
+}
+.panelEdges .edge__d { font-size: .85rem; }
+
+.triLegend {
+  margin-top: 1rem; font-family: var(--mono); font-size: .62rem;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3);
+}
+
 .punchline {
   margin-top: clamp(2rem, 4vw, 3rem);
   font-size: clamp(1.1rem, 2.4vw, 1.5rem);

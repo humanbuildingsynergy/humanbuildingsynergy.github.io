@@ -71,28 +71,33 @@ disclaimer: >-
 {# The conversation is data. Edit src/_data/exchange.yml, never the JS. #}
 <script type="application/json" id="exchange-data">{{ { "steps": exchange.steps, "fields": exchange.fields } | jsonScript | safe }}</script>
 
-<!-- ===== Three edges ================================================ -->
+<!-- ===== The three arrangements ====================================== -->
 <section class="band band--rule wrap" id="edges">
   <div class="band__head measure">
     <p class="label">The shape of the problem</p>
-    <h2>A triangle, not a control loop.</h2>
+    <h2>From setpoint to conversation.</h2>
     <p class="lede">{{ edges.intro }}</p>
   </div>
 
-  <div class="edges">
-    {%- for e in edges.edges %}
-    <div class="edge">
-      <div class="edge__side right">
-        <p class="edge__t {{ partyClass(e.left.party) | trim }}">{{ e.left.title }}</p>
-        <p class="edge__d">{{ e.left.text }}</p>
-      </div>
-      <div class="edge__mid"><b>⇄</b><i>Edge {{ e.n }}</i></div>
-      <div class="edge__side">
-        <p class="edge__t {{ partyClass(e.right.party) | trim }}">{{ e.right.title }}</p>
-        <p class="edge__d">{{ e.right.text }}</p>
-      </div>
+  <div class="triWrap">
+    <div class="segmented" id="habTabs" role="tablist" aria-label="Arrangement">
+      {%- for m in edges.modes %}
+      <button class="seg" role="tab" data-mode="{{ m.key }}"
+              aria-selected="{{ "true" if loop.last else "false" }}">{{ m.name }}</button>
+      {%- endfor %}
     </div>
-    {%- endfor %}
+
+    <div class="triStage">
+      <div class="triViz">
+        <svg id="habFig" viewBox="0 0 640 366" role="img"
+             aria-label="How the human, the controller or agent, and the building are connected"></svg>
+      </div>
+      {# Carries the mode caption in the first two arrangements and the six
+         channel descriptions in the third, where all six are live. #}
+      <div class="triPanel" id="habPanel" aria-live="polite"></div>
+    </div>
+
+    <p class="triLegend" id="habLegend"></p>
   </div>
 
   <p class="punchline">
@@ -100,6 +105,7 @@ disclaimer: >-
     <span class="c-ai">{{ edges.closing.punch }}</span>
   </p>
 </section>
+<script type="application/json" id="edges-data">{{ { "edges": edges.edges, "modes": edges.modes } | jsonScript | safe }}</script>
 
 <!-- ===== Scale explorer ============================================= -->
 <section class="band band--rule wrap" id="scales">
