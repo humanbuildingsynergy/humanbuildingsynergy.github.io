@@ -6,6 +6,12 @@
 # `text` may contain inline HTML links.
 
 - date: 2026-08
+  type: people
+  text: >-
+    The HUBS lab welcomes a new PhD student, Sadia Jahan Noor! She will work on
+    agentic AI occupant/building systems, including the educational applications.
+
+- date: 2026-08
   type: service
   text: >-
     Dr. Jung will serve as a Poster and Demo Co-Chair at Buildsys 2027 (ACM Sustainability Week 2027)!
