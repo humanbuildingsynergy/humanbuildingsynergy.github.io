@@ -791,7 +791,11 @@
     var panel = document.getElementById("panel");
     if (!data || !panel) return;
 
-    var segs = [].slice.call(document.querySelectorAll(".seg"));
+    /* Scoped to this explorer's own tablist. A bare ".seg" also matches
+       any other segmented control on the page, and the two strips then
+       wire each other's buttons. */
+    var segs = [].slice.call(
+      document.querySelectorAll('[aria-label="Research scale"] .seg'));
 
     function fill(el, d) {
       el.textContent = "";
