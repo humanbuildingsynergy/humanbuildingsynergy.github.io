@@ -747,6 +747,35 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 .visionBody p { font-size: 1.15rem; color: var(--ink-2); }
 .visionBody p + p { margin-top: 1rem; }
 
+/* The vision figure. The prose is capped at --measure inside a 1240px wrap, so
+   the right third of that section was already empty; this grid fills it without
+   changing the text's line length by a single character. */
+.visionGrid {
+  display: grid;
+  grid-template-columns: minmax(0, var(--measure)) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem); align-items: start;
+}
+@media (max-width: 900px) { .visionGrid { grid-template-columns: 1fr; } }
+
+.visionFig { margin: 0; }
+@media (max-width: 900px) { .visionFig { max-width: 28rem; } }
+.hudSvg { width: 100%; height: auto; display: block; }
+.hudRead {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .08em;
+  fill: var(--ai); opacity: .7;
+}
+/* The exchange under the instrument, each line in its speaker's colour. That
+   is what separates it from the ring above: those are measured, these are said. */
+.hudSay { font-size: 12.5px; }
+.hudSay--hu { fill: var(--human); }
+.hudSay--ai { fill: var(--ai); }
+
+/* The sweep is the only thing on the page that keeps moving. Slow and faint,
+   because it sits beside prose meant to be read rather than watched. */
+.hudScan { animation: hudSpin 16s linear infinite; }
+@keyframes hudSpin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .hudScan { animation: none; } }
+
 .callout { padding: 1.1rem 1.4rem; border-left: 2px solid var(--ai); background: var(--surface); }
 
 /* Director CV — portrait beside the lists, stacked on narrow screens.

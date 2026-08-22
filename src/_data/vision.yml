@@ -1,0 +1,31 @@
+# The figure beside the About vision: a room read by an instrument.
+# Geometry lives in _includes/vision-figure.njk; only the words are here.
+#
+# `reads` are what the instrument measures. Left column reads the occupant,
+# right column reads the room and the world beyond it — the lab's own ladder,
+# body outward. Three rows each; the layout is fixed, so keep them short
+# (roughly 15 characters, or they run past the frame).
+reads:
+  left:
+    - occupied 2 h
+    - prefers 22.5 °C
+    - overruled twice
+  right:
+    - 23.4 °C
+    - 612 ppm
+    - grid peak 14:40
+
+# What gets said about it. The reply gives a reason, and the reason is the grid
+# rather than the person — an agent that explains itself, not a switch.
+# Keep the room's line under about 45 characters.
+says:
+  human: “It's a bit warm.”
+  room: “Cooling 0.9 °C now, ahead of the 14:40 peak.”
+
+alt: >-
+  A room seen in section, someone seated at a desk by the window, ringed by an
+  instrument dial. The readings run outward from the body: occupied two hours,
+  prefers 22.5 degrees, and the occupant having overruled it twice; then the
+  room itself at 23.4 degrees and 612 ppm; then grid peak at 14:40. Below, the
+  occupant says it is a bit warm, and the room answers that it is cooling by
+  0.9 degrees now, ahead of the 14:40 grid peak.

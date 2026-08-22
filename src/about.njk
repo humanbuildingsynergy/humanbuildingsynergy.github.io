@@ -20,6 +20,9 @@ description: >-
 </section>
 
 <section class="band band--tight wrap">
+  {# Two columns. The prose keeps the same --measure it had on its own, so the
+     figure fills space that was already empty rather than squeezing the text. #}
+  <div class="visionGrid">
   <div class="prose">
     <p class="label">Vision</p>
     <h2 style="margin-top:.5rem">Iron Man had Jarvis. Your building should too.</h2>
@@ -46,6 +49,11 @@ description: >-
         into a room. That is the work that HUBS envisions.
       </p>
     </div>
+  </div>
+
+  <figure class="visionFig">
+    {% include "vision-figure.njk" %}
+  </figure>
   </div>
 </section>
 
