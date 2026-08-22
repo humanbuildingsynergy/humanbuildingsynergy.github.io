@@ -148,6 +148,10 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 
 .band__head { margin-bottom: clamp(2rem, 4vw, 3rem); }
 .band__head h2 { font-size: clamp(1.55rem, 3.6vw, 2.5rem); max-width: 24ch; margin-top: .75rem; }
+/* 24ch lands at 629.5px, and a couple of headings come to 630. Opt those
+   into a little more room rather than loosening every heading on the site;
+   they still wrap once the viewport genuinely cannot hold the line. */
+.band__head h2.wide { max-width: 30ch; }
 .band__head p.lede { color: var(--ink-2); margin-top: 1rem; }
 
 .label {
