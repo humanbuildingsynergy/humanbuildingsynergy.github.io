@@ -756,13 +756,19 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
    changing the text's line length by a single character. */
 .visionGrid {
   display: grid;
-  grid-template-columns: minmax(0, var(--measure)) minmax(0, 1fr);
+  /* Proportional, not a fixed measure beside a 1fr. With the text column
+     pinned to --measure it surrendered nothing as the window narrowed and the
+     figure absorbed the whole loss -- 664px of prose beside a 163px figure at
+     950px wide. 1.3fr reproduces the same split at full width (664/512) and
+     then both give way together. .prose still caps itself at --measure. */
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
   gap: clamp(2rem, 5vw, 4rem); align-items: start;
 }
-@media (max-width: 900px) { .visionGrid { grid-template-columns: 1fr; } }
+/* Stacked before the prose is squeezed under about 48 characters. */
+@media (max-width: 1000px) { .visionGrid { grid-template-columns: 1fr; } }
 
 .visionFig { margin: 0; }
-@media (max-width: 900px) { .visionFig { max-width: 28rem; } }
+@media (max-width: 1000px) { .visionFig { max-width: 28rem; } }
 .hudSvg { width: 100%; height: auto; display: block; }
 .hudRead {
   font-family: var(--mono); font-size: 10px; letter-spacing: .08em;
