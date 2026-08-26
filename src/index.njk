@@ -83,7 +83,7 @@ disclaimer: >-
     <div class="segmented" id="habTabs" role="tablist" aria-label="Arrangement">
       {%- for m in edges.modes %}
       <button class="seg" role="tab" data-mode="{{ m.key }}"
-              aria-selected="{{ "true" if loop.last else "false" }}">{{ m.name }}</button>
+              aria-selected="{{ "true" if loop.last else "false" }}"><span class="seg__full">{{ m.name }}</span><span class="seg__abbr">{{ m.short or m.name }}</span></button>
       {%- endfor %}
     </div>
 
