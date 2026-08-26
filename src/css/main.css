@@ -22,8 +22,16 @@
   --hairline:  #38342e;
 
   --ink:   #f0ece5;
-  --ink-2: #a8a196;
-  --ink-3: #756f66;
+  --ink-2: #b8b1a5;
+  /* Ledes sit between the heading and the body. Without this they took
+     --ink-2, the same colour as body copy, and had no prominence at all
+     -- .band__head p.lede is not even set larger. 10.9:1 on --ground. */
+  --ink-lede: #ccc5b9;
+  /* Was #756f66: 3.8:1 on --ground and only 3.5:1 on --surface, under the
+     4.5:1 WCAG AA wants for normal text -- and this token carries the
+     smallest type on the site (labels, tab names, footer, disclaimers).
+     5.6:1 and 5.2:1. */
+  --ink-3: #948c80;
 
   --human: #e8a04c;
   --ai:    #3ecfd4;
@@ -152,7 +160,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
    into a little more room rather than loosening every heading on the site;
    they still wrap once the viewport genuinely cannot hold the line. */
 .band__head h2.wide { max-width: 30ch; }
-.band__head p.lede { color: var(--ink-2); margin-top: 1rem; }
+.band__head p.lede { color: var(--ink-lede); margin-top: 1rem; }
 
 .label {
   font-family: var(--mono); font-size: .6875rem; letter-spacing: .2em;
@@ -304,11 +312,11 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
    random. Without JavaScript only the first is shown — and once the script has
    removed the others, whichever it kept has no preceding sibling, so it shows. */
 .heroHeadline ~ .heroHeadline { display: none; }
-.hero p.lede { color: var(--ink-2); max-width: 58ch; }
+.hero p.lede { color: var(--ink-lede); max-width: 58ch; }
 
 .pageHero { padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 3vw, 2.5rem); }
 .pageHero h1 { font-size: clamp(2rem, 5.5vw, 3.6rem); margin-top: .6rem; }
-.pageHero p.lede { color: var(--ink-2); max-width: 58ch; margin-top: 1rem; font-size: 1.1rem; }
+.pageHero p.lede { color: var(--ink-lede); max-width: 58ch; margin-top: 1rem; font-size: 1.1rem; }
 
 /* ---------------------------------------------------------------------------
    7. Exchange (Fig. 1)
@@ -602,6 +610,14 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
   display: flex; gap: 2px; padding: 3px; background: var(--surface-2);
   border: 1px solid var(--hairline); border-radius: 100px;
   margin-bottom: 2.25rem; overflow-x: auto;
+}
+/* The three arrangement names do not fit a phone. Each tab carries both a
+   full and an abbreviated label and swaps at the breakpoint, rather than the
+   strip scrolling sideways where the third tab is simply never seen. */
+.seg__abbr { display: none; }
+@media (max-width: 760px) {
+  .seg__full { display: none; }
+  .seg__abbr { display: inline; }
 }
 .seg {
   flex: 1; white-space: nowrap; font-family: var(--mono); font-size: .68rem;
