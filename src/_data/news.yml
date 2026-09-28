@@ -5,6 +5,16 @@
 # service, people, outreach, milestone.
 # `text` may contain inline HTML links.
 
+- date: 2026-09
+  type: publication
+  text: >-
+    A new journal article, titled
+    <a href="https://doi.org/10.1016/j.softx.2026.103068" target="_blank" rel="noopener">
+    BuildOcc: A large language model occupant agent platform for building energy
+    research</a>, is published by SoftwareX! The platform itself is
+    <a href="https://doi.org/10.5281/zenodo.21192895" target="_blank" rel="noopener">released
+    and archived</a> with its own DOI.
+
 - date: 2026-08
   type: people
   text: >-
