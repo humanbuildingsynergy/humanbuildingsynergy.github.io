@@ -383,7 +383,7 @@
   },
   "10.1155/ina/6840369": {
     "title": [
-      "Meta\u2010Analysis and Regression Modeling of the Impacts of Four Indoor Environmental Quality Metrics on Office Performance"
+      "Meta‐Analysis and Regression Modeling of the Impacts of Four Indoor Environmental Quality Metrics on Office Performance"
     ],
     "volume": "2025",
     "type": "journal-article",
@@ -1327,8 +1327,8 @@
         "given": "Pablo"
       },
       {
-        "family": "Andr\u00e9",
-        "given": "Ma\u00edra"
+        "family": "André",
+        "given": "Maíra"
       },
       {
         "family": "Ashrafian",
@@ -1518,8 +1518,8 @@
         "given": "Rajan"
       },
       {
-        "family": "Andr\u00e9",
-        "given": "Ma\u00edra"
+        "family": "André",
+        "given": "Maíra"
       },
       {
         "family": "Vashi",
@@ -2485,6 +2485,41 @@
       {
         "family": "Kim",
         "given": "Dongsu"
+      }
+    ]
+  },
+  "10.1016/j.softx.2026.103068": {
+    "title": [
+      "BuildOcc: A large language model occupant agent platform for building energy research"
+    ],
+    "volume": "36",
+    "type": "journal-article",
+    "container-title": [
+      "SoftwareX"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          12
+        ]
+      ]
+    },
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          25
+        ]
+      ],
+      "date-time": "2026-09-25T11:50:52Z",
+      "timestamp": 1790337052000
+    },
+    "author": [
+      {
+        "family": "Jung",
+        "given": "Wooyoung"
       }
     ]
   }
