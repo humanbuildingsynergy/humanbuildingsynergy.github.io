@@ -50,6 +50,9 @@ code:
     version: v1.0.0
     license: Apache-2.0
     year: 2026
+    paper:
+      doi: 10.1016/j.softx.2026.103068
+      venue: SoftwareX
 
   - name: HEMA
     full: Multi-Agent Home Energy Management Assistant
