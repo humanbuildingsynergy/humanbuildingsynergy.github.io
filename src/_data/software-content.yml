@@ -18,6 +18,25 @@ intro: >-
 
 # ---- Software releases ----------------------------------------------------
 code:
+  - name: Building AI-Readiness
+    full: Measurement-based AI-readiness assessment of buildings
+    description: >-
+      The reproduction package for "Which Buildings Are AI-Ready?". Ships the
+      readiness canon, the ceiling census, the question bank, and the agent
+      harness and grader, along with the deposited run summaries, episode
+      transcripts, and a BATS v1.0 supplement. Three ways to reproduce it: rebuild
+      the run tables from the deposited summaries, recompute the census and
+      ceilings from public data (BATS, Mortar, BTS), or run the agent yourself
+      against a local open model.
+    github: https://github.com/humanbuildingsynergy/building-ai-readiness
+    zenodo: 10.5281/zenodo.23197610
+    version: 1.0.0
+    license: Apache-2.0
+    year: 2026
+    paper:
+      doi: 10.48550/arXiv.2610.09119
+      venue: arXiv preprint
+
   - name: BuildOcc
     full: ATUS-grounded LLM occupant agents for building energy simulation
     description: >-
