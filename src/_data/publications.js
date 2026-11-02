@@ -19,7 +19,9 @@ import path from "node:path";
 import yaml from "js-yaml";
 
 const ORCID = "0000-0003-2746-4983";
+const ARXIV_AUTHOR = "Wooyoung Jung";
 const CACHE = path.join(process.cwd(), ".cache", "publications.json");
+const ARXIV_CACHE = path.join(process.cwd(), ".cache", "preprints.json");
 const UA = "HUBS-site/1.0 (https://hubs.engr.arizona.edu; mailto:wooyoung@arizona.edu)";
 const STOP = new Set(["a", "an", "the", "of", "for", "and", "in", "on", "to",
   "with", "from", "into", "at", "as"]);
@@ -84,6 +86,56 @@ async function dois() {
     return seen.has(k) ? false : seen.add(k);
   });
 }
+
+/* Preprints come from arXiv rather than ORCID. arXiv registers its DOIs with
+   DataCite, so even a preprint claimed in ORCID would fail the Crossref lookup
+   above and be skipped. The arXiv API answers in Atom; the handful of fields
+   read here do not need an XML parser. */
+const decode = (s) => s.replace(/\s+/g, " ").trim()
+  .replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"')
+  .replace(/&apos;/g, "'").replace(/&amp;/g, "&");
+
+async function arxiv() {
+  const q = encodeURIComponent(`au:"${ARXIV_AUTHOR}"`);
+  const res = await fetch(
+    `https://export.arxiv.org/api/query?search_query=${q}&max_results=100&sortBy=submittedDate`,
+    { headers: { "User-Agent": UA } });
+  if (!res.ok) throw new Error(`${res.status} arXiv`);
+  const xml = await res.text();
+  return [...xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)].map(([, e]) => {
+    const tag = (t) => (e.match(new RegExp(`<${t}[^>]*>([\\s\\S]*?)</${t}>`)) || [])[1] || "";
+    return {
+      id: tag("id").split("/abs/")[1].replace(/v\d+$/, ""),
+      title: decode(tag("title")),
+      authors: [...e.matchAll(/<name>([\s\S]*?)<\/name>/g)].map((m) => decode(m[1])),
+      published: tag("published").slice(0, 10),
+      // Set by the authors once the paper appears in a journal.
+      journalDoi: decode(tag("arxiv:doi")),
+    };
+  });
+}
+
+async function preprints() {
+  let cached = [];
+  try { cached = JSON.parse(fs.readFileSync(ARXIV_CACHE, "utf8")); } catch {}
+  try {
+    const fresh = await arxiv();
+    if (JSON.stringify(fresh) !== JSON.stringify(cached)) {
+      fs.mkdirSync(path.dirname(ARXIV_CACHE), { recursive: true });
+      fs.writeFileSync(ARXIV_CACHE, JSON.stringify(fresh, null, 2) + "\n");
+    }
+    return fresh;
+  } catch (err) {
+    console.warn(`[publications] arXiv unreachable (${err.message}); using cache`);
+    return cached;
+  }
+}
+
+// arXiv gives "Wooyoung Jung"; the rest of the list is "Jung, Wooyoung".
+const lastFirst = (n) => {
+  const i = n.lastIndexOf(" ");
+  return i < 0 ? n : `${n.slice(i + 1)}, ${n.slice(0, i)}`;
+};
 
 function shape(doi, m) {
   const fix = FIX[doi.toLowerCase()] || {};
@@ -161,19 +213,63 @@ export default async function () {
   // Slugs are URLs, so they have to be unique even when two papers open with
   // the same seven words — the two PECS reviews do.
   const seen = new Set();
-  for (const p of pubs) {
+  const unique = (p) => {
     let s = p.slug, n = 2;
     while (seen.has(s)) s = `${p.slug}-${n++}`;
     seen.add((p.slug = s));
-  }
+  };
+  pubs.forEach(unique);
 
   pubs.sort((a, b) => b.year.localeCompare(a.year) || b.sortDate.localeCompare(a.sortDate));
 
   /* Numbered the way the CV numbers them: oldest is 1, newest is highest. The
-     list reads newest-first, so the numbers count down the page. */
+     list reads newest-first, so the numbers count down the page. Preprints are
+     added after this and numbered on their own, so they never shift the count
+     of peer-reviewed work. */
   pubs.forEach((p, i) => { p.n = pubs.length - i; });
   console.log(`[publications] ${pubs.length} works ` +
     `(${pubs.filter((p) => p.kind === "journal").length} journal, ` +
     `${pubs.filter((p) => p.kind === "conference").length} conference)`);
-  return pubs;
+
+  /* A preprint leaves the list on its own once it is published: when arXiv
+     names a journal DOI that is already above, or when the title matches a
+     paper that is. The published paper then carries the arXiv link instead,
+     so the free copy is still one click away. A stranger who shares the name
+     is dropped by putting the arXiv DOI (10.48550/arXiv.…) under `exclude` in
+     the overrides file. */
+  const norm = (t) => String(t).toLowerCase().replace(/[^a-z0-9]+/g, "");
+  // Hand-written papers without a DOI are left out of the DOI index, or an
+  // empty journalDoi would match them.
+  const byDoi = new Map(pubs.filter((p) => p.doi)
+    .map((p) => [p.doi.replace("https://doi.org/", "").toLowerCase(), p]));
+  const byTitle = new Map(pubs.map((p) => [norm(p.title), p]));
+  const pre = [];
+  for (const e of await preprints()) {
+    const doi = `10.48550/arXiv.${e.id}`;
+    if (skip.has(doi.toLowerCase())) continue;
+    const published = byDoi.get(e.journalDoi.toLowerCase()) || byTitle.get(norm(e.title));
+    if (published) {
+      published.arxiv = e.id;
+      continue;
+    }
+    if (e.journalDoi) console.warn(`[publications] arXiv ${e.id} was published as ` +
+      `${e.journalDoi}, which is not on the list; claim it in ORCID`);
+    pre.push({
+      doi: `https://doi.org/${doi}`,
+      slug: slugify(e.title),
+      title: e.title,
+      authors: e.authors.map(lastFirst),
+      venue: "arXiv",
+      year: e.published.slice(0, 4),
+      volume: "",
+      kind: "preprint",
+      preprint: true,
+      sortDate: e.published,
+    });
+  }
+  pre.sort((a, b) => b.sortDate.localeCompare(a.sortDate));
+  pre.forEach((p, i) => { p.n = pre.length - i; });
+  pre.forEach(unique);
+  console.log(`[publications] ${pre.length} preprints`);
+  return [...pubs, ...pre];
 }

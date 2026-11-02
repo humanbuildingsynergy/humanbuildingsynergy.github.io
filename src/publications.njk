@@ -2,8 +2,8 @@
 layout: base.njk
 title: Publications
 description: >-
-  Journal articles and conference papers from the Human Building Synergy
-  Laboratory at the University of Arizona.
+  Journal articles, conference papers, and preprints from the Human Building
+  Synergy Laboratory at the University of Arizona.
 ---
 {% from "icons.njk" import icon %}
 
@@ -14,13 +14,49 @@ description: >-
   <p class="label">Publications</p>
   <h1>Read the <span class="c-gold">work.</span></h1>
   <p class="lede">
-    Everything the lab has published, newest first. Each title goes to the
-    paper; Cite downloads a citation file for your reference manager.
+    Preprints first, then everything the lab has published, newest first. Each
+    title goes to the paper; Cite downloads a citation file for your reference
+    manager.
   </p>
 </section>
 
 <section class="band band--tight wrap">
-  {%- for group in publications | groupPubsByYear %}
+  {#- Preprints sit above the published papers and are numbered on their own,
+      so the CV's count of peer-reviewed work is untouched. Each one drops off
+      by itself once it is published; see src/_data/publications.js. #}
+  {%- set preprints = publications | selectattr("preprint") %}
+  {%- if preprints.length %}
+  <div class="yearHead">
+    <b>Preprints</b>
+    <hr />
+    <span>{{ preprints.length }} {% if preprints.length == 1 %}preprint{% else %}preprints{% endif %}</span>
+  </div>
+
+  {#- Grouped by year under the heading. Some preprints stay preprints, and
+      without the year a three-year-old one would read as new. #}
+  {%- for group in preprints | groupPubsByYear %}
+  <p class="pubsSub">{{ group.year }}</p>
+  <ul class="pubs">
+    {%- for p in group.items %}
+    <li>
+      <span class="pub__n" aria-hidden="true">{{ p.n }}</span>
+      <a class="pub__title" href="{{ p.doi }}" target="_blank" rel="noopener">{{ p.title }}</a>
+      <p class="pub__authors">
+        {%- for a in p.authors %}{{ a | authorDisplay }}{% if not loop.last %}, {% endif %}{% endfor %}
+      </p>
+      <p class="pub__meta">
+        <span class="kind">{{ p.kind }}</span>
+        <span>{{ p.venue }}</span>
+        <a class="pub__doi" href="{{ p.doi }}" target="_blank" rel="noopener">{{ p.doi | replace("https://doi.org/", "") }}</a>
+        <a class="pub__cite" href="/publications/{{ p.slug }}.ris" download>Cite</a>
+      </p>
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- endfor %}
+  {%- endif %}
+
+  {%- for group in publications | rejectattr("preprint") | groupPubsByYear %}
   <div class="yearHead">
     <b>{{ group.year }}</b>
     <hr />
@@ -48,6 +84,12 @@ description: >-
         {%- if p.doi %}
         <a class="pub__doi" href="{{ p.doi }}" target="_blank" rel="noopener">{{ p.doi | replace("https://doi.org/", "") }}</a>
         {%- endif %}
+        {#- The arXiv copy this paper started as, linked for readers without a
+            subscription. Set by src/_data/publications.js when a preprint is
+            matched to it. #}
+        {%- if p.arxiv %}
+        <a class="pub__doi" href="https://arxiv.org/abs/{{ p.arxiv }}" target="_blank" rel="noopener">arXiv:{{ p.arxiv }}</a>
+        {%- endif %}
         <a class="pub__cite" href="/publications/{{ p.slug }}.ris" download>Cite</a>
       </p>
     </li>
@@ -59,7 +101,7 @@ description: >-
 <section class="band band--rule band--tight wrap">
   <div class="cta">
     <p class="label">Elsewhere</p>
-    <h2 style="margin-top:.8rem">Citation counts and preprints.</h2>
+    <h2 style="margin-top:.8rem">Citation counts.</h2>
     <div class="btnRow">
       <a class="btn btn--quiet" href="{{ site.social.scholar }}" target="_blank" rel="noopener">Google Scholar {{ icon("external") }}</a>
       <a class="btn btn--quiet" href="/research/">Research {{ icon("arrow-right") }}</a>

@@ -13,7 +13,7 @@ pagination:
 permalink: "/publications/{{ pub.slug }}.ris"
 eleventyExcludeFromCollections: true
 ---
-TY  - {{ "CONF" if pub.kind == "conference" else "JOUR" }}
+TY  - {{ { "conference": "CONF", "preprint": "UNPB" }[pub.kind] or "JOUR" }}
 TI  - {{ pub.title | trim | safe }}
 {%- for a in pub.authors %}
 AU  - {{ a | safe }}

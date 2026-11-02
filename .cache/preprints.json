@@ -1,0 +1,86 @@
+[
+  {
+    "id": "2610.09937",
+    "title": "Where Can a Decision Model Diagnose HVAC Faults? Reasoning Demand, Physical Representation, and Robustness Under Shift",
+    "authors": [
+      "Wooyoung Jung"
+    ],
+    "published": "2026-10-07",
+    "journalDoi": ""
+  },
+  {
+    "id": "2610.09119",
+    "title": "Which Buildings Are Artificial Intelligence-Ready? A Measurement-Based Assessment Framework for AI Question Answering and Actuation",
+    "authors": [
+      "Wooyoung Jung"
+    ],
+    "published": "2026-10-06",
+    "journalDoi": ""
+  },
+  {
+    "id": "2610.00224",
+    "title": "Build2SPARQL: A Large-Scale Text-to-SPARQL Benchmark Dataset for Building Knowledge Graph Querying",
+    "authors": [
+      "Wooyoung Jung"
+    ],
+    "published": "2026-09-22",
+    "journalDoi": ""
+  },
+  {
+    "id": "2610.00073",
+    "title": "A Comprehensive Evaluation Framework for Conversational Home Energy Management Systems",
+    "authors": [
+      "Wooyoung Jung"
+    ],
+    "published": "2026-09-04",
+    "journalDoi": ""
+  },
+  {
+    "id": "2610.00038",
+    "title": "BuildGraph: A Synthetic Multi-Archetype Building Knowledge Graph Dataset",
+    "authors": [
+      "Wooyoung Jung"
+    ],
+    "published": "2026-09-02",
+    "journalDoi": ""
+  },
+  {
+    "id": "2609.02729",
+    "title": "BuildOcc: A Large Language Model Occupant Agent Platform for Building Energy Research",
+    "authors": [
+      "Wooyoung Jung"
+    ],
+    "published": "2026-09-02",
+    "journalDoi": "10.1016/j.softx.2026.103068"
+  },
+  {
+    "id": "2609.02719",
+    "title": "Large Language Model-Driven Context-Aware Eco-Feedback Generation and Evaluation",
+    "authors": [
+      "Wooyoung Jung",
+      "Prosper Babon-Ayeng"
+    ],
+    "published": "2026-09-02",
+    "journalDoi": "10.1016/j.enbuild.2026.118038"
+  },
+  {
+    "id": "2602.16140",
+    "title": "Human-AI Collaboration in Large Language Model-Integrated Building Energy Management Systems: The Role of User Domain Knowledge and AI Literacy",
+    "authors": [
+      "Wooyoung Jung",
+      "Kahyun Jeon",
+      "Prosper Babon-Ayeng"
+    ],
+    "published": "2026-02-18",
+    "journalDoi": ""
+  },
+  {
+    "id": "2602.15219",
+    "title": "Multi-Agent Home Energy Management Assistant",
+    "authors": [
+      "Wooyoung Jung"
+    ],
+    "published": "2026-02-16",
+    "journalDoi": "10.1016/j.softx.2026.102633"
+  }
+]

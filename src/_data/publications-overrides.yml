@@ -10,6 +10,9 @@
 # The 2024 Taylor & Francis book is registered with a DOI per chapter as well
 # as one for the book, so ORCID reports eleven works for one book. The chapters
 # are dropped and the book itself is kept.
+#
+# Preprints are found on arXiv by author name. If one by somebody else with
+# the same name turns up, list its arXiv DOI here (10.48550/arXiv.<id>).
 # ---------------------------------------------------------------------------
 exclude:
   - 10.4324/9780367814748-1    # Introduction

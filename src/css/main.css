@@ -1113,6 +1113,11 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
   .pubs li { grid-template-columns: 1.9rem minmax(0,1fr); }
   .pub__n { font-size: .68rem; }
 }
+/* The year inside the Preprints group: a quiet label set in the title column,
+   so it reads as a subdivision of Preprints rather than a rival heading. */
+.pubsSub { font-family: var(--mono); font-size: .72rem; letter-spacing: .12em;
+           color: var(--ink-2); margin: 1.1rem 0 1rem 2.5rem; }
+@media (max-width: 620px) { .pubsSub { margin-left: 1.9rem; } }
 .pubs li:last-child { border-bottom: 0; padding-bottom: 0; }
 .pub__title {
   font-size: 1.05rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.3;
