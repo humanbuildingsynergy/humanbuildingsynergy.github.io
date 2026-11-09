@@ -5,6 +5,46 @@
 # service, people, outreach, milestone.
 # `text` may contain inline HTML links.
 
+- date: 2026-10
+  type: publication
+  # DRAFT — rewrite this sentence before merging.
+  text: >-
+    Jung et al. published
+    <a href="https://doi.org/10.48550/arXiv.2610.09937" target="_blank" rel="noopener">Where Can a Decision Model Diagnose HVAC Faults? Reasoning Demand, Physical Representation, and Robustness Under Shift</a>
+    in arXiv.
+
+- date: 2026-10
+  type: publication
+  # DRAFT — rewrite this sentence before merging.
+  text: >-
+    Jung et al. published
+    <a href="https://doi.org/10.48550/arXiv.2610.09119" target="_blank" rel="noopener">Which Buildings Are Artificial Intelligence-Ready? A Measurement-Based Assessment Framework for AI Question Answering and Actuation</a>
+    in arXiv.
+
+- date: 2026-09
+  type: publication
+  # DRAFT — rewrite this sentence before merging.
+  text: >-
+    Jung et al. published
+    <a href="https://doi.org/10.48550/arXiv.2610.00224" target="_blank" rel="noopener">Build2SPARQL: A Large-Scale Text-to-SPARQL Benchmark Dataset for Building Knowledge Graph Querying</a>
+    in arXiv.
+
+- date: 2026-09
+  type: publication
+  # DRAFT — rewrite this sentence before merging.
+  text: >-
+    Jung et al. published
+    <a href="https://doi.org/10.48550/arXiv.2610.00073" target="_blank" rel="noopener">A Comprehensive Evaluation Framework for Conversational Home Energy Management Systems</a>
+    in arXiv.
+
+- date: 2026-09
+  type: publication
+  # DRAFT — rewrite this sentence before merging.
+  text: >-
+    Jung et al. published
+    <a href="https://doi.org/10.48550/arXiv.2610.00038" target="_blank" rel="noopener">BuildGraph: A Synthetic Multi-Archetype Building Knowledge Graph Dataset</a>
+    in arXiv.
+
 - date: 2026-09
   type: publication
   text: >-
