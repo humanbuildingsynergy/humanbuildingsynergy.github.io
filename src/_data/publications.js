@@ -22,6 +22,7 @@ const ORCID = "0000-0003-2746-4983";
 const ARXIV_AUTHOR = "Wooyoung Jung";
 const CACHE = path.join(process.cwd(), ".cache", "publications.json");
 const ARXIV_CACHE = path.join(process.cwd(), ".cache", "preprints.json");
+const ZENODO_CACHE = path.join(process.cwd(), ".cache", "supplements.json");
 const UA = "HUBS-site/1.0 (https://hubs.engr.arizona.edu; mailto:wooyoung@arizona.edu)";
 const STOP = new Set(["a", "an", "the", "of", "for", "and", "in", "on", "to",
   "with", "from", "into", "at", "as"]);
@@ -104,8 +105,13 @@ async function arxiv() {
   const xml = await res.text();
   return [...xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)].map(([, e]) => {
     const tag = (t) => (e.match(new RegExp(`<${t}[^>]*>([\\s\\S]*?)</${t}>`)) || [])[1] || "";
+    const [, id, version] = tag("id").split("/abs/")[1].match(/^(.*?)(v\d+)?$/);
     return {
-      id: tag("id").split("/abs/")[1].replace(/v\d+$/, ""),
+      id,
+      // The latest version and when it went up. Lab papers are revised in
+      // place, so the page says which version a reader is looking at.
+      version: version || "v1",
+      updated: tag("updated").slice(0, 10),
       title: decode(tag("title")),
       authors: [...e.matchAll(/<name>([\s\S]*?)<\/name>/g)].map((m) => decode(m[1])),
       published: tag("published").slice(0, 10),
@@ -120,20 +126,62 @@ async function arxiv() {
   });
 }
 
-async function preprints() {
-  let cached = [];
-  try { cached = JSON.parse(fs.readFileSync(ARXIV_CACHE, "utf8")); } catch {}
+/* Fetch, and keep the last good answer on disk: a deploy while an API is down
+   still shows what it knew last time. Written only when the answer changes,
+   so the committed cache does not churn. */
+async function cachedFetch(file, label, fetcher, empty) {
+  let cached = empty;
+  try { cached = JSON.parse(fs.readFileSync(file, "utf8")); } catch {}
   try {
-    const fresh = await arxiv();
+    const fresh = await fetcher();
     if (JSON.stringify(fresh) !== JSON.stringify(cached)) {
-      fs.mkdirSync(path.dirname(ARXIV_CACHE), { recursive: true });
-      fs.writeFileSync(ARXIV_CACHE, JSON.stringify(fresh, null, 2) + "\n");
+      fs.mkdirSync(path.dirname(file), { recursive: true });
+      fs.writeFileSync(file, JSON.stringify(fresh, null, 2) + "\n");
     }
     return fresh;
   } catch (err) {
-    console.warn(`[publications] arXiv unreachable (${err.message}); using cache`);
+    console.warn(`[publications] ${label} unreachable (${err.message}); using cache`);
     return cached;
   }
+}
+
+const preprints = () => cachedFetch(ARXIV_CACHE, "arXiv", arxiv, []);
+
+/* Code and data released on Zenodo, keyed by the paper each release says it
+   belongs to. Zenodo records name their paper as a related identifier —
+   "arXiv:2610.09119", "10.48550/arXiv.2609.02729", or the journal DOI — under
+   isSupplementTo or isDocumentedBy. A release that names no paper gets no
+   link; adding the relation on Zenodo is all it takes. Searched by name and
+   by ORCID, since older records carry only one of the two. */
+async function zenodo() {
+  const found = new Map();
+  for (const q of [`creators.name:"Jung, Wooyoung"`, `creators.orcid:${ORCID}`]) {
+    // Unauthenticated searches are capped at 25 a page.
+    for (let page = 1; page <= 8; page++) {
+      const d = await getJSON(`https://zenodo.org/api/records?size=25&page=${page}` +
+        `&q=${encodeURIComponent(q)}`);
+      for (const r of d.hits.hits) found.set(r.conceptdoi || r.doi, r);
+      if (page * 25 >= d.hits.total) break;
+    }
+  }
+  const links = {};
+  for (const [doi, r] of found) {
+    for (const rel of r.metadata.related_identifiers || []) {
+      if (!/^(issupplementto|isdocumentedby|isdescribedby)$/i.test(rel.relation)) continue;
+      const id = rel.identifier.toLowerCase();
+      const ax = id.includes("arxiv") && id.match(/(\d{4}\.\d{4,5})/);
+      const key = ax ? `arxiv:${ax[1]}` : id.replace(/^https?:\/\/(dx\.)?doi\.org\//, "");
+      if (!ax && !key.startsWith("10.")) continue;  // a GitHub tree, not a paper
+      (links[key] = links[key] || []).push({
+        doi,
+        type: r.metadata.resource_type?.type === "dataset" ? "Data" : "Code",
+      });
+    }
+  }
+  // Sorted so the cache only changes when the links do.
+  return Object.fromEntries(Object.keys(links).sort().map((k) => [k,
+    links[k].filter((v, i, a) => a.findIndex((w) => w.doi === v.doi) === i)
+      .sort((a, b) => a.type.localeCompare(b.type) || a.doi.localeCompare(b.doi))]));
 }
 
 // arXiv gives "Wooyoung Jung"; the rest of the list is "Jung, Wooyoung".
@@ -269,12 +317,19 @@ export default async function () {
   const byDoi = new Map(pubs.filter((p) => p.doi)
     .map((p) => [p.doi.replace("https://doi.org/", "").toLowerCase(), p]));
   const byTitle = new Map(pubs.map((p) => [norm(p.title), p]));
+  const supplements = await cachedFetch(ZENODO_CACHE, "Zenodo", zenodo, {});
+  const releasesFor = (...keys) => keys.filter(Boolean)
+    .flatMap((k) => supplements[k.toLowerCase()] || [])
+    .filter((v, i, a) => a.findIndex((w) => w.doi === v.doi) === i);
+
   const pre = [];
   for (const e of papers) {
     const published = byDoi.get(e.journalDoi.toLowerCase()) || byTitle.get(norm(e.title));
     if (published) {
       published.arxiv = e.id;
       published.series = e.series;
+      published.releases = releasesFor(`arxiv:${e.id}`,
+        published.doi.replace("https://doi.org/", ""));
       continue;
     }
     if (e.journalDoi) console.warn(`[publications] arXiv ${e.id} was published as ` +
@@ -289,6 +344,11 @@ export default async function () {
       volume: "",
       kind: "lab paper",
       series: e.series,
+      version: e.version || "v1",
+      // Only a revised paper says when; "Nov 2026" rather than a full date.
+      updated: !e.updated || e.version === "v1" ? "" : new Date(e.updated)
+        .toLocaleString("en-US", { month: "short", year: "numeric", timeZone: "UTC" }),
+      releases: releasesFor(`arxiv:${e.id}`, e.journalDoi),
       lab: true,
       sortDate: e.published,
     });

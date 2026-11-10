@@ -6,6 +6,14 @@ description: >-
   Building Synergy Laboratory at the University of Arizona.
 ---
 {% from "icons.njk" import icon %}
+{#- The code and data a paper released on Zenodo, found by the build from the
+    paper each Zenodo record names; see src/_data/publications.js. Linked by
+    concept DOI, which always resolves to the latest version. #}
+{% macro releases(p) %}
+  {%- for r in p.releases %}
+        <a class="pub__rel" href="https://doi.org/{{ r.doi }}" target="_blank" rel="noopener" title="{{ r.doi }}">{{ r.type }}</a>
+  {%- endfor %}
+{% endmacro %}
 
 {# Deliberately absent from site.nav — reached from the Research page, which is
    where someone looking for papers already is. The list itself is built from
@@ -47,9 +55,14 @@ description: >-
       <li><b>Range.</b> Benchmarks, datasets, evaluation frameworks and careful
         negative or neutral results move the field forward, but rarely fit the shape of a
         journal article. The series gives them a permanent, citable home.</li>
+      <li><b>Open by default.</b> Each paper's code and data are released
+        alongside it and archived on Zenodo with their own DOI, so the results
+        can be checked, rerun and cited on their own, apart from the paper.</li>
       <li><b>A record of our own.</b> Each paper carries a series number and a
-        permanent arXiv identifier, with its code and data archived alongside,
-        in the way national laboratories publish their technical reports.</li>
+        permanent arXiv identifier, in the way national laboratories publish
+        their technical reports. Lab papers are living documents: we revise
+        them as the work develops, every version stays on arXiv, and each notes
+        what changed.</li>
     </ul>
     <p>
       Many go on to journals and conferences; when one does, both versions are
@@ -73,7 +86,10 @@ description: >-
       <p class="pub__meta">
         <span class="kind">{{ p.kind }}</span>
         <span>{{ p.venue }}</span>
+        {#- The version on arXiv now, and when it went up if it is not the first. #}
+        <span>{{ p.version }}{% if p.updated %}, updated {{ p.updated }}{% endif %}</span>
         <a class="pub__doi" href="{{ p.doi }}" target="_blank" rel="noopener">{{ p.doi | replace("https://doi.org/", "") }}</a>
+        {{- releases(p) }}
         <a class="pub__cite" href="/publications/{{ p.slug }}.ris" download>Cite</a>
       </p>
     </li>
@@ -123,6 +139,7 @@ description: >-
         {%- if p.arxiv %}
         <a class="pub__doi" href="https://arxiv.org/abs/{{ p.arxiv }}" target="_blank" rel="noopener">arXiv:{{ p.arxiv }}</a>
         {%- endif %}
+        {{- releases(p) }}
         <a class="pub__cite" href="/publications/{{ p.slug }}.ris" download>Cite</a>
       </p>
     </li>

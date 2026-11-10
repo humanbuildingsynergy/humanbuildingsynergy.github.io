@@ -1119,10 +1119,14 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
            color: var(--ink-2); margin: 1.1rem 0 1rem 2.5rem; }
 @media (max-width: 620px) { .pubsSub { margin-left: 1.9rem; } }
 /* Why the series exists, set in the title column under its heading. */
-.labNote { margin: 1.1rem 0 0 2.5rem; max-width: 64ch; color: var(--ink-2);
+.labNote { margin: 1.1rem 0 0 2.5rem; color: var(--ink-2);
            font-size: .92rem; line-height: 1.6; display: grid; gap: .8rem; }
+/* The note spans the page on a wide screen, but no single line does: the
+   paragraphs stop at a readable measure and the four points sit two by two. */
+.labNote p { max-width: 82ch; }
 .labNote b { color: var(--ink); font-weight: 700; }
-.labNote ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .5rem; }
+.labNote ul { list-style: none; padding: 0; margin: .2rem 0; display: grid; gap: .9rem 3rem; }
+@media (min-width: 900px) { .labNote ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .labNote li { padding-left: 1.15rem; position: relative; }
 .labNote li::before { content: "+"; position: absolute; left: 0; color: var(--ink-3); font-family: var(--mono); }
 @media (max-width: 620px) { .labNote { margin-left: 1.9rem; } }
@@ -1140,8 +1144,8 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 .pubTitle { font-size: clamp(1.5rem, 3.6vw, 2.4rem); max-width: 26ch; }
 .pubVenue { font-family: var(--mono); font-size: .72rem; letter-spacing: .12em;
             text-transform: uppercase; color: var(--ink-3); margin-top: .6rem; }
-.pub__cite { color: var(--ai); text-decoration: none; }
-.pub__cite:hover { color: var(--human); }
+.pub__cite, .pub__rel { color: var(--ai); text-decoration: none; }
+.pub__cite:hover, .pub__rel:hover { color: var(--human); }
 
 /* The DOI sits quieter than Cite — it is there to be read and copied, not
    clicked. Kept on one line: a wrapped DOI is impossible to select cleanly. */
