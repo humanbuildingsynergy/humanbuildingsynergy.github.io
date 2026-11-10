@@ -279,7 +279,9 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 .navToggle[aria-expanded="true"] span::before { transform: translateY(5px) rotate(45deg); }
 .navToggle[aria-expanded="true"] span::after  { transform: translateY(-5px) rotate(-45deg); }
 
-@media (max-width: 900px) {
+/* The full bar needs about 1,040px since Publications joined it; below that
+   it folds into the menu button rather than wrapping its links. */
+@media (max-width: 1040px) {
   .navToggle { display: flex; }
   .nav {
     position: fixed; inset: 3.6rem 0 auto 0; flex-direction: column; align-items: stretch;
