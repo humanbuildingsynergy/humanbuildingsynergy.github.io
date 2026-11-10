@@ -19,12 +19,19 @@
     <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
     <meta property="og:title" content="{% if title %}{{ title }} | {{ site.titleName }}{% else %}{{ site.titleName }} — {{ site.researchArea }}{% endif %}" />
     <meta property="og:description" content="{{ description or site.description }}" />
-    <meta property="og:image" content="{{ site.url }}{{ ogImage or '/assets/logo/hubs_logo_one_inch.png' }}" />
+    {#- Each page's share card, made by tools/og-cards.mjs from the page's own
+        headline; ogCards.json lists the pages that have one. Any other page
+        shares the homepage card. #}
+    {%- set ogKey = (page.url | replace("/", "")) or "home" %}
+    {%- set ogPath = ogImage or ("/assets/og/" + ogKey + ".png" if ogKey in ogCards else "/assets/og/home.png") %}
+    <meta property="og:image" content="{{ site.url }}{{ ogPath }}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{% if title %}{{ title }} | {{ site.titleName }}{% else %}{{ site.titleName }} — {{ site.researchArea }}{% endif %}" />
     <meta name="twitter:description" content="{{ description or site.description }}" />
-    <meta name="twitter:image" content="{{ site.url }}{{ ogImage or '/assets/logo/hubs_logo_one_inch.png' }}" />
+    <meta name="twitter:image" content="{{ site.url }}{{ ogPath }}" />
 
     {% if site.googleSiteVerification %}
     <meta name="google-site-verification" content="{{ site.googleSiteVerification }}" />
