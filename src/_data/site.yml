@@ -132,15 +132,15 @@ social:
   linkedin: https://www.linkedin.com/in/jungwyoungs/
 
 nav:
-  - { text: Home,         url: / }
-  - { text: About,        url: /about/ }
-  - { text: People,       url: /people/ }
-  - { text: Research,     url: /research/ }
-  - { text: Publications, url: /publications/ }
-  - { text: Facility,     url: /facility/ }
-  - { text: Teaching,     url: /teaching/ }
-  - { text: News,         url: /news/ }
-  - { text: Join Us,      url: /join-us/, highlight: true }
+  - { text: Home,          url: / }
+  - { text: About,         url: /about/ }
+  - { text: People,        url: /people/ }
+  - { text: Research,      url: /research/ }
+  - { text: Contributions, url: /publications/ }
+  - { text: Facility,      url: /facility/ }
+  - { text: Teaching,      url: /teaching/ }
+  - { text: News,          url: /news/ }
+  - { text: Join Us,       url: /join-us/, highlight: true }
 
 footerLinks:
   - { text: Privacy,    url: https://privacy.arizona.edu/privacy-statement }

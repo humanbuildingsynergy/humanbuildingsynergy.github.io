@@ -1,11 +1,13 @@
 ---
 layout: base.njk
-title: Publications
+title: Contributions
 description: >-
-  HUBS Lab Papers, journal articles, and conference papers from the Human
-  Building Synergy Laboratory at the University of Arizona.
+  HUBS Lab Papers, software and data releases, and journal and conference
+  papers from the Human Building Synergy Laboratory at the University of
+  Arizona.
 ---
 {% from "icons.njk" import icon %}
+{% from "release.njk" import release %}
 {#- The code and data a paper released on Zenodo, found by the build from the
     paper each Zenodo record names; see src/_data/publications.js. Linked by
     concept DOI, which always resolves to the latest version. #}
@@ -15,16 +17,18 @@ description: >-
   {%- endfor %}
 {% endmacro %}
 
-{# In site.nav since the HUBS Lab Papers series made this page a destination of
-   its own. The list itself is built from Dr. Jung's ORCID record and arXiv at
-   deploy time; see src/_data/publications.js. #}
+{# Everything the lab puts out: its own paper series, the software and data
+   behind it, and the journal and conference papers. Still served at
+   /publications/, which existing links and the Cite files use. The papers
+   come from ORCID and arXiv at deploy time (src/_data/publications.js), the
+   releases from GitHub and Zenodo (src/_data/software.js). #}
 <section class="pageHero wrap">
-  <p class="label">Publications</p>
-  <h1>Read the <span class="c-gold">work.</span></h1>
+  <p class="label">Knowledge contributions</p>
+  <h1>Read it, run it, <span class="c-gold">cite it.</span></h1>
   <p class="lede">
-    HUBS Lab Papers first, then everything published in journals and
-    conferences, newest first. Each title goes to the paper; Cite downloads a
-    citation file for your reference manager.
+    The lab's own paper series, the software and data released with it, and
+    everything published in journals and conferences, newest first. Cite
+    downloads a citation file for your reference manager.
   </p>
 </section>
 
@@ -97,6 +101,27 @@ description: >-
   </ul>
   {%- endfor %}
   {%- endif %}
+
+  {#- Every public repo and every Zenodo software or dataset record, found by
+      the build; see src/_data/software.js. #}
+  {%- set releaseCount = software.code.length + software.datasets.length + software.courseware.length %}
+  <div class="yearHead">
+    <b>Software and Data</b>
+    <hr />
+    <span>{{ releaseCount }} releases</span>
+  </div>
+  {%- for group in [
+        { title: "Software", items: software.code, tone: "c-ai" },
+        { title: "Datasets and benchmarks", items: software.datasets, tone: "c-bl" },
+        { title: "Course materials", items: software.courseware, tone: "c-hu" }
+      ] %}
+  {%- if group.items.length %}
+  <p class="pubsSub">{{ group.title }}</p>
+  <div class="release release--indent">
+    {%- for r in group.items %}{{ release(r, group.tone, publications) }}{%- endfor %}
+  </div>
+  {%- endif %}
+  {%- endfor %}
 
   {#- Set out the same way as the lab papers above: one heading for the group,
       the years as quiet labels beneath it. #}
