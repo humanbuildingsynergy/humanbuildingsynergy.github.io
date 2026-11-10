@@ -5,6 +5,15 @@
 # service, people, outreach, milestone.
 # `text` may contain inline HTML links.
 
+- date: 2026-11
+  type: milestone
+  text: >-
+    Introducing HUBS Lab Papers! The lab now releases its work on arXiv first,
+    as a numbered series beginning with HUBS Lab Paper No. 2026-001, with code
+    and data archived on Zenodo, and work from earlier years to follow. Many
+    will go on to journals; some will stand as lab papers in their own right.
+    See <a href="/publications/">Publications</a>.
+
 - date: 2026-09
   type: publication
   text: >-
