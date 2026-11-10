@@ -6,6 +6,7 @@ description: >-
   Mechanics at the University of Arizona.
 ---
 {% from "icons.njk" import icon %}
+{% from "release.njk" import release %}
 {% macro tone(p) %}{{ 'c-hu' if p == 'human' else ('c-ai' if p == 'ai' else 'c-bl') }}{% endmacro %}
 
 <section class="pageHero wrap">
@@ -56,6 +57,21 @@ description: >-
   </article>
   {%- endfor %}
 </section>
+
+{#- The lab's public course repos, found by the build like its research
+    releases (src/_data/software.js); `courses` in software-content.yml says
+    which repos are teaching materials. #}
+{%- if software.courseware.length %}
+<section class="band band--rule band--tight wrap">
+  <div class="band__head measure">
+    <p class="label">Open course materials</p>
+    <h2>Free to use and adapt.</h2>
+  </div>
+  <div class="release">
+    {%- for r in software.courseware %}{{ release(r, "c-grn", publications) }}{%- endfor %}
+  </div>
+</section>
+{%- endif %}
 
 <section class="band band--rule band--tight wrap">
   <div class="cta">

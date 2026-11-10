@@ -15,13 +15,17 @@
 githubOrg: https://github.com/humanbuildingsynergy
 
 # Repos that are teaching materials rather than research software. They are
-# listed in a group of their own. Names are repo names on the account above.
+# listed on the Teaching page, not with the research releases. Names are repo
+# names on the account above.
 courses:
   - UArizona_CE310_Probability_Statistics_in_CAE
   - BDAV
 
-# Public repos to leave off the page entirely. This website is always left off.
-exclude: []
+# Releases to leave off entirely: a repo name, or a Zenodo DOI for a release
+# with no repo here. This website is always left off, and so is any Zenodo
+# release whose code lives outside the account above (another lab's work).
+exclude:
+  - HUBS_GPT-based_SCALE_Framework
 
 intro: >-
   Software and data released by the lab. Everything here is citable and
@@ -88,6 +92,23 @@ code:
     paper:
       doi: 10.1016/j.buildenv.2023.110628
       venue: Building and Environment
+
+# ---- Course materials (shown on the Teaching page) -----------------------
+courseware:
+  - name: CE 310
+    full: Probability and Statistics in Civil and Architectural Engineering
+    description: >-
+      Open course materials from the University of Arizona: 16 modules with
+      Excel labs, Python and Colab labs, and a capstone.
+    github: https://github.com/humanbuildingsynergy/UArizona_CE310_Probability_Statistics_in_CAE
+
+  - name: BDAV
+    full: Building Data Analytics and Visualization
+    description: >-
+      Course content from the Building Data Analytics and Visualization course
+      in Civil and Architectural Engineering and Mechanics at the University of
+      Arizona.
+    github: https://github.com/humanbuildingsynergy/BDAV
 
 # ---- Archived datasets and benchmarks -------------------------------------
 datasets:

@@ -103,8 +103,9 @@ description: >-
   {%- endif %}
 
   {#- Every public repo and every Zenodo software or dataset record, found by
-      the build; see src/_data/software.js. #}
-  {%- set releaseCount = software.code.length + software.datasets.length + software.courseware.length %}
+      the build; see src/_data/software.js. Course materials are on the
+      Teaching page instead. #}
+  {%- set releaseCount = software.code.length + software.datasets.length %}
   <div class="yearHead">
     <b>Software and Data</b>
     <hr />
@@ -112,8 +113,7 @@ description: >-
   </div>
   {%- for group in [
         { title: "Software", items: software.code, tone: "c-ai" },
-        { title: "Datasets and benchmarks", items: software.datasets, tone: "c-bl" },
-        { title: "Course materials", items: software.courseware, tone: "c-hu" }
+        { title: "Datasets and benchmarks", items: software.datasets, tone: "c-bl" }
       ] %}
   {%- if group.items.length %}
   <p class="pubsSub">{{ group.title }}</p>

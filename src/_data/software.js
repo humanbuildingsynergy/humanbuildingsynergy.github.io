@@ -107,7 +107,10 @@ function keyOf(paper) {
 
 export default async function () {
   const [repos, records] = await Promise.all([cachedRepos(), zenodoRecords()]);
-  const skip = listed(content.exclude);
+  // `exclude` takes repo names and Zenodo DOIs alike.
+  const skipDois = new Set((content.exclude || []).filter((x) => /^10\./.test(x))
+    .map((x) => x.toLowerCase()));
+  const skip = listed((content.exclude || []).filter((x) => !/^10\./.test(x)));
   skip.add(`${ORG}/${ORG}.github.io`.toLowerCase());  // this website
   const courses = listed(content.courses);
 
@@ -122,7 +125,8 @@ export default async function () {
   };
 
   // The hand-written entries first, so the sources fill in around them.
-  for (const [group, list] of [["software", content.code], ["data", content.datasets]]) {
+  for (const [group, list] of [["software", content.code], ["data", content.datasets],
+                               ["courses", content.courseware]]) {
     for (const item of list || []) {
       add({
         group, name: item.name, full: item.full || "", description: item.description || "",
@@ -135,6 +139,10 @@ export default async function () {
 
   for (const rec of records) {
     if (!["software", "dataset"].includes(rec.type)) continue;
+    // Dr. Jung is a co-author on releases from other labs too. One whose code
+    // lives outside the lab's GitHub account is theirs, not the lab's.
+    if (rec.repo && !rec.repo.startsWith(`${ORG.toLowerCase()}/`)) continue;
+    if (skipDois.has(rec.doi.toLowerCase()) || skipDois.has(rec.conceptdoi.toLowerCase())) continue;
     const e = (rec.repo && byRepo.get(rec.repo)) || byDoi.get(rec.doi.toLowerCase())
       || byDoi.get(rec.conceptdoi.toLowerCase())
       || add({ group: rec.type === "dataset" ? "data" : "software", repo: rec.repo, dois: [] });
