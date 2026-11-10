@@ -54,9 +54,17 @@ for (const p of missing) {
   lines.push(`  type: publication`);
   lines.push(`  # DRAFT — rewrite this sentence before merging.`);
   lines.push(`  text: >-`);
-  lines.push(`    ${first} et al. published`);
-  lines.push(`    <a href="${p.doi}" target="_blank" rel="noopener">${p.title}</a>`);
-  lines.push(`    in ${p.venue}.`);
+  const who = p.authors.length > 1 ? `${first} et al.` : first;
+  if (p.lab) {
+    // A lab paper is the lab's own release, not a venue's acceptance.
+    lines.push(`    The lab released HUBS Lab Paper No. ${p.series},`);
+    lines.push(`    <a href="${p.doi}" target="_blank" rel="noopener">${p.title}</a>,`);
+    lines.push(`    on arXiv.`);
+  } else {
+    lines.push(`    ${who} published`);
+    lines.push(`    <a href="${p.doi}" target="_blank" rel="noopener">${p.title}</a>`);
+    lines.push(`    in ${p.venue}.`);
+  }
   lines.push("");
 }
 const block = lines.join("\n");
