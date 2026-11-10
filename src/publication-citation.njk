@@ -13,13 +13,16 @@ pagination:
 permalink: "/publications/{{ pub.slug }}.ris"
 eleventyExcludeFromCollections: true
 ---
-TY  - {{ { "conference": "CONF", "preprint": "UNPB" }[pub.kind] or "JOUR" }}
+TY  - {{ { "conference": "CONF", "lab paper": "RPRT" }[pub.kind] or "JOUR" }}
 TI  - {{ pub.title | trim | safe }}
 {%- for a in pub.authors %}
 AU  - {{ a | safe }}
 {%- endfor %}
 {%- if pub.kind == "conference" %}
 T2  - {{ pub.venue | trim | safe }}
+{%- elif pub.kind == "lab paper" %}
+PB  - Human Building Synergy Laboratory, University of Arizona
+SN  - HUBS Lab Paper No. {{ pub.series }}
 {%- else %}
 JO  - {{ pub.venue | trim | safe }}
 {%- endif %}

@@ -1118,6 +1118,15 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 .pubsSub { font-family: var(--mono); font-size: .72rem; letter-spacing: .12em;
            color: var(--ink-2); margin: 1.1rem 0 1rem 2.5rem; }
 @media (max-width: 620px) { .pubsSub { margin-left: 1.9rem; } }
+/* Why the series exists, set in the title column under its heading. */
+.labNote { margin: 1.1rem 0 0 2.5rem; max-width: 64ch; color: var(--ink-2);
+           font-size: .92rem; line-height: 1.6; display: grid; gap: .8rem; }
+.labNote b { color: var(--ink); font-weight: 700; }
+.labNote ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .5rem; }
+.labNote li { padding-left: 1.15rem; position: relative; }
+.labNote li::before { content: "+"; position: absolute; left: 0; color: var(--ink-3); font-family: var(--mono); }
+@media (max-width: 620px) { .labNote { margin-left: 1.9rem; } }
+.labNote + .pubsSub { margin-top: 2.25rem; }
 .pubs li:last-child { border-bottom: 0; padding-bottom: 0; }
 .pub__title {
   font-size: 1.05rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.3;

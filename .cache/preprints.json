@@ -1,12 +1,23 @@
 [
   {
+    "id": "2611.10886",
+    "title": "The one-step surface-air lag in the EnergyPlus zone heat balance: order of accuracy, correction and consequences",
+    "authors": [
+      "Wooyoung Jung"
+    ],
+    "published": "2026-11-07",
+    "journalDoi": "",
+    "stated": "2026-010"
+  },
+  {
     "id": "2610.09937",
     "title": "Where Can a Decision Model Diagnose HVAC Faults? Reasoning Demand, Physical Representation, and Robustness Under Shift",
     "authors": [
       "Wooyoung Jung"
     ],
     "published": "2026-10-07",
-    "journalDoi": ""
+    "journalDoi": "",
+    "stated": ""
   },
   {
     "id": "2610.09119",
@@ -15,7 +26,8 @@
       "Wooyoung Jung"
     ],
     "published": "2026-10-06",
-    "journalDoi": ""
+    "journalDoi": "",
+    "stated": ""
   },
   {
     "id": "2610.00224",
@@ -24,7 +36,8 @@
       "Wooyoung Jung"
     ],
     "published": "2026-09-22",
-    "journalDoi": ""
+    "journalDoi": "",
+    "stated": ""
   },
   {
     "id": "2610.00073",
@@ -33,7 +46,8 @@
       "Wooyoung Jung"
     ],
     "published": "2026-09-04",
-    "journalDoi": ""
+    "journalDoi": "",
+    "stated": ""
   },
   {
     "id": "2610.00038",
@@ -42,7 +56,8 @@
       "Wooyoung Jung"
     ],
     "published": "2026-09-02",
-    "journalDoi": ""
+    "journalDoi": "",
+    "stated": ""
   },
   {
     "id": "2609.02729",
@@ -51,7 +66,8 @@
       "Wooyoung Jung"
     ],
     "published": "2026-09-02",
-    "journalDoi": "10.1016/j.softx.2026.103068"
+    "journalDoi": "10.1016/j.softx.2026.103068",
+    "stated": ""
   },
   {
     "id": "2609.02719",
@@ -61,7 +77,8 @@
       "Prosper Babon-Ayeng"
     ],
     "published": "2026-09-02",
-    "journalDoi": "10.1016/j.enbuild.2026.118038"
+    "journalDoi": "10.1016/j.enbuild.2026.118038",
+    "stated": ""
   },
   {
     "id": "2602.16140",
@@ -72,7 +89,8 @@
       "Prosper Babon-Ayeng"
     ],
     "published": "2026-02-18",
-    "journalDoi": ""
+    "journalDoi": "",
+    "stated": "2026-002"
   },
   {
     "id": "2602.15219",
@@ -81,6 +99,7 @@
       "Wooyoung Jung"
     ],
     "published": "2026-02-16",
-    "journalDoi": "10.1016/j.softx.2026.102633"
+    "journalDoi": "10.1016/j.softx.2026.102633",
+    "stated": "2026-001"
   }
 ]

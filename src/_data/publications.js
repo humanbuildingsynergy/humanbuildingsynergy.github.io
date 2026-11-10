@@ -111,6 +111,11 @@ async function arxiv() {
       published: tag("published").slice(0, 10),
       // Set by the authors once the paper appears in a journal.
       journalDoi: decode(tag("arxiv:doi")),
+      // The series number as printed on arXiv, "HUBS Lab Paper No. 2026-001",
+      // from whichever of the comments or journal-ref carries it. Only used to
+      // check the number worked out below; papers not yet re-set lack it.
+      stated: (`${tag("arxiv:comment")} ${tag("arxiv:journal_ref")}`
+        .match(/HUBS Lab Paper No\.?\s*(\d{4}-\d{3})/i) || [])[1] || "",
     };
   });
 }
@@ -223,20 +228,41 @@ export default async function () {
   pubs.sort((a, b) => b.year.localeCompare(a.year) || b.sortDate.localeCompare(a.sortDate));
 
   /* Numbered the way the CV numbers them: oldest is 1, newest is highest. The
-     list reads newest-first, so the numbers count down the page. Preprints are
-     added after this and numbered on their own, so they never shift the count
-     of peer-reviewed work. */
+     list reads newest-first, so the numbers count down the page. Lab papers are
+     added after this and left out of the count; they carry the series number
+     instead. */
   pubs.forEach((p, i) => { p.n = pubs.length - i; });
   console.log(`[publications] ${pubs.length} works ` +
     `(${pubs.filter((p) => p.kind === "journal").length} journal, ` +
     `${pubs.filter((p) => p.kind === "conference").length} conference)`);
 
-  /* A preprint leaves the list on its own once it is published: when arXiv
-     names a journal DOI that is already above, or when the title matches a
-     paper that is. The published paper then carries the arXiv link instead,
-     so the free copy is still one click away. A stranger who shares the name
-     is dropped by putting the arXiv DOI (10.48550/arXiv.…) under `exclude` in
-     the overrides file. */
+  /* Every arXiv paper of the lab is a HUBS Lab Paper. The number follows the
+     series' own rule (hubs-arxiv/SERIES.md): in order of the first arXiv
+     version within the year, same-day submissions by arXiv id. The register
+     itself is private, so the number is worked out here and checked against
+     the one printed on arXiv where a paper already carries it.
+
+     A stranger who shares the name is dropped, before numbering, by putting
+     the arXiv DOI (10.48550/arXiv.…) under `exclude` in the overrides file. */
+  const papers = (await preprints())
+    .filter((e) => !skip.has(`10.48550/arxiv.${e.id}`.toLowerCase()))
+    .sort((a, b) => a.published.localeCompare(b.published) || a.id.localeCompare(b.id));
+  const count = {};
+  for (const e of papers) {
+    const y = e.published.slice(0, 4);
+    count[y] = (count[y] || 0) + 1;
+    e.series = `${y}-${String(count[y]).padStart(3, "0")}`;
+    if (e.stated && e.stated !== e.series) {
+      console.warn(`[publications] arXiv ${e.id} says No. ${e.stated} but the ` +
+        `series rule gives ${e.series}; using ${e.stated}`);
+      e.series = e.stated;
+    }
+  }
+
+  /* A lab paper that goes on to a journal leaves this group on its own: when
+     arXiv names a journal DOI that is already above, or when the title matches
+     a paper that is. The journal entry then carries the series number and the
+     arXiv link, so the free copy is still one click away. */
   const norm = (t) => String(t).toLowerCase().replace(/[^a-z0-9]+/g, "");
   // Hand-written papers without a DOI are left out of the DOI index, or an
   // empty journalDoi would match them.
@@ -244,32 +270,31 @@ export default async function () {
     .map((p) => [p.doi.replace("https://doi.org/", "").toLowerCase(), p]));
   const byTitle = new Map(pubs.map((p) => [norm(p.title), p]));
   const pre = [];
-  for (const e of await preprints()) {
-    const doi = `10.48550/arXiv.${e.id}`;
-    if (skip.has(doi.toLowerCase())) continue;
+  for (const e of papers) {
     const published = byDoi.get(e.journalDoi.toLowerCase()) || byTitle.get(norm(e.title));
     if (published) {
       published.arxiv = e.id;
+      published.series = e.series;
       continue;
     }
     if (e.journalDoi) console.warn(`[publications] arXiv ${e.id} was published as ` +
       `${e.journalDoi}, which is not on the list; claim it in ORCID`);
     pre.push({
-      doi: `https://doi.org/${doi}`,
+      doi: `https://doi.org/10.48550/arXiv.${e.id}`,
       slug: slugify(e.title),
       title: e.title,
       authors: e.authors.map(lastFirst),
-      venue: "arXiv",
+      venue: `No. ${e.series}`,
       year: e.published.slice(0, 4),
       volume: "",
-      kind: "preprint",
-      preprint: true,
+      kind: "lab paper",
+      series: e.series,
+      lab: true,
       sortDate: e.published,
     });
   }
-  pre.sort((a, b) => b.sortDate.localeCompare(a.sortDate));
-  pre.forEach((p, i) => { p.n = pre.length - i; });
+  pre.sort((a, b) => b.series.localeCompare(a.series));
   pre.forEach(unique);
-  console.log(`[publications] ${pre.length} preprints`);
+  console.log(`[publications] ${pre.length} lab papers`);
   return [...pubs, ...pre];
 }
