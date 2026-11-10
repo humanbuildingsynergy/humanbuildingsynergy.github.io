@@ -73,7 +73,15 @@ code:
   - name: HEMA
     full: Multi-Agent Home Energy Management Assistant
     description: >-
-      A multi-agent assistant for residential energy management.
+      A conversational assistant that helps homeowners understand and manage
+      their energy use. An LLM classifier routes each question to one of three
+      specialized agents, which share 36 tools: an analysis agent for
+      appliance-level consumption, time-of-use rates and solar; a knowledge
+      agent with document retrieval, weather and rebate lookup; and a control
+      agent for smart devices such as thermostats and EV chargers (simulated).
+      Built on LangGraph and FastAPI with a React chat interface. It runs on
+      OpenAI, Gemini, Anthropic or a local Ollama model, falling back from one
+      to the next.
     github: https://github.com/humanbuildingsynergy/HEMA
     zenodo: ""
     year: 2026
@@ -81,11 +89,32 @@ code:
       doi: 10.1016/j.softx.2026.102633
       venue: SoftwareX
 
+  - name: BrickTrace
+    full: Multi-agent text-to-SPARQL for Brick building knowledge graphs
+    description: >-
+      Answers natural-language questions about a building by writing SPARQL
+      against its Brick model. Three agents keep reasoning about the ontology
+      separate from the building's own data: a Navigator plans the path through
+      the Brick ontology, a Grounder checks that plan against the building's
+      RDF graph, and a Composer writes and validates the query from the
+      verified evidence. Because the stages stay separate, a wrong answer can
+      be traced to the step that caused it. Evaluated on the BuildingQA
+      benchmark, with scripts that reproduce the paper's results.
+    github: https://github.com/humanbuildingsynergy/BrickTrace
+    year: 2026
+    paper:
+      doi: 10.1145/3765611.3815486
+      venue: ACM Sustainability Week 2026
+
   - name: ROSS
     full: Residential Occupancy Schedule Simulator
     description: >-
-      Generates representative U.S. residential occupancy schedules derived from
-      smart thermostat data.
+      Generates stochastic residential occupancy schedules for building energy
+      modeling, grounded in smart thermostat data from more than 90,000 homes
+      (ecobee Donate Your Data). Representative schedules found by time-series
+      k-means clustering drive an inhomogeneous Markov chain. Users choose the
+      level of randomness, whether occupancy follows motion data or the
+      household's own schedule, and the day of the week.
     github: https://github.com/humanbuildingsynergy/ResidentialOccupancyScheduleSimulator
     zenodo: ""
     year: 2023
