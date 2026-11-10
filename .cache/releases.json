@@ -1,63 +1,134 @@
-{
-  "10.5281/zenodo.21192895": {
-    "pushed": "2026-09-25",
-    "language": "Python",
+[
+  {
+    "repo": "humanbuildingsynergy/bdav",
+    "name": "BDAV",
+    "url": "https://github.com/humanbuildingsynergy/BDAV",
+    "description": "This repository is to share the UArizona CAEM Building Data Analytics and Visualization (BDAV) course content",
+    "created": "2024-11-13",
+    "pushed": "2024-12-08",
+    "language": "Jupyter Notebook",
     "archived": false,
-    "ghLicence": "",
-    "version": "v1.0.0",
-    "licence": "APACHE-2.0",
-    "released": "2026-07-04",
-    "ghLicense": "",
-    "license": "APACHE-2.0"
-  },
-  "https://github.com/humanbuildingsynergy/HEMA": {
-    "pushed": "2026-04-28",
-    "language": "Python",
-    "archived": false,
-    "ghLicence": "",
-    "licence": "",
-    "ghLicense": "",
-    "license": ""
-  },
-  "https://github.com/humanbuildingsynergy/ResidentialOccupancyScheduleSimulator": {
-    "pushed": "2023-07-24",
-    "language": "Python",
-    "archived": false,
-    "ghLicence": "MIT",
-    "licence": "MIT",
-    "ghLicense": "MIT",
     "license": "MIT"
   },
-  "10.5281/zenodo.20015123": {
+  {
+    "repo": "humanbuildingsynergy/bricktrace",
+    "name": "BrickTrace",
+    "url": "https://github.com/humanbuildingsynergy/BrickTrace",
+    "description": "BrickTrace: Multi-agent text-to-SPARQL for Brick building knowledge graphs",
+    "created": "2026-03-07",
+    "pushed": "2026-03-07",
+    "language": "Python",
+    "archived": false,
+    "license": ""
+  },
+  {
+    "repo": "humanbuildingsynergy/buildgraph",
+    "name": "BuildGraph",
+    "url": "https://github.com/humanbuildingsynergy/BuildGraph",
+    "description": "Synthetic building knowledge graph generator grounded in DOE prototype archetypes",
+    "created": "2026-05-03",
     "pushed": "2026-05-04",
     "language": "Python",
     "archived": false,
-    "ghLicence": "",
-    "version": "1.0",
-    "licence": "CC-BY-NC-4.0",
-    "released": "2026-05-02",
-    "ghLicense": "",
-    "license": "CC-BY-NC-4.0"
+    "license": ""
   },
-  "10.5281/zenodo.20451474": {
-    "version": "1.0",
-    "licence": "CC-BY-NC-4.0",
-    "released": "2026-05-29",
-    "license": "CC-BY-NC-4.0"
-  },
-  "10.5281/zenodo.20777376": {
-    "version": "",
-    "licence": "CC-BY-NC-4.0",
-    "released": "2026-06-20",
-    "license": "CC-BY-NC-4.0"
-  },
-  "10.5281/zenodo.23197610": {
-    "pushed": "2026-10-06",
+  {
+    "repo": "humanbuildingsynergy/building-ai-readiness",
+    "name": "building-ai-readiness",
+    "url": "https://github.com/humanbuildingsynergy/building-ai-readiness",
+    "description": "Code, results and data supplement for the paper 'Which Buildings Are Artificial Intelligence-Ready? A Measurement-Based Assessment Framework for AI Question Answering and Actuation'",
+    "created": "2026-10-06",
+    "pushed": "2026-11-04",
     "language": "Python",
     "archived": false,
-    "ghLicense": "APACHE-2.0",
-    "version": "1.0.0",
-    "license": "APACHE-2.0",
-    "released": "2026-10-06"
+    "license": "APACHE-2.0"
+  },
+  {
+    "repo": "humanbuildingsynergy/buildocc",
+    "name": "BuildOcc",
+    "url": "https://github.com/humanbuildingsynergy/BuildOcc",
+    "description": "ATUS-grounded LLM occupant agents for building energy simulation",
+    "created": "2026-07-04",
+    "pushed": "2026-09-25",
+    "language": "Python",
+    "archived": false,
+    "license": ""
+  },
+  {
+    "repo": "humanbuildingsynergy/energyplus-surfaceaircoupling",
+    "name": "EnergyPlus-SurfaceAirCoupling",
+    "url": "https://github.com/humanbuildingsynergy/EnergyPlus-SurfaceAirCoupling",
+    "description": "Research patches and scripts for EnergyPlus version 26.2.0: solving the surface and zone air heat balances to agreement within each timestep. Not affiliated with or endorsed by the U.S. Department of Energy.",
+    "created": "2026-11-05",
+    "pushed": "2026-11-10",
+    "language": "Python",
+    "archived": false,
+    "license": "BSD-3-CLAUSE"
+  },
+  {
+    "repo": "humanbuildingsynergy/hema",
+    "name": "HEMA",
+    "url": "https://github.com/humanbuildingsynergy/HEMA",
+    "description": "HEMA is an open-source, multi-agent system that combines large language model reasoning with three specialized agents - Analysis, Knowledge, and Control - equipped with 36 purpose-built tools, handling energy analysis, educational and information support, and smart device management through a natural language conversational interface.",
+    "created": "2026-02-28",
+    "pushed": "2026-04-28",
+    "language": "Python",
+    "archived": false,
+    "license": ""
+  },
+  {
+    "repo": "humanbuildingsynergy/hubs_gpt-based_scale_framework",
+    "name": "HUBS_GPT-based_SCALE_Framework",
+    "url": "https://github.com/humanbuildingsynergy/HUBS_GPT-based_SCALE_Framework",
+    "description": "",
+    "created": "2025-06-09",
+    "pushed": "2025-07-09",
+    "language": "Jupyter Notebook",
+    "archived": false,
+    "license": "MIT"
+  },
+  {
+    "repo": "humanbuildingsynergy/humanbuildingsynergy.github.io",
+    "name": "humanbuildingsynergy.github.io",
+    "url": "https://github.com/humanbuildingsynergy/humanbuildingsynergy.github.io",
+    "description": "HUBS' hompage!",
+    "created": "2022-03-19",
+    "pushed": "2026-11-10",
+    "language": "Nunjucks",
+    "archived": false,
+    "license": ""
+  },
+  {
+    "repo": "humanbuildingsynergy/residentialoccupancyschedulesimulator",
+    "name": "ResidentialOccupancyScheduleSimulator",
+    "url": "https://github.com/humanbuildingsynergy/ResidentialOccupancyScheduleSimulator",
+    "description": "ROSS: Residential Occupancy Schedule Simulator",
+    "created": "2022-09-15",
+    "pushed": "2023-07-24",
+    "language": "Python",
+    "archived": false,
+    "license": "MIT"
+  },
+  {
+    "repo": "humanbuildingsynergy/uarizona_ce310_probability_statistics_in_cae",
+    "name": "UArizona_CE310_Probability_Statistics_in_CAE",
+    "url": "https://github.com/humanbuildingsynergy/UArizona_CE310_Probability_Statistics_in_CAE",
+    "description": "CE 310: Probability & Statistics in Civil and Architectural Engineering — open course materials (University of Arizona). 16 modules: Excel labs, Python/Colab labs, and a capstone.",
+    "created": "2026-08-13",
+    "pushed": "2026-09-08",
+    "language": "Jupyter Notebook",
+    "archived": false,
+    "license": ""
+  },
+  {
+    "repo": "humanbuildingsynergy/us-commercialstock_ai_readiness",
+    "name": "US-CommercialStock_AI_Readiness",
+    "url": "https://github.com/humanbuildingsynergy/US-CommercialStock_AI_Readiness",
+    "description": "",
+    "created": "2026-10-29",
+    "pushed": "2026-11-05",
+    "language": "Python",
+    "archived": false,
+    "license": "APACHE-2.0"
   }
-}
+]

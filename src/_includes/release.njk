@@ -1,0 +1,30 @@
+{#- One software or data release, as a card. Used by the Contributions page and
+    the Research page. Everything on it comes from src/_data/software.js:
+    version, license and dates from Zenodo and GitHub, never hand-edited.
+    `pushed` is the repo's last activity, which tells a visitor the code is
+    alive; a release with no repo falls back to its Zenodo release date. #}
+{% from "icons.njk" import icon %}
+{% macro release(r, tone, pubs) %}
+  <article>
+    <div class="release__id">
+      <span class="release__name {{ tone }}">{{ r.name }}</span>
+      {% if r.version %}<span class="release__yr">{{ r.version }}</span>{% endif %}
+      {% if r.license %}<span class="release__yr">{{ r.license }}</span>{% endif %}
+      {% if r.pushed or r.released %}
+      <span class="release__yr">Updated {{ (r.pushed or r.released) | monthYear }}</span>
+      {%- endif %}
+      {% if r.archived %}<span class="release__yr release__yr--warn">Archived</span>{% endif %}
+    </div>
+    <div>
+      {% if r.full %}<h3>{{ r.full }}</h3>{% endif %}
+      {% if r.description %}<p class="release__desc">{{ r.description }}</p>{% endif %}
+      <div class="release__links">
+        {%- if r.github %}<a href="{{ r.github }}" target="_blank" rel="noopener">{{ icon("github") }} GitHub</a>{% endif %}
+        {%- if r.zenodo %}<a href="https://doi.org/{{ r.zenodo }}" target="_blank" rel="noopener">{{ icon("external") }} {{ r.zenodo }}</a>{% endif %}
+        {%- set paper = pubs | paperFor(r.paperKey, r.paperVenue) %}
+        {%- if paper and paper.href %}<a href="{{ paper.href }}" target="_blank" rel="noopener">{{ icon("cv") }} {{ paper.label }}</a>
+        {%- elif paper %}<span>{{ icon("cv") }} {{ paper.label }}</span>{% endif %}
+      </div>
+    </div>
+  </article>
+{% endmacro %}

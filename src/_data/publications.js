@@ -17,12 +17,12 @@
 import fs from "node:fs";
 import path from "node:path";
 import yaml from "js-yaml";
+import { zenodoRecords, paperKeys } from "../../lib/zenodo.js";
 
 const ORCID = "0000-0003-2746-4983";
 const ARXIV_AUTHOR = "Wooyoung Jung";
 const CACHE = path.join(process.cwd(), ".cache", "publications.json");
 const ARXIV_CACHE = path.join(process.cwd(), ".cache", "preprints.json");
-const ZENODO_CACHE = path.join(process.cwd(), ".cache", "supplements.json");
 const UA = "HUBS-site/1.0 (https://hubs.engr.arizona.edu; mailto:wooyoung@arizona.edu)";
 const STOP = new Set(["a", "an", "the", "of", "for", "and", "in", "on", "to",
   "with", "from", "into", "at", "as"]);
@@ -148,40 +148,19 @@ async function cachedFetch(file, label, fetcher, empty) {
 const preprints = () => cachedFetch(ARXIV_CACHE, "arXiv", arxiv, []);
 
 /* Code and data released on Zenodo, keyed by the paper each release says it
-   belongs to. Zenodo records name their paper as a related identifier —
-   "arXiv:2610.09119", "10.48550/arXiv.2609.02729", or the journal DOI — under
-   isSupplementTo or isDocumentedBy. A release that names no paper gets no
-   link; adding the relation on Zenodo is all it takes. Searched by name and
-   by ORCID, since older records carry only one of the two. */
-async function zenodo() {
-  const found = new Map();
-  for (const q of [`creators.name:"Jung, Wooyoung"`, `creators.orcid:${ORCID}`]) {
-    // Unauthenticated searches are capped at 25 a page.
-    for (let page = 1; page <= 8; page++) {
-      const d = await getJSON(`https://zenodo.org/api/records?size=25&page=${page}` +
-        `&q=${encodeURIComponent(q)}`);
-      for (const r of d.hits.hits) found.set(r.conceptdoi || r.doi, r);
-      if (page * 25 >= d.hits.total) break;
-    }
-  }
+   belongs to (see paperKeys in lib/zenodo.js). A release that names no paper
+   gets no link; adding the relation on Zenodo is all it takes. */
+async function supplements() {
   const links = {};
-  for (const [doi, r] of found) {
-    for (const rel of r.metadata.related_identifiers || []) {
-      if (!/^(issupplementto|isdocumentedby|isdescribedby)$/i.test(rel.relation)) continue;
-      const id = rel.identifier.toLowerCase();
-      const ax = id.includes("arxiv") && id.match(/(\d{4}\.\d{4,5})/);
-      const key = ax ? `arxiv:${ax[1]}` : id.replace(/^https?:\/\/(dx\.)?doi\.org\//, "");
-      if (!ax && !key.startsWith("10.")) continue;  // a GitHub tree, not a paper
+  for (const rec of await zenodoRecords()) {
+    for (const key of paperKeys(rec)) {
       (links[key] = links[key] || []).push({
-        doi,
-        type: r.metadata.resource_type?.type === "dataset" ? "Data" : "Code",
+        doi: rec.conceptdoi,
+        type: rec.type === "dataset" ? "Data" : "Code",
       });
     }
   }
-  // Sorted so the cache only changes when the links do.
-  return Object.fromEntries(Object.keys(links).sort().map((k) => [k,
-    links[k].filter((v, i, a) => a.findIndex((w) => w.doi === v.doi) === i)
-      .sort((a, b) => a.type.localeCompare(b.type) || a.doi.localeCompare(b.doi))]));
+  return links;
 }
 
 // arXiv gives "Wooyoung Jung"; the rest of the list is "Jung, Wooyoung".
@@ -317,9 +296,10 @@ export default async function () {
   const byDoi = new Map(pubs.filter((p) => p.doi)
     .map((p) => [p.doi.replace("https://doi.org/", "").toLowerCase(), p]));
   const byTitle = new Map(pubs.map((p) => [norm(p.title), p]));
-  const supplements = await cachedFetch(ZENODO_CACHE, "Zenodo", zenodo, {});
+  const releases = await supplements();
   const releasesFor = (...keys) => keys.filter(Boolean)
-    .flatMap((k) => supplements[k.toLowerCase()] || [])
+    .flatMap((k) => releases[k.toLowerCase()] || [])
+    .sort((a, b) => a.type.localeCompare(b.type) || a.doi.localeCompare(b.doi))
     .filter((v, i, a) => a.findIndex((w) => w.doi === v.doi) === i);
 
   const pre = [];

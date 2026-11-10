@@ -93,46 +93,19 @@ description: >-
     <a class="btn" href="{{ software.githubOrg }}" target="_blank" rel="noopener">All repositories on GitHub {{ icon("external") }}</a>
   </div>
 
-  {%- macro release(r, tone) %}
-  <article>
-    {#- version, license and the date are fetched from Zenodo and GitHub at
-        build time by src/_data/software.js — do not hand-edit them in the
-        YAML. `pushed` is the repo's last activity, which is what tells a
-        visitor the code is alive; datasets have no repo, so they fall back to
-        the Zenodo release date. #}
-    <div class="release__id">
-      <span class="release__name {{ tone }}">{{ r.name }}</span>
-      {% if r.version %}<span class="release__yr">{{ r.version }}</span>{% endif %}
-      {% if r.license %}<span class="release__yr">{{ r.license }}</span>{% endif %}
-      {% if r.pushed or r.released %}
-      <span class="release__yr">Updated {{ (r.pushed or r.released) | monthYear }}</span>
-      {%- elif r.year %}<span class="release__yr">{{ r.year }}</span>{% endif %}
-      {% if r.archived %}<span class="release__yr release__yr--warn">Archived</span>{% endif %}
-    </div>
-    <div>
-      <h3>{{ r.full }}</h3>
-      <p class="release__desc">{{ r.description }}</p>
-      <div class="release__links">
-        {%- if r.github %}<a href="{{ r.github }}" target="_blank" rel="noopener">{{ icon("github") }} GitHub</a>{% endif %}
-        {%- if r.zenodo %}<a href="https://doi.org/{{ r.zenodo }}" target="_blank" rel="noopener">{{ icon("external") }} {{ r.zenodo }}</a>{% endif %}
-        {%- if r.paper.doi %}<a href="https://doi.org/{{ r.paper.doi }}" target="_blank" rel="noopener">{{ icon("cv") }} {{ r.paper.venue }}</a>
-        {%- elif r.paper.venue %}<span>{{ icon("cv") }} {{ r.paper.venue }}</span>{% endif %}
-      </div>
-    </div>
-  </article>
-  {%- endmacro %}
+  {%- from "release.njk" import release %}
 
   {%- if software.code.length %}
   <p class="label" style="margin-bottom:.75rem">Software</p>
   <div class="release">
-    {%- for s in software.code %}{{ release(s, "c-ai") }}{%- endfor %}
+    {%- for s in software.code %}{{ release(s, "c-ai", publications) }}{%- endfor %}
   </div>
   {%- endif %}
 
   {%- if software.datasets.length %}
   <p class="label" style="margin:2.75rem 0 .75rem">Datasets &amp; benchmarks</p>
   <div class="release">
-    {%- for d in software.datasets %}{{ release(d, "c-bl") }}{%- endfor %}
+    {%- for d in software.datasets %}{{ release(d, "c-bl", publications) }}{%- endfor %}
   </div>
   {%- endif %}
 </section>

@@ -88,6 +88,21 @@ export default function (eleventyConfig) {
       .map((y) => ({ year: y, items: groups[y] }));
   });
 
+  // The paper a software or data release belongs to, as a link. A lab paper
+  // is named by its series number, a journal paper by its venue; a paper not
+  // on the list still links, by its arXiv id or DOI.
+  eleventyConfig.addFilter("paperFor", (pubs, key, venue) => {
+    if (!key) return venue ? { label: venue } : null;
+    const k = String(key).toLowerCase();
+    const ax = k.startsWith("arxiv:") ? k.slice(6) : "";
+    const p = (pubs || []).find((p) => ax
+      ? (p.arxiv || "").toLowerCase() === ax || p.doi.toLowerCase().endsWith(`arxiv.${ax}`)
+      : p.doi.toLowerCase() === `https://doi.org/${k}`);
+    if (p) return { href: p.doi, label: p.lab ? `HUBS Lab Paper No. ${p.series}` : p.venue || venue };
+    return { href: ax ? `https://arxiv.org/abs/${ax}` : `https://doi.org/${k}`,
+             label: venue || (ax ? `arXiv:${ax}` : k) };
+  });
+
   // Look a publication up by slug, so a news item can name the papers it is
   // announcing without repeating their titles.
   eleventyConfig.addFilter("pubsBySlug", (pubs, slugs) =>

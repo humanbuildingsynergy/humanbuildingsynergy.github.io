@@ -986,8 +986,11 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 .release { display: grid; gap: 1px; background: var(--hairline); border-block: 1px solid var(--hairline); }
 .release article {
   background: var(--ground); padding: 1.4rem 0;
-  display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 1.5rem; align-items: start;
+  display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 1.5rem; align-items: start;
 }
+/* Repo names arrive as written on GitHub, some with no break in them
+   ("EnergyPlus-SurfaceAirCoupling"); they wrap rather than run into the title. */
+.release__id > * { min-width: 0; overflow-wrap: anywhere; }
 .release__id { display: grid; gap: .2rem; align-content: start; }
 .release__name {
   font-family: var(--mono); font-size: .8rem; letter-spacing: .08em;

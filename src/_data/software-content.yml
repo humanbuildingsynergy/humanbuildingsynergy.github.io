@@ -1,15 +1,27 @@
 # ============================================================================
-# Code releases and archived datasets — the lab's citable research outputs
-# that are not journal articles.
+# Software and data the lab releases — OPTIONAL prose.
 #
-# Prose only. `version`, `license` and the last-updated date are NOT set here —
-# src/_data/software.js fetches them from Zenodo and GitHub at build time, so
-# they cannot drift from the actual release. Any `version`/`license` left below
-# is a fallback used only if those APIs are unreachable.
+# Nothing here is needed for a release to appear. src/_data/software.js lists
+# every public repo on the lab's GitHub account and every software or dataset
+# record on Zenodo by itself, with version, license and dates from the source.
 #
+# Add an entry below only to say it better than the sources do. An entry is
+# matched by its `github` URL or `zenodo` DOI, and its `name`, `full`,
+# `description` and `paper` win over what the sources would give. Any
+# `version`/`license` written here is a fallback used only if the APIs are
+# unreachable.
 # ============================================================================
 
 githubOrg: https://github.com/humanbuildingsynergy
+
+# Repos that are teaching materials rather than research software. They are
+# listed in a group of their own. Names are repo names on the account above.
+courses:
+  - UArizona_CE310_Probability_Statistics_in_CAE
+  - BDAV
+
+# Public repos to leave off the page entirely. This website is always left off.
+exclude: []
 
 intro: >-
   Software and data released by the lab. Everything here is citable and
