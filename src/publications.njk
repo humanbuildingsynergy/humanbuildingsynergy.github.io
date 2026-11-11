@@ -122,6 +122,9 @@ description: >-
   </div>
   {%- endif %}
   {%- endfor %}
+  <div class="btnRow release--indent" style="margin-top:-1rem">
+    <a class="btn btn--quiet" href="{{ software.githubOrg }}" target="_blank" rel="noopener">All repositories on GitHub {{ icon("external") }}</a>
+  </div>
 
   {#- Set out the same way as the lab papers above: one heading for the group,
       the years as quiet labels beneath it. #}
@@ -179,7 +182,7 @@ description: >-
     <h2 style="margin-top:.8rem">Citation counts.</h2>
     <div class="btnRow">
       <a class="btn btn--quiet" href="{{ site.social.scholar }}" target="_blank" rel="noopener">Google Scholar {{ icon("external") }}</a>
-      <a class="btn btn--quiet" href="/research/">Research {{ icon("arrow-right") }}</a>
+      <a class="btn btn--quiet" href="/research/">The projects behind them {{ icon("arrow-right") }}</a>
     </div>
   </div>
 </section>

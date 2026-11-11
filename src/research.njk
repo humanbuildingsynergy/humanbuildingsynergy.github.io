@@ -2,8 +2,8 @@
 layout: base.njk
 title: Research
 description: >-
-  Funded projects, publications, and open-source software from the Human Building
-  Synergy Laboratory at the University of Arizona.
+  Funded projects, sponsors and partners of the Human Building Synergy
+  Laboratory at the University of Arizona.
 ---
 {% from "icons.njk" import icon %}
 
@@ -65,49 +65,23 @@ description: >-
   </div>
 </section>
 
-<!-- ===== Publications =============================================== -->
+<!-- ===== Contributions ============================================ -->
+{#- The papers, software and data themselves are on the Contributions page;
+    this is the hand-off from the projects to what they produced. #}
 <section class="band band--rule wrap">
   <div class="band__head measure">
-    <p class="label">Publications</p>
-    <h2>Papers and proceedings</h2>
+    <p class="label">What came out of it</p>
+    <h2>Papers, software and data</h2>
     <p class="lede">
-      Every paper the lab has published, each with a citation you can download.
+      The lab's paper series, the code and data released with it, and every
+      journal and conference paper, each with a DOI you can cite.
     </p>
   </div>
 
   <div class="btnRow" style="margin-top:0">
-    <a class="btn" href="/publications/">All publications {{ icon("arrow-right") }}</a>
+    <a class="btn" href="/publications/">Contributions {{ icon("arrow-right") }}</a>
     <a class="btn btn--quiet" href="{{ site.social.scholar }}" target="_blank" rel="noopener">Google Scholar {{ icon("external") }}</a>
   </div>
-</section>
-
-<!-- ===== Software and data ========================================== -->
-<section class="band band--rule wrap">
-  <div class="band__head measure">
-    <p class="label">Intellectual property</p>
-    <h2>Software and data</h2>
-    <p class="lede">{{ software.intro }}</p>
-  </div>
-
-  <div class="btnRow" style="margin-top:0;margin-bottom:2.5rem">
-    <a class="btn" href="{{ software.githubOrg }}" target="_blank" rel="noopener">All repositories on GitHub {{ icon("external") }}</a>
-  </div>
-
-  {%- from "release.njk" import release %}
-
-  {%- if software.code.length %}
-  <p class="label" style="margin-bottom:.75rem">Software</p>
-  <div class="release">
-    {%- for s in software.code %}{{ release(s, "c-ai", publications) }}{%- endfor %}
-  </div>
-  {%- endif %}
-
-  {%- if software.datasets.length %}
-  <p class="label" style="margin:2.75rem 0 .75rem">Datasets &amp; benchmarks</p>
-  <div class="release">
-    {%- for d in software.datasets %}{{ release(d, "c-bl", publications) }}{%- endfor %}
-  </div>
-  {%- endif %}
 </section>
 
 <!-- ===== Sponsors and partners ====================================== -->
