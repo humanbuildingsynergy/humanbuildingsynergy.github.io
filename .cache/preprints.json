@@ -61,15 +61,15 @@
   },
   {
     "id": "2610.00038",
-    "version": "v1",
-    "updated": "2026-09-02",
+    "version": "v2",
+    "updated": "2026-11-09",
     "title": "BuildGraph: A Synthetic Multi-Archetype Building Knowledge Graph Dataset",
     "authors": [
       "Wooyoung Jung"
     ],
     "published": "2026-09-02",
     "journalDoi": "",
-    "stated": ""
+    "stated": "2026-005"
   },
   {
     "id": "2609.02729",
