@@ -6,12 +6,27 @@
 # `text` may contain inline HTML links.
 
 - date: 2026-11
+  type: publication
+  text: >-
+    HUBS Lab Paper No. 2026-010 is out on arXiv:
+    <a href="https://arxiv.org/abs/2611.10886" target="_blank" rel="noopener">The
+    one-step surface-air lag in the EnergyPlus zone heat balance: order of
+    accuracy, correction and consequences</a>. Because EnergyPlus surfaces use
+    the previous timestep's air temperature, its zone heat balance is first-order
+    accurate or lower, even with the third-order default. Solving surfaces, air
+    and HVAC to agreement within each timestep restores about second order, and
+    across DOE prototype buildings the correction changed window-upgrade savings
+    by 10% or more in 13 of 34 cases. The patches, scripts and results are
+    <a href="https://doi.org/10.5281/zenodo.24041716" target="_blank" rel="noopener">archived
+    on Zenodo</a>.
+
+- date: 2026-11
   type: milestone
   text: >-
-    The HUBS lab is collaborating with the
-    <a href="https://cltc.ucdavis.edu/" target="_blank" rel="noopener">California
-    Lighting Technology Center (CLTC) at UC Davis</a> on agentic AI for
-    residential housing, households and nudges. Stay tuned!
+    Our earlier papers on arXiv are being re-issued in the HUBS Lab Paper
+    layout, each now carrying its series number, from HUBS Lab Paper No.
+    2026-001 to No. 2026-009. The content is unchanged, and every earlier
+    version stays on arXiv. See <a href="/publications/">Contributions</a>.
 
 - date: 2026-11
   type: milestone
@@ -21,6 +36,14 @@
     and data archived on Zenodo, and work from earlier years to follow. Many
     will go on to journals; some will stand as lab papers in their own right.
     See <a href="/publications/">Contributions</a>.
+
+- date: 2026-10
+  type: milestone
+  text: >-
+    The HUBS lab is collaborating with the
+    <a href="https://cltc.ucdavis.edu/" target="_blank" rel="noopener">California
+    Lighting Technology Center (CLTC) at UC Davis</a> on agentic AI for
+    residential housing, households and nudges. Stay tuned!
 
 - date: 2026-09
   type: publication
