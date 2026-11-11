@@ -8,6 +8,14 @@
 - date: 2026-11
   type: milestone
   text: >-
+    The HUBS lab is collaborating with the
+    <a href="https://cltc.ucdavis.edu/" target="_blank" rel="noopener">California
+    Lighting Technology Center (CLTC) at UC Davis</a> on agentic AI for
+    residential housing, households and nudges. Stay tuned!
+
+- date: 2026-11
+  type: milestone
+  text: >-
     Introducing HUBS Lab Papers! The lab now releases its work on arXiv first,
     as a numbered series beginning with HUBS Lab Paper No. 2026-001, with code
     and data archived on Zenodo, and work from earlier years to follow. Many
