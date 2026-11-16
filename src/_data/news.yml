@@ -7,6 +7,14 @@
 
 - date: 2026-11
   type: publication
+  # DRAFT — rewrite this sentence before merging.
+  text: >-
+    The lab released HUBS Lab Paper No. 2026-010,
+    <a href="https://doi.org/10.48550/arXiv.2611.10886" target="_blank" rel="noopener">The one-step surface-air lag in the EnergyPlus zone heat balance: order of accuracy, correction and consequences</a>,
+    on arXiv.
+
+- date: 2026-11
+  type: publication
   text: >-
     HUBS Lab Paper No. 2026-010 is out on arXiv:
     <a href="https://arxiv.org/abs/2611.10886" target="_blank" rel="noopener">The

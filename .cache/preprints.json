@@ -25,15 +25,15 @@
   },
   {
     "id": "2610.09119",
-    "version": "v1",
-    "updated": "2026-10-06",
+    "version": "v2",
+    "updated": "2026-11-10",
     "title": "Which Buildings Are Artificial Intelligence-Ready? A Measurement-Based Assessment Framework for AI Question Answering and Actuation",
     "authors": [
       "Wooyoung Jung"
     ],
     "published": "2026-10-06",
     "journalDoi": "",
-    "stated": ""
+    "stated": "2026-008"
   },
   {
     "id": "2610.00224",
@@ -49,15 +49,15 @@
   },
   {
     "id": "2610.00073",
-    "version": "v1",
-    "updated": "2026-09-04",
+    "version": "v2",
+    "updated": "2026-11-13",
     "title": "A Comprehensive Evaluation Framework for Conversational Home Energy Management Systems",
     "authors": [
       "Wooyoung Jung"
     ],
     "published": "2026-09-04",
     "journalDoi": "",
-    "stated": ""
+    "stated": "2026-006"
   },
   {
     "id": "2610.00038",
@@ -85,8 +85,8 @@
   },
   {
     "id": "2609.02719",
-    "version": "v2",
-    "updated": "2026-09-03",
+    "version": "v3",
+    "updated": "2026-11-11",
     "title": "Large Language Model-Driven Context-Aware Eco-Feedback Generation and Evaluation",
     "authors": [
       "Wooyoung Jung",
@@ -94,7 +94,7 @@
     ],
     "published": "2026-09-02",
     "journalDoi": "10.1016/j.enbuild.2026.118038",
-    "stated": ""
+    "stated": "2026-003"
   },
   {
     "id": "2602.16140",
